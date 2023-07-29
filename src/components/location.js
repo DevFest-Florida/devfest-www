@@ -1,34 +1,33 @@
 import React from 'react';
-import VenueMap from '../assets/2023/maps.seminolestate.edu.png';
-import VenueImage from "../assets/2023/up.jpeg";
+import VenueImage from "../assets/2023/USF-Logo.png";
 
 const LocationSection = () => (
   <section className='my-20'>
     <h2 className='text-center'>Venue</h2>
     <div className='w-10/12 sm:my-5 mx-auto grid grid-cols-1 lg:grid-cols-2'>
       <div className='mx-auto px-4'>
-        <a
+        {/* <a
           href='https://goo.gl/maps/LXtoPLKqmNpmh6VZ7'
           target={'_blank'}
           rel='noreferrer'
-        >
+        > */}
           <img
             src={VenueImage}
             className='rounded-2xl overflow-hidden'
-            alt='Seminole State College Wayne M. Densch Partnership Center'
+            alt='University of South Florida'
           ></img>
-        </a>
+        {/* </a> */}
       </div>
       <div className='mx-auto px-4 text-center'>
         <p className='text-xl lg:text-left lg:pt-0'>
           We're excited to announce that DevFest{' '}
           {process.env.REACT_APP_CHAPTER_NAME} will take place at{' '}
           <span className='font-semibold'>
-          Seminole State College Wayne M. Densch Partnership Center
+          University of South Florida
           </span>
         </p>
 
-        <a
+        {/* <a
           href='https://goo.gl/maps/LXtoPLKqmNpmh6VZ7'
           className='hover:text-Blue500 lg:text-left'
           target={'_blank'}
@@ -41,13 +40,13 @@ const LocationSection = () => (
             <br />
             Sanford, FL 32773
           </p>
-        </a>
+        </a> */}
 
         <p className='text-xl lg:text-left lg:pt-0'>
           Special thanks to{' '}
-          <a href='https://www.seminolestate.edu/' target={'_blank'} rel='noreferrer'>
+          <a href='https://www.usf.edu/' target={'_blank'} rel='noreferrer'>
             <span className='font-semibold'>
-            Seminole State College
+            University of South Florida
             </span>
             {', '}
           </a>{' '}
@@ -55,7 +54,7 @@ const LocationSection = () => (
         </p>
       </div>
     </div>
-    <div className='w-10/12 sm:my-5 mx-auto grid grid-cols-1'>
+    {/* <div className='w-10/12 sm:my-5 mx-auto grid grid-cols-1'>
       <div className='mx-auto px-4'>
           <img
             src={VenueMap}
@@ -63,7 +62,7 @@ const LocationSection = () => (
             className='rounded-2xl overflow-hidden'
           ></img>
       </div>
-    </div>
+    </div> */}
   </section>
 );
 

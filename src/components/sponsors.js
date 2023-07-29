@@ -1,6 +1,6 @@
 import React from "react";
+import USFLogo from "../assets/2023/USF-Logo.png";
 import GoogleLogo from "../assets/2023/sponsors/Google_2015_logo.png";
-import SeminoleStateLogo from "../assets/2023/sponsors/logo-seminole-state-2line-cmyk-2019.png";
 
 const SponsorLogos = () => (
   <div className="text-center my-20">
@@ -19,8 +19,8 @@ const SponsorLogos = () => (
 
       <div className="">
         <img
-          src={SeminoleStateLogo}
-          alt="Seminole State College Logo"
+          src={USFLogo}
+          alt="University of South FLorida Logo"
           className="object-contain h-56 w-3/4 md:w-full px-2 mx-auto"
         ></img>
       </div>
