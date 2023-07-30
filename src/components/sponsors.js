@@ -1,5 +1,5 @@
 import React from "react";
-import FIULogo from "../assets/2023/FIU_vrt_Color.png";
+import FIULogo from "../assets/2023/sponsors/FIU_vrt_Color.png";
 import GoogleLogo from "../assets/2023/sponsors/Google_2015_logo.png";
 
 const SponsorLogos = () => (

@@ -5,7 +5,7 @@ import gdg_logo from '../assets/2023/gdg.png';
 
 const Footer = () => (
 
-    <footer className='bg-Grey900 text-white p-10 '>
+    <footer className='bg-cyan-400 text-black hover:text-black p-10 '>
        
         <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 w-11/12 mx-auto'>
             <div className=''>
@@ -13,8 +13,8 @@ const Footer = () => (
                 <p>
                     {process.env.REACT_APP_CHAPTER_ABOUT} 
                 </p>
-                <a href='https://gdg.community.dev/'>
-                    <img src={gdg_logo} className='my-3 p-5 bg-white rounded-xl' alt='GDG {process.env.REACT_APP_CHAPTER_NAME} logo'></img>
+                <a href={process.env.REACT_APP_SOCIAL_WEBSITE}>
+                    <img src={gdg_logo} className='my-3 p-5 bg-white rounded-xl' alt='GDG {process.env.REACT_APP_CHAPTER_NAME} logo' />
                 </a>
             </div>
             <div>
@@ -56,20 +56,20 @@ const Footer = () => (
                 <h3>DevFest {process.env.REACT_APP_CHAPTER_NAME}</h3>
                 <ul>
                     <li>
-                        <Link to='/code-of-conduct' className='text-white'>Code of Conduct</Link> 
+                        <Link to='/code-of-conduct'>Code of Conduct</Link> 
                     </li>
                     <li>
-                        <Link to='/faq' className='text-white'>FAQ</Link> 
+                        <Link to='/faq'>FAQ</Link> 
                     </li>
                     <li>
-                        <Link to ='/volunteer' className='text-white'>Volunteer</Link>
+                        <Link to ='/volunteer'>Volunteer</Link>
                     </li>
                 </ul>
             </div>
         </div>
         <div className='my-10 text-center'>
             <div>
-                <span>Copyright 2022 Google Developer Groups (GDG) {process.env.REACT_APP_CHAPTER_NAME}.</span>
+                <span>Copyright 2023 Google Developer Groups (GDG) {process.env.REACT_APP_CHAPTER_NAME}.</span>
             </div>
             <div>
                 <span>GDG {process.env.REACT_APP_CHAPTER_NAME} is an independent group; our activities and the opinions expressed here should in no way be linked to Google, the corporation.</span>
