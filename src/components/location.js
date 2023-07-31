@@ -1,6 +1,6 @@
 import React from 'react';
-import VenueMap from '../assets/2023/maps.seminolestate.edu.png';
-import VenueImage from "../assets/2023/up.jpeg";
+import VenueMap from '../assets/2023/sponsors/maps.seminolestate.edu.png';
+import VenueImage from "../assets/2023/sponsors/up.jpeg";
 
 const LocationSection = () => (
   <section className='my-20'>

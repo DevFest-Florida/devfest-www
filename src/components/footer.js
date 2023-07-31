@@ -5,7 +5,7 @@ import gdg_logo from '../assets/2023/gdg.png';
 
 const Footer = () => (
 
-    <footer className='bg-Grey900 text-white p-10 '>
+    <footer className='bg-purple-900 text-white p-10 '>
        
         <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 w-11/12 mx-auto'>
             <div className=''>
@@ -13,7 +13,7 @@ const Footer = () => (
                 <p>
                     {process.env.REACT_APP_CHAPTER_ABOUT} 
                 </p>
-                <a href='https://gdg.community.dev/'>
+                <a href={process.env.REACT_APP_SOCIAL_WEBSITE}>
                     <img src={gdg_logo} className='my-3 p-5 bg-white rounded-xl' alt='GDG {process.env.REACT_APP_CHAPTER_NAME} logo'></img>
                 </a>
             </div>
