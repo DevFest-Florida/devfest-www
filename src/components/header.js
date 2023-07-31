@@ -4,7 +4,7 @@ import HamburgerMenu from "./hamburger.js";
 import Navbar from "./navbar.js";
 
 const Header = () => (
-  <header className="bg-Grey900 py-1 top-0 sticky z-10">
+  <header className="bg-emerald-800 py-1 top-0 sticky z-10">
     <nav className="flex justify-between items-center w-11/12 mx-auto py-3">
       <div className="w-64">
         <a href={process.env.REACT_APP_SOCIAL_WEBSITE}>

@@ -5,7 +5,7 @@ import gdg_logo from '../assets/2023/gdg.png';
 
 const Footer = () => (
 
-    <footer className='bg-Grey900 text-white p-10 '>
+    <footer className='bg-emerald-800 text-white p-10 '>
        
         <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 w-11/12 mx-auto'>
             <div className=''>
@@ -13,9 +13,16 @@ const Footer = () => (
                 <p>
                     {process.env.REACT_APP_CHAPTER_ABOUT} 
                 </p>
-                <a href='https://gdg.community.dev/'>
+                <a href={process.env.REACT_APP_SOCIAL_WEBSITE}>
                     <img src={gdg_logo} className='my-3 p-5 bg-white rounded-xl' alt='GDG {process.env.REACT_APP_CHAPTER_NAME} logo'></img>
                 </a>
+                <h3>About GDSC USF</h3>
+                <p>
+                GDSC at USF is an organization that strives to ensure learning remains entertaining, excellent and inclusive.
+                </p>
+                <p>
+                Bridging the gap between theory and practical application, know more <a href="https://linktr.ee/usfgdsc">https://linktr.ee/usfgdsc</a>
+                </p>
             </div>
             <div>
                 <h3>Resources</h3>
