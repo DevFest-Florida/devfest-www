@@ -15,12 +15,12 @@ const Header = () => (
         <Navbar />
       </div>
       <div className="hidden lg:block">
-        {/* <a
+        <a
           href={process.env.REACT_APP_DEVFEST_REGISTRATION_URL}
-          className="text-white bg-Red500 hover:bg-Red500 hover:text-white rounded-full text-md px-6 py-4 mx-2"
+          className="text-white bg-Green500 hover:bg-Green500 hover:text-white rounded-full text-md px-6 py-4 mx-2"
         >
           Register
-        </a> */}
+        </a>
       </div>
       <div className="">
         <HamburgerMenu />
