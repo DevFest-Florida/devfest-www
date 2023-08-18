@@ -1,6 +1,7 @@
 import React from "react";
 import GoogleLogo from "../assets/2023/sponsors/Google_2015_logo.png";
 import SeminoleStateLogo from "../assets/2023/sponsors/logo-seminole-state-2line-cmyk-2019.png";
+import JetBrainsLogo from "../assets/2023/sponsors/jb_beam.png"
 
 const SponsorLogos = () => (
   <div className="text-center my-20">
@@ -83,10 +84,10 @@ const SponsorLogos = () => (
       </div>
     </section> */}
 
-    {/* <section>
+    <section>
       <h3 className="my-10 font-semibold">Supporters</h3>
       <div className="w-1/2 grid grid-cols-1 md:grid-cols-1 mx-auto">
-        <div className="">
+        {/* <div className="">
           <a
             href="http://www.weareinit.org/"
             target={"_blank"}
@@ -98,7 +99,7 @@ const SponsorLogos = () => (
               className="object-contain h-36 w-full px-2"
             ></img>
           </a>
-        </div>
+        </div> */}
         <div className="">
           <a
             href="https://www.jetbrains.com/"
@@ -113,7 +114,7 @@ const SponsorLogos = () => (
           </a>
         </div>
       </div>
-    </section> */}
+    </section>
 
     <div className="m-16">
       <a
