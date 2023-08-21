@@ -1,7 +1,7 @@
 import React from "react";
 import GoogleLogo from "../assets/2023/sponsors/Google_2015_logo.png";
+import JetBrainsLogo from "../assets/2023/sponsors/jb_beam.png";
 import SeminoleStateLogo from "../assets/2023/sponsors/logo-seminole-state-2line-cmyk-2019.png";
-import JetBrainsLogo from "../assets/2023/sponsors/jb_beam.png"
 
 const SponsorLogos = () => (
   <div className="text-center my-20">
@@ -9,7 +9,7 @@ const SponsorLogos = () => (
     <p>Thank you to our sponsors for their generous support.</p>
 
     <section className="my-20">
-      <h3 className="my-10 font-semibold">Platinum</h3>
+      <h3 className="my-10 font-semibold">Partner</h3>
       <div className="">
         <img
           src={GoogleLogo}
@@ -27,7 +27,18 @@ const SponsorLogos = () => (
       </div>
     </section>
 
-
+    {/* <section className="my-20">
+      <h3 className="my-10 font-semibold">Diamond</h3>
+      <div className="">
+        <a href="https://www.cobuildlab.com/" target="blank">
+          <img
+            src={Cobuild}
+            alt="Cobuild Logo"
+            className="object-contain h-32 w-3/4 md:w-full px-2 mx-auto"
+          />
+        </a>
+      </div>
+    </section> */}
 
     {/* <section className="my-20">
       <h3 className="my-10 font-semibold">Gold</h3>
@@ -40,9 +51,9 @@ const SponsorLogos = () => (
           />
         </a>
       </div>
-    </section>
+    </section> */}
 
-    <section className="my-20">
+    {/* <section className="my-20">
       <h3 className="my-10 font-semibold">Silver</h3>
       <div className="w-full md:w-1/2 grid grid-cols-1 md:grid-cols-2 mx-auto">
         <div className="">
@@ -67,7 +78,7 @@ const SponsorLogos = () => (
     </section> */}
 
     {/* <section className="my-20">
-      <h3 className="my-10 font-semibold">Bronze</h3>
+      <h3 className="my-10 font-semibold">Copper</h3>
       <div></div>
     </section> */}
 
