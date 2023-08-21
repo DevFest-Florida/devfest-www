@@ -38,7 +38,7 @@ const LocationSection = () => (
             <br />
             11200 SW 8th St
             <br />
-            FL 33199
+            Miami, FL 33199
           </p>
         </a>
 
