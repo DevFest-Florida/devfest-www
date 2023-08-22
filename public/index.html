@@ -1,41 +1,110 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-    <!-- COMMON TAGS -->
-    <meta charset="utf-8">
-    <title>DevFest %REACT_APP_CHAPTER_NAME% - %REACT_APP_DEVFEST_DATE% | Google Developer Groups - %REACT_APP_CHAPTER_NAME%</title>
-    <!-- Search Engine -->
-    <meta name="description" content="DevFest %REACT_APP_CHAPTER_NAME% is a community-run, one-day conference aimed to bring technologists, developers, students, tech companies, and speakers together in one location to learn, discuss and experiment with technology. Organized by Google Developer Groups %REACT_APP_CHAPTER_NAME%.">
-    <meta name="image" content="%PUBLIC_URL%/DevFest-2022-Graph-Image.png"><!--CHANGE THIS IMAGE-->
-    <!-- Schema.org for Google -->
-    <meta itemprop="name" content="DevFest %REACT_APP_CHAPTER_NAME% - %process.env.REACT_APP_DEVFEST_DATE% | Google Developer Groups - %REACT_APP_CHAPTER_NAME%">
-    <meta itemprop="description" content="DevFest %REACT_APP_CHAPTER_NAME% is a community-run, one-day conference aimed to bring technologists, developers, students, tech companies, and speakers together in one location to learn, discuss and experiment with technology. Organized by Google Developer Groups %REACT_APP_CHAPTER_NAME%.">
-    <meta itemprop="image" content="%PUBLIC_URL%/DevFest-2022-Graph-Image.png"> <!--CHANGE THIS IMAGE-->
-    <!-- Twitter -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="DevFest %REACT_APP_CHAPTER_NAME% %REACT_APP_DEVFEST_YEAR% | Google Developer Groups - %REACT_APP_CHAPTER_NAME%">
-    <meta name="twitter:description" content="DevFest %REACT_APP_CHAPTER_NAME% is a community-run, one-day conference aimed to bring technologists, developers, students, tech companies, and speakers together in one location to learn, discuss and experiment with technology. Organized by Google Developer Groups %REACT_APP_CHAPTER_NAME%.">
-    <meta name="twitter:site" content="%REACT_APP_SOCIAL_TWITTER%">
-    <meta name="twitter:creator" content="%REACT_APP_SOCIAL_TWITTER%">
-    <meta name="twitter:image:src" content="%PUBLIC_URL%/DevFest-2022-Twitter-Image.png"><!--CHANGE THIS IMAGE MAKE SURE IT FOLLOWS TWITTER IMAGE SIZE GUIDELINES-->
-    <!-- Open Graph general (Facebook, Pinterest & Google+) -->
-    <meta name="og:title" content="DevFest %REACT_APP_CHAPTER_NAME% %REACT_APP_DEVFEST_YEAR% | Google Developer Groups - %REACT_APP_CHAPTER_NAME%">
-    <meta name="og:description" content="DevFest %REACT_APP_CHAPTER_NAME% is a community-run, one-day conference aimed to bring technologists, developers, students, tech companies, and speakers together in one location to learn, discuss and experiment with technology. Organized by Google Developer Groups %REACT_APP_CHAPTER_NAME%.">
-    <meta name='image' property="og:image" content="%PUBLIC_URL%/DevFest-2022-Graph-Image.png"> <!--CHANGE THIS IMAGE MAKE SURE IT FOLLOWS OPEN GRAPH IMAGE SIZE GUIDELINES-->
-    <meta name="og:url" content="%PUBLIC_URL%/">
-    <meta name="og:site_name" content="DevFest %REACT_APP_CHAPTER_NAME%">
-    <meta name="og:type" content="website">
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-    <!--
+
+<head>
+  <meta charset="utf-8" />
+  <link
+    rel="icon"
+    href="%PUBLIC_URL%/favicon.ico"
+  />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1"
+  />
+  <meta
+    name="theme-color"
+    content="#000000"
+  />
+  <!-- COMMON TAGS -->
+  <meta charset="utf-8">
+  <title>DevFest %REACT_APP_CHAPTER_NAME% - %REACT_APP_DEVFEST_DATE% | Google Developer Groups -
+    %REACT_APP_CHAPTER_NAME%</title>
+  <!-- Search Engine -->
+  <meta
+    name="description"
+    content="DevFest %REACT_APP_CHAPTER_NAME% is a community-run, one-day conference aimed to bring technologists, developers, students, tech companies, and speakers together in one location to learn, discuss and experiment with technology. Organized by Google Developer Groups %REACT_APP_CHAPTER_NAME%."
+  >
+  <meta
+    name="image"
+    content="%PUBLIC_URL%/DevFest-2023-Graph-Image.png"
+  ><!--CHANGE THIS IMAGE-->
+  <!-- Schema.org for Google -->
+  <meta
+    itemprop="name"
+    content="DevFest %REACT_APP_CHAPTER_NAME% - %process.env.REACT_APP_DEVFEST_DATE% | Google Developer Groups - %REACT_APP_CHAPTER_NAME%"
+  >
+  <meta
+    itemprop="description"
+    content="DevFest %REACT_APP_CHAPTER_NAME% is a community-run, one-day conference aimed to bring technologists, developers, students, tech companies, and speakers together in one location to learn, discuss and experiment with technology. Organized by Google Developer Groups %REACT_APP_CHAPTER_NAME%."
+  >
+  <meta
+    itemprop="image"
+    content="%PUBLIC_URL%/DevFest-2023-Graph-Image.png"
+  > <!--CHANGE THIS IMAGE-->
+  <!-- Twitter -->
+  <meta
+    name="twitter:card"
+    content="summary_large_image"
+  >
+  <meta
+    name="twitter:title"
+    content="DevFest %REACT_APP_CHAPTER_NAME% %REACT_APP_DEVFEST_YEAR% | Google Developer Groups - %REACT_APP_CHAPTER_NAME%"
+  >
+  <meta
+    name="twitter:description"
+    content="DevFest %REACT_APP_CHAPTER_NAME% is a community-run, one-day conference aimed to bring technologists, developers, students, tech companies, and speakers together in one location to learn, discuss and experiment with technology. Organized by Google Developer Groups %REACT_APP_CHAPTER_NAME%."
+  >
+  <meta
+    name="twitter:site"
+    content="%REACT_APP_SOCIAL_TWITTER%"
+  >
+  <meta
+    name="twitter:creator"
+    content="%REACT_APP_SOCIAL_TWITTER%"
+  >
+  <meta
+    name="twitter:image:src"
+    content="%PUBLIC_URL%/DevFest-2023-Twitter-Image.png"
+  ><!--CHANGE THIS IMAGE MAKE SURE IT FOLLOWS TWITTER IMAGE SIZE GUIDELINES-->
+  <!-- Open Graph general (Facebook, Pinterest & Google+) -->
+  <meta
+    name="og:title"
+    content="DevFest %REACT_APP_CHAPTER_NAME% %REACT_APP_DEVFEST_YEAR% | Google Developer Groups - %REACT_APP_CHAPTER_NAME%"
+  >
+  <meta
+    name="og:description"
+    content="DevFest %REACT_APP_CHAPTER_NAME% is a community-run, one-day conference aimed to bring technologists, developers, students, tech companies, and speakers together in one location to learn, discuss and experiment with technology. Organized by Google Developer Groups %REACT_APP_CHAPTER_NAME%."
+  >
+  <meta
+    name='image'
+    property="og:image"
+    content="%PUBLIC_URL%/DevFest-2023-Graph-Image.png"
+  > <!--CHANGE THIS IMAGE MAKE SURE IT FOLLOWS OPEN GRAPH IMAGE SIZE GUIDELINES-->
+  <meta
+    name="og:url"
+    content="%PUBLIC_URL%/"
+  >
+  <meta
+    name="og:site_name"
+    content="DevFest %REACT_APP_CHAPTER_NAME%"
+  >
+  <meta
+    name="og:type"
+    content="website"
+  >
+  <link
+    rel="apple-touch-icon"
+    href="%PUBLIC_URL%/logo192.png"
+  />
+  <!--
       manifest.json provides metadata used when your web app is installed on a
       user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
     -->
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <!--
+  <link
+    rel="manifest"
+    href="%PUBLIC_URL%/manifest.json"
+  />
+  <!--
       Notice the use of %PUBLIC_URL% in the tags above.
       It will be replaced with the URL of the `public` folder during the build.
       Only files inside the `public` folder can be referenced from the HTML.
@@ -44,26 +113,26 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
-    <script type="application/ld+json">
+  <script type="application/ld+json">
       {
         "@context": "https://schema.org",
         "@type": "Event",
         "name": "DevFest %REACT_APP_CHAPTER_NAME%",
-        "startDate": "2023-10-14T8:00",
-        "endDate": "2023-10-29T17:00",
+        "startDate": "2023-12-09T8:00",
+        "endDate": "2023-12-09T17:00",
         "url": "%PUBLIC_URL%/",
         "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
         "eventStatus": "https://schema.org/EventScheduled",
         "location": {
           "@type": "Place",
-          "name": "Seminole State College Wayne M. Densch Partnership Center",
+          "name": "Florida International University PG6 Tech Station",
           "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "100 Weldon Blvd",
-            "addressLocality": "Sanford",
-            "postalCode": "32773",
-            "addressRegion": "Florda",
-            "addressCountry": "US"
+          "@type": "PostalAddress",
+          "streetAddress": "11200 SW 8th St.",
+          "addressLocality": "Miami",
+          "postalCode": "33174",
+          "addressRegion": "Florida",
+          "addressCountry": "US"
           }
         },
         "image": [
@@ -77,11 +146,12 @@
         }
       }
       </script>
-  </head>
-  <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
-    <!--
+</head>
+
+<body>
+  <noscript>You need to enable JavaScript to run this app.</noscript>
+  <div id="root"></div>
+  <!--
       This HTML file is a template.
       If you open it directly in the browser, you will see an empty page.
 
@@ -91,5 +161,6 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
-  </body>
+</body>
+
 </html>
