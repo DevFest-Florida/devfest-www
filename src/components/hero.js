@@ -13,9 +13,9 @@ const Hero = () => (
             <h3 className='text-Green500 font-semibold animate-pulse'>Date: {process.env.REACT_APP_DEVFEST_DATE}</h3>
             <p className='sm:px-5 sm:text-lg'>DevFest {process.env.REACT_APP_CHAPTER_NAME} is a community-run one-day conference aimed to bring technologists, developers, students, tech companies, and speakers together in one location to learn, discuss and experiment with technology.</p>
             
-            {/* <div className='my-10'>
-                    <a href={process.env.REACT_APP_DEVFEST_REGISTRATION_URL} className='text-white bg-Red500 hover:text-white rounded-full text-md px-6 py-4'>Register</a> 
-            </div> */}
+            <div className='my-10'>
+                    <a href={process.env.REACT_APP_DEVFEST_REGISTRATION_URL} className='text-white bg-Red500 hover:text-white rounded-full text-md px-6 py-4'>Buy a Ticket!</a> 
+            </div>
         </div>
     </section>
     
