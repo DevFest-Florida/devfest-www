@@ -1,5 +1,6 @@
 import React from "react";
 import GoogleLogo from "../assets/2023/sponsors/Google_2015_logo.png";
+import BlackOrlandoTechLogo from "../assets/2023/sponsors/bot_male_master_logo_full_color_web_med.png";
 import JetBrainsLogo from "../assets/2023/sponsors/jb_beam.png";
 import SeminoleStateLogo from "../assets/2023/sponsors/logo-seminole-state-2line-cmyk-2019.png";
 
@@ -10,20 +11,29 @@ const SponsorLogos = () => (
 
     <section className="my-20">
       <h3 className="my-10 font-semibold">Partner</h3>
+
       <div className="">
-        <img
-          src={GoogleLogo}
-          alt="Google Logo"
-          className="object-contain h-56 w-3/4 md:w-full px-2 mx-auto"
-        ></img>
+        <a href="https://developers.google.com/" target={"_blank"}
+          rel="noreferrer">
+          <img
+            src={GoogleLogo}
+            alt="Google Logo"
+            className="object-contain h-56 w-3/4 md:w-full px-2 mx-auto"
+          ></img>
+        </a>
       </div>
 
       <div className="">
-        <img
-          src={SeminoleStateLogo}
-          alt="Seminole State College Logo"
-          className="object-contain h-56 w-3/4 md:w-full px-2 mx-auto"
-        ></img>
+        <a href="https://www.seminolestate.edu/" target={"_blank"}
+          rel="noreferrer" >
+          <img
+            src={SeminoleStateLogo}
+            alt="Seminole State College Logo"
+            target={"_blank"}
+            rel="noreferrer"
+            className="object-contain h-56 w-3/4 md:w-full px-2 mx-auto"
+          ></img>
+        </a>
       </div>
     </section>
 
@@ -53,29 +63,19 @@ const SponsorLogos = () => (
       </div>
     </section> */}
 
-    {/* <section className="my-20">
+    <section className="my-20">
       <h3 className="my-10 font-semibold">Silver</h3>
-      <div className="w-full md:w-1/2 grid grid-cols-1 md:grid-cols-2 mx-auto">
-        <div className="">
-          <a href="https://www.bexrealty.com/" target="blank">
-            <img
-              src={BEXRealtyLogo}
-              alt="BEX Realty Logo"
-              className="object-contain h-56 w-full px-2"
-            />
-          </a>
-        </div>
-        <div className="">
-          <a href="https://www.devintent.com/" target="blank">
-            <img
-              src={DevIntentLogo}
-              alt="DevIntent Logo"
-              className="object-contain h-56 w-full px-2"
-            />
-          </a>
-        </div>
+      <div className="">
+        <a href="https://blackorlandotech.org/" target={"_blank"}
+          rel="noreferrer">
+          <img
+            src={BlackOrlandoTechLogo}
+            alt="Black Orlando Tech Logo"
+            className="object-contain h-56 w-full px-2"
+          />
+        </a>
       </div>
-    </section> */}
+    </section>
 
     {/* <section className="my-20">
       <h3 className="my-10 font-semibold">Copper</h3>
