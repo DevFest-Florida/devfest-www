@@ -5,15 +5,15 @@ const Schedule = () => (
     <h1 className="text-center">
       DevFest {process.env.REACT_APP_CHAPTER_NAME} Sessions
     </h1>
-    {/* <iframe
+    <iframe
       class="w-full aspect-auto min-h-fit"
       frameborder="0"
       width="100%"
       height="1280"
-      src="https://sessionize.com/api/v2/likz3ws5/view/GridSmart"
+      src="https://sessionize.com/api/v2/0xzborcw/view/GridSmart"
       title="schedule"
-    ></iframe> */}
-    <iframe
+    ></iframe>
+    {/* <iframe
       class="w-full aspect-auto min-h-fit"
       frameborder="0"
       width="100%"
@@ -21,7 +21,7 @@ const Schedule = () => (
       src="https://sessionize.com/api/v2/yxw3guek/view/Sessions
       "
       title="Sessions"
-    ></iframe>
+    ></iframe> */}
   </div>
 );
 
