@@ -35,6 +35,11 @@ const Navbar = () => (
             Code of Conduct
           </Link>
         </li>
+        <li>
+          <a href="http://googledevsflorida.blogspot.com/" rel="noopener noreferrer" target="_blank" className="text-white" >
+            Blog
+          </a>
+        </li>
       </ul>
     </div>
   </div>
