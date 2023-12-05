@@ -10,7 +10,7 @@ const Schedule = () => (
       frameborder="0"
       width="100%"
       height="1280"
-      src="https://sessionize.com/api/v2/likz3ws5/view/GridSmart"
+      src="https://sessionize.com/api/v2/d4zg4aeq/view/GridSmart"
       title="schedule"
     ></iframe>
   </div>
