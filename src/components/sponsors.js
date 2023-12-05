@@ -1,6 +1,6 @@
 import React from "react";
-import FIULogo from "../assets/2023/sponsors/FIU_vrt_Color.png";
 import GoogleLogo from "../assets/2023/sponsors/Google_2015_logo.png";
+import MindspaceLogo from "../assets/2023/sponsors/Mindspace.png";
 
 const SponsorLogos = () => (
   <div className="text-center my-20">
@@ -18,15 +18,13 @@ const SponsorLogos = () => (
       </div>
 
       <div className="">
-            <img
-              src={FIULogo}
-              alt="FIU Logo"
-              className="object-contain h-36 w-full px-2"
-            ></img>
-        </div>
+        <img
+          src={MindspaceLogo}
+          alt="Mindspace Logo"
+          className="object-contain h-36 w-1/2 px-2 mx-auto"
+        ></img>
+      </div>
     </section>
-
-
 
     {/* <section className="my-20">
       <h3 className="my-10 font-semibold">Gold</h3>
