@@ -1,8 +1,9 @@
 import React from "react";
+import SpeakerProfiles from "../components/speakers";
 
 const Speakers = () => (
   <>
-     <div className="w-11/12 mx-auto my-10 grid grid-cols-1 lg:grid-cols-2">
+    {/* <div className="w-11/12 mx-auto my-10 grid grid-cols-1 lg:grid-cols-2">
       <div className="px-5 my-5">
         <div className="aspect-w-16 aspect-h-9">
           <iframe
@@ -37,8 +38,8 @@ const Speakers = () => (
           Submit Your Tech Talk!
         </a>
       </div>
-    </div>
-    {/* <SpeakerProfiles /> */}
+    </div> */}
+    <SpeakerProfiles />
   </>
 );
 
