@@ -1,30 +1,28 @@
 site:
-  name: AstroWind
-  site: 'https://astrowind.vercel.app'
+  name: DevFest Florida
+  site: 'https://devfestflorida.com/'
   base: '/'
   trailingSlash: false
-
-  googleSiteVerificationId: orcPxI47GSa-cRvY11tUe6iGg2IO_RPvnA1q95iEM3M
 
 # Default SEO metadata
 metadata:
   title:
-    default: AstroWind
-    template: '%s — AstroWind'
-  description: "\U0001F680 Suitable for Startups, Small Business, Sass Websites, Professional Portfolios, Marketing Websites, Landing Pages & Blogs."
+    default: DevFest Florida
+    template: '%s — DevFest Florida'
+  description: "\U0001F334 GDG Florida is group of GDG chapters from around the state of Florida. We work together to bring technologists and developers from the Florida area to code, learn, have fun, and give back."
   robots:
     index: true
     follow: true
   openGraph:
-    site_name: AstroWind
+    site_name: DevFest Florida
     images:
-      - url: '~/assets/images/default.png'
-        width: 1200
-        height: 628
+      - url: '~/assets/images/devfest-florida-2024.png'
+        width: 1920
+        height: 1080
     type: website
   twitter:
-    handle: '@onwidget'
-    site: '@onwidget'
+    handle: '@devfestfl'
+    site: '@devfestfl'
     cardType: summary_large_image
 
 i18n:
@@ -34,7 +32,7 @@ i18n:
 apps:
   blog:
     isEnabled: true
-    postsPerPage: 6
+    postsPerPage: 10
 
     post:
       isEnabled: true
