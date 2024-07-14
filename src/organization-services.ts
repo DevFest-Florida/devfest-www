@@ -12,6 +12,7 @@ export class OrganizationServices
         record.name = "Google Developer Group of Central Florida";
         record.conferenceEmail = "organizers@devfestflorida.org";
         record.codeOfConductReportFormLink = "https://fixme.com";
+        record.eventName = "DevFest Central Florida";
         return record;
     }
 }

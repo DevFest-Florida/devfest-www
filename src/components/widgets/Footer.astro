@@ -1,3 +1,8 @@
+---
+import { OrganizationServices } from '~/organization-services';
+
+export const orgInfo = new OrganizationServices().getOrganizationInfo();
+---
 <style>
   .container {
     display: flex;
@@ -23,9 +28,8 @@
 
 <div class="container">
   <div>
-    <div class="font-bold">About GDG Central Florida</div>
-
-    GDG Central Florida is a group of people working together to bring technologists and developers from our area to code, learn, have fun, and give back.
+    <div class="font-bold">About {orgInfo.name}</div>
+    {orgInfo.name} is a group of people working together to bring technologists and developers from our area to code, learn, have fun, and give back.
 
   </div>
   <div>
@@ -48,10 +52,15 @@
   </div>
   <div>
     <div class="font-bold">Contact</div> 
-    organizers@devfestflorida.com
+    <div>organizers@devfestflorida.com</div>
+    <div>
+      <a href="https://googledevscentralflorida.com/" target="_blank">
+        googledevscentralflorida.com
+      </a>
+    </div>
   </div>
   <div>
-    <div class="font-bold">DevFest Central Florida</div>
+    <div class="font-bold">{orgInfo.eventName}</div>
     <ul>
       <li>
         <a href="code-of-conduct">Code of Conduct</a>
