@@ -23,10 +23,6 @@ export const headerData = {
       href: getPermalink('/location')
     },    
     {
-      text: 'Code of conduct',
-      href: getPermalink('/code-of-conduct')
-    },    
-    {
       text: 'Blog',
       href: getBlogPermalink()
     },
