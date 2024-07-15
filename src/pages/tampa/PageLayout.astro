@@ -2,8 +2,9 @@
 import Header from '~/components/widgets/Header.astro';
 import Layout from '~/layouts/Layout.astro';
 import Footer from '~/pages/orlando/Footer.astro';
+import CustomStyles from './CustomStyles.astro';
 
-import { footerData, headerData } from '~/pages/orlando/navigation-orlando';
+import { footerData, headerData } from '~/pages/orlando/navigation';
 
 import type { MetaData } from '~/types';
 
@@ -15,6 +16,7 @@ const { metadata } = Astro.props;
 ---
 
 <Layout metadata={metadata}>
+  <CustomStyles />
   <slot name="header">
     <Header {...headerData} isSticky showRssFeed showToggleTheme />
   </slot>
