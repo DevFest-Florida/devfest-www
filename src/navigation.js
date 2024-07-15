@@ -5,23 +5,7 @@ export const headerData = {
     {
       text: 'Home',
       href: getPermalink('/')
-    },
-    {
-      text: 'Speakers',
-      href: getPermalink('/speakers')
-    },    
-    {
-      text: 'Sponsors',
-      href: getPermalink('/sponsors')
-    },
-    {
-      text: 'Schedule',
-      href: getPermalink('/schedule')
-    },    
-    {
-      text: 'Location',
-      href: getPermalink('/location')
-    },    
+    },   
     {
       text: 'Blog',
       href: getBlogPermalink()
