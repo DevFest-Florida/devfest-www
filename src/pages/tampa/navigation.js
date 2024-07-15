@@ -1,27 +1,31 @@
-import { getAsset, getBlogPermalink, getPermalink } from './utils/permalinks';
+import { getAsset, getBlogPermalink, getPermalink } from '../../utils/permalinks';
 
 export const headerData = {
   links: [
     {
-      text: 'Home',
-      href: getPermalink('/')
-    },   
+      text: 'Tampa',
+      href: getPermalink('/tampa')
+    },
+    {
+      text: 'Speakers',
+      href: getPermalink('/tampa/speakers')
+    },    
+    {
+      text: 'Sponsors',
+      href: getPermalink('/tampa/sponsors')
+    },
+    {
+      text: 'Schedule',
+      href: getPermalink('/tampa/schedule')
+    },    
+    {
+      text: 'Location',
+      href: getPermalink('/tampa/location')
+    },    
     {
       text: 'Blog',
       href: getBlogPermalink()
     },
-    {
-      text: 'Orlando',
-      href: getPermalink('/orlando')
-    },  
-    {
-      text: 'Tampa',
-      href: getPermalink('/tampa')
-    },  
-    {
-      text: 'Miami',
-      href: getPermalink('/miami')
-    },  
 
   
 
