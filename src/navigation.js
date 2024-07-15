@@ -1,4 +1,4 @@
-import { getAsset, getBlogPermalink, getPermalink } from './utils/permalinks';
+import { getAsset, getPermalink } from './utils/permalinks';
 
 export const headerData = {
   links: [
@@ -8,19 +8,19 @@ export const headerData = {
     },   
     {
       text: 'Blog',
-      href: getBlogPermalink()
+      href: getPermalink('#')
     },
     {
       text: 'Orlando',
-      href: getPermalink('/orlando')
+      href: getPermalink('#')
     },  
     {
       text: 'Tampa',
-      href: getPermalink('/tampa')
+      href: getPermalink('#')
     },  
     {
       text: 'Miami',
-      href: getPermalink('/miami')
+      href: getPermalink('#')
     },  
 
   
@@ -56,9 +56,9 @@ export const footerData = {
     },
   ],
   secondaryLinks: [
-    { text: 'Orlando', href: getPermalink('/orlando') },
-    { text: 'Tampa', href: getPermalink('/tampa') },
-    { text: 'Miami', href: getPermalink('/miami') },
+    { text: 'Orlando', href: getPermalink('#') },
+    { text: 'Tampa', href: getPermalink('#') },
+    { text: 'Miami', href: getPermalink('#') },
   ],
   socialLinks: [
     { ariaLabel: 'X', icon: 'tabler:brand-x', href: 'https://x.com/devfestfl' },
