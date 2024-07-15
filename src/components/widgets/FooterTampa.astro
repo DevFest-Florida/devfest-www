@@ -1,0 +1,67 @@
+---
+import { OrganizationServices } from '~/organization-services';
+
+export const orgInfo = new OrganizationServices().getOrganizationInfo();
+---
+<style>
+  .container {
+    display: flex;
+    flex-wrap: wrap; /* Allow columns to wrap on smaller screens */
+  }
+
+  .container > div:first-child {
+    flex: 0 0 calc(25%); 
+  }
+
+  .container > div {
+    margin: 1rem; /* Add some margin for spacing */
+    box-sizing: border-box; /* Ensure margins fit within width */
+  }
+
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .container > div {
+      flex: 1 1 50%; /* All columns take up 50% on smaller screens */
+    }
+  }
+</style>
+
+<div class="container">
+  <div>
+    <div class="font-bold">About {orgInfo.name}</div>
+    {orgInfo.name} is a group of people working together to bring technologists and developers from our area to code, learn, have fun, and give back.
+
+  </div>
+  <div>
+    <div class="font-bold">Resources</div>
+    <ul>
+      <li><a href="https://developers.google.com/community/gdg" target="_blank">Google Developer Groups</a></li>
+      <li><a href="https://developers.google.com/womentechmakers" target="_blank">Women Tech Makers</a></li>
+      <li>
+        <a target="_blank" href="https://developers.google.com/community/gdsc">
+          Google Developer Student Clubs
+        </a>
+      </li>
+      <li>
+        <a href="https://developers.google.com/community/experts" target="_blank">
+          Google Developer Experts
+        </a>
+      </li>
+
+    </ul>
+  </div>
+  <div>
+    <div class="font-bold">Contact</div> 
+    <div>organizers@devfestflorida.com</div>
+    
+  </div>
+  <div>
+    <div class="font-bold">DevFest Tampa</div>
+    <ul>
+      <li>
+        <a href="code-of-conduct">Code of Conduct</a>
+      </li>
+    </ul>
+    
+  </div>
+</div>
