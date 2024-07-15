@@ -1,10 +1,9 @@
 ---
-import Layout from '~/layouts/Layout.astro';
 import Header from '~/components/widgets/Header.astro';
-import Footer from '~/components/widgets/FooterOrlando.astro';
-import Announcement from '~/components/widgets/Announcement.astro';
+import Layout from '~/layouts/Layout.astro';
+import Footer from '~/pages/miami/Footer.astro';
 
-import { headerData, footerData } from '~/navigation-orlando';
+import { footerData, headerData } from '~/pages/miami/navigation-miami';
 
 import type { MetaData } from '~/types';
 
@@ -17,7 +16,7 @@ const { metadata } = Astro.props;
 
 <Layout metadata={metadata}>
   <slot name="header">
-    <Header {...headerData} isSticky showRssFeed showToggleTheme  />
+    <Header {...headerData} isSticky showRssFeed showToggleTheme />
   </slot>
   <main>
     <slot />
