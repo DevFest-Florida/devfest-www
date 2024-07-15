@@ -2,6 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: 'GoogleSans';
+  src: url('/fonts/GoogleSans/GoogleSans-Regular-v1.27.ttf') format ('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
 @layer utilities {
   .bg-page {
     background-color: var(--aw-color-bg-page);

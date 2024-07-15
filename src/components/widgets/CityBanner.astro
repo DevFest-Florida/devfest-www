@@ -1,0 +1,44 @@
+---
+import FaGlobe from '../../assets/images/FaGlobe.svg';
+import FaLinkedin from '../../assets/images/FaLinkedin.svg';
+import FaMeetup from '../../assets/images/FaMeetup.svg';
+import FaTwitter from '../../assets/images/FaTwitter.svg';
+
+const { alt, date, color = 'bg-black', location, gdgWebsite, twitter, linkedIn, meetup, chapterName, id } = Astro.props;
+---
+
+<article
+  id={id}
+  class={`${color} text-black flex flex-col place-items-center justify-start px-6 md:px-7 2xl:px-8 pt-8 md:pt-4 lg:pt-8 grow w-100 xl:w-1/3`}
+>
+  <h2 class="border-8 p-8 border-current rounded-full center">{alt}</h2>
+  <h3 class="text-center font-semibold w-100 center">
+    {location && <p>{location}</p>}
+    <p>{date}</p>
+  </h3>
+
+  <ul class="flex flex-row space-y-0 space-x-4 text-xl my-4 w-100 place-items-center justify-center">
+    <li class="m-0">{`${chapterName}`}</li>
+    <li class="m-0">
+      <a href={gdgWebsite} aria-label={`GDG ${chapterName} Website`}>
+        <img src={FaGlobe.src} height="20px" width="20px" alt="GDG Website" />
+      </a>
+    </li>
+    <li class="m-0">
+      <a href={'https://twitter.com/' + twitter} aria-label={`Follow GDG ${chapterName} on Twitter`}>
+        <img src={FaTwitter.src} height="20px" width="20px" alt="Twitter" />
+      </a>
+    </li>
+    <li class="m-0">
+      <a href={linkedIn} aria-label={`Follow GDG ${chapterName} on LinkedIn`}>
+        <img src={FaLinkedin.src} height="20px" width="20px" alt="LinkedIn" />
+      </a>
+    </li>
+    <li class="m-0">
+      <a href={meetup} aria-label={`Follow GDG ${chapterName} on Meetup`}>
+        <img src={FaMeetup.src} height="20px" width="20px" alt="Meetup" />
+      </a>
+    </li>
+  </ul>
+  <slot />
+</article>
