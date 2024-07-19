@@ -1,5 +1,8 @@
 ---
 import Layout from '~/pages/orlando/PageLayout.astro';
+import EventDetails from './EventDetails.astro';
+import Location from './Location.astro';
+import Sponsors from './Sponsors.astro';
 
 const metadata = {
   title:
@@ -7,7 +10,10 @@ const metadata = {
   ignoreTitleTemplate: true,
 };
 ---
-
 <Layout metadata={metadata}>
-  <h1>DevFest Central Florida goes here...</h1>
+  <div>
+    <EventDetails></EventDetails>
+    <Location></Location>
+    <Sponsors></Sponsors>
+  </div>
 </Layout>
