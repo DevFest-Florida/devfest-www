@@ -1,5 +1,5 @@
 import { footerData as footer } from '~/navigation';
-import { getBlogPermalink, getPermalink } from '../../utils/permalinks';
+import { getPermalink } from '../../utils/permalinks';
 
 export const headerData = {
   links: [
@@ -7,26 +7,26 @@ export const headerData = {
       text: 'Orlando',
       href: getPermalink('/orlando')
     },
-    {
-      text: 'Speakers',
-      href: getPermalink('/orlando/speakers')
-    },    
+    // {
+    //   text: 'Speakers',
+    //   href: getPermalink('/orlando/speakers')
+    // },    
     {
       text: 'Sponsors',
       href: getPermalink('/orlando/sponsors')
     },
-    {
-      text: 'Schedule',
-      href: getPermalink('/orlando/schedule')
-    },    
+    // {
+    //   text: 'Schedule',
+    //   href: getPermalink('/orlando/schedule')
+    // },    
     {
       text: 'Location',
       href: getPermalink('/orlando/location')
     },    
-    {
-      text: 'Blog',
-      href: getBlogPermalink()
-    },
+    // {
+    //   text: 'Blog',
+    //   href: getBlogPermalink()
+    // },
 
   
 
