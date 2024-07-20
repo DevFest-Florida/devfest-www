@@ -31,6 +31,10 @@ export const headerData = {
   
 
   ],
+  actions: [
+    { variant: 'primary', text: 'Buy a Ticket!', href: 'https://www.eventbrite.com/e/935541117667?aff=oddtdtcreator', icon: 'tabler:square-rounded-arrow-right',         target:'_blank'
+    }
+  ]
 };
 
 export const footerData = footer;

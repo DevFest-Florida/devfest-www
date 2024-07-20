@@ -1,5 +1,8 @@
 ---
+import gif from '~/assets/images/devfest-florida-save-the-date.gif';
+import Button from '~/components/ui/Button.astro';
 import Layout from '~/pages/orlando/PageLayout.astro';
+import About from '../../components/widgets/About.astro';
 
 const metadata = {
   title:
@@ -9,5 +12,26 @@ const metadata = {
 ---
 
 <Layout metadata={metadata}>
-  <h1>DevFest Central Florida goes here...</h1>
+  <section class="w-10/12 mx-auto grid grid-cols-1 lg:grid-cols-2">
+    <div class="mx-auto">
+      <img src={gif.src} class="mx-auto" alt="DevFest Save The Date" />
+    </div>
+    <div class="mx-auto text-center">
+      <h1>DevFest Central Florida</h1>
+      <h2 class="font-semibold animate-pulse">Saturday, September 28th</h2>
+      <p class="sm:px-5 sm:text-lg text-justify">
+        DevFest Central Florida is a community-run one-day conference aimed to bring technologists, developers,
+        students, tech companies, and speakers together in one location to learn, discuss and experiment with
+        technology.
+      </p>
+      <Button
+        text="Buy a Ticket!"
+        variant="primary"
+        target="_blank"
+        icon="tabler:square-rounded-arrow-right"
+        href="https://www.eventbrite.com/e/devfest-florida-2024-tickets-935541117667?aff=oddtdtcreator"
+      />
+    </div>
+  </section>
+  <About />
 </Layout>
