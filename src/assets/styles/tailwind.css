@@ -1,13 +1,28 @@
 @tailwind base;
-@tailwind components;
-@tailwind utilities;
 
-@font-face {
-  font-family: 'GoogleSans';
-  src: url('/fonts/GoogleSans/GoogleSans-Regular-v1.27.ttf') format ('truetype');
-  font-weight: 400;
-  font-style: normal;
+@layer base {
+  h1 {
+    @apply text-4xl;
+    @apply font-semibold;
+    @apply my-2;
+  }
+  h2 {
+    @apply text-3xl;
+    @apply font-semibold;
+    @apply my-2;
+  }
+  h3 {
+    @apply text-2xl;
+    @apply my-2;
+  }
+  p {
+    @apply my-5;
+  }
 }
+
+@tailwind components;
+
+@tailwind utilities;
 
 @layer utilities {
   .bg-page {
