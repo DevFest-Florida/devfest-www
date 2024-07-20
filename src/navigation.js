@@ -25,7 +25,8 @@ export const headerData = {
 
     {
       text: 'Sponsors',
-      href: 'https://docs.google.com/presentation/d/e/2PACX-1vSLWOK5QCBkvoNcfB0K5fSPxPW6QHRpyYurCvBiizMBzb1VATghaDX0ZZ9IsJSmBuRb_tlOdBHUL8OS/pub?start=false&loop=false&delayms=3000'
+      href: 'https://docs.google.com/presentation/d/e/2PACX-1vSLWOK5QCBkvoNcfB0K5fSPxPW6QHRpyYurCvBiizMBzb1VATghaDX0ZZ9IsJSmBuRb_tlOdBHUL8OS/pub?start=false&loop=false&delayms=3000',
+      target: '_blank',
     },  
   
 
