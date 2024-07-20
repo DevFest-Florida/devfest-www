@@ -1,0 +1,44 @@
+---
+import VenueMap from '../../assets/images/maps.seminolestate.edu.png';
+import VenueImage from '../../assets/images/up.png';
+---
+
+<section class="grid-cols-2">
+  <h1>Venue</h1>
+  <div>
+    <a href="https://goo.gl/maps/LXtoPLKqmNpmh6VZ7" target={'_blank'} rel="noreferrer">
+      <img
+        src={VenueImage.src}
+        class="rounded-2xl"
+        alt="Seminole State College Wayne M. Densch Partnership Center"
+      /></a
+    >
+    <a href="https://goo.gl/maps/LXtoPLKqmNpmh6VZ7" target={'_blank'} rel="noreferrer">
+      <img src={VenueMap.src} alt="DevFest Map" class="rounded-2xl" />
+    </a>
+    <p>
+      We're excited to announce that DevFest{' '}
+      {process.env.REACT_APP_CHAPTER_NAME} will take place at{' '}
+      <span class="font-semibold"> Seminole State College Wayne M. Densch Partnership Center </span>
+    </p>
+
+    <a href="https://goo.gl/maps/LXtoPLKqmNpmh6VZ7" target={'_blank'} rel="noreferrer">
+      <p class="text-lg">
+        Seminole State College Wayne M. Densch Partnership Center
+        <br />
+        100 Weldon Blvd
+        <br />
+        Sanford, FL 32773
+      </p>
+    </a>
+
+    <p>
+      Special thanks to{' '}
+      <a href="https://www.seminolestate.edu/" target={'_blank'} rel="noreferrer">
+        <span class="font-semibold"> Seminole State College </span>
+        {', '}
+      </a>{' '}
+      for sponsoring DevFest Florida on campus.
+    </p>
+  </div>
+</section>
