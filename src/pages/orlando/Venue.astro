@@ -3,8 +3,7 @@ import VenueMap from '../../assets/images/maps.seminolestate.edu.png';
 import VenueImage from '../../assets/images/up.png';
 ---
 
-<section class="grid-cols-2">
-  <h1>Venue</h1>
+<section class="w-10/12 mx-auto grid grid-cols-1 lg:grid-cols-2 gap-4">
   <div>
     <a href="https://goo.gl/maps/LXtoPLKqmNpmh6VZ7" target={'_blank'} rel="noreferrer">
       <img
@@ -13,15 +12,16 @@ import VenueImage from '../../assets/images/up.png';
         alt="Seminole State College Wayne M. Densch Partnership Center"
       /></a
     >
-    <a href="https://goo.gl/maps/LXtoPLKqmNpmh6VZ7" target={'_blank'} rel="noreferrer">
-      <img src={VenueMap.src} alt="DevFest Map" class="rounded-2xl" />
-    </a>
     <p>
       We're excited to announce that DevFest{' '}
       {process.env.REACT_APP_CHAPTER_NAME} will take place at{' '}
       <span class="font-semibold"> Seminole State College Wayne M. Densch Partnership Center </span>
     </p>
-
+  </div>
+  <div>
+    <a href="https://goo.gl/maps/LXtoPLKqmNpmh6VZ7" target={'_blank'} rel="noreferrer">
+      <img src={VenueMap.src} alt="DevFest Map" class="rounded-2xl" />
+    </a>
     <a href="https://goo.gl/maps/LXtoPLKqmNpmh6VZ7" target={'_blank'} rel="noreferrer">
       <p class="text-lg">
         Seminole State College Wayne M. Densch Partnership Center
