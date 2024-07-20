@@ -6,22 +6,22 @@ export const headerData = {
       text: 'Home',
       href: getPermalink('/')
     },   
-    {
-      text: 'Blog',
-      href: getPermalink('#')
-    },
+    // {
+    //   text: 'Blog',
+    //   href: getPermalink('#')
+    // },
     {
       text: 'Orlando',
-      href: getPermalink('#')
+      href: getPermalink('/orlando')
     },  
-    {
-      text: 'Tampa',
-      href: getPermalink('#')
-    },  
-    {
-      text: 'Miami',
-      href: getPermalink('#')
-    },  
+    // {
+    //   text: 'Tampa',
+    //   href: getPermalink('#')
+    // },  
+    // {
+    //   text: 'Miami',
+    //   href: getPermalink('#')
+    // },  
 
   
 
@@ -56,9 +56,11 @@ export const footerData = {
     },
   ],
   secondaryLinks: [
-    { text: 'Orlando', href: getPermalink('#') },
-    { text: 'Tampa', href: getPermalink('#') },
-    { text: 'Miami', href: getPermalink('#') },
+    { text: 'Orlando 2024', href: getPermalink('/orlando') },
+    { text: 'Orlando 2023', href: getPermalink('https://2023-orlando.devfestflorida.com/') },
+    { text: 'Tampa 2023', href: getPermalink('https://2023-tampa.devfestflorida.com/') },
+    { text: 'Miami 2023', href: getPermalink('https://2023-miami.devfestflorida.com/') },
+    { text: 'Miami 2022', href: getPermalink('https://2022.devfestflorida.com/') },
   ],
   socialLinks: [
     { ariaLabel: 'X', icon: 'tabler:brand-x', href: 'https://x.com/devfestfl' },
