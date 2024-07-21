@@ -2,6 +2,7 @@
 import CityBanner from '~/components/widgets/CityBanner.astro';
 import Layout from '~/layouts/PageLayout.astro';
 
+import Button from '~/components/ui/Button.astro';
 import FaGlobe from '../assets/images/FaGlobe.svg';
 import FaLinkedin from '../assets/images/FaLinkedin.svg';
 import FaMeetup from '../assets/images/FaMeetup.svg';
@@ -101,6 +102,7 @@ const metadata = {
       linkedIn="https://www.linkedin.com/company/google-developers-group-central-florida/"
       meetup="https://www.meetup.com/gdg-central-florida/"
       chapterName="Central Florida"
+      url="/orlando"
     >
       <ul class="flex flex-row space-y-0 space-x-4 text-xl my-4 w-100 place-items-center justify-center">
         <li class="m-0">Space Coast</li>
@@ -138,24 +140,19 @@ const metadata = {
           </a>
         </li>
       </ul>
-      <a href="https://www.eventbrite.com/e/935541117667?aff=oddtdtcreator" target="_blank" rel="noreferrer">
-        <span
-          class="bg-sky-100 text-sky-800 text-2xl font-large me-2 px-2.5 py-0.5 rounded-full dark:bg-sky-900 dark:text-sky-300"
-        >
-          Get your tickets now!
-        </span>
-      </a>
-      <ul class="flex flex-row space-y-0 space-x-4 text-xl my-4 w-100 place-items-center justify-center">
-        <li class="m-0">
-          <a href="https://2023-orlando.devfestflorida.com/"> DevFest CFL 2023 </a>
-        </li>
-      </ul>
+
+      <Button
+        text="Get your tickets now!"
+        variant="primary"
+        target="_blank"
+        icon="tabler:square-rounded-arrow-right"
+        href="https://www.eventbrite.com/e/935541117667?aff=oddtdtcreator"
+      />
     </CityBanner>
 
     <CityBanner
       id="tampa"
       color="bg-green-400"
-      url="https://2023-tampa.devfestflorida.com"
       alt="DevFest Tampa"
       date="TBD"
       gdgWebsite="https://gdg.community.dev/gdg-tampa-bay/"
@@ -195,7 +192,6 @@ const metadata = {
     <CityBanner
       id="miami"
       color="bg-rose-400"
-      url="https://2023-miami.devfestflorida.com"
       alt="DevFest Miami"
       date="TBD"
       gdgWebsite="https://gdg.community.dev/gdg-miami/"
