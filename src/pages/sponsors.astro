@@ -1,0 +1,46 @@
+---
+import Button from '~/components/ui/Button.astro';
+import Layout from '~/layouts/PageLayout.astro';
+---
+
+<Layout>
+  <h1 class="text-center">Sponsors</h1>
+
+  <section class="w-10/12 mx-auto">
+    <iframe
+      src="https://docs.google.com/presentation/d/e/2PACX-1vSLWOK5QCBkvoNcfB0K5fSPxPW6QHRpyYurCvBiizMBzb1VATghaDX0ZZ9IsJSmBuRb_tlOdBHUL8OS/embed?start=true&loop=true&delayms=5000"
+      allowfullscreen="true"
+      class="mx-auto w-full aspect-video rounded-3xl border-solid border-4 border-black dark:border-white"></iframe>
+    <div>
+      <h2 class="text-center my-10">Why Sponsor DevFest Florida?</h2>
+      <ul>
+        <li class="my-10 text-lg">
+          <span class="font-semibold">Technical Recruiting:</span> DevFest Florida is a great opportunity to meet emerging
+          talent in the Florida tech industry.
+        </li>
+        <li class="my-10 text-lg">
+          <span class="font-semibold">Brand Recognition/Product Exposure:</span> Expand your brand presence and expose attendees,
+          partners, and press to your company, product, or API.
+        </li>
+        <li class="my-10 text-lg">
+          <span class="font-semibold">Support the Florida Tech Community:</span> We are excited to be a part of the growing
+          tech community in Florida. Join us!
+        </li>
+      </ul>
+      <Button
+        text="Become a Sponsor"
+        variant="primary"
+        target="_blank"
+        icon="tabler:mail"
+        href="mailto:organizers@devfestflorida.com"
+      />
+      <Button
+        text="Download Sponsor Packages"
+        variant="primary"
+        target="_blank"
+        icon="tabler:square-rounded-arrow-down"
+        href="/devfestflorida-partnership-july-1-2024-v2.pdf"
+      />
+    </div>
+  </section>
+</Layout>
