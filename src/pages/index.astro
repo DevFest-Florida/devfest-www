@@ -2,6 +2,7 @@
 import CityBanner from '~/components/widgets/CityBanner.astro';
 import Layout from '~/layouts/PageLayout.astro';
 
+import Button from '~/components/ui/Button.astro';
 import FaGlobe from '../assets/images/FaGlobe.svg';
 import FaLinkedin from '../assets/images/FaLinkedin.svg';
 import FaMeetup from '../assets/images/FaMeetup.svg';
@@ -139,13 +140,14 @@ const metadata = {
           </a>
         </li>
       </ul>
-      <a href="https://www.eventbrite.com/e/935541117667?aff=oddtdtcreator" target="_blank" rel="noreferrer">
-        <span
-          class="bg-sky-100 text-sky-800 text-2xl font-large me-2 px-2.5 py-0.5 rounded-full dark:bg-sky-900 dark:text-sky-300"
-        >
-          Get your tickets now!
-        </span>
-      </a>
+
+      <Button
+        text="Get your tickets now!"
+        variant="primary"
+        target="_blank"
+        icon="tabler:square-rounded-arrow-right"
+        href="https://www.eventbrite.com/e/935541117667?aff=oddtdtcreator"
+      />
     </CityBanner>
 
     <CityBanner
