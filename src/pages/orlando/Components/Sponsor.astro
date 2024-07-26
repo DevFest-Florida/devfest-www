@@ -2,6 +2,8 @@
 import Button from '~/components/ui/Button.astro';
 import GoogleLogo from '../../../assets/images/sponsors/Google_2015_logo.png';
 import SeminoleStateLogo from '../../../assets/images/sponsors/logo-seminole-state-2line-cmyk-2019.png';
+import JettBrainsLogo from '../../../assets/images/sponsors/jetbrains.png';
+import Kodeco from '../../../assets/images/sponsors/logotype-orange.png';
 ---
 
 <section class="w-10/12 mx-auto">
@@ -34,52 +36,51 @@ import SeminoleStateLogo from '../../../assets/images/sponsors/logo-seminole-sta
       >
     </div>
   </section>
-  <section>
-    <h3 class="my-10 font-semibold">Supporters</h3><div class="w-1/2 grid grid-cols-1 md:grid-cols-1 mx-auto">
-      <div class="">
-        <a href="https://www.jetbrains.com/" target="_blank" rel="noreferrer"
-          ><img
-            src="/static/media/jb_beam.00ac2802f6d9a13779bb.png"
-            alt="JetBrains Logo"
-            class="object-contain h-36 w-full px-2"
-          /></a
-        >
-      </div>
-    </div>
-  </section> -->
+-->
+<section>
+  <h3 class="text-center my-10 font-semibold">Supporters</h3>
+  <div class="w-10/12 grid grid-cols-1 md:grid-cols-2 gap-4 mx-auto">
+    <a href="https://www.kodeco.com/" target="_blank" rel="noreferrer"
+      ><img src={Kodeco.src} alt="JetBrains Logo" class="object-contain h-1/2 w-full max-h-24 px-2" /></a
+    >
+    <a href="https://www.jetbrains.com/" target="_blank" rel="noreferrer"
+      ><img src={JettBrainsLogo.src} alt="JetBrains Logo" class="object-contain h-1/2 max-h-24 w-full px-2" /></a
+    >
+  </div>
 
-<section class="w-10/12 mx-auto">
-  <iframe
-    src="https://docs.google.com/presentation/d/e/2PACX-1vSLWOK5QCBkvoNcfB0K5fSPxPW6QHRpyYurCvBiizMBzb1VATghaDX0ZZ9IsJSmBuRb_tlOdBHUL8OS/embed?start=true&loop=true&delayms=5000"
-    allowfullscreen="true"
-    class="mx-auto w-full aspect-video rounded-3xl border-solid border-4 border-black dark:border-white"></iframe>
-  <h2 class="text-center my-10">Why Sponsor DevFest Central Florida?</h2>
-  <ul>
-    <li class="my-10 text-lg">
-      <span class="font-semibold">Technical Recruiting:</span> DevFest Central Florida is a great opportunity to meet emerging
-      talent in the Central Florida tech industry.
-    </li>
-    <li class="my-10 text-lg">
-      <span class="font-semibold">Brand Recognition/Product Exposure:</span> Expand your brand presence and expose attendees,
-      partners, and press to your company, product, or API.
-    </li>
-    <li class="my-10 text-lg">
-      <span class="font-semibold">Support the Central Florida Tech Community:</span> We are excited to be a part of the growing
-      tech community in Central Florida. Join us!
-    </li>
-  </ul>
-  <Button
-    text="Become a Sponsor"
-    variant="primary"
-    target="_blank"
-    icon="tabler:mail"
-    href="mailto:organizers@devfestflorida.com"
-  />
-  <Button
-    text="Download Sponsor Packages"
-    variant="primary"
-    target="_blank"
-    icon="tabler:square-rounded-arrow-down"
-    href="/devfestflorida-partnership-july-1-2024-v2.pdf"
-  />
+  <section class="w-10/12 mx-auto mt-10">
+    <iframe
+      src="https://docs.google.com/presentation/d/e/2PACX-1vSLWOK5QCBkvoNcfB0K5fSPxPW6QHRpyYurCvBiizMBzb1VATghaDX0ZZ9IsJSmBuRb_tlOdBHUL8OS/embed?start=true&loop=true&delayms=5000"
+      allowfullscreen="true"
+      class="mx-auto w-full aspect-video rounded-3xl border-solid border-4 border-black dark:border-white"></iframe>
+    <h2 class="text-center my-10">Why Sponsor DevFest Central Florida?</h2>
+    <ul>
+      <li class="my-10 text-lg">
+        <span class="font-semibold">Technical Recruiting:</span> DevFest Central Florida is a great opportunity to meet emerging
+        talent in the Central Florida tech industry.
+      </li>
+      <li class="my-10 text-lg">
+        <span class="font-semibold">Brand Recognition/Product Exposure:</span> Expand your brand presence and expose attendees,
+        partners, and press to your company, product, or API.
+      </li>
+      <li class="my-10 text-lg">
+        <span class="font-semibold">Support the Central Florida Tech Community:</span> We are excited to be a part of the
+        growing tech community in Central Florida. Join us!
+      </li>
+    </ul>
+    <Button
+      text="Become a Sponsor"
+      variant="primary"
+      target="_blank"
+      icon="tabler:mail"
+      href="mailto:organizers@devfestflorida.com"
+    />
+    <Button
+      text="Download Sponsor Packages"
+      variant="primary"
+      target="_blank"
+      icon="tabler:square-rounded-arrow-down"
+      href="/devfestflorida-partnership-july-1-2024-v2.pdf"
+    />
+  </section>
 </section>

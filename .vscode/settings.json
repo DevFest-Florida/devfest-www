@@ -41,5 +41,8 @@
   },
   "peacock.color": "#38bdf8",
   "IDX.aI.enableInlineCompletion": true,
-  "IDX.aI.enableCodebaseIndexing": true
+  "IDX.aI.enableCodebaseIndexing": true,
+  "conventionalCommits.scopes": [
+    "Sponsor"
+  ]
 }
