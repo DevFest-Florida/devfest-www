@@ -1,0 +1,56 @@
+---
+const { speaker } = Astro.props;
+---
+
+<section
+  class="bg-yellow-200 rounded-3xl border-solid border-4 border-black dark:border-white dark:text-black m-2 p-2 md:m-10 md:p-10"
+>
+  <div class="p-5 w-full">
+    <img
+      src={speaker.profilePicture}
+      alt={speaker.fullName}
+      class="rounded-full w-48 mx-auto rounded-3xl border-solid border-4 border-black dark:border-white"
+    />
+  </div>
+  <h3 class="font-semibold">{speaker.fullName}</h3>
+  <!-- {
+  speaker.links.length > 0 && (
+    <ul class="inline-flex space-x-4 text-xl my-2">
+      <li>
+        {speaker.links.forEach((link) => {
+          if (link.title === 'Twitter') {
+            link.title = (
+              <Icon
+                name="tabler:brand-x"
+                class="w-6 h-6 text-gray-400 dark:text-slate-500 hover:text-black dark:hover:text-slate-300"
+              />
+            );
+          } else if (link.title === 'LinkedIn') {
+            link.title = (
+              <Icon
+                name="tabler:brand-linkedin"
+                class="w-6 h-6 text-gray-400 dark:text-slate-500 hover:text-black dark:hover:text-slate-300"
+              />
+            );
+          } else if (link.title === 'Company Website' || link.title === 'Blog' || link.title === 'Website')
+            link.title = (
+              <Icon
+                name="tabler:globe"
+                class="w-6 h-6 text-gray-400 dark:text-slate-500 hover:text-black dark:hover:text-slate-300"
+              />
+            );
+        })}
+        {speaker.links.map((link) => (
+          <li>
+            <a href={link.url} class="hover:text-white" aria-label={link.linkType}>
+              {link.title}
+            </a>
+          </li>
+        ))}
+      </li>
+    </ul>
+  )
+} -->
+  <p>{speaker.tagLine}</p>
+  {speaker.sessions.map((session) => <h3>{session.name}</h3>)}
+</section>

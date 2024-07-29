@@ -1,0 +1,20 @@
+---
+const response = await fetch('https://sessionize.com/api/v2/1xy9p1oq/view/Speakers');
+const data = await response.json();
+const speakers = data.sort((a, b) => a.lastName.localeCompare(b.lastName));
+
+import SpeakerProfile from './SpeakerProfile.astro';
+---
+
+<section class="text-center bg-LightBlue py-10">
+  {
+    speakers.length > 0 && (
+    <h2 class="my-10">Featured Speakers</h2>
+      <div class="w-10/12 mx-auto grid grid-cols-1 lg:grid-cols-2">
+        {speakers.map((speaker) => (
+          <SpeakerProfile speaker={speaker} />
+        ))}
+      </div>
+    )
+  }
+</section>
