@@ -23,10 +23,10 @@ export const headerData = {
       text: 'Location',
       href: getPermalink('/orlando/location')
     },    
-    // {
-    //   text: 'Blog',
-    //   href: getBlogPermalink()
-    // },
+    {
+      text: 'Blog',
+      href: getPermalink('/blog')
+    },
 
   
 
