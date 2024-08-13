@@ -1,0 +1,42 @@
+---
+import Button from '~/components/ui/Button.astro';
+---
+
+<form
+  action="https://devfestflorida.us19.list-manage.com/subscribe/post?u=119f4ac3ccc791030553d81da&id=3d659ceec7&f_id=00a7a7e4f0"
+  method="post"
+  id="mc-embedded-subscribe-form"
+  name="mc-embedded-subscribe-form"
+  target="_self"
+  class="font-mono"
+>
+  <div id="mc_embed_signup_scroll">
+    <h2>Subscribe to our mailing list!</h2>
+    <div class="indicates-required py-2"><span class="asterisk">*</span> indicates required</div>
+    <div class="mc-field-group py-2">
+      <label for="mce-EMAIL">Email Address <span class="asterisk">*</span></label>
+      <input type="email" name="EMAIL" class="required email text-black border-4 rounded-lg" id="mce-EMAIL" required />
+    </div>
+    <div class="mc-field-group py-2">
+      <label for="mce-FNAME">First Name <span class="asterisk">*</span></label>
+      <input type="text" name="FNAME" class="required text text-black border-4 rounded-lg" id="mce-FNAME" required />
+    </div>
+    <div class="mc-field-group py-2">
+      <label for="mce-LNAME">Last Name </label>
+      <input type="text" name="LNAME" class="text text-black border-4 rounded-lg" id="mce-LNAME" />
+    </div>
+    <div class="mc-field-group py-2">
+      <label for="mce-EXCITED">What are you most excited about DevFest? </label>
+      <input type="text" name="EXCITED" class="text text-black border-4 rounded-lg" id="mce-EXCITED" />
+    </div>
+    <div id="mce-responses" class="clear foot">
+      <div class="response" id="mce-error-response" style="display: none;"></div>
+      <div class="response" id="mce-success-response" style="display: none;"></div>
+    </div>
+    <div aria-hidden="true" style="position: absolute; left: -5000px;">
+      <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups  -->
+      <input type="text" name="b_119f4ac3ccc791030553d81da_3d659ceec7" tabindex="-1" value="" />
+    </div>
+  </div>
+  <Button variant="primary" type="submit"> Subscribe </Button>
+</form>
