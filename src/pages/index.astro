@@ -3,6 +3,7 @@ import CityBanner from '~/components/widgets/CityBanner.astro';
 import Layout from '~/layouts/PageLayout.astro';
 
 import Button from '~/components/ui/Button.astro';
+import EmailForm from '~/components/ui/EmailForm.astro';
 import FaGlobe from '../assets/images/FaGlobe.svg';
 import FaLinkedin from '../assets/images/FaLinkedin.svg';
 import FaMeetup from '../assets/images/FaMeetup.svg';
@@ -209,5 +210,9 @@ const metadata = {
         </li>
       </ul>
     </CityBanner>
+  </section>
+
+  <section class="p-8 mx-auto max-w-fit">
+    <EmailForm />
   </section>
 </Layout>
