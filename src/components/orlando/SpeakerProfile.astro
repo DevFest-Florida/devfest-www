@@ -1,17 +1,17 @@
 ---
 import { Icon } from 'astro-icon/components';
+import { getImage } from 'astro:assets';
 
 const { speaker } = Astro.props;
+const optimizedProfileimage = await getImage({ src: speaker.profilePicture, inferSize: true });
 ---
 
-<section
-  class="bg-yellow-200 rounded-3xl border-solid border-4 border-black dark:border-white dark:text-black m-2 p-2 md:m-10 md:p-10"
->
+<section class="bg-yellow-200 rounded-3xl border-solid border-4 border-black dark:text-black m-2 p-2 md:m-10 md:p-10">
   <div class="p-5 w-full">
     <img
-      src={speaker.profilePicture}
+      src={optimizedProfileimage.src}
       alt={speaker.fullName}
-      class="rounded-full w-48 mx-auto rounded-3xl border-solid border-4 border-black dark:border-white"
+      class="rounded-full w-48 mx-auto rounded-3xl border-solid border-4 border-black"
     />
   </div>
   <h3 class="font-semibold">{speaker.fullName}</h3>
