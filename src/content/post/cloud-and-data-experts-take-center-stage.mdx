@@ -13,6 +13,8 @@ tags:
 
 import Logo from '~/components/Logo.astro';
 import { YouTube, Tweet, Vimeo } from 'astro-embed';
+import Button from '~/components/ui/Button.astro';
+
 
 DevFest Florida is a community-driven one-day conference that brings together technologists, developers, students, tech companies, and speakers in Central Florida. The event focuses on cutting-edge technologies, including Machine Learning, Mobile, Web, Cloud, AI, and career development. Attendees can learn, discuss, and experiment with these technologies. The conference features 30+ speakers from top tech companies and development experts, covering various tool stacks and industry insights. It’s an inclusive environment that fosters learning and networking among local talent and global experts. Plus, there’s awesome swag and magical moments!
 
@@ -109,7 +111,13 @@ Jeff's opinions are his own and do not reflect those of his employer.
 
 Home city: Orlando, FL
 
-
+      <Button
+        text="Buy a Ticket!"
+        variant="primary"
+        target="_blank"
+        icon="tabler:square-rounded-arrow-right"
+        href="https://www.eventbrite.com/e/devfest-florida-2024-tickets-935541117667?aff=oddtdtcreator"
+      />
 
 ## Building Your First Serverless Web App on Google Cloud Platform
 
@@ -168,4 +176,10 @@ Home city: Orlando, FL
 
 
 
-
+<Button
+  text="Buy a Ticket!"
+  variant="primary"
+  target="_blank"
+  icon="tabler:square-rounded-arrow-right"
+  href="https://www.eventbrite.com/e/devfest-florida-2024-tickets-935541117667?aff=oddtdtcreator"
+/>
