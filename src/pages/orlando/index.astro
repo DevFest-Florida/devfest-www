@@ -5,15 +5,9 @@ import Layout from '~/pages/orlando/PageLayout.astro';
 import About from '../../components/orlando/About.astro';
 import Sponsor from '../../components/orlando/Sponsor.astro';
 import Venue from '../../components/orlando/Venue.astro';
-
-const metadata = {
-  title:
-    'DevFest Florida is group of GDG chapters from around the state of Florida. We work together to bring technologists and developers from the Florida area to code, learn, have fun, and give back.',
-  ignoreTitleTemplate: true,
-};
 ---
 
-<Layout metadata={metadata}>
+<Layout>
   <section class="w-10/12 mx-auto grid grid-cols-1 lg:grid-cols-2">
     <div class="mx-auto">
       <img
