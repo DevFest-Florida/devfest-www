@@ -4,6 +4,8 @@ import Layout from '~/layouts/Layout.astro';
 import Footer from '../../components/orlando/Footer.astro';
 import CustomStyles from './CustomStyles.astro';
 
+import metaImage from '~/assets/images/devfest-central-florida-2024.png';
+
 import { footerData, headerData } from '~/pages/orlando/navigation';
 
 import type { MetaData } from '~/types';
@@ -12,7 +14,24 @@ export interface Props {
   metadata?: MetaData;
 }
 
-const { metadata } = Astro.props;
+const defaultMeta = {
+  title: 'DevFest Central Florida',
+  ignoreTitleTemplate: true,
+  description:
+    "DevFest Central Florida is group of GDG chapters from central part the state of Florida. We work together to bring technologists and developers from the Florida area to code, learn, have fun, and give back. This year's event is on Saturday, September 28th at the Seminole State College - Lake Mary/Sanford Campus",
+  openGraph: {
+    images: [
+      {
+        url: metaImage,
+        width: 1920,
+        height: 1080,
+        alt: 'DevFest Central Florida 2024 Saturday, September 28th, Seminole State College - Lake Mary/Sanford Campus',
+      },
+    ],
+  },
+};
+
+const metadata = Astro?.props?.metadata || defaultMeta;
 ---
 
 <Layout metadata={metadata}>
