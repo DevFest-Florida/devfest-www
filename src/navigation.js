@@ -4,31 +4,30 @@ export const headerData = {
   links: [
     {
       text: 'Home',
-      href: getPermalink('/')
-    },   
+      href: getPermalink('/'),
+    },
     {
       text: 'Orlando',
-      href: getPermalink('/orlando')
-    },  
+      href: getPermalink('/orlando'),
+    },
     // {
     //   text: 'Tampa',
     //   href: getPermalink('#')
-    // },  
-    // {
-    //   text: 'Miami',
-    //   href: getPermalink('#')
-    // },  
+    // },
+    {
+      text: 'Miami',
+      href: getPermalink('/miami'),
+    },
 
     {
       text: 'Sponsors',
       href: getPermalink('/sponsors'),
       target: '_blank',
-    },  
+    },
     {
       text: 'Blog',
-      href: getPermalink('/blog')
-    },  
-
+      href: getPermalink('/blog'),
+    },
   ],
 };
 
@@ -46,9 +45,7 @@ export const footerData = {
     },
     {
       title: 'Contact',
-      links: [
-        { text: 'Email', href: 'mailto:organizers@devfestflorida.com' },
-      ],
+      links: [{ text: 'Email', href: 'mailto:organizers@devfestflorida.com' }],
     },
     {
       title: 'DevFest Florida',
@@ -73,5 +70,4 @@ export const footerData = {
     { ariaLabel: 'RSS', icon: 'tabler:rss', href: getAsset('/rss.xml') },
     { ariaLabel: 'Github', icon: 'tabler:brand-github', href: 'https://github.com/DevFest-Florida' },
   ],
-  
 };

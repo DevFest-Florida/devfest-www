@@ -7,10 +7,10 @@ export const headerData = {
       text: 'Miami',
       href: getPermalink('/miami'),
     },
-    {
-      text: 'Speakers',
-      href: getPermalink('/miami/speakers'),
-    },
+    // {
+    //   text: 'Speakers',
+    //   href: getPermalink('/miami/speakers'),
+    // },
     {
       text: 'Sponsors',
       href: getPermalink('/miami/sponsors'),
