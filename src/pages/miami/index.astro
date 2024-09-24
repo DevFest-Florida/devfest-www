@@ -1,13 +1,42 @@
 ---
+import gif from '~/assets/images/Save_The_Date.gif';
+import Button from '~/components/ui/Button.astro';
 import Layout from '~/pages/miami/PageLayout.astro';
-
-const metadata = {
-  title:
-    'DevFest Florida is group of GDG chapters from around the state of Florida. We work together to bring technologists and developers from the Florida area to code, learn, have fun, and give back.',
-  ignoreTitleTemplate: true,
-};
+import About from '../../components/miami/About.astro';
+import Sponsor from '../../components/miami/Sponsor.astro';
+import Venue from '../../components/miami/Venue.astro';
 ---
 
-<Layout metadata={metadata}>
-  <h1>DevFest Miami goes here...</h1>
+<Layout>
+  <section class="w-10/12 mx-auto grid grid-cols-1 lg:grid-cols-2">
+    <div class="mx-auto">
+      <img
+        src={gif.src}
+        class="mx-auto rounded-3xl border-solid border-4 border-black dark:border-white"
+        alt="DevFest Save The Date"
+      />
+    </div>
+    <div class="mx-auto text-center">
+      <h1>DevFest Miami</h1>
+      <h2 class="font-semibold animate-pulse">Saturday, December 14th</h2>
+      <p class="sm:px-5 sm:text-lg text-justify">
+        We're back with THE conference for tech enthusiasts in Miami ☀️🏝! This electrifying event is a hub of
+        innovation and inspiration. Immerse yourself in captivating talks, hands-on demos, and cutting-edge workshops
+        led by renowned Googlers, Google Developer Experts, and industry speakers. DevFest Miami is where dreams meet
+        reality- where you'll supercharge your skills to shape the future of tech. 🚀
+      </p>
+      <Button
+        text="RSVP!"
+        variant="primary"
+        target="_blank"
+        icon="tabler:square-rounded-arrow-right"
+        href="https://gdg.community.dev/events/details/google-gdg-miami-presents-devfest-miami-2024/cohost-gdg-miami"
+      />
+    </div>
+  </section>
+  <About class="mt-4" />
+  <h2 class="w-10/12 mx-auto text-center mt-4">Venue</h2>
+  <Venue />
+  <h2 class="w-10/12 mx-auto text-center mt-4">Sponsors</h2>
+  <Sponsor />
 </Layout>
