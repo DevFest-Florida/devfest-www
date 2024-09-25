@@ -1,10 +1,12 @@
 ---
 import Header from '~/components/widgets/Header.astro';
 import Layout from '~/layouts/Layout.astro';
+import Footer from '../../components/miami/Footer.astro';
 import CustomStyles from './CustomStyles.astro';
-import Footer from './Footer.astro';
 
-import { footerData, headerData } from '~/pages/orlando/navigation';
+import metaImage from '~/assets/images/devfest-miami-2024.png';
+
+import { footerData, headerData } from '~/pages/miami/navigation';
 
 import type { MetaData } from '~/types';
 
@@ -12,7 +14,24 @@ export interface Props {
   metadata?: MetaData;
 }
 
-const { metadata } = Astro.props;
+const defaultMeta = {
+  title: 'DevFest Miami',
+  ignoreTitleTemplate: true,
+  description:
+    "We're back with THE conference for tech enthusiasts in Miami ☀️🏝! This electrifying event is a hub of innovation and inspiration. Immerse yourself in captivating talks, hands-on demos, and cutting-edge workshops led by renowned Googlers, Google Developer Experts, and industry speakers. DevFest Miami is where dreams meet reality- where you'll supercharge your skills to shape the future of tech. 🚀 This year's event is on Saturday, December 14th, AI Center at Miami Dade College - North Campus",
+  openGraph: {
+    images: [
+      {
+        url: metaImage,
+        width: 1920,
+        height: 1080,
+        alt: 'DevFest Miami 2024 Saturday, December 14th, AI Center at Miami Dade College - North Campus',
+      },
+    ],
+  },
+};
+
+const metadata = Astro?.props?.metadata || defaultMeta;
 ---
 
 <Layout metadata={metadata}>
