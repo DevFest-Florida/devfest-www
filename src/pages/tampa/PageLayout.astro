@@ -1,10 +1,12 @@
 ---
 import Header from '~/components/widgets/Header.astro';
 import Layout from '~/layouts/Layout.astro';
+import Footer from '../../components/tampa/Footer.astro';
 import CustomStyles from './CustomStyles.astro';
-import Footer from './Footer.astro';
 
-import { footerData, headerData } from '~/navigation';
+import metaImage from '~/assets/images/devfest-tampa-2024.png';
+
+import { footerData, headerData } from '~/pages/tampa/navigation';
 
 import type { MetaData } from '~/types';
 
@@ -12,7 +14,24 @@ export interface Props {
   metadata?: MetaData;
 }
 
-const { metadata } = Astro.props;
+const defaultMeta = {
+  title: 'DevFest Tampa',
+  ignoreTitleTemplate: true,
+  description:
+    "DevFest Tampa is a community-run one-day conference aimed to bring technologists, developers, students, tech companies, and speakers together in one location to learn, discuss and experiment with technology. This year's event is on Saturday, October 5th, Engineering Building II at University of South Florida",
+  openGraph: {
+    images: [
+      {
+        url: metaImage,
+        width: 1920,
+        height: 1080,
+        alt: 'DevFest Tamoa 2024 Saturday, October 5th, Engineering Building II at University of South Florida',
+      },
+    ],
+  },
+};
+
+const metadata = Astro?.props?.metadata || defaultMeta;
 ---
 
 <Layout metadata={metadata}>

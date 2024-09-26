@@ -10,10 +10,10 @@ export const headerData = {
       text: 'Orlando',
       href: getPermalink('/orlando'),
     },
-    // {
-    //   text: 'Tampa',
-    //   href: getPermalink('#')
-    // },
+    {
+      text: 'Tampa',
+      href: getPermalink('/tampa'),
+    },
     {
       text: 'Miami',
       href: getPermalink('/miami'),
@@ -59,7 +59,9 @@ export const footerData = {
   secondaryLinks: [
     { text: 'Orlando 2024', href: getPermalink('/orlando') },
     { text: 'Orlando 2023', href: 'https://2023-orlando.devfestflorida.com/' },
+    { text: 'Tampa 2024', href: getPermalink('/tampa') },
     { text: 'Tampa 2023', href: 'https://2023-tampa.devfestflorida.com/' },
+    { text: 'Miami 2024', href: getPermalink('/miami') },
     { text: 'Miami 2023', href: 'https://2023-miami.devfestflorida.com/' },
     { text: 'Miami 2022', href: 'https://2022.devfestflorida.com/' },
   ],
