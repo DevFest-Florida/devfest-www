@@ -12,7 +12,8 @@ export const headerData = {
     },
     {
       text: 'Tampa',
-      href: getPermalink('/tampa'),
+      href: getPermalink('https://devfesttampa.com/'),
+      target: '_blank',
     },
     {
       text: 'Miami',
@@ -22,7 +23,6 @@ export const headerData = {
     {
       text: 'Sponsors',
       href: getPermalink('/sponsors'),
-      target: '_blank',
     },
     {
       text: 'Blog',
