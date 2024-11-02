@@ -1,17 +1,17 @@
 ---
-import CityBanner from '~/components/widgets/CityBanner.astro';
-import Layout from '~/layouts/PageLayout.astro';
+import CityBanner from "~/components/widgets/CityBanner.astro";
+import Layout from "~/layouts/PageLayout.astro";
 
-import Button from '~/components/ui/Button.astro';
-import EmailForm from '~/components/ui/EmailForm.astro';
-import FaGlobe from '../assets/images/FaGlobe.svg';
-import FaLinkedin from '../assets/images/FaLinkedin.svg';
-import FaMeetup from '../assets/images/FaMeetup.svg';
-import FaTwitter from '../assets/images/FaTwitter.svg';
+import Button from "~/components/ui/Button.astro";
+import EmailForm from "~/components/ui/EmailForm.astro";
+import FaGlobe from "../assets/images/FaGlobe.svg";
+import FaLinkedin from "../assets/images/FaLinkedin.svg";
+import FaMeetup from "../assets/images/FaMeetup.svg";
+import FaTwitter from "../assets/images/FaTwitter.svg";
 
 const metadata = {
   title:
-    'DevFest Florida is group of GDG chapters from around the state of Florida. We work together to bring technologists and developers from the Florida area to code, learn, have fun, and give back.',
+    "DevFest Florida is group of GDG chapters from around the state of Florida. We work together to bring technologists and developers from the Florida area to code, learn, have fun, and give back.",
   ignoreTitleTemplate: true,
 };
 ---
@@ -71,7 +71,9 @@ const metadata = {
         <path
           d="M522.827,361.808 L588.203,361.808 L588.203,380.24 L542.267,380.24 L542.267,405.296 L583.595,405.296 L583.595,423.728 L542.267,423.728 L542.267,464.912 L522.827,464.912 z"
           fill="currentColor"></path>
-        <path d="M601.987,361.808 L620.851,361.808 L620.851,464.912 L601.987,464.912 z" fill="currentColor"></path>
+        <path
+          d="M601.987,361.808 L620.851,361.808 L620.851,464.912 L601.987,464.912 z"
+          fill="currentColor"></path>
         <path
           d="M673.084,467.216 Q661.708,467.216 652.78,462.104 Q643.852,456.992 638.884,448.136 Q633.916,439.28 633.916,428.192 Q633.916,417.248 638.884,408.32 Q643.852,399.392 652.78,394.28 Q661.708,389.168 673.084,389.168 Q684.316,389.168 693.244,394.28 Q702.172,399.392 707.14,408.32 Q712.108,417.248 712.108,428.192 Q712.108,439.28 707.14,448.136 Q702.172,456.992 693.244,462.104 Q684.316,467.216 673.084,467.216 z M673.084,449.792 Q678.556,449.792 683.164,447.2 Q687.772,444.608 690.508,439.712 Q693.244,434.816 693.244,428.192 Q693.244,421.712 690.508,416.816 Q687.772,411.92 683.164,409.328 Q678.556,406.736 673.084,406.736 Q667.612,406.736 663.004,409.328 Q658.396,411.92 655.588,416.816 Q652.78,421.712 652.78,428.192 Q652.78,434.672 655.588,439.64 Q658.396,444.608 663.004,447.2 Q667.612,449.792 673.084,449.792 z"
           fill="currentColor"></path>
@@ -105,38 +107,75 @@ const metadata = {
       chapterName="Central Florida"
       url="/orlando"
     >
-      <ul class="flex flex-row space-y-0 space-x-4 text-xl my-4 w-100 place-items-center justify-center">
+      <ul
+        class="flex flex-row space-y-0 space-x-4 text-xl my-4 w-100 place-items-center justify-center"
+      >
         <li class="m-0">Space Coast</li>
         <li class="m-0">
-          <a href="https://gdg.community.dev/gdg-space-coast/" aria-label={`GDG Space Coast Website`}>
-            <img src={FaGlobe.src} height="20px" width="20px" alt="GDG Website" />
+          <a
+            href="https://gdg.community.dev/gdg-space-coast/"
+            aria-label={`GDG Space Coast Website`}
+          >
+            <img
+              src={FaGlobe.src}
+              height="20px"
+              width="20px"
+              alt="GDG Website"
+            />
           </a>
         </li>
         <li class="m-0">
-          <a href={'https://www.twitter.com/gdgspacecoast'} aria-label={`Follow GDG Space Coast on Twitter`}>
+          <a
+            href={"https://www.twitter.com/gdgspacecoast"}
+            aria-label={`Follow GDG Space Coast on Twitter`}
+          >
             <img src={FaTwitter.src} height="20px" width="20px" alt="Twitter" />
           </a>
         </li>
         <li class="m-0">
-          <a href="https://www.linkedin.com/company/gdgspacecoast/" aria-label={`Follow GDG Space Coast on LinkedIn`}>
-            <img src={FaLinkedin.src} height="20px" width="20px" alt="LinkedIn" />
+          <a
+            href="https://www.linkedin.com/company/gdgspacecoast/"
+            aria-label={`Follow GDG Space Coast on LinkedIn`}
+          >
+            <img
+              src={FaLinkedin.src}
+              height="20px"
+              width="20px"
+              alt="LinkedIn"
+            />
           </a>
         </li>
         <li class="m-0">
-          <a href="https://www.meetup.com/gdg-space-coast/" aria-label={`Follow GDG Space Coast on Meetup`}>
+          <a
+            href="https://www.meetup.com/gdg-space-coast/"
+            aria-label={`Follow GDG Space Coast on Meetup`}
+          >
             <img src={FaMeetup.src} height="20px" width="20px" alt="MeetUp" />
           </a>
         </li>
       </ul>
-      <ul class="flex flex-row space-y-0 space-x-4 text-xl my-4 w-100 place-items-center justify-center">
+      <ul
+        class="flex flex-row space-y-0 space-x-4 text-xl my-4 w-100 place-items-center justify-center"
+      >
         <li class="m-0">Daytona Beach</li>
         <li class="m-0">
-          <a href="https://gdg.community.dev/gdg-daytona-beach/" aria-label={`GDG Space Coast Website`}>
-            <img src={FaGlobe.src} height="20px" width="20px" alt="GDG Website" />
+          <a
+            href="https://gdg.community.dev/gdg-daytona-beach/"
+            aria-label={`GDG Space Coast Website`}
+          >
+            <img
+              src={FaGlobe.src}
+              height="20px"
+              width="20px"
+              alt="GDG Website"
+            />
           </a>
         </li>
         <li class="m-0">
-          <a href="https://www.meetup.com/gdg-daytona-beach/" aria-label={`Follow GDG Space Coast on Meetup`}>
+          <a
+            href="https://www.meetup.com/gdg-daytona-beach/"
+            aria-label={`Follow GDG Space Coast on Meetup`}
+          >
             <img src={FaMeetup.src} height="20px" width="20px" alt="MeetUp" />
           </a>
         </li>
@@ -164,30 +203,52 @@ const metadata = {
       chapterName="Tampa"
       url="https://devfesttampa.com/"
     >
-      <ul class="flex flex-row space-y-0 space-x-4 text-xl my-4 w-100 place-items-center justify-center">
+      <ul
+        class="flex flex-row space-y-0 space-x-4 text-xl my-4 w-100 place-items-center justify-center"
+      >
         <li class="m-0">USF</li>
         <li class="m-0">
           <a
             href="https://bullsconnect.usf.edu/events?group_ids=57952"
             aria-label={`GDSC USF Website`}
           >
-            <img src={FaGlobe.src} height="20px" width="20px" alt="GDG Website" />
+            <img
+              src={FaGlobe.src}
+              height="20px"
+              width="20px"
+              alt="GDG Website"
+            />
           </a>
         </li>
         <li class="m-0">
-          <a href={'https://www.twitter.com/usfgdsc'} aria-label={`Follow GDSC USF on Twitter`}>
+          <a
+            href={"https://www.twitter.com/usfgdsc"}
+            aria-label={`Follow GDSC USF on Twitter`}
+          >
             <img src={FaTwitter.src} height="20px" width="20px" alt="Twitter" />
           </a>
         </li>
         <li class="m-0">
-          <a href="https://www.linkedin.com/company/usfgdsc" aria-label={`Follow GDSC USF on LinkedIn`}>
-            <img src={FaLinkedin.src} height="20px" width="20px" alt="LinkedIn" />
+          <a
+            href="https://www.linkedin.com/company/usfgdsc"
+            aria-label={`Follow GDSC USF on LinkedIn`}
+          >
+            <img
+              src={FaLinkedin.src}
+              height="20px"
+              width="20px"
+              alt="LinkedIn"
+            />
           </a>
         </li>
       </ul>
-      <ul class="flex flex-row space-y-0 space-x-4 text-xl my-4 w-100 place-items-center justify-center">
+      <ul
+        class="flex flex-row space-y-0 space-x-4 text-xl my-4 w-100 place-items-center justify-center"
+      >
         <li class="m-0">
-          <a href="https://2023-tampa.devfestflorida.com/"> DevFest Tampa 2023 </a>
+          <a href="https://2023-tampa.devfestflorida.com/">
+            DevFest Tampa 2023
+          </a>
         </li>
       </ul>
       <Button
@@ -203,7 +264,7 @@ const metadata = {
       id="miami"
       color="bg-rose-400"
       alt="DevFest Miami"
-      location="Miami Dade College, North Campus"
+      location="Miami Dade College, Wolfson Campus"
       date="December 14th, 2024"
       gdgWebsite="https://gdg.community.dev/gdg-miami/"
       twitter="GDGMiami"
@@ -212,9 +273,13 @@ const metadata = {
       chapterName="Miami"
       url="/miami"
     >
-      <ul class="flex flex-row space-y-0 space-x-4 text-xl my-4 w-100 place-items-center justify-center">
+      <ul
+        class="flex flex-row space-y-0 space-x-4 text-xl my-4 w-100 place-items-center justify-center"
+      >
         <li class="m-0">
-          <a href="https://2023-miami.devfestflorida.com/"> DevFest Miami 2023 </a>
+          <a href="https://2023-miami.devfestflorida.com/">
+            DevFest Miami 2023
+          </a>
           <li class="m-0">
             <a href="https://2022.devfestflorida.com/">DevFest Miami 2022</a>
           </li>
