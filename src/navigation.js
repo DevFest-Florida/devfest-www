@@ -7,8 +7,8 @@ export const headerData = {
       href: getPermalink('/'),
     },
     {
-      text: 'Orlando',
-      href: getPermalink('/orlando'),
+      text: 'Miami',
+      href: getPermalink('/miami'),
     },
     {
       text: 'Tampa',
@@ -16,10 +16,9 @@ export const headerData = {
       target: '_blank',
     },
     {
-      text: 'Miami',
-      href: getPermalink('/miami'),
+      text: 'Orlando',
+      href: getPermalink('/orlando'),
     },
-
     {
       text: 'Sponsors',
       href: getPermalink('/sponsors'),
