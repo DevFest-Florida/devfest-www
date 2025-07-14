@@ -1,17 +1,11 @@
 ---
-import CityBanner from '~/components/widgets/CityBanner.astro';
 import Layout from '~/layouts/PageLayout.astro';
-
-import Button from '~/components/ui/Button.astro';
 import EmailForm from '~/components/ui/EmailForm.astro';
-import FaGlobe from '../assets/images/FaGlobe.svg';
-import FaLinkedin from '../assets/images/FaLinkedin.svg';
-import FaMeetup from '../assets/images/FaMeetup.svg';
-import FaTwitter from '../assets/images/FaTwitter.svg';
+import Hero2 from '~/components/widgets/Hero2.astro';
+import Hackathon from '~/assets/images/devfest-hackathon-2025.png';
 
 const metadata = {
-  title:
-    'DevFest Florida is group of GDG chapters from around the state of Florida. We work together to bring technologists and developers from the Florida area to code, learn, have fun, and give back.',
+  title: 'DevFest Central Florida Hackathon | October 25th - November 1st, 2025',
   ignoreTitleTemplate: true,
 };
 ---
@@ -19,8 +13,8 @@ const metadata = {
 <Layout metadata={metadata}>
   <h1 class="sr-only">DevFest Florida</h1>
   <!--?xml version="1.0" encoding="UTF-8"?-->
-  <svg
-    class="mx-auto max-w-full max-h-96"
+  <!-- <svg
+    class="mx-auto max-w-full max-h-24"
     version="1.1"
     xmlns="http://www.w3.org/2000/svg"
     xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -89,145 +83,16 @@ const metadata = {
           fill="currentColor"></path>
       </g>
     </g>
-  </svg>
+  </svg> -->
 
-  <section class="flex flex-col xl:flex-row grow">
-    <CityBanner
-      id="miami"
-      color="bg-rose-400"
-      alt="DevFest Miami"
-      location="Miami Dade College, Wolfson Campus"
-      date="December 14th, 2024"
-      gdgWebsite="https://gdg.community.dev/gdg-miami/"
-      twitter="GDGMiami"
-      linkedIn="https://www.linkedin.com/company/gdg-miami/"
-      meetup="https://www.meetup.com/gdgmiami/"
-      chapterName="Miami"
-      url="/miami"
-    >
-      <ul class="flex flex-row space-y-0 space-x-4 text-xl my-4 w-100 place-items-center justify-center">
-        <li class="m-0">
-          <a href="https://2023-miami.devfestflorida.com/"> DevFest Miami 2023 </a>
-          <li class="m-0">
-            <a href="https://2022.devfestflorida.com/">DevFest Miami 2022</a>
-          </li>
-        </li>
-      </ul>
-      <Button
-        text="RSVP!"
-        variant="primary"
-        target="_blank"
-        icon="tabler:square-rounded-arrow-right"
-        href="https://gdg.community.dev/events/details/google-gdg-miami-presents-devfest-miami-2024/cohost-gdg-miami"
-      />
-    </CityBanner>
-  </section>
-
-  <section class="flex flex-col xl:flex-row grow">
-    <CityBanner
-      id="tampa"
-      color="bg-green-200"
-      alt="DevFest Tampa"
-      location="University of South FLorida"
-      date="October 5th, 2024"
-      gdgWebsite="https://gdg.community.dev/gdg-tampa-bay/"
-      twitter="GDGSuncoast"
-      linkedIn="https://www.linkedin.com/company/gdgsuncoast/"
-      meetup="https://www.meetup.com/gdgtampabay/"
-      chapterName="Tampa"
-      url="https://devfesttampa.com/"
-    >
-      <ul class="flex flex-row space-y-0 space-x-4 text-xl my-4 w-100 place-items-center justify-center">
-        <li class="m-0">USF</li>
-        <li class="m-0">
-          <a href="https://bullsconnect.usf.edu/events?group_ids=57952" aria-label={`GDSC USF Website`}>
-            <img src={FaGlobe.src} height="20px" width="20px" alt="GDG Website" />
-          </a>
-        </li>
-        <li class="m-0">
-          <a href={'https://www.twitter.com/usfgdsc'} aria-label={`Follow GDSC USF on Twitter`}>
-            <img src={FaTwitter.src} height="20px" width="20px" alt="Twitter" />
-          </a>
-        </li>
-        <li class="m-0">
-          <a href="https://www.linkedin.com/company/usfgdsc" aria-label={`Follow GDSC USF on LinkedIn`}>
-            <img src={FaLinkedin.src} height="20px" width="20px" alt="LinkedIn" />
-          </a>
-        </li>
-      </ul>
-      <ul class="flex flex-row space-y-0 space-x-4 text-xl my-4 w-100 place-items-center justify-center">
-        <li class="m-0">
-          <a href="https://2023-tampa.devfestflorida.com/"> DevFest Tampa 2023 </a>
-        </li>
-      </ul>
-      <Button
-        text="RSVP!"
-        variant="primary"
-        target="_blank"
-        icon="tabler:square-rounded-arrow-right"
-        href="https://bullsconnect.usf.edu/gdsc/rsvp_boot?id=1968434"
-      />
-    </CityBanner>
-
-    <CityBanner
-      id="orlando"
-      color="bg-sky-200"
-      alt="DevFest CFL"
-      location="Seminole State College, Sanford/Lake Mary Campus"
-      date="September 28th, 2024"
-      gdgWebsite="https://gdg.community.dev/gdg-central-florida/"
-      twitter="GDGCentralFL"
-      linkedIn="https://www.linkedin.com/company/google-developers-group-central-florida/"
-      meetup="https://www.meetup.com/gdg-central-florida/"
-      chapterName="Central Florida"
-      url="/orlando"
-    >
-      <ul class="flex flex-row space-y-0 space-x-4 text-xl my-4 w-100 place-items-center justify-center">
-        <li class="m-0">Space Coast</li>
-        <li class="m-0">
-          <a href="https://gdg.community.dev/gdg-space-coast/" aria-label={`GDG Space Coast Website`}>
-            <img src={FaGlobe.src} height="20px" width="20px" alt="GDG Website" />
-          </a>
-        </li>
-        <li class="m-0">
-          <a href={'https://www.twitter.com/gdgspacecoast'} aria-label={`Follow GDG Space Coast on Twitter`}>
-            <img src={FaTwitter.src} height="20px" width="20px" alt="Twitter" />
-          </a>
-        </li>
-        <li class="m-0">
-          <a href="https://www.linkedin.com/company/gdgspacecoast/" aria-label={`Follow GDG Space Coast on LinkedIn`}>
-            <img src={FaLinkedin.src} height="20px" width="20px" alt="LinkedIn" />
-          </a>
-        </li>
-        <li class="m-0">
-          <a href="https://www.meetup.com/gdg-space-coast/" aria-label={`Follow GDG Space Coast on Meetup`}>
-            <img src={FaMeetup.src} height="20px" width="20px" alt="MeetUp" />
-          </a>
-        </li>
-      </ul>
-      <ul class="flex flex-row space-y-0 space-x-4 text-xl my-4 w-100 place-items-center justify-center">
-        <li class="m-0">Daytona Beach</li>
-        <li class="m-0">
-          <a href="https://gdg.community.dev/gdg-daytona-beach/" aria-label={`GDG Space Coast Website`}>
-            <img src={FaGlobe.src} height="20px" width="20px" alt="GDG Website" />
-          </a>
-        </li>
-        <li class="m-0">
-          <a href="https://www.meetup.com/gdg-daytona-beach/" aria-label={`Follow GDG Space Coast on Meetup`}>
-            <img src={FaMeetup.src} height="20px" width="20px" alt="MeetUp" />
-          </a>
-        </li>
-      </ul>
-
-      <Button
-        text="Get your tickets now!"
-        variant="primary"
-        target="_blank"
-        icon="tabler:square-rounded-arrow-right"
-        href="https://www.eventbrite.com/e/935541117667?aff=oddtdtcreator"
-      />
-    </CityBanner>
-  </section>
+  <Hero2
+    title="Devfest Central Florida Hackathon is Coming Soon!"
+    subtitle="Sign up below to receive updates and be the first to know when registration opens."
+    image={{
+      src: Hackathon.src,
+      alt: 'Illustration of a room full of people working on their projects in a collaborative environment',
+    }}
+  />
 
   <section class="p-8 mx-auto max-w-fit">
     <EmailForm />
