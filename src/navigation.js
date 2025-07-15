@@ -6,19 +6,19 @@ export const headerData = {
       text: 'Home',
       href: getPermalink('/'),
     },
-    {
-      text: 'Miami',
-      href: getPermalink('/miami'),
-    },
-    {
-      text: 'Tampa',
-      href: getPermalink('https://devfesttampa.com/'),
-      target: '_blank',
-    },
-    {
-      text: 'Orlando',
-      href: getPermalink('/orlando'),
-    },
+    // {
+    //   text: 'Miami',
+    //   href: getPermalink('/miami'),
+    // },
+    // {
+    //   text: 'Tampa',
+    //   href: getPermalink('https://devfesttampa.com/'),
+    //   target: '_blank',
+    // },
+    // {
+    //   text: 'Orlando',
+    //   href: getPermalink('/orlando'),
+    // },
     {
       text: 'Sponsors',
       href: getPermalink('/sponsors'),
