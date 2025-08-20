@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevFest Central Florida Hackathon</title>
+    <!-- Use Tailwind CSS for styling, as requested -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Use the Inter font, a common choice for modern web design -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            color: #E2E8F0; /* Light gray text for dark background */
+        }
+        /* A subtle animation for the hero background */
+        @keyframes subtle-fade {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+        .hero-bg {
+            background: linear-gradient(-45deg, #1A202C, #2D3748, #1A202C, #2D3748);
+            background-size: 400% 400%;
+            animation: subtle-fade 15s ease infinite;
+        }
+        .glow-button {
+            transition: all 0.3s ease;
+            box-shadow: 0 0 15px rgba(139, 92, 246, 0.4);
+        }
+        .glow-button:hover {
+            box-shadow: 0 0 25px rgba(139, 92, 246, 0.6);
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body class="bg-gray-900">
+
+    <!-- Header & Navigation -->
+    <header class="py-6 px-4 md:px-8 lg:px-12 fixed w-full z-50 bg-gray-900 bg-opacity-80 backdrop-blur-sm">
+        <nav class="container mx-auto flex justify-between items-center">
+            <h1 class="text-2xl font-bold text-white">DevFest Central Florida</h1>
+            <!-- Desktop Navigation -->
+            <div class="hidden md:flex space-x-8">
+                <a href="#about" class="text-gray-300 hover:text-white transition-colors duration-300">About</a>
+                <a href="#tracks" class="text-gray-300 hover:text-white transition-colors duration-300">Tracks</a>
+                <a href="#speakers" class="text-gray-300 hover:text-white transition-colors duration-300">Speakers</a>
+                <a href="#schedule" class="text-gray-300 hover:text-white transition-colors duration-300">Agenda</a>
+                <a href="#sponsors" class="text-gray-300 hover:text-white transition-colors duration-300">Sponsors</a>
+            </div>
+            <a href="#register" class="hidden md:block bg-purple-600 hover:bg-purple-700 text-white font-bold py-2 px-6 rounded-full transition-colors duration-300">
+                Register
+            </a>
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-button" class="md:hidden text-white focus:outline-none">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                </svg>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu" class="hidden fixed inset-0 z-40 bg-gray-900 flex flex-col items-center justify-center space-y-8 text-2xl md:hidden">
+        <a href="#about" class="text-white hover:text-purple-400 transition-colors duration-300">About</a>
+        <a href="#tracks" class="text-white hover:text-purple-400 transition-colors duration-300">Tracks</a>
+        <a href="#speakers" class="text-white hover:text-purple-400 transition-colors duration-300">Speakers</a>
+        <a href="#schedule" class="text-white hover:text-purple-400 transition-colors duration-300">Agenda</a>
+        <a href="#sponsors" class="text-white hover:text-purple-400 transition-colors duration-300">Sponsors</a>
+        <a href="#register" class="bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-full transition-colors duration-300">
+            Register
+        </a>
+    </div>
+
+    <!-- Hero Section -->
+    <main id="home" class="hero-bg min-h-screen flex items-center justify-center text-center p-4 pt-24">
+        <div class="max-w-4xl">
+            <h2 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-white leading-tight mb-4">
+                Build the Future with AI.
+            </h2>
+            <p class="text-xl sm:text-2xl md:text-3xl font-light text-gray-400 mb-8">
+                A week-long hackathon designed to spark innovation with Google's AI technologies.
+            </p>
+            <!-- Countdown Timer -->
+            <div id="countdown" class="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-12 text-white">
+                <div class="bg-gray-800 p-4 rounded-xl shadow-lg">
+                    <div id="days" class="text-4xl sm:text-5xl font-bold">00</div>
+                    <div class="text-sm font-light uppercase tracking-widest mt-2 text-gray-400">Days</div>
+                </div>
+                <div class="bg-gray-800 p-4 rounded-xl shadow-lg">
+                    <div id="hours" class="text-4xl sm:text-5xl font-bold">00</div>
+                    <div class="text-sm font-light uppercase tracking-widest mt-2 text-gray-400">Hours</div>
+                </div>
+                <div class="bg-gray-800 p-4 rounded-xl shadow-lg">
+                    <div id="minutes" class="text-4xl sm:text-5xl font-bold">00</div>
+                    <div class="text-sm font-light uppercase tracking-widest mt-2 text-gray-400">Minutes</div>
+                </div>
+                <div class="bg-gray-800 p-4 rounded-xl shadow-lg">
+                    <div id="seconds" class="text-4xl sm:text-5xl font-bold">00</div>
+                    <div class="text-sm font-light uppercase tracking-widest mt-2 text-gray-400">Seconds</div>
+                </div>
+            </div>
+            <!-- Main CTA Button -->
+            <a id="register" href="https://gdg.community.dev/events/details/google-gdg-central-florida-presents-devfest-central-florida-hackathon/" target="_blank" class="glow-button bg-purple-600 hover:bg-purple-700 text-white font-bold text-lg py-4 px-12 rounded-full transition-colors duration-300 transform inline-block">
+                Register Now
+            </a>
+        </div>
+    </main>
+
+    <!-- About Section -->
+    <section id="about" class="container mx-auto py-16 px-4 md:px-8 lg:px-12">
+        <div class="text-center mb-12">
+            <h3 class="text-3xl font-bold text-white mb-4">About the Event</h3>
+            <p class="text-lg text-gray-400 max-w-2xl mx-auto">
+                Join us for an electrifying, week-long hackathon—a flagship DevFest event designed to spark innovation and connect the brightest minds in tech. This is your unparalleled opportunity to dive deep into the thrilling realm of AI agents and discover how they seamlessly integrate with the cutting-edge power of Google's technologies.
+            </p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+            <div class="bg-gray-800 p-6 rounded-xl shadow-lg">
+                <div class="text-4xl text-purple-400 mb-4">🤖</div>
+                <h4 class="text-xl font-bold mb-2">Build with AI</h4>
+                <p class="text-gray-400">Craft groundbreaking solutions using Google's Gemini AI suite, Google Cloud Platform, and Firebase.</p>
+            </div>
+            <div class="bg-gray-800 p-6 rounded-xl shadow-lg">
+                <div class="text-4xl text-purple-400 mb-4">🔗</div>
+                <h4 class="text-xl font-bold mb-2">Forge Connections</h4>
+                <p class="text-gray-400">Network with brilliant developers, share insights, and form lasting friendships and collaborations.</p>
+            </div>
+            <div class="bg-gray-800 p-6 rounded-xl shadow-lg">
+                <div class="text-4xl text-purple-400 mb-4">📈</div>
+                <h4 class="text-xl font-bold mb-2">Elevate Your Profile</h4>
+                <p class="text-gray-400">Showcase your ingenuity and build impressive projects that will make your portfolio shine.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tracks Section -->
+    <section id="tracks" class="container mx-auto py-16 px-4 md:px-8 lg:px-12">
+        <div class="text-center mb-12">
+            <h3 class="text-3xl font-bold text-white mb-4">Tracks</h3>
+            <p class="text-lg text-gray-400 max-w-2xl mx-auto">
+                Whether you're a builder or a visionary, we have a path for you.
+            </p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="bg-gray-800 p-8 rounded-xl shadow-lg border border-purple-600">
+                <h4 class="text-2xl font-bold mb-2 text-white">Software Prototype</h4>
+                <p class="text-gray-400">
+                    Develop a working MVP (Minimum Viable Product) of a high-impact software app or game enabled by AI. Bring your code to life and showcase your technical prowess.
+                </p>
+            </div>
+            <div class="bg-gray-800 p-8 rounded-xl shadow-lg border border-purple-600">
+                <h4 class="text-2xl font-bold mb-2 text-white">App Pitch</h4>
+                <p class="text-gray-400">
+                    Pitch a design and concept of operations for an app. Perfect for designers, project managers, and innovators who want to focus on strategy, user experience, and business potential.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Speakers Section -->
+    <section id="speakers" class="container mx-auto py-16 px-4 md:px-8 lg:px-12">
+        <div class="text-center mb-12">
+            <h3 class="text-3xl font-bold text-white mb-4">Meet the Speakers</h3>
+            <p class="text-lg text-gray-400 max-w-2xl mx-auto">
+                Learn from industry experts and Google Developer Experts who will guide you on your journey.
+            </p>
+        </div>
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-8">
+            <!-- Speaker 1 -->
+            <div class="flex flex-col items-center text-center">
+                <img src="https://placehold.co/128x128/6B46C1/FFFFFF?text=J.C." alt="Javier Carrion" class="rounded-full mb-4 ring-2 ring-purple-600">
+                <h4 class="text-lg font-bold text-white">Javier Carrion</h4>
+                <p class="text-sm text-gray-400">GDG Organizer & Software Engineer</p>
+            </div>
+            <!-- Speaker 2 -->
+            <div class="flex flex-col items-center text-center">
+                <img src="https://placehold.co/128x128/6B46C1/FFFFFF?text=M.R." alt="Michael Rosario" class="rounded-full mb-4 ring-2 ring-purple-600">
+                <h4 class="text-lg font-bold text-white">Michael Rosario</h4>
+                <p class="text-sm text-gray-400">Engineering Manager</p>
+            </div>
+            <!-- Speaker 3 -->
+            <div class="flex flex-col items-center text-center">
+                <img src="https://placehold.co/128x128/6B46C1/FFFFFF?text=C.K." alt="Christi Kapp" class="rounded-full mb-4 ring-2 ring-purple-600">
+                <h4 class="text-lg font-bold text-white">Christi Kapp</h4>
+                <p class="text-sm text-gray-400">Executive & Management Consultant</p>
+            </div>
+            <!-- Speaker 4 -->
+            <div class="flex flex-col items-center text-center">
+                <img src="https://placehold.co/128x128/6B46C1/FFFFFF?text=K.K." alt="Kendra Kennedy" class="rounded-full mb-4 ring-2 ring-purple-600">
+                <h4 class="text-lg font-bold text-white">Kendra Kennedy</h4>
+                <p class="text-sm text-gray-400">Dev Community Organizer</p>
+            </div>
+            <!-- Add more speakers as needed -->
+        </div>
+    </section>
+
+    <!-- Schedule Section -->
+    <section id="schedule" class="container mx-auto py-16 px-4 md:px-8 lg:px-12">
+        <div class="text-center mb-12">
+            <h3 class="text-3xl font-bold text-white mb-4">Agenda</h3>
+            <p class="text-lg text-gray-400 max-w-2xl mx-auto">
+                The hackathon is a week-long sprint, with an in-person kickoff and demo day.
+            </p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="bg-gray-800 p-6 rounded-xl shadow-lg">
+                <h4 class="text-2xl font-bold mb-2 text-white">Oct 25: Kickoff</h4>
+                <p class="text-gray-400">The excitement begins! Registration, keynote speeches, and team formation.</p>
+            </div>
+            <div class="bg-gray-800 p-6 rounded-xl shadow-lg">
+                <h4 class="text-2xl font-bold mb-2 text-white">Oct 26 - Oct 31: Build & Iterate</h4>
+                <p class="text-gray-400">Intense week of coding, collaboration, mentorship, and "show and tell" sessions.</p>
+            </div>
+            <div class="bg-gray-800 p-6 rounded-xl shadow-lg">
+                <h4 class="text-2xl font-bold mb-2 text-white">Nov 1: Demo Day</h4>
+                <p class="text-gray-400">Final presentations, project celebration, and networking with the community.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sponsors Section -->
+    <section id="sponsors" class="container mx-auto py-16 px-4 md:px-8 lg:px-12">
+        <div class="text-center mb-12">
+            <h3 class="text-3xl font-bold text-white mb-4">Our Sponsors</h3>
+            <p class="text-lg text-gray-400 max-w-2xl mx-auto">
+                This event is made possible by the generous support of our partners.
+            </p>
+        </div>
+        <div class="flex flex-wrap justify-center items-center gap-8 md:gap-12">
+            <!-- Sponsor Logos (placeholder text, would be replaced with actual logos) -->
+            <div class="text-xl font-bold text-white">Google</div>
+            <div class="text-xl font-bold text-gray-400">Black Orlando Tech</div>
+            <div class="text-xl font-bold text-gray-400">Seminole State College</div>
+            <div class="text-xl font-bold text-gray-400">JetBrains</div>
+            <div class="text-xl font-bold text-gray-400">Design Interactive</div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 py-8 px-4 md:px-8 lg:px-12 text-center text-gray-500 text-sm">
+        <p>A GDG Central Florida event. Connect with us at GDG Central Florida.</p>
+        <p>&copy; 2025 DevFest Central Florida Hackathon. All rights reserved.</p>
+    </footer>
+
+    <!-- JavaScript for Countdown Timer and Mobile Menu -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const countdownDate = new Date("October 25, 2025 09:00:00").getTime();
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            // Countdown Timer Logic
+            const x = setInterval(function() {
+                const now = new Date().getTime();
+                const distance = countdownDate - now;
+
+                // Calculate time units
+                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                // Update the elements
+                document.getElementById("days").innerHTML = String(days).padStart(2, '0');
+                document.getElementById("hours").innerHTML = String(hours).padStart(2, '0');
+                document.getElementById("minutes").innerHTML = String(minutes).padStart(2, '0');
+                document.getElementById("seconds").innerHTML = String(seconds).padStart(2, '0');
+
+                // If the countdown is finished, show a message
+                if (distance < 0) {
+                    clearInterval(x);
+                    document.getElementById("countdown").innerHTML = `<div class="text-center text-xl sm:text-2xl md:text-3xl font-bold text-purple-400 col-span-4">The event has begun!</div>`;
+                }
+            }, 1000);
+
+            // Mobile Menu Toggle Logic
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            // Close mobile menu when a link is clicked
+            mobileMenu.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>
