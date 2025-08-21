@@ -1,0 +1,48 @@
+---
+import SpeakerProfile from '~/components/orlando/SpeakerProfile.astro';
+
+const mockSpeaker = {
+  profilePicture: 'https://devfestflorida.com/_astro/6c83-400o400o1-QDT5xKFrSSw7dL7DKTs7Fu_186vRq.webp', // Replace with a path to a local image
+  fullName: 'Javiera Laso',
+  links: [
+    { url: 'https://twitter.com/mockspeaker', linkType: 'Twitter', title: 'X (Twitter)' },
+    { url: 'https://linkedin.com/in/mockspeaker', linkType: 'LinkedIn', title: 'LinkedIn' },
+  ],
+  tagLine: 'Senior developer Consultant at Thoughtworks',
+  sessions: [
+    { name: 'Journey to implement DDD into an organization' },    
+  ],
+};
+
+function getSpeakers(){
+  let response = []
+  for(let i = 0; i < 6; i++)
+  {    
+    response.push(mockSpeaker)
+  }
+  return response
+}
+
+const speakers = getSpeakers();
+
+---
+<!-- Speakers Section -->
+<div class="text-center mb-12">
+  <h3 class="text-3xl font-bold text-white mb-4">Meet the Speakers</h3>
+  <p class="text-lg text-gray-400 max-w-2xl mx-auto">
+    Learn from industry experts and Google Developer Experts who will guide you on your journey.
+  </p>
+</div>  
+
+<section class="text-center">
+  {
+    speakers.length > 0 && (
+      <div class="w-10/12 mx-auto grid grid-cols-1 lg:grid-cols-2">
+        {speakers.map((speaker) => (
+          <SpeakerProfile speaker={speaker} />
+        ))}
+      </div>
+    )
+  }
+</section>
+
