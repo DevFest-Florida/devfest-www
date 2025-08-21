@@ -30,25 +30,33 @@ const metadata = {
 };
 
 ---
-
+<style>
+.sectionHero
+{
+   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 2)),url('~/assets/images/devfest-hero.png');      
+}
+</style>
 <Layout metadata={metadata}>
   
 
   <!-- Hero Section -->
-  <section id="home" class="relative hero-bg min-h-screen flex items-center justify-center text-center p-4 pt-24">
+  <section id="home" class="relative sectionHero min-h-screen flex items-center justify-center text-center p-4 pt-24">
     <div class="relative z-10 max-w-4xl mx-auto">
       <h2 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-white leading-tight mb-4">
         DevFest GemJam
       </h2>
-      <p class="text-xl sm:text-2xl md:text-3xl font-light text-gray-400 mb-8">
+      <p class="text-xl sm:text-2xl md:text-3xl font-light mb-8 text-white">
         Collaboration | Make Apps | GenAI
       </p>
-      <p>
+      <p class="text-white">
       DevFest GemJam is a welcoming space where people of all backgrounds come together to imagine, build, and share ideas for a better future. Instead of focusing on competition or speed, we emphasize collaboration, creativity, and community impact. With AI transforming the world, we approach it as a tool for augmentation, not replacement — a partner that supports human creativity, connection, and problem-solving.
       </p>
-      <p>
+      <p class="text-white">
         At this event, participants explore how to use AI responsibly and ethically, ensuring that innovation is guided by inclusivity, fairness, and care for people. Whether you’re a coder, designer, storyteller, or community builder, there’s a place for your voice. Together, we’ll create solutions that reflect both human ingenuity and human values.      
       </p>
+
+
+
       <!-- Countdown Timer -->
       <div id="countdown" class="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-12 text-white">
         <div class="bg-gray-800 p-4 rounded-xl shadow-lg">
