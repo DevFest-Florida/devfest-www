@@ -6,6 +6,10 @@ export const headerData = {
       text: 'Home',
       href: getPermalink('/'),
     },
+    {
+      text: 'Speakers',
+      href: getPermalink('/speakers'),
+    },    
     // {
     //   text: 'Miami',
     //   href: getPermalink('/miami'),
