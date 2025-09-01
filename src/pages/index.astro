@@ -21,6 +21,7 @@ import Steps from '~/components/widgets/Steps.astro';
 import Steps2 from '~/components/widgets/Steps2.astro';
 import Testimonials from '~/components/widgets/Testimonials.astro';
 import Venue from '~/components/orlando/Venue.astro';
+import DevFestFans from '~/assets/images/devfest-fans.jpg';
 
 const posts = await getCollection('post');
 
@@ -149,6 +150,14 @@ const metadata = {
   </section>
 
 
+<section id="community" class="container mx-auto py-16 px-4 md:px-8 lg:px-12">
+    <div class="text-center mb-12">
+      <h3 class="text-3xl font-bold text-white mb-4">Our Community</h3>
+    </div>
+    <img src={DevFestFans.src} alt="Meet our DevFest Fans">
+</section>
+
+
 
   <!-- Schedule Section -->
   <section id="schedule" class="container mx-auto py-16 px-4 md:px-8 lg:px-12">
@@ -181,6 +190,8 @@ const metadata = {
     </div>
     <Sponsor>
   </section>
+
+
 
   <br><br><br>
   <h2 class="w-10/12 mx-auto text-center mt-4">Venue</h2>
