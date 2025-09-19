@@ -14,6 +14,11 @@ export const headerData = {
       text: 'Speakers',
       href: getPermalink('/speakers'),
     },    
+    {
+      text: 'Inspiration',
+      href: getPermalink('/inspiration'),
+    }, 
+
     // {
     //   text: 'Miami',
     //   href: getPermalink('/miami'),
@@ -28,13 +33,14 @@ export const headerData = {
     //   href: getPermalink('/orlando'),
     // },
     {
+      text: 'Blog',
+      href: getPermalink('/blog'),
+    },    
+    {
       text: 'Sponsors',
       href: getPermalink('/sponsors'),
     },
-    {
-      text: 'Blog',
-      href: getPermalink('/blog'),
-    },
+    
   ],
 };
 
