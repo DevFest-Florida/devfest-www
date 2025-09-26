@@ -33,7 +33,7 @@ Create the "Wow" Factor: Imagine building an app that doesn't just look good but
 
 In this guide, we'll walk you through every step of integrating the Gemini API into a Flutter app. We'll keep it simple and practical by building a "Hackathon Idea Generator"—a fun tool that will get you comfortable with the core concepts you need to bring your own innovative AI-powered ideas to life. Let's get building!
 
-<img title="Hackathon Idea Generator" alt="Hackathon Idea Generator" src="/src/assets/images/FlutterGeminiApp.jpg"></img>
+![Hackathon Idea Generator](~/assets/images/FlutterGeminiApp.jpg)
 
 ## Step 1: Setting Up Your Flutter Project
 First things first, let's get our Flutter project ready for AI magic. This part is all about laying the groundwork: creating the app, adding the right packages, and making sure we handle our secret API key safely.
@@ -64,7 +64,8 @@ After saving the file, run flutter pub get in your terminal to install them.
     variant="primary"
     target="_blank"
     icon="tabler:square-rounded-arrow-right"
-    href="https://www.eventbrite.com/e/devfest-florida-2024-tickets-935541117667?aff=oddtdtcreator"
+    href="https://www.eventbrite.com/e/devfest-gemjam-tickets-1032640023107?aff=oddtdtcreator"
+    
   />
 
   3. Secure Your API Key (Super Important!)
@@ -214,9 +215,9 @@ class GenerativeAiService {
 
     // Initialize the model
     final model = GenerativeModel(
-      // We use gemini-1.5-flash here. It's fast and powerful.
+      // We use gemini-2.5-flash here. It's fast and powerful.
       // You can experiment with other models like 'gemma-2b-it'.
-      model: 'gemini-1.5-flash-latest', 
+      model: 'gemini-2.5-flash',
       apiKey: apiKey,
     );
 
@@ -417,7 +418,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
     variant="primary"
     target="_blank"
     icon="tabler:square-rounded-arrow-right"
-    href="https://www.eventbrite.com/e/devfest-florida-2024-tickets-935541117667?aff=oddtdtcreator"
+    href="https://www.eventbrite.com/e/devfest-gemjam-tickets-1032640023107?aff=oddtdtcreator"
   />
 
 And that's it! You now have a fully functional Flutter app that uses the Gemini API to generate creative hackathon ideas. Happy hacking!
