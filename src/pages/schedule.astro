@@ -1,0 +1,143 @@
+---
+import Button from '~/components/ui/Button.astro';
+import Layout from '~/layouts/PageLayout.astro';
+---
+
+<Layout>
+  <h1 class="text-center">Schedule</h1>
+    <style>
+        /* Custom styles based on Google's primary colors */
+        .color-blue { background-color: #4285F4; } /* Google Blue */
+        .color-red { background-color: #DB4437; } /* Google Red */
+        .color-yellow { background-color: #F4B400; } /* Google Yellow/Amber */
+        .text-green { color: #0F9D58; } /* Google Green text highlight */
+        .text-blue-primary { color: #4285F4; } /* Google Blue text highlight */
+
+        /* Pastel shades derived from the schedule image's colors for backgrounds */
+        .bg-light-green-pastel { background-color: #EEF7F2; } /* Light green/gray for content rows */
+        .bg-light-yellow-pastel { background-color: #FFF8E1; } /* Light amber for breaks/highlights */
+        .bg-light-purple-pastel { background-color: #F3E5F5; } /* Light purple for lunch/main break */
+
+        body {
+        font-family: 'Inter', sans-serif;
+        }
+    </style>
+  <section class="w-10/12 mx-auto">
+    <div class="w-full max-w-4xl shadow-2xl rounded-xl overflow-hidden border border-gray-200">
+        <div class="p-6 bg-white border-b border-gray-100">
+            <h1 class="text-3xl font-extrabold text-gray-800">DevFest Conference Schedule - Oct 25</h1>
+        </div>
+
+        <!-- Schedule Grid Container -->
+        <div class="text-gray-800 divide-y divide-gray-200">
+
+            <!-- Grid Header Row -->
+            <div class="grid grid-cols-12 font-bold text-base md:text-lg text-white rounded-t-xl">
+                <div class="col-span-2 py-3 px-4 color-blue border-r border-white/50 rounded-tl-xl">Time</div>
+                <div class="col-span-5 py-3 px-4 color-red border-r border-white/50">Space A</div>
+                <div class="col-span-5 py-3 px-4 color-yellow rounded-tr-xl">Space B</div>
+            </div>
+
+            <!-- 8:00 AM Registration (Yellow Highlight) -->
+            <div class="grid grid-cols-12 bg-light-yellow-pastel">
+                <div class="col-span-2 py-3 px-4 font-semibold text-sm md:text-base">8:00 AM</div>
+                <div class="col-span-10 py-3 px-4 border-l border-gray-200 font-medium">Registration</div>
+            </div>
+
+            <!-- 9:00 AM Orientation (Green Rows) -->
+            <div class="grid grid-cols-12 bg-light-green-pastel">
+                <div class="col-span-2 py-2 px-4 font-semibold text-sm md:text-base">9:00 AM</div>
+                <div class="col-span-10 py-2 px-4 border-l border-gray-200">Orientation</div>
+            </div>
+            
+            <!-- Welcome From SCC -->
+            <div class="grid grid-cols-12 bg-light-green-pastel">
+                <div class="col-span-2"></div>
+                <div class="col-span-10 py-1 px-4 border-l border-gray-200 pl-8 text-sm">Welcome From Seminole Community State College</div>
+            </div>
+
+            <!-- Keynote: We All Need Junior Developers (Blue Text Highlight) -->
+            <div class="grid grid-cols-12 bg-light-green-pastel">
+                <div class="col-span-2"></div>
+                <div class="col-span-10 py-1 px-4 font-medium border-l border-gray-200 pl-8 text-blue-primary text-sm">Keynote: We All Need Junior Developers</div>
+            </div>
+
+            <!-- Concept Pitch Tracks -->
+            <div class="grid grid-cols-12 bg-light-green-pastel">
+                <div class="col-span-2"></div>
+                <div class="col-span-10 py-1 px-4 border-l border-gray-200 pl-8 text-sm">Concept Pitch Tracks for GemJam</div>
+            </div>
+
+            <!-- 10:00 AM Vontage (Yellow Highlight) -->
+            <div class="grid grid-cols-12 bg-light-yellow-pastel">
+                <div class="col-span-2 py-3 px-4 font-semibold text-sm md:text-base">10:00 AM</div>
+                <div class="col-span-10 py-3 px-4 border-l border-gray-200 font-medium">Building Community Through Live Streaming using Vonage</div>
+            </div>
+
+            <!-- 11:00 AM AI Agents / Azure + GenAI -->
+            <div class="grid grid-cols-12 bg-light-green-pastel">
+                <div class="col-span-2 py-3 px-4 font-semibold text-sm md:text-base">11:00 AM</div>
+                <div class="col-span-5 py-3 px-4 border-l border-gray-200 text-sm">AI Agents, MCP, Langflow examples</div>
+                <div class="col-span-5 py-3 px-4 border-l border-gray-200 text-sm">Azure + GenAI innovation</div>
+            </div>
+
+            <!-- 11:30 AM Product Management / Github Copilot (Green Text Highlight) -->
+            <div class="grid grid-cols-12 bg-light-green-pastel">
+                <div class="col-span-2 py-3 px-4 font-semibold text-sm md:text-base">11:30 AM</div>
+                <div class="col-span-5 py-3 px-4 border-l border-gray-200 text-sm">Product Management at Scale</div>
+                <div class="col-span-5 py-3 px-4 border-l border-gray-200 font-medium text-sm">What's New with Github Copilot with John Papa</div>
+            </div>
+
+            <!-- 12:00 PM Lunch (Purple Highlight) -->
+            <div class="grid grid-cols-12 bg-light-purple-pastel font-bold text-gray-800">
+                <div class="col-span-2 py-3 px-4 text-sm md:text-base">12:00 PM</div>
+                <div class="col-span-10 py-3 px-4 border-l border-gray-200 text-lg">Lunch</div>
+            </div>
+
+            <!-- 1:00 PM Vibe Coding / Gen UI -->
+            <div class="grid grid-cols-12 bg-light-green-pastel">
+                <div class="col-span-2 py-3 px-4 font-semibold text-sm md:text-base">1:00 PM</div>
+                <div class="col-span-5 py-3 px-4 border-l border-gray-200 text-sm">Master Controlled "Vibe Coding" Workshop</div>
+                <div class="col-span-5 py-3 px-4 border-l border-gray-200 text-sm">Gen UI, Ephemeral UI with Flutter</div>
+            </div>
+
+            <!-- 1:30 PM Hackathon flow / Microsoft Open Hack (Blue Text Highlight) -->
+            <div class="grid grid-cols-12 bg-light-green-pastel">
+                <div class="col-span-2 py-3 px-4 font-semibold text-sm md:text-base">1:30 PM</div>
+                <div class="col-span-5 py-3 px-4 border-l border-gray-200 text-sm">Hackathon flow</div>
+                <div class="col-span-5 py-3 px-4 border-l border-gray-200 font-medium text-sm">Microsoft Open Hack</div>
+            </div>
+
+            <!-- Project Visions / Agent Framework -->
+            <div class="grid grid-cols-12 bg-light-green-pastel">
+                <div class="col-span-2"></div>
+                <div class="col-span-5 py-1 px-4 border-l border-gray-200 pl-8 text-sm">Pitching project visions</div>
+                <div class="col-span-5 py-1 px-4 border-l border-gray-200 pl-8 text-sm">* Learn Microsoft Agent Framework</div>
+            </div>
+
+            <!-- Team Matching / Azure Foundry -->
+            <div class="grid grid-cols-12 bg-light-green-pastel">
+                <div class="col-span-2"></div>
+                <div class="col-span-5 py-1 px-4 border-l border-gray-200 pl-8 text-sm">Leader to team matching</div>
+                <div class="col-span-5 py-1 px-4 border-l border-gray-200 pl-8 text-sm">* Explore Azure Foundry</div>
+            </div>
+
+            <!-- Sprint Planning / Shopping Experience -->
+            <div class="grid grid-cols-12 bg-light-green-pastel">
+                <div class="col-span-2"></div>
+                <div class="col-span-5 py-1 px-4 border-l border-gray-200 pl-8 text-sm">Sprint planning</div>
+                <div class="col-span-5 py-1 px-4 border-l border-gray-200 pl-8 text-sm">* Enable Shopping Experience using Agents</div>
+            </div>
+
+            <!-- 4:30 PM Closing (Yellow Highlight) -->
+            <div class="grid grid-cols-12 bg-light-yellow-pastel font-bold rounded-b-xl">
+                <div class="col-span-2 py-3 px-4 text-sm md:text-base">4:30 PM</div>
+                <div class="col-span-5 py-3 px-4 border-l border-gray-200">Closing</div>
+                <div class="col-span-5 py-3 px-4 border-l border-gray-200 rounded-br-xl">Closing</div>
+            </div>
+
+        </div>
+    </div>
+
+  </section>
+</Layout>
