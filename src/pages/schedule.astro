@@ -13,7 +13,7 @@ const sessionData = [
     ],
     "session_description": "This talk will explore the critical and often misunderstood role of the technical product manager in bridging the gap between research & development and real-world application. We will follow a model’s lifecycle, from the initial stages of defining research goals, through the challenges of deployment, and into the long-term work of sustainment. Learn how effective technical product management ensures that groundbreaking research delivers tangible, valuable, and sustainable products.",
     "location": "TBD",
-    "start_time": "TBD",
+    "start_time": "11:30am",
     "prep_link": "TBD"
   },
   {
@@ -22,9 +22,9 @@ const sessionData = [
     "speaker_list": [
       "Dwane Hemmings"
     ],
-    "session_description": "Teams use the Vonage Video API (and optionally Messaging, Voice, etc.) to create an interactive live-streaming experience that goes beyond broadcasting — think Q&A, co-streaming panels, watch parties, captions, breakout rooms, etc. Goal: design an engaging solution that shows how live streaming can foster real community. Dwane will also be leading an interactive code-along on Vonage's APIs and building a live streaming platform with the Vonage Video API.",
+    "session_description": "Teams use the Vonage Video API (and optionally Messaging, Voice, etc.) to create an interactive live-streaming experience that goes beyond broadcasting — think Q&A, co-streaming panels, watch parties, captions, breakout rooms, etc. Goal: design an engaging solution that shows how live streaming can foster real community. Dwane will also be leading an interactive code-along on Vonage\'s APIs and building a live streaming platform with the Vonage Video API.",
     "location": "TBD",
-    "start_time": "TBD",
+    "start_time": "10:00am",
     "prep_link": "TBD"
   },
   {
@@ -38,9 +38,24 @@ const sessionData = [
     ],
     "session_description": "The Microsoft Azure AI Agent Open Hack is a hands-on 3-hour challenge-based activity where developers explore how Azure AI Foundry can be used to create agents that simulate real-world scenarios. Participants will learn to build AI agents that improve business efficiency, apply Azure AI in practical contexts, and adopt best practices with VS Code and GitHub Copilot. The event also offers opportunities to network with Microsoft experts.",
     "location": "TBD",
-    "start_time": "TBD",
+    "start_time": "11:00am and 1:00pm",
     "prep_link": "TBD"
   },
+  {
+    "session_id": "ghcp",
+    "session_title": "What's New with Github Copilot with John Papa",
+    "speaker_list": [
+      "John Papa",
+      "Anthony Bartolo",
+      "Dan Wahlin",
+      "Henk Boelman"
+    ],
+    "session_description": "(Draft session details) --- Join John Papa to explore the latest time-saving features in GitHub Copilot and dramatically boost your daily coding speed. We'll dive into advanced features like Copilot Edits for multi-file changes, the Copilot coding agent for autonomous tasks, and Slash Commands for instant actions. Learn practical tips for integrating these tools to maximize your productivity and focus on your most important development work.",
+    "location": "TBD",
+    "start_time": "11:30am",
+    "prep_link": "TBD"
+  },
+
   {
     "session_id": "ai-agents-langflow-examples",
     "session_title": "AI Agents, MCP, Langflow examples",
@@ -49,18 +64,18 @@ const sessionData = [
     ],
     "session_description": "How to go from a conceptual prompt to a functional, real-life agent without getting lost in a sea of code and complex orchestration frameworks? This talk will walk through a practical, real-world scenario: building an AI agent that automates tasks by leveraging Langflow’s visual interface to connect different components—from an LLM’s reasoning engine to external API tools and data sources—to create an intelligent workflow.",
     "location": "TBD",
-    "start_time": "TBD",
+    "start_time": "11:00am",
     "prep_link": "TBD"
   },
   {
     "session_id": "company-pitch-event-horizon-labs",
-    "session_title": "The Company Pitch track: Event Horizon Labs",
+    "session_title": "The Company and App Pitch tracks",
     "speaker_list": [
       "Christi Kapp"
     ],
     "session_description": "A bold new track focused on the hypothetical company “Event Horizon Labs,” tasked with becoming the trigger for the technological “Singularity.” Product Manager teams are challenged to create a business plan and product definition, including a core component on human-centric guardrails to ensure the preservation of human dignity, creativity, and agency in a post-Singularity world.",
     "location": "TBD",
-    "start_time": "TBD",
+    "start_time": "9:30am",
     "prep_link": "TBD"
   },
   {
@@ -69,7 +84,7 @@ const sessionData = [
     "speaker_list": [
       "Leo Farias"
     ],
-    "session_description": "The static interface era is ending. This session explores 'Fleeting Interfaces' - ephemeral UIs that intelligently evolve without explicit programming. Through schema-driven architecture in Flutter, powered by Gemini for decision-making, it demonstrates how interfaces become living temporal experiences, responding to usage patterns and context.",
+    "session_description": "The static interface era is ending. This session explores \'Fleeting Interfaces\' - ephemeral UIs that intelligently evolve without explicit programming. Through schema-driven architecture in Flutter, powered by Gemini for decision-making, it demonstrates how interfaces become living temporal experiences, responding to usage patterns and context.",
     "location": "TBD",
     "start_time": "TBD",
     "prep_link": "TBD"
@@ -91,7 +106,7 @@ const sessionData = [
     "speaker_list": [
       "Michael Rosario"
     ],
-    "session_description": "Discover the Google Agent Development Kit (ADK), a robust, 'batteries-included' framework for building and deploying scalable, enterprise-grade AI agents. This talk explores how ADK simplifies complex multi-agent workflows and offers a streamlined path from prototype to deployment using Google Cloud Platform and your favorite LLM tools.",
+    "session_description": "Discover the Google Agent Development Kit (ADK), a robust, \'batteries-included\' framework for building and deploying scalable, enterprise-grade AI agents. This talk explores how ADK simplifies complex multi-agent workflows and offers a streamlined path from prototype to deployment using Google Cloud Platform and your favorite LLM tools.",
     "location": "TBD",
     "start_time": "TBD",
     "prep_link": "TBD"
@@ -229,7 +244,7 @@ window.closeSessionDetails = closeSessionDetails;
             <!-- Concept Pitch Tracks -->
             <div class="grid grid-cols-12 bg-light-green-pastel">
                 <div class="col-span-2"></div>
-                <div class="col-span-10 py-1 px-4 border-l border-gray-200 pl-8 text-sm"
+                <div class="col-span-10 py-1 px-4 border-l border-gray-200 pl-8 text-sm cursor-pointer"
                   onclick="showSessionDetails('company-pitch-event-horizon-labs')"
                 >
                   Concept Pitch Tracks for GemJam
@@ -237,7 +252,7 @@ window.closeSessionDetails = closeSessionDetails;
             </div>
 
             <!-- 10:00 AM Vontage (Yellow Highlight) -->
-            <div class="grid grid-cols-12 bg-light-yellow-pastel" onclick="showSessionDetails('live-streaming-hackathon-challenge')">
+            <div class="grid grid-cols-12 bg-light-yellow-pastel cursor-pointer" onclick="showSessionDetails('live-streaming-hackathon-challenge')">
                 <div class="col-span-2 py-3 px-4 font-semibold text-sm md:text-base">10:00 AM</div>
                 <div class="col-span-10 py-3 px-4 border-l border-gray-200 font-medium"
                 
@@ -247,22 +262,24 @@ window.closeSessionDetails = closeSessionDetails;
             <!-- 11:00 AM AI Agents / Azure + GenAI -->
             <div class="grid grid-cols-12 bg-light-green-pastel" >
                 <div class="col-span-2 py-3 px-4 font-semibold text-sm md:text-base">11:00 AM</div>
-                <div class="col-span-5 py-3 px-4 border-l border-gray-200 text-sm"
+                <div class="col-span-5 py-3 px-4 border-l border-gray-200 text-sm cursor-pointer"
                 onclick="showSessionDetails('ai-agents-langflow-examples')"
                 >AI Agents, MCP, Langflow examples</div>
-                <div class="col-span-5 py-3 px-4 border-l border-gray-200 text-sm"
-                onclick="showSessionDetails('product-management-at-scale')"
-                >Azure + GenAI innovation</div>
+                <div class="col-span-5 py-3 px-4 border-l border-gray-200 text-sm cursor-pointer"
+                onclick="showSessionDetails('ai-agent-challenge-open-hack')"
+                >
+                Open Hack: AI Agent Challenge
+              </div>
             </div>
 
             <!-- 11:30 AM Product Management / Github Copilot (Green Text Highlight) -->
             <div class="grid grid-cols-12 bg-light-green-pastel">
                 <div class="col-span-2 py-3 px-4 font-semibold text-sm md:text-base">11:30 AM</div>
-                <div class="col-span-5 py-3 px-4 border-l border-gray-200 text-sm"
+                <div class="col-span-5 py-3 px-4 border-l border-gray-200 text-sm cursor-pointer"
                 onclick="showSessionDetails('product-management-at-scale')"
                 >Product Management at Scale</div>
-                <div class="col-span-5 py-3 px-4 border-l border-gray-200 font-medium text-sm" 
-                onclick="showSessionDetails('product-management-at-scale')"
+                <div class="col-span-5 py-3 px-4 border-l border-gray-200 font-medium text-sm cursor-pointer" 
+                onclick="showSessionDetails('ghcp')"
                 >What's New with Github Copilot with John Papa</div>
             </div>
 
@@ -275,10 +292,10 @@ window.closeSessionDetails = closeSessionDetails;
             <!-- 1:00 PM Vibe Coding / Gen UI -->
             <div class="grid grid-cols-12 bg-light-green-pastel">
                 <div class="col-span-2 py-3 px-4 font-semibold text-sm md:text-base">1:00 PM</div>
-                <div class="col-span-5 py-3 px-4 border-l border-gray-200 text-sm"
+                <div class="col-span-5 py-3 px-4 border-l border-gray-200 text-sm cursor-pointer"
                 onclick="showSessionDetails('master-controlled-vibe-coding-workshop')"
                 >Master Controlled "Vibe Coding" Workshop</div>
-                <div class="col-span-5 py-3 px-4 border-l border-gray-200 text-sm"
+                <div class="col-span-5 py-3 px-4 border-l border-gray-200 text-sm cursor-pointer"
                 onclick="showSessionDetails('gen-ui-ephemeral-interfaces')"
                 >Gen UI, Ephemeral UI with Flutter</div>
             </div>
@@ -291,7 +308,7 @@ window.closeSessionDetails = closeSessionDetails;
                   Hackathon project and team planning
                   </a>
                 </div>
-                <div class="col-span-5 py-3 px-4 border-l border-gray-200 font-medium text-sm" onclick="showSessionDetails('ai-agent-challenge-open-hack')">Microsoft Open Hack</div>
+                <div class="col-span-5 py-3 px-4 border-l border-gray-200 font-medium text-sm cursor-pointer" onclick="showSessionDetails('ai-agent-challenge-open-hack')">Microsoft Open Hack</div>
             </div>
 
             <!-- Project Visions / Agent Framework -->
@@ -380,6 +397,12 @@ window.closeSessionDetails = closeSessionDetails;
     </div>
 </div>
 
-
+<Button
+        text="Buy a Ticket!"
+        variant="primary"
+        target="_blank"
+        icon="tabler:square-rounded-arrow-right"
+        href="https://www.eventbrite.com/e/devfest-gemjam-tickets-1032640023107?aff=oddtdtcreator"
+      />
   </section>
 </Layout>
