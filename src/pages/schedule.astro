@@ -2,7 +2,154 @@
 import Button from '~/components/ui/Button.astro';
 import Layout from '~/layouts/PageLayout.astro';
 ---
+<script>
 
+const sessionData = [
+  {
+    "session_id": "product-management-at-scale",
+    "session_title": "Product Management at Scale",
+    "speaker_list": [
+      "Vanessa Eaton"
+    ],
+    "session_description": "This talk will explore the critical and often misunderstood role of the technical product manager in bridging the gap between research & development and real-world application. We will follow a model’s lifecycle, from the initial stages of defining research goals, through the challenges of deployment, and into the long-term work of sustainment. Learn how effective technical product management ensures that groundbreaking research delivers tangible, valuable, and sustainable products.",
+    "location": "TBD",
+    "start_time": "TBD",
+    "prep_link": "TBD"
+  },
+  {
+    "session_id": "live-streaming-hackathon-challenge",
+    "session_title": "The Challenge: Building Community Through Live Streaming (Hackathon Challenge)",
+    "speaker_list": [
+      "Dwane Hemmings"
+    ],
+    "session_description": "Teams use the Vonage Video API (and optionally Messaging, Voice, etc.) to create an interactive live-streaming experience that goes beyond broadcasting — think Q&A, co-streaming panels, watch parties, captions, breakout rooms, etc. Goal: design an engaging solution that shows how live streaming can foster real community. Dwane will also be leading an interactive code-along on Vonage's APIs and building a live streaming platform with the Vonage Video API.",
+    "location": "TBD",
+    "start_time": "TBD",
+    "prep_link": "TBD"
+  },
+  {
+    "session_id": "ai-agent-challenge-open-hack",
+    "session_title": "Open Hack: AI Agent Challenge",
+    "speaker_list": [
+      "John Papa",
+      "Anthony Bartolo",
+      "Dan Wahlin",
+      "Henk Boelman"
+    ],
+    "session_description": "The Microsoft Azure AI Agent Open Hack is a hands-on 3-hour challenge-based activity where developers explore how Azure AI Foundry can be used to create agents that simulate real-world scenarios. Participants will learn to build AI agents that improve business efficiency, apply Azure AI in practical contexts, and adopt best practices with VS Code and GitHub Copilot. The event also offers opportunities to network with Microsoft experts.",
+    "location": "TBD",
+    "start_time": "TBD",
+    "prep_link": "TBD"
+  },
+  {
+    "session_id": "ai-agents-langflow-examples",
+    "session_title": "AI Agents, MCP, Langflow examples",
+    "speaker_list": [
+      "David M. Elgueta"
+    ],
+    "session_description": "How to go from a conceptual prompt to a functional, real-life agent without getting lost in a sea of code and complex orchestration frameworks? This talk will walk through a practical, real-world scenario: building an AI agent that automates tasks by leveraging Langflow’s visual interface to connect different components—from an LLM’s reasoning engine to external API tools and data sources—to create an intelligent workflow.",
+    "location": "TBD",
+    "start_time": "TBD",
+    "prep_link": "TBD"
+  },
+  {
+    "session_id": "company-pitch-event-horizon-labs",
+    "session_title": "The Company Pitch track: Event Horizon Labs",
+    "speaker_list": [
+      "Christi Kapp"
+    ],
+    "session_description": "A bold new track focused on the hypothetical company “Event Horizon Labs,” tasked with becoming the trigger for the technological “Singularity.” Product Manager teams are challenged to create a business plan and product definition, including a core component on human-centric guardrails to ensure the preservation of human dignity, creativity, and agency in a post-Singularity world.",
+    "location": "TBD",
+    "start_time": "TBD",
+    "prep_link": "TBD"
+  },
+  {
+    "session_id": "gen-ui-ephemeral-interfaces",
+    "session_title": "Gen UI, Epheneral UI (Fleeting Interfaces)",
+    "speaker_list": [
+      "Leo Farias"
+    ],
+    "session_description": "The static interface era is ending. This session explores 'Fleeting Interfaces' - ephemeral UIs that intelligently evolve without explicit programming. Through schema-driven architecture in Flutter, powered by Gemini for decision-making, it demonstrates how interfaces become living temporal experiences, responding to usage patterns and context.",
+    "location": "TBD",
+    "start_time": "TBD",
+    "prep_link": "TBD"
+  },
+  {
+    "session_id": "master-controlled-vibe-coding-workshop",
+    "session_title": "Master Controlled “Vibe Coding” Workshop",
+    "speaker_list": [
+      "Kendra Kennedy"
+    ],
+    "session_description": "This workshop is an enterprise playbook for mastering the agentic future on Google Cloud, providing an end-to-end roadmap from idea to a full-scale, operational Agentverse. Participants will learn how the skills of a developer, architect, data engineer, and SRE converge to create, manage, and scale a powerful Agentverse. Preparation tools include: Gemini CLI, Google Cloud account, Firebase, and Firebase Studio.",
+    "location": "TBD",
+    "start_time": "TBD",
+    "prep_link": "TBD"
+  },
+  {
+    "session_id": "collaborative-ai-google-adk",
+    "session_title": "Building Collaborative AI: A Guide to Multi-Agent Systems with Google ADK",
+    "speaker_list": [
+      "Michael Rosario"
+    ],
+    "session_description": "Discover the Google Agent Development Kit (ADK), a robust, 'batteries-included' framework for building and deploying scalable, enterprise-grade AI agents. This talk explores how ADK simplifies complex multi-agent workflows and offers a streamlined path from prototype to deployment using Google Cloud Platform and your favorite LLM tools.",
+    "location": "TBD",
+    "start_time": "TBD",
+    "prep_link": "TBD"
+  }
+]
+
+/**
+ * Finds session data by ID and displays it in the modal.
+ * @param {string} sessionId The session_id of the talk to display.
+ */
+function showSessionDetails(sessionId) {
+    const session = sessionData.find(s => s.session_id === sessionId);
+    const modal = document.getElementById('session-modal');
+    const modalContent = document.getElementById('modal-content');
+
+    if (!session) {
+        console.error(`Session with ID ${sessionId} not found.`);
+        return;
+    }
+
+    // Update modal content
+    modalContent.querySelector('#modal-title').textContent = session.session_title;
+    modalContent.querySelector('#modal-speakers').innerHTML = `<span class="font-semibold">Speakers:</span> ${session.speaker_list.join(', ')}`;
+    modalContent.querySelector('#modal-description').textContent = session.session_description;
+    
+    // Update the detail boxes
+    modalContent.querySelector('#detail-location').textContent = session.location;
+    modalContent.querySelector('#detail-time').textContent = session.start_time;
+    
+    // Handle Prep Link - if TBD, show text, otherwise make it a link
+    const prepLinkElement = modalContent.querySelector('#detail-prep-link');
+    if (session.prep_link === 'TBD') {
+        prepLinkElement.textContent = session.prep_link;
+        prepLinkElement.classList.remove('text-primary', 'hover:text-blue-700');
+        prepLinkElement.classList.add('text-gray-500');
+    } else {
+        prepLinkElement.textContent = 'View Link';
+        prepLinkElement.href = session.prep_link;
+        prepLinkElement.target = '_blank';
+        prepLinkElement.classList.add('text-primary', 'hover:text-blue-700');
+        prepLinkElement.classList.remove('text-gray-500');
+    }
+
+    // Show the modal
+    modal.classList.remove('hidden');
+}
+
+/**
+ * Closes the session details modal.
+ */
+function closeSessionDetails() {
+    document.getElementById('session-modal').classList.add('hidden');
+}
+
+// 🔑 EXPLICITLY ATTACH TO THE GLOBAL WINDOW OBJECT 🔑
+window.showSessionDetails = showSessionDetails;
+window.closeSessionDetails = closeSessionDetails;
+</script>
 <Layout>
   <h1 class="text-center">Schedule</h1>
     <style>
@@ -21,6 +168,17 @@ import Layout from '~/layouts/PageLayout.astro';
         body {
         font-family: 'Inter', sans-serif;
         }
+
+        /* Custom scrollbar for modal content */
+        .modal-content-area::-webkit-scrollbar {
+            width: 8px;
+        }
+        .modal-content-area::-webkit-scrollbar-thumb {
+            background-color: #cbd5e1; /* slate-300 */
+            border-radius: 4px;
+        }
+
+
     </style>
   <section class="w-10/12 mx-auto">
     <div class="w-full max-w-4xl shadow-2xl rounded-xl overflow-hidden border border-gray-200">
@@ -32,10 +190,10 @@ import Layout from '~/layouts/PageLayout.astro';
         <div class="text-gray-800 divide-y divide-gray-200">
 
             <!-- Grid Header Row -->
-            <div class="grid grid-cols-12 font-bold text-base md:text-lg text-white rounded-t-xl">
-                <div class="col-span-2 py-3 px-4 color-blue border-r border-white/50 rounded-tl-xl">Time</div>
+            <div class="grid grid-cols-12 font-bold text-base md:text-lg text-white ">
+                <div class="col-span-2 py-3 px-4 color-blue border-r border-white/50 ">Time</div>
                 <div class="col-span-5 py-3 px-4 color-red border-r border-white/50">Space A</div>
-                <div class="col-span-5 py-3 px-4 color-yellow rounded-tr-xl">Space B</div>
+                <div class="col-span-5 py-3 px-4 color-yellow">Space B</div>
             </div>
 
             <!-- 8:00 AM Registration (Yellow Highlight) -->
@@ -59,33 +217,53 @@ import Layout from '~/layouts/PageLayout.astro';
             <!-- Keynote: We All Need Junior Developers (Blue Text Highlight) -->
             <div class="grid grid-cols-12 bg-light-green-pastel">
                 <div class="col-span-2"></div>
-                <div class="col-span-10 py-1 px-4 font-medium border-l border-gray-200 pl-8 text-blue-primary text-sm">Keynote: We All Need Junior Developers</div>
+                <div class="col-span-10 py-1 px-4 font-medium border-l border-gray-200 pl-8 text-blue-primary text-sm"
+                
+                >
+                <a href="/keynote">
+                  Keynote: We All Need Junior Developers
+                </a>
+              </div>
             </div>
 
             <!-- Concept Pitch Tracks -->
             <div class="grid grid-cols-12 bg-light-green-pastel">
                 <div class="col-span-2"></div>
-                <div class="col-span-10 py-1 px-4 border-l border-gray-200 pl-8 text-sm">Concept Pitch Tracks for GemJam</div>
+                <div class="col-span-10 py-1 px-4 border-l border-gray-200 pl-8 text-sm"
+                  onclick="showSessionDetails('company-pitch-event-horizon-labs')"
+                >
+                  Concept Pitch Tracks for GemJam
+                </div>
             </div>
 
             <!-- 10:00 AM Vontage (Yellow Highlight) -->
-            <div class="grid grid-cols-12 bg-light-yellow-pastel">
+            <div class="grid grid-cols-12 bg-light-yellow-pastel" onclick="showSessionDetails('live-streaming-hackathon-challenge')">
                 <div class="col-span-2 py-3 px-4 font-semibold text-sm md:text-base">10:00 AM</div>
-                <div class="col-span-10 py-3 px-4 border-l border-gray-200 font-medium">Building Community Through Live Streaming using Vonage</div>
+                <div class="col-span-10 py-3 px-4 border-l border-gray-200 font-medium"
+                
+                >Building Community Through Live Streaming using Vonage</div>
             </div>
 
             <!-- 11:00 AM AI Agents / Azure + GenAI -->
-            <div class="grid grid-cols-12 bg-light-green-pastel">
+            <div class="grid grid-cols-12 bg-light-green-pastel" >
                 <div class="col-span-2 py-3 px-4 font-semibold text-sm md:text-base">11:00 AM</div>
-                <div class="col-span-5 py-3 px-4 border-l border-gray-200 text-sm">AI Agents, MCP, Langflow examples</div>
-                <div class="col-span-5 py-3 px-4 border-l border-gray-200 text-sm">Azure + GenAI innovation</div>
+                <div class="col-span-5 py-3 px-4 border-l border-gray-200 text-sm"
+                onclick="showSessionDetails('ai-agents-langflow-examples')"
+                >AI Agents, MCP, Langflow examples</div>
+                <div class="col-span-5 py-3 px-4 border-l border-gray-200 text-sm"
+                onclick="showSessionDetails('product-management-at-scale')"
+                >Azure + GenAI innovation</div>
             </div>
 
             <!-- 11:30 AM Product Management / Github Copilot (Green Text Highlight) -->
             <div class="grid grid-cols-12 bg-light-green-pastel">
                 <div class="col-span-2 py-3 px-4 font-semibold text-sm md:text-base">11:30 AM</div>
-                <div class="col-span-5 py-3 px-4 border-l border-gray-200 text-sm">Product Management at Scale</div>
-                <div class="col-span-5 py-3 px-4 border-l border-gray-200 font-medium text-sm">What's New with Github Copilot with John Papa</div>
+                <div class="col-span-5 py-3 px-4 border-l border-gray-200 text-sm"
+                onclick="showSessionDetails('product-management-at-scale')"
+                >Product Management at Scale</div>
+                <div class="col-span-5 py-3 px-4 border-l border-gray-200 font-medium text-sm" 
+                onclick="showSessionDetails('product-management-at-scale')"
+                >What's New with Github Copilot with John Papa</div>
             </div>
 
             <!-- 12:00 PM Lunch (Purple Highlight) -->
@@ -97,15 +275,23 @@ import Layout from '~/layouts/PageLayout.astro';
             <!-- 1:00 PM Vibe Coding / Gen UI -->
             <div class="grid grid-cols-12 bg-light-green-pastel">
                 <div class="col-span-2 py-3 px-4 font-semibold text-sm md:text-base">1:00 PM</div>
-                <div class="col-span-5 py-3 px-4 border-l border-gray-200 text-sm">Master Controlled "Vibe Coding" Workshop</div>
-                <div class="col-span-5 py-3 px-4 border-l border-gray-200 text-sm">Gen UI, Ephemeral UI with Flutter</div>
+                <div class="col-span-5 py-3 px-4 border-l border-gray-200 text-sm"
+                onclick="showSessionDetails('master-controlled-vibe-coding-workshop')"
+                >Master Controlled "Vibe Coding" Workshop</div>
+                <div class="col-span-5 py-3 px-4 border-l border-gray-200 text-sm"
+                onclick="showSessionDetails('gen-ui-ephemeral-interfaces')"
+                >Gen UI, Ephemeral UI with Flutter</div>
             </div>
 
             <!-- 1:30 PM Hackathon flow / Microsoft Open Hack (Blue Text Highlight) -->
             <div class="grid grid-cols-12 bg-light-green-pastel">
                 <div class="col-span-2 py-3 px-4 font-semibold text-sm md:text-base">1:30 PM</div>
-                <div class="col-span-5 py-3 px-4 border-l border-gray-200 text-sm">Hackathon flow</div>
-                <div class="col-span-5 py-3 px-4 border-l border-gray-200 font-medium text-sm">Microsoft Open Hack</div>
+                <div class="col-span-5 py-3 px-4 border-l border-gray-200 text-sm">
+                  <a target="_blank" href="https://docs.google.com/document/d/e/2PACX-1vRzm7djcGKlIoGF01vPQi41GJqFFzfst2O69iknaZc_CvkIzSx858OHXrk_KOdkZhvVn0VU_joA73k4/pub">
+                  Hackathon project and team planning
+                  </a>
+                </div>
+                <div class="col-span-5 py-3 px-4 border-l border-gray-200 font-medium text-sm" onclick="showSessionDetails('ai-agent-challenge-open-hack')">Microsoft Open Hack</div>
             </div>
 
             <!-- Project Visions / Agent Framework -->
@@ -138,6 +324,62 @@ import Layout from '~/layouts/PageLayout.astro';
 
         </div>
     </div>
+
+
+<!-- Modal HTML Structure -->
+<div id="session-modal" class="fixed inset-0 z-50 hidden bg-gray-900 bg-opacity-75 flex items-center justify-center p-4 transition-opacity duration-300" aria-modal="true" role="dialog">
+    <!-- Modal Card -->
+    <div id="modal-content" class="bg-white rounded-xl shadow-2xl w-full max-w-4xl max-h-[90vh] flex flex-col transform transition-transform duration-300 scale-100">
+        <!-- Modal Header -->
+        <div class="p-6 border-b border-gray-100 flex justify-between items-center bg-primary ">
+            <h2 id="modal-title" class="text-2xl font-bold text-white leading-tight">Session Title</h2>
+            <button onclick="closeSessionDetails()" class="text-white hover:text-gray-200 p-2 rounded-full transition duration-150">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+            </button>
+        </div>
+
+        <!-- Modal Body: Scrollable Content Area -->
+        <div class="modal-content-area p-6 flex-grow overflow-y-auto">
+
+            <!-- Speakers -->
+            <p id="modal-speakers" class="text-lg text-gray-700 mb-4 pb-2 border-b font-medium">
+                <span class="font-semibold text-gray-900">Speakers:</span>
+            </p>
+
+            <!-- Description -->
+            <h3 class="text-xl font-bold text-gray-800 mb-3 border-b-2 pb-1 border-secondary">Session Description</h3>
+            <p id="modal-description" class="text-gray-700 leading-relaxed"></p>
+
+            <!-- Details Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6 text-center">
+                <!-- Location -->
+                <div class="bg-gray-100 p-4 rounded-lg shadow-inner">
+                    <p class="text-sm font-semibold text-gray-500 mb-1">Location</p>
+                    <p id="detail-location" class="text-lg font-bold text-gray-800 italic">TBD</p>
+                </div>
+                <!-- Time -->
+                <div class="bg-gray-100 p-4 rounded-lg shadow-inner">
+                    <p class="text-sm font-semibold text-gray-500 mb-1">Start Time</p>
+                    <p id="detail-time" class="text-lg font-bold text-gray-800 italic">TBD</p>
+                </div>
+                <!-- Prep Link -->
+                <div class="bg-gray-100 p-4 rounded-lg shadow-inner">
+                    <p class="text-sm font-semibold text-gray-500 mb-1">Preparation Link</p>
+                    <a id="detail-prep-link" href="#" class="text-lg font-bold text-gray-500 hover:underline">TBD</a>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Modal Footer -->
+        <div class="p-4 border-t border-gray-100 text-right rounded-b-xl">
+            <button onclick="closeSessionDetails()" class="px-6 py-2 bg-gray-200 text-gray-700 font-semibold rounded-lg hover:bg-gray-300 transition duration-150 shadow">
+                Close
+            </button>
+        </div>
+    </div>
+</div>
+
 
   </section>
 </Layout>
