@@ -27,37 +27,37 @@ const posts = await getCollection('post');
 
 const metadata = {
   title: 'DevFest GemJam | Oct 25',
-  description: 'Build the Future with AI. A week-long hackathon designed to spark innovation with Google\'s AI technologies.',
+  description:
+    "Build the Future with AI. A week-long hackathon designed to spark innovation with Google's AI technologies.",
 };
-
 ---
+
 <style>
-.sectionHero
-{
-   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 2)),url('~/assets/images/devfest-hero.png');      
-}
+  .sectionHero {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 2)), url('~/assets/images/devfest-hero.jpg');
+  }
 </style>
 <Layout metadata={metadata}>
-  
   <!-- Hero Section -->
   <section id="home" class="relative sectionHero min-h-screen flex items-center justify-center text-center p-4 pt-24">
     <div class="relative z-10 max-w-4xl mx-auto">
       <h2 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-white leading-tight mb-4">
         DevFest GemJam
       </h2>
-      <p class="text-xl sm:text-2xl md:text-3xl font-light mb-8 text-white">
-        Collaboration | Make Apps | GenAI
-      </p>
-      <p class="text-xl sm:text-2xl md:text-3xl font-light mb-8 text-white">
-        Join us Oct 25th
+      <p class="text-xl sm:text-2xl md:text-3xl font-light mb-8 text-white">Collaboration | Make Apps | GenAI</p>
+      <p class="text-xl sm:text-2xl md:text-3xl font-light mb-8 text-white">Join us Oct 25th</p>
+      <p class="text-white">
+        DevFest GemJam is a welcoming space where people of all backgrounds come together to imagine, build, and share
+        ideas for a better future. Instead of focusing on competition or speed, we emphasize collaboration, creativity,
+        and community impact. With AI transforming the world, we approach it as a tool for augmentation, not replacement
+        — a partner that supports human creativity, connection, and problem-solving.
       </p>
       <p class="text-white">
-      DevFest GemJam is a welcoming space where people of all backgrounds come together to imagine, build, and share ideas for a better future. Instead of focusing on competition or speed, we emphasize collaboration, creativity, and community impact. With AI transforming the world, we approach it as a tool for augmentation, not replacement — a partner that supports human creativity, connection, and problem-solving.
+        At this event, participants explore how to use AI responsibly and ethically, ensuring that innovation is guided
+        by inclusivity, fairness, and care for people. Whether you’re a coder, designer, storyteller, or community
+        builder, there’s a place for your voice. Together, we’ll create solutions that reflect both human ingenuity and
+        human values.
       </p>
-      <p class="text-white">
-        At this event, participants explore how to use AI responsibly and ethically, ensuring that innovation is guided by inclusivity, fairness, and care for people. Whether you’re a coder, designer, storyteller, or community builder, there’s a place for your voice. Together, we’ll create solutions that reflect both human ingenuity and human values.      
-      </p>
-
 
       <!-- Countdown Timer -->
       <div id="countdown" class="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-12 text-white">
@@ -79,7 +79,12 @@ const metadata = {
         </div>
       </div>
       <!-- Main CTA Button -->
-      <a id="register" href="https://www.eventbrite.com/e/devfest-gemjam-tickets-1032640023107?aff=oddtdtcreator" target="_blank" class="glow-button bg-purple-600 hover:bg-purple-700 text-white font-bold text-lg py-4 px-12 rounded-full transition-colors duration-300 transform inline-block">
+      <a
+        id="register"
+        href="https://www.eventbrite.com/e/devfest-gemjam-tickets-1032640023107?aff=oddtdtcreator"
+        target="_blank"
+        class="glow-button bg-purple-600 hover:bg-purple-700 text-white font-bold text-lg py-4 px-12 rounded-full transition-colors duration-300 transform inline-block"
+      >
         Register Now
       </a>
     </div>
@@ -90,24 +95,33 @@ const metadata = {
     <div class="text-center mb-12">
       <h3 class="text-3xl font-bold text-white mb-4">About the Event</h3>
       <p class="text-lg text-gray-400 max-w-2xl mx-auto">
-        Join us for an electrifying, week-long sprint building GenAi powered apps—a flagship DevFest event designed to spark innovation and connect the brightest minds in tech. This is your unparalleled opportunity to dive deep into the thrilling realm of AI agents and discover how they seamlessly integrate with the cutting-edge power of Google's technologies.
+        Join us for an electrifying, week-long sprint building GenAi powered apps—a flagship DevFest event designed to
+        spark innovation and connect the brightest minds in tech. This is your unparalleled opportunity to dive deep
+        into the thrilling realm of AI agents and discover how they seamlessly integrate with the cutting-edge power of
+        Google's technologies.
       </p>
     </div>
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
       <div class="bg-amber-400 p-6 rounded-xl shadow-lg">
         <div class="text-4xl text-purple-400 mb-4">🤖</div>
         <h4 class="text-xl font-bold mb-2 text-black">Build with AI</h4>
-        <p class="text-black">Craft groundbreaking solutions using Google's Gemini AI suite, Google Cloud Platform, and Firebase.</p>
+        <p class="text-black">
+          Craft groundbreaking solutions using Google's Gemini AI suite, Google Cloud Platform, and Firebase.
+        </p>
       </div>
       <div class="bg-amber-400 p-6 rounded-xl shadow-lg">
         <div class="text-4xl text-purple-400 mb-4">🔗</div>
         <h4 class="text-xl font-bold mb-2 text-black">Forge Connections</h4>
-        <p class="text-black">Network with brilliant developers, share insights, and form lasting friendships and collaborations.</p>
+        <p class="text-black">
+          Network with brilliant developers, share insights, and form lasting friendships and collaborations.
+        </p>
       </div>
       <div class="bg-amber-400 p-6 rounded-xl shadow-lg">
         <div class="text-4xl text-purple-400 mb-4">📈</div>
-        <h4 class="text-xl font-bold mb-2  text-black">Elevate Your Profile</h4>
-        <p class="text-black">Showcase your ingenuity and build impressive projects that will make your portfolio shine.</p>
+        <h4 class="text-xl font-bold mb-2 text-black">Elevate Your Profile</h4>
+        <p class="text-black">
+          Showcase your ingenuity and build impressive projects that will make your portfolio shine.
+        </p>
       </div>
     </div>
   </section>
@@ -126,7 +140,8 @@ const metadata = {
           <a href="app-mvp-rules">Software Prototype</a>
         </h4>
         <p class="text-gray-400">
-          Develop a working MVP (Minimum Viable Product) of a high-impact software app or game enabled by AI. Bring your code to life and showcase your technical prowess.
+          Develop a working MVP (Minimum Viable Product) of a high-impact software app or game enabled by AI. Bring your
+          code to life and showcase your technical prowess.
         </p>
       </div>
       <div class="bg-blue-800 p-8 rounded-xl shadow-lg border border-purple-600">
@@ -134,7 +149,8 @@ const metadata = {
           <a href="app-pitch">App Pitch</a>
         </h4>
         <p class="text-gray-400">
-          Pitch a design and concept of operations for an app. Perfect for designers, project managers, and innovators who want to focus on strategy, user experience, and business potential.
+          Pitch a design and concept of operations for an app. Perfect for designers, project managers, and innovators
+          who want to focus on strategy, user experience, and business potential.
         </p>
       </div>
       <div class="bg-blue-800 p-8 rounded-xl shadow-lg border border-purple-600">
@@ -142,22 +158,19 @@ const metadata = {
           <a href="company-pitch">Singularity Startup Pitch</a>
         </h4>
         <p class="text-gray-400">
-          Your team of Product Managers are tasked with creating a business plan + product definition for Event Horizon Labs.
-          Imagine a strong business concept that leverages AI that surpasses human intelligence.
+          Your team of Product Managers are tasked with creating a business plan + product definition for Event Horizon
+          Labs. Imagine a strong business concept that leverages AI that surpasses human intelligence.
         </p>
-      </div>      
+      </div>
     </div>
   </section>
 
-
-<section id="community" class="container mx-auto py-16 px-4 md:px-8 lg:px-12">
+  <section id="community" class="container mx-auto py-16 px-4 md:px-8 lg:px-12">
     <div class="text-center mb-12">
       <h3 class="text-3xl font-bold text-white mb-4">Our Community</h3>
     </div>
-    <img src={DevFestFans.src} alt="Meet our DevFest Fans">
-</section>
-
-
+    <img src={DevFestFans.src} alt="Meet our DevFest Fans" />
+  </section>
 
   <!-- Schedule Section -->
   <section id="schedule" class="container mx-auto py-16 px-4 md:px-8 lg:px-12">
@@ -170,7 +183,9 @@ const metadata = {
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
       <div class="bg-yellow-200 rounded-3xl border-solid border-4 border-black dark:text-black m-2 p-2 md:m-10 md:p-10">
         <h4 class="text-2xl font-bold mb-2 text-black">Oct 25: Kickoff</h4>
-        <p class="text-black-400">The excitement begins! Registration, keynote, hands-on workshops and team formation.</p>
+        <p class="text-black-400">
+          The excitement begins! Registration, keynote, hands-on workshops and team formation.
+        </p>
       </div>
       <div class="bg-yellow-200 rounded-3xl border-solid border-4 border-black dark:text-black m-2 p-2 md:m-10 md:p-10">
         <h4 class="text-2xl font-bold mb-2 text-black">Oct 26 - Oct 31: Build & Iterate</h4>
@@ -178,7 +193,10 @@ const metadata = {
       </div>
       <div class="bg-yellow-200 rounded-3xl border-solid border-4 border-black dark:text-black m-2 p-2 md:m-10 md:p-10">
         <h4 class="text-2xl font-bold mb-2 text-black">Nov 2: Demo Day</h4>
-        <p class="text-black-400">Final presentations, project celebration, and networking with the community at <a href="https://innovateorlando.io/tech-hub-orlando/">Tech Hub Orlando</a>
+        <p class="text-black-400">
+          Final presentations, project celebration, and networking with the community at <a
+            href="https://innovateorlando.io/tech-hub-orlando/">Tech Hub Orlando</a
+          >
         </p>
       </div>
     </div>
@@ -187,100 +205,101 @@ const metadata = {
   <!-- Sponsors Section -->
   <section id="sponsors" class="container mx-auto py-16 px-4 md:px-8 lg:px-12">
     <div class="text-center mb-12">
-      <h3 class="text-3xl font-bold text-white mb-4">Our 2024 Sponsors</h3>     
+      <h3 class="text-3xl font-bold text-white mb-4">Our 2025 Sponsors</h3>
     </div>
-    <Sponsor>
+    <Sponsor />
+
+    <br /><br /><br />
+    <h2 class="w-10/12 mx-auto text-center mt-4">Venue</h2>
+    <Venue />
   </section>
 
+  <!-- JavaScript for Countdown Timer and Mobile Menu -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const countdownDate = new Date('October 25, 2025 09:00:00').getTime();
+      const mobileMenuButton = document.getElementById('mobile-menu-button');
+      const mobileMenu = document.getElementById('mobile-menu');
 
+      // Countdown Timer Logic
+      const x = setInterval(function () {
+        const now = new Date().getTime();
+        const distance = countdownDate - now;
 
-  <br><br><br>
-  <h2 class="w-10/12 mx-auto text-center mt-4">Venue</h2>
-  <Venue />
+        // Calculate time units
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-</Layout>
+        // Update the elements
+        const daysEl = document.getElementById('days');
+        const hoursEl = document.getElementById('hours');
+        const minutesEl = document.getElementById('minutes');
+        const secondsEl = document.getElementById('seconds');
 
-<!-- JavaScript for Countdown Timer and Mobile Menu -->
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const countdownDate = new Date("October 25, 2025 09:00:00").getTime();
-    const mobileMenuButton = document.getElementById('mobile-menu-button');
-    const mobileMenu = document.getElementById('mobile-menu');
+        if (daysEl) daysEl.innerHTML = String(days).padStart(2, '0');
+        if (hoursEl) hoursEl.innerHTML = String(hours).padStart(2, '0');
+        if (minutesEl) minutesEl.innerHTML = String(minutes).padStart(2, '0');
+        if (secondsEl) secondsEl.innerHTML = String(seconds).padStart(2, '0');
 
-    // Countdown Timer Logic
-    const x = setInterval(function() {
-      const now = new Date().getTime();
-      const distance = countdownDate - now;
-
-      // Calculate time units
-      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-      // Update the elements
-      const daysEl = document.getElementById("days");
-      const hoursEl = document.getElementById("hours");
-      const minutesEl = document.getElementById("minutes");
-      const secondsEl = document.getElementById("seconds");
-
-      if (daysEl) daysEl.innerHTML = String(days).padStart(2, '0');
-      if (hoursEl) hoursEl.innerHTML = String(hours).padStart(2, '0');
-      if (minutesEl) minutesEl.innerHTML = String(minutes).padStart(2, '0');
-      if (secondsEl) secondsEl.innerHTML = String(seconds).padStart(2, '0');
-
-
-      // If the countdown is finished, show a message
-      if (distance < 0) {
-        clearInterval(x);
-        const countdownEl = document.getElementById("countdown");
-        if (countdownEl) {
+        // If the countdown is finished, show a message
+        if (distance < 0) {
+          clearInterval(x);
+          const countdownEl = document.getElementById('countdown');
+          if (countdownEl) {
             countdownEl.innerHTML = `<div class=\"text-center text-xl sm:text-2xl md:text-3xl font-bold text-purple-400 col-span-4\">The event has begun!</div>`;
+          }
         }
-      }
-    }, 1000);
+      }, 1000);
 
-    // Mobile Menu Toggle Logic
-    if (mobileMenuButton && mobileMenu) {
+      // Mobile Menu Toggle Logic
+      if (mobileMenuButton && mobileMenu) {
         mobileMenuButton.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
+          mobileMenu.classList.toggle('hidden');
         });
 
         // Close mobile menu when a link is clicked
-        mobileMenu.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.add('hidden');
-            });
+        mobileMenu.querySelectorAll('a').forEach((link) => {
+          link.addEventListener('click', () => {
+            mobileMenu.classList.add('hidden');
+          });
         });
-    }
-  });
-</script>
+      }
+    });
+  </script>
 
-<style>
-  /* Existing styles from devfest-hackathon.html */
-  body {
+  <style>
+    /* Existing styles from devfest-hackathon.html */
+    body {
       font-family: 'Inter', sans-serif;
-      color: #E2E8F0; /* Light gray text for dark background */
-  }
-  /* A subtle animation for the hero background */
-  @keyframes subtle-fade {
-      0%, 100% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-  }
-  .hero-bg {
-      background: linear-gradient(-45deg, #1A202C, #2D3748, #1A202C, #2D3748);
+      color: #e2e8f0; /* Light gray text for dark background */
+    }
+    /* A subtle animation for the hero background */
+    @keyframes subtle-fade {
+      0%,
+      100% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+    }
+    .hero-bg {
+      background: linear-gradient(-45deg, #1a202c, #2d3748, #1a202c, #2d3748);
       background-size: 400% 400%;
       animation: subtle-fade 15s ease infinite;
-  }
-  .glow-button {
+    }
+    .glow-button {
       transition: all 0.3s ease;
       box-shadow: 0 0 15px rgba(139, 92, 246, 0.4);
-  }
-  .glow-button:hover {
+    }
+    .glow-button:hover {
       box-shadow: 0 0 25px rgba(139, 92, 246, 0.6);
       transform: scale(1.05);
-  }
+    }
 
     /* Additional styles from /src/assets/styles/tailwind.css if needed */
     /* Assuming Tailwind is configured in astro.config.mjs and applied via the Layout */
-</style>
+  </style>
+</Layout>
