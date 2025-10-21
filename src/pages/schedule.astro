@@ -29,7 +29,7 @@ const sessionData = [
   },
   {
     "session_id": "ai-agent-challenge-open-hack",
-    "session_title": "Open Hack: AI Agent Challenge",
+    "session_title": "Beyond the Chatbot: The AI Agent and MCP Open Hack Challenge",
     "speaker_list": [
       "Anthony Bartolo",
       "Dan Wahlin",
@@ -37,7 +37,7 @@ const sessionData = [
     ],
     "session_description": "The Microsoft Azure AI Agent Open Hack is a hands-on 3-hour challenge-based activity where developers explore how Azure AI Foundry can be used to create agents that simulate real-world scenarios. Participants will learn to build AI agents that improve business efficiency, apply Azure AI in practical contexts, and adopt best practices with VS Code and GitHub Copilot. The event also offers opportunities to network with Microsoft experts.",
     "location": "TBD",
-    "start_time": "11:00am and 1:00pm",
+    "start_time": "1:00pm",
     "prep_link": "TBD"
   },
   {
@@ -82,7 +82,7 @@ const sessionData = [
     ],
     "session_description": "The static interface era is ending. This session explores \'Fleeting Interfaces\' - ephemeral UIs that intelligently evolve without explicit programming. Through schema-driven architecture in Flutter, powered by Gemini for decision-making, it demonstrates how interfaces become living temporal experiences, responding to usage patterns and context.",
     "location": "TBD",
-    "start_time": "TBD",
+    "start_time": "11:00am",
     "prep_link": "TBD"
   },
   {
@@ -93,7 +93,7 @@ const sessionData = [
     ],
     "session_description": "This workshop is an enterprise playbook for mastering the agentic future on Google Cloud, providing an end-to-end roadmap from idea to a full-scale, operational Agentverse. Participants will learn how the skills of a developer, architect, data engineer, and SRE converge to create, manage, and scale a powerful Agentverse. Preparation tools include: Gemini CLI, Google Cloud account, Firebase, and Firebase Studio.",
     "location": "TBD",
-    "start_time": "TBD",
+    "start_time": "1:00pm",
     "prep_link": "TBD"
   },
   {
@@ -104,7 +104,7 @@ const sessionData = [
     ],
     "session_description": "Discover the Google Agent Development Kit (ADK), a robust, \'batteries-included\' framework for building and deploying scalable, enterprise-grade AI agents. This talk explores how ADK simplifies complex multi-agent workflows and offers a streamlined path from prototype to deployment using Google Cloud Platform and your favorite LLM tools.",
     "location": "TBD",
-    "start_time": "TBD",
+    "start_time": "3:30pm",
     "prep_link": "TBD"
   }
 ]
@@ -261,11 +261,11 @@ window.closeSessionDetails = closeSessionDetails;
                 <div class="col-span-5 py-3 px-4 border-l border-gray-200 text-sm cursor-pointer"
                 onclick="showSessionDetails('ai-agents-langflow-examples')"
                 >AI Agents, MCP, Langflow examples</div>
+
                 <div class="col-span-5 py-3 px-4 border-l border-gray-200 text-sm cursor-pointer"
-                onclick="showSessionDetails('ai-agent-challenge-open-hack')"
-                >
-                Open Hack: AI Agent Challenge
-              </div>
+                onclick="showSessionDetails('gen-ui-ephemeral-interfaces')"
+                >Gen UI, Ephemeral UI with Flutter</div>
+
             </div>
 
             <!-- 11:30 AM Product Management / Github Copilot (Green Text Highlight) -->
@@ -291,9 +291,11 @@ window.closeSessionDetails = closeSessionDetails;
                 <div class="col-span-5 py-3 px-4 border-l border-gray-200 text-sm cursor-pointer"
                 onclick="showSessionDetails('master-controlled-vibe-coding-workshop')"
                 >Master Controlled "Vibe Coding" Workshop</div>
-                <div class="col-span-5 py-3 px-4 border-l border-gray-200 text-sm cursor-pointer"
-                onclick="showSessionDetails('gen-ui-ephemeral-interfaces')"
-                >Gen UI, Ephemeral UI with Flutter</div>
+              <div class="col-span-5 py-3 px-4 border-l border-gray-200 text-sm cursor-pointer"
+                onclick="showSessionDetails('ai-agent-challenge-open-hack')"
+                >
+                Beyond the Chatbot: The AI Agent and MCP Open Hack Challenge
+              </div>               
             </div>
 
             <!-- 1:30 PM Hackathon flow / Microsoft Open Hack (Blue Text Highlight) -->
@@ -327,6 +329,17 @@ window.closeSessionDetails = closeSessionDetails;
                 <div class="col-span-5 py-1 px-4 border-l border-gray-200 pl-8 text-sm">Sprint planning</div>
                 <div class="col-span-5 py-1 px-4 border-l border-gray-200 pl-8 text-sm">* Enable Shopping Experience using Agents</div>
             </div>
+
+            <!-- 3:30 PM Closing (Yellow Highlight) -->
+            <div class="grid grid-cols-12 bg-light-green-pastel">
+              <div class="col-span-2 py-3 px-4 font-semibold text-sm md:text-base">3:30 PM</div>
+              <div class="col-span-5 py-3 px-4 border-l border-gray-200"
+                onclick="showSessionDetails('collaborative-ai-google-adk')"
+              >
+              Google Agent Development Kit (ADK) Workshop
+              </div>
+              <div class="col-span-5 py-3 px-4 border-l border-gray-200 rounded-br-xl">Microsoft Open Hack</div>
+            </div>            
 
             <!-- 4:30 PM Closing (Yellow Highlight) -->
             <div class="grid grid-cols-12 bg-light-yellow-pastel font-bold rounded-b-xl">
