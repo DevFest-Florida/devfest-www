@@ -74,6 +74,7 @@ export const footerData = {
     },
   ],
   secondaryLinks: [
+    { text: 'Orlando 2025', href: getPermalink('/2025') },
     { text: 'Orlando 2024', href: getPermalink('/orlando') },
     { text: 'Orlando 2023', href: 'https://2023-orlando.devfestflorida.com/' },
     { text: 'Tampa 2024', href: 'https://devfesttampa.com/' },
