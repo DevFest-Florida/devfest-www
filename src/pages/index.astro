@@ -22,13 +22,15 @@ import Steps2 from '~/components/widgets/Steps2.astro';
 import Testimonials from '~/components/widgets/Testimonials.astro';
 import Venue from '~/components/orlando/Venue.astro';
 import DevFestFans from '~/assets/images/devfest-fans.jpg';
+import DevFestSaveTheDate2026 from '~/assets/images/2026/devFestFloridaSaveTheDate2026.png';
+import GdgCentralFloridaLogo from '~/assets/images/2026/GDG ProfessionalHorizontalLight.png';
 
 const posts = await getCollection('post');
 
 const metadata = {
-  title: 'DevFest GemJam | Oct 25',
+  title: 'DevFest Hackathon 2026 | November 6–8',
   description:
-    "Build the Future with AI. A week-long hackathon designed to spark innovation with Google's AI technologies.",
+    'Save the date for DevFest Hackathon 2026, November 6–8. Venue and registration details are coming soon.',
 };
 ---
 
@@ -42,12 +44,12 @@ const metadata = {
   <section id="home" class="relative sectionHero min-h-screen flex items-center justify-center text-center p-4 pt-24">
     <div class="relative z-10 max-w-4xl mx-auto">
       <h2 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-white leading-tight mb-4">
-        DevFest GemJam
+        DevFest Hackathon 2026
       </h2>
-      <p class="text-xl sm:text-2xl md:text-3xl font-light mb-8 text-white">Collaboration | Make Apps | GenAI</p>
-      <p class="text-xl sm:text-2xl md:text-3xl font-light mb-8 text-white">Join us Oct 25th</p>
+      <p class="text-xl sm:text-2xl md:text-3xl font-light mb-8 text-white">Build, Innovate & Connect</p>
+      <p class="text-xl sm:text-2xl md:text-3xl font-light mb-8 text-white">November 6–8, 2026</p>
       <p class="text-white">
-        DevFest GemJam is a welcoming space where people of all backgrounds come together to imagine, build, and share
+        DevFest Hackathon 2026 is a welcoming space where people of all backgrounds come together to imagine, build, and share
         ideas for a better future. Instead of focusing on competition or speed, we emphasize collaboration, creativity,
         and community impact. With AI transforming the world, we approach it as a tool for augmentation, not replacement
         — a partner that supports human creativity, connection, and problem-solving.
@@ -60,24 +62,41 @@ const metadata = {
       </p>
 
       <!-- Countdown Timer -->
-      <div id="countdown" class="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-12 text-white">
-        <div class="bg-gray-800 p-4 rounded-xl shadow-lg">
-          <div id="days" class="text-4xl sm:text-5xl font-bold">00</div>
-          <div class="text-sm font-light uppercase tracking-widest mt-2 text-gray-400">Days</div>
+      <div
+        id="countdown"
+        class="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-12 text-white"
+        role="group"
+        aria-labelledby="countdown-heading"
+      >
+        <p id="countdown-heading" class="sr-only">Time remaining until DevFest Hackathon 2026 begins</p>
+        <div data-countdown-card class="rounded-xl border-t-4 border-[#4285f4] bg-[#1e1e1e] p-4 shadow-lg" aria-hidden="true">
+          <time id="days" class="text-4xl font-bold text-[#4285f4] sm:text-5xl">00</time>
+          <div class="mt-2 text-sm font-light uppercase tracking-widest text-gray-300">Days</div>
         </div>
-        <div class="bg-gray-800 p-4 rounded-xl shadow-lg">
-          <div id="hours" class="text-4xl sm:text-5xl font-bold">00</div>
-          <div class="text-sm font-light uppercase tracking-widest mt-2 text-gray-400">Hours</div>
+        <div data-countdown-card class="rounded-xl border-t-4 border-[#ea4335] bg-[#1e1e1e] p-4 shadow-lg" aria-hidden="true">
+          <time id="hours" class="text-4xl font-bold text-[#ea4335] sm:text-5xl">00</time>
+          <div class="mt-2 text-sm font-light uppercase tracking-widest text-gray-300">Hours</div>
         </div>
-        <div class="bg-gray-800 p-4 rounded-xl shadow-lg">
-          <div id="minutes" class="text-4xl sm:text-5xl font-bold">00</div>
-          <div class="text-sm font-light uppercase tracking-widest mt-2 text-gray-400">Minutes</div>
+        <div data-countdown-card class="rounded-xl border-t-4 border-[#f9ab00] bg-[#1e1e1e] p-4 shadow-lg" aria-hidden="true">
+          <time id="minutes" class="text-4xl font-bold text-[#f9ab00] sm:text-5xl">00</time>
+          <div class="mt-2 text-sm font-light uppercase tracking-widest text-gray-300">Minutes</div>
         </div>
-        <div class="bg-gray-800 p-4 rounded-xl shadow-lg">
-          <div id="seconds" class="text-4xl sm:text-5xl font-bold">00</div>
-          <div class="text-sm font-light uppercase tracking-widest mt-2 text-gray-400">Seconds</div>
+        <div data-countdown-card class="rounded-xl border-t-4 border-[#34a853] bg-[#1e1e1e] p-4 shadow-lg" aria-hidden="true">
+          <time id="seconds" class="text-4xl font-bold text-[#34a853] sm:text-5xl">00</time>
+          <div class="mt-2 text-sm font-light uppercase tracking-widest text-gray-300">Seconds</div>
         </div>
+        <p id="countdown-complete" class="col-span-2 hidden text-center text-2xl font-bold text-[#f0f0f0] sm:col-span-4 sm:text-3xl">
+          The event has kicked off!!
+        </p>
       </div>
+      <p id="countdown-status" class="sr-only" role="status" aria-live="polite" aria-atomic="true"></p>
+      <aside
+        class="mb-8 rounded-2xl border-l-4 border-[#4285f4] bg-[#f0f0f0]/95 px-5 py-4 text-left text-[#1e1e1e] shadow-lg sm:px-6"
+        aria-label="DevFest Hackathon 2026 planning status"
+      >
+        <p class="text-lg font-bold sm:text-xl">Save the date — November 6–8, 2026</p>
+        <p class="mt-1 text-sm sm:text-base">Venue and registration details are coming soon.</p>
+      </aside>
       <!-- Main CTA Button -->
       <a
         id="register"
@@ -87,6 +106,21 @@ const metadata = {
       >
         Register Now
       </a>
+    </div>
+  </section>
+
+  <section class="container mx-auto px-4 py-12 md:px-8 lg:px-12" aria-labelledby="save-the-date-heading">
+    <div class="mx-auto max-w-6xl">
+      <h2 id="save-the-date-heading" class="sr-only">Save the date for DevFest Hackathon 2026</h2>
+      <img
+        src={DevFestSaveTheDate2026.src}
+        alt="Save the date for DevFest Florida Hackathon, November 6 through 8, 2026, in Orlando, Florida"
+        width={DevFestSaveTheDate2026.width}
+        height={DevFestSaveTheDate2026.height}
+        loading="lazy"
+        decoding="async"
+        class="h-auto w-full rounded-3xl border border-slate-700 shadow-2xl"
+      />
     </div>
   </section>
 
@@ -177,7 +211,7 @@ const metadata = {
     <div class="text-center mb-12">
       <h3 class="text-3xl font-bold text-white mb-4">Agenda</h3>
       <p class="text-lg text-gray-400 max-w-2xl mx-auto">
-        The GemJam is a week-long collaboration and creative sprint, with an in-person kickoff and demo day.
+        The DevFest Hackathon is a week-long collaboration and creative sprint, with an in-person kickoff and demo day.
       </p>
     </div>
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -214,17 +248,43 @@ const metadata = {
     <Venue />
   </section>
 
+  <section class="border-t border-slate-700 bg-[#f0f0f0] px-4 py-10 text-center" aria-labelledby="organized-by-heading">
+    <div class="mx-auto max-w-5xl">
+      <h2 id="organized-by-heading" class="mb-5 text-sm font-semibold uppercase tracking-[0.2em] text-[#1e1e1e]">
+        Organized by
+      </h2>
+      <img
+        src={GdgCentralFloridaLogo.src}
+        alt="Google Developer Group Central Florida"
+        width={GdgCentralFloridaLogo.width}
+        height={GdgCentralFloridaLogo.height}
+        loading="lazy"
+        decoding="async"
+        class="mx-auto h-auto w-full max-w-3xl object-contain"
+      />
+    </div>
+  </section>
+
   <!-- JavaScript for Countdown Timer and Mobile Menu -->
   <script>
     document.addEventListener('DOMContentLoaded', () => {
-      const countdownDate = new Date('October 25, 2025 09:00:00').getTime();
+      const countdownDate = new Date('2026-11-06T09:00:00-05:00').getTime();
       const mobileMenuButton = document.getElementById('mobile-menu-button');
       const mobileMenu = document.getElementById('mobile-menu');
 
       // Countdown Timer Logic
-      const x = setInterval(function () {
-        const now = new Date().getTime();
-        const distance = countdownDate - now;
+      const countdownCards = document.querySelectorAll('[data-countdown-card]');
+      const countdownCompleteEl = document.getElementById('countdown-complete');
+      const countdownStatusEl = document.getElementById('countdown-status');
+      const daysEl = document.getElementById('days');
+      const hoursEl = document.getElementById('hours');
+      const minutesEl = document.getElementById('minutes');
+      const secondsEl = document.getElementById('seconds');
+      let countdownInterval: number | undefined;
+      let lastAnnouncedMinute: number | undefined;
+
+      const updateCountdown = () => {
+        const distance = Math.max(0, countdownDate - Date.now());
 
         // Calculate time units
         const days = Math.floor(distance / (1000 * 60 * 60 * 24));
@@ -232,26 +292,31 @@ const metadata = {
         const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
         const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-        // Update the elements
-        const daysEl = document.getElementById('days');
-        const hoursEl = document.getElementById('hours');
-        const minutesEl = document.getElementById('minutes');
-        const secondsEl = document.getElementById('seconds');
+        if (daysEl) daysEl.textContent = String(days).padStart(2, '0');
+        if (hoursEl) hoursEl.textContent = String(hours).padStart(2, '0');
+        if (minutesEl) minutesEl.textContent = String(minutes).padStart(2, '0');
+        if (secondsEl) secondsEl.textContent = String(seconds).padStart(2, '0');
 
-        if (daysEl) daysEl.innerHTML = String(days).padStart(2, '0');
-        if (hoursEl) hoursEl.innerHTML = String(hours).padStart(2, '0');
-        if (minutesEl) minutesEl.innerHTML = String(minutes).padStart(2, '0');
-        if (secondsEl) secondsEl.innerHTML = String(seconds).padStart(2, '0');
-
-        // If the countdown is finished, show a message
-        if (distance < 0) {
-          clearInterval(x);
-          const countdownEl = document.getElementById('countdown');
-          if (countdownEl) {
-            countdownEl.innerHTML = `<div class=\"text-center text-xl sm:text-2xl md:text-3xl font-bold text-purple-400 col-span-4\">The event has begun!</div>`;
-          }
+        if (distance === 0) {
+          countdownCards.forEach((card) => card.classList.add('hidden'));
+          countdownCompleteEl?.classList.remove('hidden');
+          if (countdownStatusEl) countdownStatusEl.textContent = 'The event has kicked off!!';
+          if (countdownInterval) window.clearInterval(countdownInterval);
+          return false;
         }
-      }, 1000);
+
+        const totalMinutes = Math.floor(distance / (1000 * 60));
+        if (totalMinutes !== lastAnnouncedMinute && countdownStatusEl) {
+          countdownStatusEl.textContent = `${days} days, ${hours} hours, and ${minutes} minutes until DevFest Hackathon 2026 begins.`;
+          lastAnnouncedMinute = totalMinutes;
+        }
+
+        return true;
+      };
+
+      if (updateCountdown()) {
+        countdownInterval = window.setInterval(updateCountdown, 1000);
+      }
 
       // Mobile Menu Toggle Logic
       if (mobileMenuButton && mobileMenu) {

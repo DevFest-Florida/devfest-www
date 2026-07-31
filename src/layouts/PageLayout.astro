@@ -3,6 +3,7 @@ import Layout from '~/layouts/Layout.astro';
 import Header from '~/components/widgets/Header.astro';
 import Footer from '~/components/widgets/Footer.astro';
 import Announcement from '~/components/widgets/Announcement.astro';
+import DevFest2026Logo from '~/assets/images/2026/DF26-Logo-Lockup-Secondary.png';
 
 import { headerData, footerData } from '~/navigation';
 
@@ -17,7 +18,14 @@ const { metadata } = Astro.props;
 
 <Layout metadata={metadata}>
   <slot name="header">
-    <Header {...headerData} isSticky showRssFeed showToggleTheme />
+    <Header
+      {...headerData}
+      logo={{ src: DevFest2026Logo.src, alt: 'DevFest 2026', label: '🌴 Florida 🏖️' }}
+      position="left"
+      isSticky
+      showRssFeed
+      showToggleTheme
+    />
   </slot>
   <main>
     <slot />
