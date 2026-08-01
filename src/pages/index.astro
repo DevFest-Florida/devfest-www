@@ -1,5 +1,6 @@
 ---
 import { getCollection } from 'astro:content';
+import { Icon } from 'astro-icon/components';
 import Layout from '~/layouts/PageLayout.astro';
 
 import About from '~/components/orlando/About.astro';
@@ -99,12 +100,12 @@ const metadata = {
       </aside>
       <!-- Main CTA Button -->
       <a
-        id="register"
-        href="https://www.eventbrite.com/e/devfest-gemjam-tickets-1032640023107?aff=oddtdtcreator"
-        target="_blank"
-        class="glow-button bg-purple-600 hover:bg-purple-700 text-white font-bold text-lg py-4 px-12 rounded-full transition-colors duration-300 transform inline-block"
+        href="mailto:organizers@devfestflorida.com?subject=DevFest%20Hackathon%202026%20Sponsorship"
+        aria-label="Email the DevFest Florida organizers about sponsorship"
+        class="inline-flex items-center justify-center gap-2 rounded-full bg-[#4285f4] px-12 py-4 text-lg font-bold text-white shadow-lg transition-colors duration-300 hover:bg-[#3367d6] focus:outline-none focus-visible:ring-4 focus-visible:ring-[#c3ecf6] focus-visible:ring-offset-2 focus-visible:ring-offset-[#1e1e1e]"
       >
-        Register Now
+        <Icon name="tabler:mail" class="h-5 w-5" aria-hidden="true" />
+        Become a Sponsor
       </a>
     </div>
   </section>
