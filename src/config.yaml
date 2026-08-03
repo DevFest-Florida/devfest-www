@@ -16,9 +16,9 @@ metadata:
   openGraph:
     site_name: DevFest Florida
     images:
-      - url: '~/assets/images/devfest-hackathon-2025-date.png'
-        width: 1920
-        height: 1080
+      - url: '~/assets/images/2026/devFestFloridaSaveTheDate2026.png'
+        width: 2816
+        height: 1536
     type: website
   twitter:
     handle: '@devfestfl'

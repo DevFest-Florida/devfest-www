@@ -9,19 +9,19 @@ export const headerData = {
     {
       text: 'Keynote',
       href: getPermalink('/keynote'),
-    },    
+    },
     {
       text: 'Speakers',
       href: getPermalink('/speakers'),
-    },    
+    },
     {
       text: 'Inspiration',
       href: getPermalink('/inspiration'),
-    }, 
+    },
     {
       text: 'Schedule',
       href: getPermalink('/schedule'),
-    }, 
+    },
 
     // {
     //   text: 'Miami',
@@ -39,12 +39,11 @@ export const headerData = {
     {
       text: 'Blog',
       href: getPermalink('/blog'),
-    },    
+    },
     {
       text: 'Sponsors',
       href: getPermalink('/sponsors'),
     },
-    
   ],
 };
 
