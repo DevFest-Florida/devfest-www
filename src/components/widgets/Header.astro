@@ -81,14 +81,14 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
       <a class="flex items-center" href={getHomePermalink()} aria-label={logo?.alt || 'Home'}>
         {
           logo ? (
-            <span class="inline-flex flex-col items-center rounded-md bg-[#f0f0f0] px-1.5 py-1 leading-none">
+            <span class="inline-flex flex-col items-center rounded-md px-1.5 py-1 leading-none">
               <img
                 src={logo.src}
                 alt={logo.alt}
-                class="h-9 w-auto max-w-[11.5rem] object-contain sm:h-10 sm:max-w-[13.5rem]"
+                class="h-9 w-auto max-w-[11.5rem] object-contain dark:brightness-0 dark:invert sm:h-10 sm:max-w-[13.5rem]"
               />
               {logo.label && (
-                <span class="mt-1 text-xs font-semibold leading-none text-[#1e1e1e] sm:text-sm">{logo.label}</span>
+                <span class="mt-1 text-xs font-semibold leading-none text-[#1e1e1e] dark:text-[#f0f0f0] sm:text-sm">{logo.label}</span>
               )}
             </span>
           ) : (

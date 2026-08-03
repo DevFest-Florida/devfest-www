@@ -533,7 +533,8 @@ const metadata = {
 
   <!-- JavaScript for Countdown Timer and Mobile Menu -->
   <script>
-    document.addEventListener('DOMContentLoaded', () => {
+
+    const initCountdown = () => {
       const countdownDate = new Date('2026-11-06T09:00:00-05:00').getTime();
       const mobileMenuButton = document.getElementById('mobile-menu-button');
       const mobileMenu = document.getElementById('mobile-menu');
@@ -546,8 +547,12 @@ const metadata = {
       const hoursEl = document.getElementById('hours');
       const minutesEl = document.getElementById('minutes');
       const secondsEl = document.getElementById('seconds');
-      let countdownInterval: number | undefined;
-      let lastAnnouncedMinute: number | undefined;
+
+      const w = window as unknown as { __dfCountdownInterval?: number };
+      if (w.__dfCountdownInterval) {
+        window.clearInterval(w.__dfCountdownInterval);
+        w.__dfCountdownInterval = undefined;
+      }
 
       const updateCountdown = () => {
         const distance = Math.max(0, countdownDate - Date.now());
@@ -567,21 +572,22 @@ const metadata = {
           countdownCards.forEach((card) => card.classList.add('hidden'));
           countdownCompleteEl?.classList.remove('hidden');
           if (countdownStatusEl) countdownStatusEl.textContent = 'The event has kicked off!!';
-          if (countdownInterval) window.clearInterval(countdownInterval);
+          if (w.__dfCountdownInterval) {
+            window.clearInterval(w.__dfCountdownInterval);
+            w.__dfCountdownInterval = undefined;
+          }
           return false;
         }
 
-        const totalMinutes = Math.floor(distance / (1000 * 60));
-        if (totalMinutes !== lastAnnouncedMinute && countdownStatusEl) {
+        if (countdownStatusEl) {
           countdownStatusEl.textContent = `${days} days, ${hours} hours, and ${minutes} minutes until DevFest Hackathon 2026 begins.`;
-          lastAnnouncedMinute = totalMinutes;
         }
 
         return true;
       };
 
       if (updateCountdown()) {
-        countdownInterval = window.setInterval(updateCountdown, 1000);
+        w.__dfCountdownInterval = window.setInterval(updateCountdown, 1000);
       }
 
       // Mobile Menu Toggle Logic
@@ -591,12 +597,23 @@ const metadata = {
         });
 
         // Close mobile menu when a link is clicked
-        mobileMenu.querySelectorAll('a').forEach((link) => {
-          link.addEventListener('click', () => {
-            mobileMenu.classList.add('hidden');
-          });
-        });
+         mobileMenu.querySelectorAll('a').forEach((link) => {
+           link.addEventListener('click', () => {
+             mobileMenu.classList.add('hidden');
+           });
+         });
+       }
+    };
+
+    initCountdown();
+    window.addEventListener('pageshow', (event) => {
+      if (event.persisted) {
+        initCountdown();
       }
+    });
+
+    document.addEventListener('astro:page-load', () => {
+      initCountdown();
     });
   </script>
 
