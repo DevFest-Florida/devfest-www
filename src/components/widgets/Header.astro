@@ -82,8 +82,14 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
         {
           logo ? (
             <span class="inline-flex flex-col items-center rounded-md bg-[#f0f0f0] px-1.5 py-1 leading-none">
-              <img src={logo.src} alt={logo.alt} class="h-9 w-auto max-w-[11.5rem] object-contain sm:h-10 sm:max-w-[13.5rem]" />
-              {logo.label && <span class="mt-1 text-xs font-semibold leading-none text-[#1e1e1e] sm:text-sm">{logo.label}</span>}
+              <img
+                src={logo.src}
+                alt={logo.alt}
+                class="h-9 w-auto max-w-[11.5rem] object-contain sm:h-10 sm:max-w-[13.5rem]"
+              />
+              {logo.label && (
+                <span class="mt-1 text-xs font-semibold leading-none text-[#1e1e1e] sm:text-sm">{logo.label}</span>
+              )}
             </span>
           ) : (
             <Logo />
@@ -166,7 +172,7 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
         {
           actions?.length ? (
             <span class="ml-4 rtl:ml-0 rtl:mr-4">
-              {actions.map((btnProps) => (
+              {actions.map(btnProps => (
                 <Button {...btnProps} class="ml-2 py-2.5 px-5.5 md:px-6 font-semibold shadow-none text-sm w-auto" />
               ))}
             </span>
@@ -178,3 +184,20 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
     </div>
   </div>
 </header>
+
+<style>
+  /* Subtle indicator for the currently active nav link */
+  .aw-link-active {
+    position: relative;
+  }
+  .aw-link-active::after {
+    content: '';
+    position: absolute;
+    left: 1rem;
+    right: 1rem;
+    bottom: 0.45rem;
+    height: 2px;
+    border-radius: 9999px;
+    background-color: #f9ab00;
+  }
+</style>

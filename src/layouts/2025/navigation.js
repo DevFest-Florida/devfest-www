@@ -24,10 +24,6 @@ export const headerData = {
       href: getPermalink('/2025/schedule'),
     },
     {
-      text: 'Blog',
-      href: getPermalink('/blog'),
-    },
-    {
       text: 'Sponsors',
       href: getPermalink('/2025/sponsors'),
     },
