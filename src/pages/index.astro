@@ -1,31 +1,11 @@
 ---
-import { getCollection } from 'astro:content';
 import { Icon } from 'astro-icon/components';
 import Layout from '~/layouts/PageLayout.astro';
 
-import About from '~/components/orlando/About.astro';
-import CallToAction from '~/components/widgets/CallToAction.astro';
-import Contact from '~/components/widgets/Contact.astro';
-import CustomStyles from '~/components/orlando/CustomStyles.astro';
-import FAQs from '~/components/widgets/FAQs.astro';
-import Features from '~/components/widgets/Features.astro';
-import Features2 from '~/components/widgets/Features2.astro';
-import Footer from '~/components/orlando/Footer.astro';
-import Hero from '~/components/widgets/Hero2.astro';
-import LatestPosts from '~/components/widgets/BlogLatestPosts.astro';
-import Note from '~/components/widgets/Note.astro';
-import SpeakerProfiles from '~/components/orlando/SpeakerProfiles2025.astro';
-import Speakers from '~/components/orlando/SpeakerProfiles.astro';
 import Sponsor from '~/components/orlando/Sponsor2026.astro';
-import Sponsors from '~/components/orlando/Sponsor.astro';
-import Steps from '~/components/widgets/Steps.astro';
-import Steps2 from '~/components/widgets/Steps2.astro';
-import Testimonials from '~/components/widgets/Testimonials.astro';
 import DevFestFans from '~/assets/images/devfest-fans.jpg';
 import DevFestSaveTheDate2026 from '~/assets/images/2026/devFestFloridaSaveTheDate2026.webp';
 import GdgCentralFloridaLogo from '~/assets/images/2026/GDG ProfessionalHorizontalLight.png';
-
-const posts = await getCollection('post');
 
 const metadata = {
   title: 'DevFest Hackathon 2026 | November 6–8',
@@ -69,38 +49,6 @@ const eventSchema = {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-  }
-
-  .theme-section {
-    background-color: rgb(248 250 252);
-  }
-
-  .theme-section :is(h2, h3, h4) {
-    color: rgb(15 23 42);
-  }
-
-  .theme-section p {
-    color: rgb(71 85 105);
-  }
-
-  .theme-section :is(.rounded-xl, .rounded-2xl, .rounded-3xl) {
-    background-color: white;
-  }
-
-  :global(.dark) .theme-section {
-    background-color: rgb(30 30 30);
-  }
-
-  :global(.dark) .theme-section :is(h2, h3, h4) {
-    color: rgb(248 250 252);
-  }
-
-  :global(.dark) .theme-section p {
-    color: rgb(240 240 240 / 0.75);
-  }
-
-  :global(.dark) .theme-section :is(.rounded-xl, .rounded-2xl, .rounded-3xl) {
-    background-color: rgb(30 30 30);
   }
 </style>
 <Layout metadata={metadata}>
@@ -188,7 +136,7 @@ const eventSchema = {
       <a
         href="mailto:organizers@devfestflorida.com?subject=DevFest%20Hackathon%202026%20Sponsorship"
         aria-label="Email the DevFest Florida organizers about sponsorship"
-        class="inline-flex items-center justify-center gap-2 rounded-full bg-[#4285f4] px-12 py-4 text-lg font-bold text-white shadow-lg transition-colors duration-300 hover:bg-[#1e1e1e] hover:text-[#f0f0f0] focus:outline-none focus-visible:ring-4 focus-visible:ring-[#f9ab00] focus-visible:ring-offset-2 focus-visible:ring-offset-[#1e1e1e]"
+        class="inline-flex items-center justify-center gap-2 rounded-full bg-[#1967d2] px-12 py-4 text-lg font-bold text-white shadow-lg transition-colors duration-300 hover:bg-[#1e1e1e] hover:text-[#f0f0f0] focus:outline-none focus-visible:ring-4 focus-visible:ring-[#f9ab00] focus-visible:ring-offset-2 focus-visible:ring-offset-[#1e1e1e]"
       >
         <Icon name="tabler:mail" class="h-5 w-5" aria-hidden="true" />
         Become a Sponsor
@@ -212,10 +160,10 @@ const eventSchema = {
   </section>
 
   <!-- About Section -->
-  <section id="about" class="theme-section container mx-auto py-16 px-4 md:px-8 lg:px-12 bg-[#1e1e1e]">
+  <section id="about" class="theme-section container mx-auto py-16 px-4 md:px-8 lg:px-12">
     <div class="text-center mb-12">
-      <h3 class="text-3xl font-bold text-white mb-4">About the Event</h3>
-      <p class="text-lg text-[#f0f0f0]/70 max-w-2xl mx-auto">
+      <h3 class="theme-heading text-3xl font-bold mb-4">About the Event</h3>
+      <p class="theme-copy text-lg max-w-2xl mx-auto">
         Join us for an electrifying, three-day sprint building GenAI-powered apps—a flagship DevFest event designed to
         spark innovation and connect the brightest minds in tech. This is your unparalleled opportunity to dive deep
         into the thrilling realm of AI agents and discover how they seamlessly integrate with the cutting-edge power of
@@ -223,24 +171,24 @@ const eventSchema = {
       </p>
     </div>
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-      <div class="rounded-xl border-t-4 border-[#4285f4] bg-[#f0f0f0] p-6 shadow-lg">
+      <div class="theme-card rounded-xl border-t-4 border-[#4285f4] p-6 shadow-lg">
         <div class="text-4xl text-[#4285f4] mb-4">🤖</div>
-        <h4 class="text-xl font-bold mb-2 text-[#1e1e1e]">Build with AI</h4>
-        <p class="text-[#1e1e1e]">
+        <h4 class="theme-heading text-xl font-bold mb-2">Build with AI</h4>
+        <p class="theme-copy">
           Craft groundbreaking solutions using Google's Gemini AI suite, Google Cloud Platform, and Firebase.
         </p>
       </div>
-      <div class="rounded-xl border-t-4 border-[#34a853] bg-[#f0f0f0] p-6 shadow-lg">
+      <div class="theme-card rounded-xl border-t-4 border-[#34a853] p-6 shadow-lg">
         <div class="text-4xl text-[#4285f4] mb-4">🔗</div>
-        <h4 class="text-xl font-bold mb-2 text-[#1e1e1e]">Forge Connections</h4>
-        <p class="text-[#1e1e1e]">
+        <h4 class="theme-heading text-xl font-bold mb-2">Forge Connections</h4>
+        <p class="theme-copy">
           Network with brilliant developers, share insights, and form lasting friendships and collaborations.
         </p>
       </div>
-      <div class="rounded-xl border-t-4 border-[#ea4335] bg-[#f0f0f0] p-6 shadow-lg">
+      <div class="theme-card rounded-xl border-t-4 border-[#ea4335] p-6 shadow-lg">
         <div class="text-4xl text-[#4285f4] mb-4">📈</div>
-        <h4 class="text-xl font-bold mb-2 text-[#1e1e1e]">Elevate Your Profile</h4>
-        <p class="text-[#1e1e1e]">
+        <h4 class="theme-heading text-xl font-bold mb-2">Elevate Your Profile</h4>
+        <p class="theme-copy">
           Showcase your ingenuity and build impressive projects that will make your portfolio shine.
         </p>
       </div>
@@ -248,49 +196,49 @@ const eventSchema = {
   </section>
 
   <!-- Tracks Section -->
-  <section id="tracks" class="theme-section container mx-auto py-16 px-4 md:px-8 lg:px-12 bg-[#1e1e1e]">
+  <section id="tracks" class="theme-section container mx-auto py-16 px-4 md:px-8 lg:px-12">
     <div class="text-center mb-12">
-      <h3 class="text-3xl font-bold text-white mb-4">Tracks</h3>
-      <p class="text-lg text-[#f0f0f0]/70 max-w-2xl mx-auto">
+      <h3 class="theme-heading text-3xl font-bold mb-4">Tracks</h3>
+      <p class="theme-copy text-lg max-w-2xl mx-auto">
         Whether you're a builder or a visionary, we have a path for you.
       </p>
     </div>
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-      <div class="rounded-xl border-l-4 border-[#f9ab00] bg-[#1e1e1e] p-8 shadow-lg">
-        <h4 class="text-2xl font-bold mb-2 text-white">
+      <div class="theme-card rounded-xl border-l-4 border-[#f9ab00] p-8 shadow-lg">
+        <h4 class="theme-heading text-2xl font-bold mb-2">
           <a
             href="app-mvp-rules"
             class="hover:text-[#f9ab00] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#f9ab00] rounded"
             >Software Prototype</a
           >
         </h4>
-        <p class="text-[#f0f0f0]/70">
+        <p class="theme-copy">
           Develop a working MVP (Minimum Viable Product) of a high-impact software app or game enabled by AI. Bring your
           code to life and showcase your technical prowess.
         </p>
       </div>
-      <div class="rounded-xl border-l-4 border-[#f9ab00] bg-[#1e1e1e] p-8 shadow-lg">
-        <h4 class="text-2xl font-bold mb-2 text-white">
+      <div class="theme-card rounded-xl border-l-4 border-[#f9ab00] p-8 shadow-lg">
+        <h4 class="theme-heading text-2xl font-bold mb-2">
           <a
             href="app-pitch"
             class="hover:text-[#f9ab00] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#f9ab00] rounded"
             >App Pitch</a
           >
         </h4>
-        <p class="text-[#f0f0f0]/70">
+        <p class="theme-copy">
           Pitch a design and concept of operations for an app. Perfect for designers, project managers, and innovators
           who want to focus on strategy, user experience, and business potential.
         </p>
       </div>
-      <div class="rounded-xl border-l-4 border-[#f9ab00] bg-[#1e1e1e] p-8 shadow-lg">
-        <h4 class="text-2xl font-bold mb-2 text-white">
+      <div class="theme-card rounded-xl border-l-4 border-[#f9ab00] p-8 shadow-lg">
+        <h4 class="theme-heading text-2xl font-bold mb-2">
           <a
             href="company-pitch"
             class="hover:text-[#f9ab00] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#f9ab00] rounded"
             >Singularity Startup Pitch</a
           >
         </h4>
-        <p class="text-[#f0f0f0]/70">
+        <p class="theme-copy">
           Your team of Product Managers are tasked with creating a business plan + product definition for Event Horizon
           Labs. Imagine a strong business concept that leverages AI that surpasses human intelligence.
         </p>
@@ -298,85 +246,85 @@ const eventSchema = {
     </div>
   </section>
 
-  <section id="community" class="theme-section container mx-auto py-16 px-4 md:px-8 lg:px-12 bg-[#1e1e1e]">
+  <section id="community" class="theme-section container mx-auto py-16 px-4 md:px-8 lg:px-12">
     <div class="text-center mb-12">
-      <h3 class="text-3xl font-bold text-white mb-4">Our Community</h3>
-      <p class="text-lg text-[#f0f0f0]/70 max-w-2xl mx-auto">
-        Hear from the speakers, attendees, and community members who have made DevFest Florida what it is today and
-        what keeps them coming back every year.
+      <h3 class="theme-heading text-3xl font-bold mb-4">Our Community</h3>
+      <p class="theme-copy text-lg max-w-2xl mx-auto">
+        Hear from the speakers, attendees, and community members who have made DevFest Florida what it is today and what
+        keeps them coming back every year.
       </p>
     </div>
 
     <!-- What Speakers Say -->
     <div class="mb-16">
-      <h4 class="text-xl font-bold text-white mb-2 text-center">What Speakers Say</h4>
-      <p class="text-sm text-[#f0f0f0]/60 text-center mb-8">Voices from the DevFest Florida stage</p>
+      <h4 class="theme-heading text-xl font-bold mb-2 text-center">What Speakers Say</h4>
+      <p class="theme-copy text-sm text-center mb-8">Voices from the DevFest Florida stage</p>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-        <div class="rounded-2xl border-t-4 border-[#4285f4] bg-[#f0f0f0] p-6 shadow-lg">
+        <div class="theme-card rounded-2xl border-t-4 border-[#4285f4] p-6 shadow-lg">
           <div class="flex items-center gap-3 mb-3">
             <div
-              class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#4285f4] font-bold text-white"
+              class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#1967d2] font-bold text-white"
             >
               M
             </div>
             <div>
-              <p class="font-bold text-[#1e1e1e]">Marc McDonald</p>
-              <p class="text-xs text-[#1e1e1e]/60">@Marc_McDonald · Nov 16, 2019</p>
+              <p class="theme-heading font-bold">Marc McDonald</p>
+              <p class="theme-copy text-xs opacity-70">@Marc_McDonald · Nov 16, 2019</p>
             </div>
           </div>
-          <p class="text-[#1e1e1e] text-sm">
-            #DevFestFL, hosted by <span class="text-[#4285f4]">@NeowareStudios</span>, has been amazing! Such a great
+          <p class="theme-copy text-sm">
+            #DevFestFL, hosted by <span class="theme-accent-blue">@NeowareStudios</span>, has been amazing! Such a great
             turnout and incredible speakers. We haven’t even gotten to the after party yet!
-            <span class="block mt-2 text-[#4285f4]">#devfest19 #devfestfl #community</span>
+            <span class="theme-accent-blue block mt-2">#devfest19 #devfestfl #community</span>
           </p>
         </div>
-        <div class="rounded-2xl border-t-4 border-[#34a853] bg-[#f0f0f0] p-6 shadow-lg">
+        <div class="theme-card rounded-2xl border-t-4 border-[#34a853] p-6 shadow-lg">
           <div class="flex items-center gap-3 mb-3">
             <div
-              class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#34a853] font-bold text-white"
+              class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#137333] font-bold text-white"
             >
               D
             </div>
             <div>
-              <p class="font-bold text-[#1e1e1e]">Dylan C. Israel</p>
-              <p class="text-xs text-[#1e1e1e]/60">Nov 28, 2019</p>
+              <p class="theme-heading font-bold">Dylan C. Israel</p>
+              <p class="theme-copy text-xs opacity-70">Nov 28, 2019</p>
             </div>
           </div>
-          <p class="text-[#1e1e1e] text-sm">
+          <p class="theme-copy text-sm">
             Had a blast giving my first conference talk at DevFest Florida 2019. Hoping to make it one of many! 🎤
           </p>
         </div>
-        <div class="rounded-2xl border-t-4 border-[#ea4335] bg-[#f0f0f0] p-6 shadow-lg">
+        <div class="theme-card rounded-2xl border-t-4 border-[#ea4335] p-6 shadow-lg">
           <div class="flex items-center gap-3 mb-3">
             <div
-              class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#ea4335] font-bold text-white"
+              class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#c5221f] font-bold text-white"
             >
               D
             </div>
             <div>
-              <p class="font-bold text-[#1e1e1e]">Danielled Coe, The Flutterfly</p>
-              <p class="text-xs text-[#1e1e1e]/60">@imafvgureskii · Dec 10, 2022</p>
+              <p class="theme-heading font-bold">Danielled Coe, The Flutterfly</p>
+              <p class="theme-copy text-xs opacity-70">@imafvgureskii · Dec 10, 2022</p>
             </div>
           </div>
-          <p class="text-[#1e1e1e] text-sm">
-            It is not an understatement that <span class="text-[#4285f4]">#DevFestFlorida</span> back in 2019 and
-            <span class="text-[#4285f4]">@bouncingherp</span> and <span class="text-[#4285f4]">@larik</span> changed my life!
-            From attendee to speaker this year. 🌟
+          <p class="theme-copy text-sm">
+            It is not an understatement that <span class="theme-accent-blue">#DevFestFlorida</span> back in 2019 and
+            <span class="theme-accent-blue">@bouncingherp</span> and <span class="theme-accent-blue">@larik</span> changed
+            my life! From attendee to speaker this year. 🌟
           </p>
         </div>
-        <div class="rounded-2xl border-t-4 border-[#f9ab00] bg-[#f0f0f0] p-6 shadow-lg">
+        <div class="theme-card rounded-2xl border-t-4 border-[#f9ab00] p-6 shadow-lg">
           <div class="flex items-center gap-3 mb-3">
             <div
-              class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#f9ab00] font-bold text-white"
+              class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#f9ab00] font-bold text-[#1e1e1e]"
             >
               C
             </div>
             <div>
-              <p class="font-bold text-[#1e1e1e]">Christi Kapp</p>
-              <p class="text-xs text-[#1e1e1e]/60">Founder, DataPsy.com</p>
+              <p class="theme-heading font-bold">Christi Kapp</p>
+              <p class="theme-copy text-xs opacity-70">Founder, DataPsy.com</p>
             </div>
           </div>
-          <p class="text-[#1e1e1e] text-sm">
+          <p class="theme-copy text-sm">
             DevFest Florida is where the GDG community shows up for each other — it’s the room where ideas become teams,
             and teams become real products. 🚀
           </p>
@@ -386,78 +334,78 @@ const eventSchema = {
 
     <!-- What Attendees Say -->
     <div class="mb-16">
-      <h4 class="text-xl font-bold text-white mb-2 text-center">Community Buzz</h4>
-      <p class="text-sm text-[#f0f0f0]/60 text-center mb-8">Reactions from the people in the seats</p>
+      <h4 class="theme-heading text-xl font-bold mb-2 text-center">Community Buzz</h4>
+      <p class="theme-copy text-sm text-center mb-8">Reactions from the people in the seats</p>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-        <div class="rounded-2xl border-t-4 border-[#f9ab00] bg-[#f0f0f0] p-6 shadow-lg">
+        <div class="theme-card rounded-2xl border-t-4 border-[#f9ab00] p-6 shadow-lg">
           <div class="flex items-center gap-3 mb-3">
             <div
-              class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#f9ab00] font-bold text-white"
+              class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#f9ab00] font-bold text-[#1e1e1e]"
             >
               J
             </div>
             <div>
-              <p class="font-bold text-[#1e1e1e]">Josh Holtzclaw</p>
-              <p class="text-xs text-[#1e1e1e]/60">@JoshuaDevelops · Jan 19, 2019</p>
+              <p class="theme-heading font-bold">Josh Holtzclaw</p>
+              <p class="theme-copy text-xs opacity-70">@JoshuaDevelops · Jan 19, 2019</p>
             </div>
           </div>
-          <p class="text-[#1e1e1e] text-sm">
-            So Magical! ✨ <span class="text-[#4285f4]">#DevFestFL</span> Loved it.
+          <p class="theme-copy text-sm">
+            So Magical! ✨ <span class="theme-accent-blue">#DevFestFL</span> Loved it.
           </p>
         </div>
-        <div class="rounded-2xl border-t-4 border-[#4285f4] bg-[#f0f0f0] p-6 shadow-lg">
+        <div class="theme-card rounded-2xl border-t-4 border-[#4285f4] p-6 shadow-lg">
           <div class="flex items-center gap-3 mb-3">
-            <div class="h-10 w-10 rounded-full bg-[#4285f4] text-white flex items-center justify-center font-bold">
+            <div class="h-10 w-10 rounded-full bg-[#1967d2] text-white flex items-center justify-center font-bold">
               J
             </div>
             <div>
-              <p class="font-bold text-[#1e1e1e]">Jim Snyder</p>
-              <p class="text-xs text-[#1e1e1e]/60">@jimswdev · Nov 16, 2019</p>
+              <p class="theme-heading font-bold">Jim Snyder</p>
+              <p class="theme-copy text-xs opacity-70">@jimswdev · Nov 16, 2019</p>
             </div>
           </div>
-          <p class="text-[#1e1e1e] text-sm">
-            <span class="text-[#4285f4]">#DevFestfl</span>
-            <span class="text-[#4285f4]">@devfestfl</span> awesome talk about their success with transitioning to <span
-              class="text-[#4285f4]">@FlutterDev</span
+          <p class="theme-copy text-sm">
+            <span class="theme-accent-blue">#DevFestfl</span>
+            <span class="theme-accent-blue">@devfestfl</span> awesome talk about their success with transitioning to <span
+              class="theme-accent-blue">@FlutterDev</span
             > by
-            <span class="text-[#4285f4]">@rodydavis</span> and <span class="text-[#4285f4]">@jaofulizsk</span> 🚀
+            <span class="theme-accent-blue">@rodydavis</span> and <span class="theme-accent-blue">@jaofulizsk</span> 🚀
           </p>
         </div>
-        <div class="rounded-2xl border-t-4 border-[#34a853] bg-[#f0f0f0] p-6 shadow-lg">
+        <div class="theme-card rounded-2xl border-t-4 border-[#34a853] p-6 shadow-lg">
           <div class="flex items-center gap-3 mb-3">
             <div
-              class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#34a853] font-bold text-white"
+              class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#137333] font-bold text-white"
             >
               T
             </div>
             <div>
-              <p class="font-bold text-[#1e1e1e]">Travis Stark</p>
-              <p class="text-xs text-[#1e1e1e]/60">@TravisDStark · Nov 16, 2019</p>
+              <p class="theme-heading font-bold">Travis Stark</p>
+              <p class="theme-copy text-xs opacity-70">@TravisDStark · Nov 16, 2019</p>
             </div>
           </div>
-          <p class="text-[#1e1e1e] text-sm">
+          <p class="theme-copy text-sm">
             Having a great time at DevFest Florida
-            <span class="text-[#4285f4]">#DevFest19</span>
-            <span class="text-[#4285f4]">#devfestfl</span> 🎉
+            <span class="theme-accent-blue">#DevFest19</span>
+            <span class="theme-accent-blue">#devfestfl</span> 🎉
           </p>
         </div>
-        <div class="rounded-2xl border-t-4 border-[#ea4335] bg-[#f0f0f0] p-6 shadow-lg">
+        <div class="theme-card rounded-2xl border-t-4 border-[#ea4335] p-6 shadow-lg">
           <div class="flex items-center gap-3 mb-3">
             <div
-              class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#ea4335] font-bold text-white"
+              class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#c5221f] font-bold text-white"
             >
               T
             </div>
             <div>
-              <p class="font-bold text-[#1e1e1e]">Thinkster</p>
-              <p class="text-xs text-[#1e1e1e]/60">@GoThinkster · Jan 19, 2019</p>
+              <p class="theme-heading font-bold">Thinkster</p>
+              <p class="theme-copy text-xs opacity-70">@GoThinkster · Jan 19, 2019</p>
             </div>
           </div>
-          <p class="text-[#1e1e1e] text-sm">
+          <p class="theme-copy text-sm">
             It’s been a great week, everyone! Here’s a video of
-            <span class="text-[#4285f4]">@AccordionGuy</span> performing
-            <em>“Should I sleep or should I code?”</em> at <span class="text-[#4285f4]">#DevFestFL</span>. This is the
-            level of enthusiasm Thinkster.io has for helping you learn to code! 🎶💻
+            <span class="theme-accent-blue">@AccordionGuy</span> performing
+            <em>“Should I sleep or should I code?”</em> at <span class="theme-accent-blue">#DevFestFL</span>. This is
+            the level of enthusiasm Thinkster.io has for helping you learn to code! 🎶💻
           </p>
         </div>
       </div>
@@ -465,45 +413,46 @@ const eventSchema = {
 
     <!-- 2023 Feedback -->
     <div class="mb-16">
-      <h4 class="text-xl font-bold text-white mb-2 text-center">What 2023 Attendees Said</h4>
-      <p class="text-sm text-[#f0f0f0]/60 text-center mb-8">Real reactions from the 2023 DevFest Florida</p>
+      <h4 class="theme-heading text-xl font-bold mb-2 text-center">What 2023 Attendees Said</h4>
+      <p class="theme-copy text-sm text-center mb-8">Real reactions from the 2023 DevFest Florida</p>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <div class="rounded-2xl border-l-4 border-[#f9ab00] bg-[#f0f0f0] p-6 shadow-lg">
-          <p class="text-[#1e1e1e] italic">
-            “I had a great experience attending <span class="text-[#4285f4] not-italic font-semibold">#DevFestFL</span>.
-            Thank you to all the sponsors who came out. Amazing people I met had a pleasure of connecting with.”
+        <div class="theme-card rounded-2xl border-l-4 border-[#f9ab00] p-6 shadow-lg">
+          <p class="theme-copy italic">
+            “I had a great experience attending <span class="theme-accent-blue not-italic font-semibold"
+              >#DevFestFL</span
+            >. Thank you to all the sponsors who came out. Amazing people I met had a pleasure of connecting with.”
           </p>
-          <p class="mt-4 text-sm font-bold text-[#1e1e1e]">— LinkedIn attendee</p>
+          <p class="theme-heading mt-4 text-sm font-bold">— LinkedIn attendee</p>
         </div>
-        <div class="rounded-2xl border-l-4 border-[#f9ab00] bg-[#f0f0f0] p-6 shadow-lg">
-          <p class="text-[#1e1e1e] italic">
+        <div class="theme-card rounded-2xl border-l-4 border-[#f9ab00] p-6 shadow-lg">
+          <p class="theme-copy italic">
             “The talks were amazing and filled with valuable insight into how to truly stand out. What stood out was the
             community of passionate developers I met.”
           </p>
-          <p class="mt-4 text-sm font-bold text-[#1e1e1e]">— LinkedIn attendee</p>
+          <p class="theme-heading mt-4 text-sm font-bold">— LinkedIn attendee</p>
         </div>
-        <div class="rounded-2xl border-l-4 border-[#f9ab00] bg-[#f0f0f0] p-6 shadow-lg">
-          <p class="text-[#1e1e1e] italic">
+        <div class="theme-card rounded-2xl border-l-4 border-[#f9ab00] p-6 shadow-lg">
+          <p class="theme-copy italic">
             “It was a great event. Thanks to all the organizers and attendees. Let’s do it again next year! 🎉”
           </p>
-          <p class="mt-4 text-sm font-bold text-[#1e1e1e]">— X (Twitter) attendee</p>
+          <p class="theme-heading mt-4 text-sm font-bold">— X (Twitter) attendee</p>
         </div>
-        <div class="rounded-2xl border-l-4 border-[#f9ab00] bg-[#f0f0f0] p-6 shadow-lg">
-          <p class="text-[#1e1e1e] italic">
+        <div class="theme-card rounded-2xl border-l-4 border-[#f9ab00] p-6 shadow-lg">
+          <p class="theme-copy italic">
             “Key Takeaways from DevFest Florida 2023 — my first tech conference. The talks were amazing and filled with
             valuable insight. The community of developers was incredibly welcoming and supportive.”
           </p>
-          <p class="mt-4 text-sm font-bold text-[#1e1e1e]">— LinkedIn attendee</p>
+          <p class="theme-heading mt-4 text-sm font-bold">— LinkedIn attendee</p>
         </div>
-        <div class="rounded-2xl border-l-4 border-[#f9ab00] bg-[#f0f0f0] p-6 shadow-lg md:col-span-2">
-          <p class="text-[#1e1e1e] italic">
-            “#DevFestFlorida was a blast this year. Thank you <span class="text-[#4285f4] not-italic font-semibold"
+        <div class="theme-card rounded-2xl border-l-4 border-[#f9ab00] p-6 shadow-lg md:col-span-2">
+          <p class="theme-copy italic">
+            “#DevFestFlorida was a blast this year. Thank you <span class="theme-accent-blue not-italic font-semibold"
               >@jessicatehre</span
             > and everyone who helped organize it.” — and — “Had fun and learned new things at <span
-              class="text-[#4285f4] not-italic font-semibold">#DevFestFlorida</span
+              class="theme-accent-blue not-italic font-semibold">#DevFestFlorida</span
             >. Thanks for having me this year again!”
           </p>
-          <p class="mt-4 text-sm font-bold text-[#1e1e1e]">— X (Twitter) attendees</p>
+          <p class="theme-heading mt-4 text-sm font-bold">— X (Twitter) attendees</p>
         </div>
       </div>
     </div>
@@ -521,27 +470,27 @@ const eventSchema = {
   </section>
 
   <!-- Schedule Section -->
-  <section id="schedule" class="theme-section container mx-auto py-16 px-4 md:px-8 lg:px-12 bg-[#1e1e1e]">
+  <section id="schedule" class="theme-section container mx-auto py-16 px-4 md:px-8 lg:px-12">
     <div class="text-center mb-12">
-      <h3 class="text-3xl font-bold text-white mb-4">Agenda</h3>
-      <p class="text-lg text-[#f0f0f0]/70 max-w-2xl mx-auto">
+      <h3 class="theme-heading text-3xl font-bold mb-4">Agenda</h3>
+      <p class="theme-copy text-lg max-w-2xl mx-auto">
         A three-day collaboration and creative sprint. Programming details are coming soon.
       </p>
     </div>
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-      <div class="rounded-3xl border-4 border-solid border-[#4285f4] bg-[#1e1e1e] m-2 p-2 md:m-10 md:p-10">
-        <h4 class="text-2xl font-bold mb-2 text-white">November 6 — Opening Day</h4>
-        <p class="text-[#f0f0f0]/80">Kickoff, registration, and community building. Programming details coming soon.</p>
+      <div class="theme-card rounded-3xl border-4 border-solid border-[#4285f4] m-2 p-2 md:m-10 md:p-10">
+        <h4 class="theme-heading text-2xl font-bold mb-2">November 6 — Opening Day</h4>
+        <p class="theme-copy">Kickoff, registration, and community building. Programming details coming soon.</p>
       </div>
-      <div class="rounded-3xl border-4 border-solid border-[#ea4335] bg-[#1e1e1e] m-2 p-2 md:m-10 md:p-10">
-        <h4 class="text-2xl font-bold mb-2 text-white">November 7 — DevFest Programming</h4>
-        <p class="text-[#f0f0f0]/80">
+      <div class="theme-card rounded-3xl border-4 border-solid border-[#ea4335] m-2 p-2 md:m-10 md:p-10">
+        <h4 class="theme-heading text-2xl font-bold mb-2">November 7 — DevFest Programming</h4>
+        <p class="theme-copy">
           A full day of sessions, workshops, and hands-on collaboration. Programming details coming soon.
         </p>
       </div>
-      <div class="rounded-3xl border-4 border-solid border-[#34a853] bg-[#1e1e1e] m-2 p-2 md:m-10 md:p-10">
-        <h4 class="text-2xl font-bold mb-2 text-white">November 8 — Closing Day</h4>
-        <p class="text-[#f0f0f0]/80">
+      <div class="theme-card rounded-3xl border-4 border-solid border-[#34a853] m-2 p-2 md:m-10 md:p-10">
+        <h4 class="theme-heading text-2xl font-bold mb-2">November 8 — Closing Day</h4>
+        <p class="theme-copy">
           Project showcases, celebration, and community networking. Programming details coming soon.
         </p>
       </div>
@@ -549,16 +498,16 @@ const eventSchema = {
   </section>
 
   <!-- Sponsors Section -->
-  <section id="sponsors" class="theme-section container mx-auto py-16 px-4 md:px-8 lg:px-12 bg-[#1e1e1e]">
+  <section id="sponsors" class="theme-section container mx-auto py-16 px-4 md:px-8 lg:px-12">
     <div class="text-center mb-12">
-      <h3 class="text-3xl font-bold text-white mb-4">Thank You to Our 2025 Sponsors</h3>
-      <p class="text-lg text-[#f0f0f0]/70 max-w-2xl mx-auto mt-4">
+      <h3 class="theme-heading text-3xl font-bold mb-4">Thank You to Our 2025 Sponsors</h3>
+      <p class="theme-copy text-lg max-w-2xl mx-auto mt-4">
         Interested in sponsoring DevFest Hackathon 2026? We would love to partner with you.
       </p>
       <a
         href="mailto:organizers@devfestflorida.com?subject=DevFest%20Hackathon%202026%20Sponsorship"
         aria-label="Email the DevFest Florida organizers about sponsorship"
-        class="mt-6 inline-flex items-center justify-center gap-2 rounded-full bg-[#4285f4] px-8 py-3 text-base font-bold text-white shadow-lg transition-colors duration-300 hover:bg-[#1e1e1e] hover:text-[#f0f0f0] focus:outline-none focus-visible:ring-4 focus-visible:ring-[#f9ab00] focus-visible:ring-offset-2 focus-visible:ring-offset-[#1e1e1e]"
+        class="mt-6 inline-flex items-center justify-center gap-2 rounded-full bg-[#1967d2] px-8 py-3 text-base font-bold text-white shadow-lg transition-colors duration-300 hover:bg-[#1e1e1e] hover:text-[#f0f0f0] focus:outline-none focus-visible:ring-4 focus-visible:ring-[#f9ab00] focus-visible:ring-offset-2 focus-visible:ring-offset-[#1e1e1e]"
       >
         <Icon name="tabler:mail" class="h-5 w-5" aria-hidden="true" />
         Become a Sponsor
@@ -567,10 +516,10 @@ const eventSchema = {
     <Sponsor />
   </section>
 
-  <section id="venue" class="theme-section container mx-auto py-16 px-4 md:px-8 lg:px-12 bg-[#1e1e1e]">
+  <section id="venue" class="theme-section container mx-auto py-16 px-4 md:px-8 lg:px-12">
     <div class="text-center">
-      <h3 class="text-3xl font-bold text-white mb-4">Venue</h3>
-      <p class="text-lg text-[#f0f0f0]/70 max-w-2xl mx-auto">Venue announcement coming soon.</p>
+      <h3 class="theme-heading text-3xl font-bold mb-4">Venue</h3>
+      <p class="theme-copy text-lg max-w-2xl mx-auto">Venue announcement coming soon.</p>
     </div>
   </section>
 
@@ -593,7 +542,6 @@ const eventSchema = {
 
   <!-- JavaScript for Countdown Timer and Mobile Menu -->
   <script>
-
     const initCountdown = () => {
       const countdownDate = new Date('2026-11-06T09:00:00-05:00').getTime();
       const mobileMenuButton = document.getElementById('mobile-menu-button');
@@ -657,12 +605,12 @@ const eventSchema = {
         });
 
         // Close mobile menu when a link is clicked
-         mobileMenu.querySelectorAll('a').forEach((link) => {
-           link.addEventListener('click', () => {
-             mobileMenu.classList.add('hidden');
-           });
-         });
-       }
+        mobileMenu.querySelectorAll('a').forEach((link) => {
+          link.addEventListener('click', () => {
+            mobileMenu.classList.add('hidden');
+          });
+        });
+      }
     };
 
     initCountdown();
