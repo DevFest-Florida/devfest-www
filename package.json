@@ -1,7 +1,7 @@
 {
-  "name": "@onwidget/astrowind",
-  "version": "1.0.0-beta.38",
-  "description": "AstroWind: A free template using Astro 4.0 and Tailwind CSS. Astro starter theme.",
+  "name": "devfest-florida",
+  "version": "2026.08.02",
+  "description": "Website for DevFest Florida, a community-run technology conference and hackathon.",
   "type": "module",
   "private": true,
   "engines": {
