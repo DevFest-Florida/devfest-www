@@ -25,6 +25,7 @@ const whenExternalScripts = (items = []) =>
   hasExternalScripts ? (Array.isArray(items) ? items.map((item) => item()) : [items()]) : [];
 
 export default defineConfig({
+  site: 'https://devfestflorida.com',
   output: 'static',
 
   integrations: [
@@ -76,7 +77,6 @@ export default defineConfig({
 
   image: {
     service: squooshImageService(),
-    domains: ['cache.sessionize.com'],
     remotePatterns: [{ protocol: 'https' }],
   },
 

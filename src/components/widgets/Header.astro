@@ -25,6 +25,11 @@ export interface Props {
   id?: string;
   links?: Array<MenuLink>;
   actions?: Array<ActionLink>;
+  logo?: {
+    src: string;
+    alt: string;
+    label?: string;
+  };
   isSticky?: boolean;
   isDark?: boolean;
   isFullWidth?: boolean;
@@ -37,6 +42,7 @@ const {
   id = 'header',
   links = [],
   actions = [],
+  logo,
   isSticky = false,
   isDark = false,
   isFullWidth = false,
@@ -72,8 +78,23 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
     ]}
   >
     <div class:list={[{ 'mr-auto rtl:mr-0 rtl:ml-auto': position === 'right' }, 'flex justify-between']}>
-      <a class="flex items-center" href={getHomePermalink()}>
-        <Logo />
+      <a class="flex items-center" href={getHomePermalink()} aria-label={logo?.alt || 'Home'}>
+        {
+          logo ? (
+            <span class="inline-flex flex-col items-center rounded-md px-1.5 py-1 leading-none">
+              <img
+                src={logo.src}
+                alt={logo.alt}
+                class="h-9 w-auto max-w-[11.5rem] object-contain dark:brightness-0 dark:invert sm:h-10 sm:max-w-[13.5rem]"
+              />
+              {logo.label && (
+                <span class="mt-1 text-xs font-semibold leading-none text-[#1e1e1e] dark:text-[#f0f0f0] sm:text-sm">{logo.label}</span>
+              )}
+            </span>
+          ) : (
+            <Logo />
+          )
+        }
       </a>
       <div class="flex items-center md:hidden">
         <ToggleMenu />
@@ -163,3 +184,20 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
     </div>
   </div>
 </header>
+
+<style>
+  /* Subtle indicator for the currently active nav link */
+  .aw-link-active {
+    position: relative;
+  }
+  .aw-link-active::after {
+    content: '';
+    position: absolute;
+    left: 1rem;
+    right: 1rem;
+    bottom: 0.45rem;
+    height: 2px;
+    border-radius: 9999px;
+    background-color: #f9ab00;
+  }
+</style>

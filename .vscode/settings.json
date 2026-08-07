@@ -1,10 +1,20 @@
 {
-  "css.customData": ["./vscode.tailwind.json"],
-  "eslint.validate": ["javascript", "javascriptreact", "astro", "typescript", "typescriptreact"],
+  "css.customData": [
+    "./vscode.tailwind.json"
+  ],
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "astro",
+    "typescript",
+    "typescriptreact"
+  ],
   "files.associations": {
     "*.mdx": "markdown"
   },
-  "prettier.documentSelectors": ["**/*.astro"],
+  "prettier.documentSelectors": [
+    "**/*.astro"
+  ],
   "[astro]": {
     "editor.defaultFormatter": "astro-build.astro-vscode"
   },
@@ -24,17 +34,27 @@
     "statusBar.background": "#38bdf8",
     "statusBar.foreground": "#15202b",
     "statusBarItem.hoverBackground": "#09acf4",
-    "statusBarItem.remoteBackground": "#38bdf8",
+    "statusBarItem.remoteBackground": "#d80898",
     "statusBarItem.remoteForeground": "#15202b",
     "titleBar.activeBackground": "#38bdf8",
     "titleBar.activeForeground": "#15202b",
     "titleBar.inactiveBackground": "#38bdf899",
-    "titleBar.inactiveForeground": "#15202b99"
+    "titleBar.inactiveForeground": "#15202b99",
+    "activityBarTop.activeBackground": "#69cdfa",
+    "activityBarTop.background": "#69cdfa",
+    "activityBarTop.foreground": "#15202b",
+    "activityBarTop.inactiveForeground": "#15202b99",
+    "commandCenter.foreground": "#15202b",
+    "statusBar.debuggingBackground": "#38bdf8",
+    "statusBar.debuggingForeground": "#15202b"
   },
   "peacock.color": "#38bdf8",
   "IDX.aI.enableInlineCompletion": true,
   "IDX.aI.enableCodebaseIndexing": true,
   "conventionalCommits.scopes": [
     "Sponsor"
+  ],
+  "cSpell.words": [
+    "tabler"
   ]
 }

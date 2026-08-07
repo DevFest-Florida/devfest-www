@@ -43,6 +43,77 @@
 }
 
 @layer components {
+  /*
+   * Theme-aware surfaces used by the 2026 event pages. Keep foreground and
+   * background choices paired so content cannot inherit a color intended for
+   * the opposite theme.
+   */
+  .theme-section {
+    background-color: rgb(248 250 252);
+    color: rgb(71 85 105);
+  }
+
+  .theme-card {
+    background-color: rgb(255 255 255);
+  }
+
+  .theme-heading {
+    color: rgb(15 23 42);
+  }
+
+  .theme-copy {
+    color: rgb(71 85 105);
+  }
+
+  .theme-accent-blue {
+    color: rgb(25 103 210);
+  }
+
+  .theme-accent-red {
+    color: rgb(197 34 31);
+  }
+
+  .theme-accent-green {
+    color: rgb(19 115 51);
+  }
+
+  .theme-accent-yellow {
+    color: rgb(138 91 0);
+  }
+
+  .dark .theme-section,
+  .dark .theme-card {
+    background-color: rgb(30 30 30);
+  }
+
+  .dark .theme-section {
+    color: rgb(240 240 240 / 75%);
+  }
+
+  .dark .theme-heading {
+    color: rgb(248 250 252);
+  }
+
+  .dark .theme-copy {
+    color: rgb(240 240 240 / 75%);
+  }
+
+  .dark .theme-accent-blue {
+    color: rgb(138 180 248);
+  }
+
+  .dark .theme-accent-red {
+    color: rgb(242 139 130);
+  }
+
+  .dark .theme-accent-green {
+    color: rgb(129 201 149);
+  }
+
+  .dark .theme-accent-yellow {
+    color: rgb(253 214 99);
+  }
+
   .btn {
     @apply inline-flex items-center justify-center rounded-full border-gray-400 border bg-transparent font-medium text-center text-base text-page leading-snug transition py-3.5 px-6 md:px-8 ease-in duration-200 focus:ring-blue-500 focus:ring-offset-blue-200 focus:ring-2 focus:ring-offset-2 hover:bg-gray-100 hover:border-gray-600 dark:text-slate-300 dark:border-slate-500 dark:hover:bg-slate-800 dark:hover:border-slate-800 cursor-pointer;
   }
@@ -113,5 +184,7 @@
   margin-top: 0;
 }
 
-
-img[alt=nick] { width: 30%; height:30%; }
+img[alt='nick'] {
+  width: 30%;
+  height: 30%;
+}

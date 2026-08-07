@@ -1,5 +1,5 @@
 import { footerData as footer } from '~/navigation';
-import { getPermalink } from '../../utils/permalinks';
+import { getPermalink } from '~/utils/permalinks';
 
 export const headerData = {
   links: [
@@ -14,7 +14,7 @@ export const headerData = {
     {
       text: 'Keynote',
       href: getPermalink('/orlando/keyNote'),
-    },    
+    },
     {
       text: 'Sponsors',
       href: getPermalink('/orlando/sponsors'),
@@ -26,10 +26,6 @@ export const headerData = {
     {
       text: 'Location',
       href: getPermalink('/orlando/location'),
-    },
-    {
-      text: 'Blog',
-      href: getPermalink('/blog'),
     },
   ],
   actions: [

@@ -1,5 +1,5 @@
 import { footerData as footer } from '~/navigation';
-import { getBlogPermalink, getPermalink } from '../../utils/permalinks';
+import { getPermalink } from '~/utils/permalinks';
 
 export const headerData = {
   links: [
@@ -22,10 +22,6 @@ export const headerData = {
     {
       text: 'Location',
       href: getPermalink('/tampa/location'),
-    },
-    {
-      text: 'Blog',
-      href: getBlogPermalink(),
     },
   ],
 };

@@ -9,19 +9,19 @@ export const headerData = {
     {
       text: 'Keynote',
       href: getPermalink('/keynote'),
-    },    
+    },
     {
       text: 'Speakers',
       href: getPermalink('/speakers'),
-    },    
+    },
     {
       text: 'Inspiration',
       href: getPermalink('/inspiration'),
-    }, 
+    },
     {
       text: 'Schedule',
       href: getPermalink('/schedule'),
-    }, 
+    },
 
     // {
     //   text: 'Miami',
@@ -39,12 +39,11 @@ export const headerData = {
     {
       text: 'Blog',
       href: getPermalink('/blog'),
-    },    
+    },
     {
       text: 'Sponsors',
       href: getPermalink('/sponsors'),
     },
-    
   ],
 };
 
@@ -74,6 +73,7 @@ export const footerData = {
     },
   ],
   secondaryLinks: [
+    { text: 'Orlando 2025', href: getPermalink('/2025') },
     { text: 'Orlando 2024', href: getPermalink('/orlando') },
     { text: 'Orlando 2023', href: 'https://2023-orlando.devfestflorida.com/' },
     { text: 'Tampa 2024', href: 'https://devfesttampa.com/' },
