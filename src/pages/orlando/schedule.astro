@@ -1,10 +1,13 @@
 ---
-import Layout from './PageLayout.astro';
-const response = await fetch('https://sessionize.com/api/v2/qw8dobow/view/GridSmart');
-const schedule = await response.text();
+import Layout from '~/layouts/legacy/OrlandoPageLayout.astro';
 ---
 
 <Layout>
-  <h1 class="text-center font-semibold">Schedule</h1>
-  <section class="text-center max-w-max bg-sky-400" set:html={schedule} />
+  <section class="mx-auto max-w-3xl px-4 py-16 text-center">
+    <h1 class="font-semibold">2024 Schedule Archive</h1>
+    <p class="mt-4">
+      The 2024 session schedule is no longer loaded from Sessionize. Visit the current
+      <a class="underline" href="/schedule">DevFest Hackathon 2026 schedule</a> for upcoming event information.
+    </p>
+  </section>
 </Layout>

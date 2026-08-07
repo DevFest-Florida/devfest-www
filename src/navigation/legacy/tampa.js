@@ -1,5 +1,5 @@
 import { footerData as footer } from '~/navigation';
-import { getPermalink } from '../../utils/permalinks';
+import { getPermalink } from '~/utils/permalinks';
 
 export const headerData = {
   links: [

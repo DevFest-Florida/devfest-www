@@ -22,9 +22,8 @@ import Steps from '~/components/widgets/Steps.astro';
 import Steps2 from '~/components/widgets/Steps2.astro';
 import Testimonials from '~/components/widgets/Testimonials.astro';
 import DevFestFans from '~/assets/images/devfest-fans.jpg';
-import DevFestSaveTheDate2026 from '~/assets/images/2026/devFestFloridaSaveTheDate2026.png';
+import DevFestSaveTheDate2026 from '~/assets/images/2026/devFestFloridaSaveTheDate2026.webp';
 import GdgCentralFloridaLogo from '~/assets/images/2026/GDG ProfessionalHorizontalLight.png';
-import DevFestHero2026 from '~/assets/images/2026/presentation.jpeg';
 
 const posts = await getCollection('post');
 
@@ -32,6 +31,34 @@ const metadata = {
   title: 'DevFest Hackathon 2026 | November 6–8',
   description:
     'Save the date for DevFest Hackathon 2026, November 6–8. Venue and registration details are coming soon.',
+};
+
+const eventSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Event',
+  name: 'DevFest Hackathon 2026',
+  description: metadata.description,
+  startDate: '2026-11-06',
+  endDate: '2026-11-08',
+  eventAttendanceMode: 'https://schema.org/OfflineEventAttendanceMode',
+  eventStatus: 'https://schema.org/EventScheduled',
+  image: [`https://devfestflorida.com${DevFestSaveTheDate2026.src}`],
+  url: 'https://devfestflorida.com/',
+  location: {
+    '@type': 'Place',
+    name: 'Orlando, Florida',
+    address: {
+      '@type': 'PostalAddress',
+      addressLocality: 'Orlando',
+      addressRegion: 'FL',
+      addressCountry: 'US',
+    },
+  },
+  organizer: {
+    '@type': 'Organization',
+    name: 'DevFest Florida',
+    url: 'https://devfestflorida.com/',
+  },
 };
 ---
 
@@ -43,14 +70,47 @@ const metadata = {
     background-repeat: no-repeat;
     background-position: center;
   }
+
+  .theme-section {
+    background-color: rgb(248 250 252);
+  }
+
+  .theme-section :is(h2, h3, h4) {
+    color: rgb(15 23 42);
+  }
+
+  .theme-section p {
+    color: rgb(71 85 105);
+  }
+
+  .theme-section :is(.rounded-xl, .rounded-2xl, .rounded-3xl) {
+    background-color: white;
+  }
+
+  :global(.dark) .theme-section {
+    background-color: rgb(30 30 30);
+  }
+
+  :global(.dark) .theme-section :is(h2, h3, h4) {
+    color: rgb(248 250 252);
+  }
+
+  :global(.dark) .theme-section p {
+    color: rgb(240 240 240 / 0.75);
+  }
+
+  :global(.dark) .theme-section :is(.rounded-xl, .rounded-2xl, .rounded-3xl) {
+    background-color: rgb(30 30 30);
+  }
 </style>
 <Layout metadata={metadata}>
+  <script type="application/ld+json" set:html={JSON.stringify(eventSchema)} />
   <!-- Hero Section -->
   <section id="home" class="relative sectionHero min-h-screen flex items-center justify-center text-center p-4 pt-24">
     <div class="relative z-10 max-w-4xl mx-auto">
-      <h2 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-white leading-tight mb-4">
+      <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-white leading-tight mb-4">
         DevFest Hackathon 2026
-      </h2>
+      </h1>
       <p class="text-xl sm:text-2xl md:text-3xl font-light mb-8 text-white">Build, Innovate & Connect</p>
       <p class="text-xl sm:text-2xl md:text-3xl font-light mb-8 text-white">November 6–8, 2026</p>
       <p class="text-white">
@@ -152,7 +212,7 @@ const metadata = {
   </section>
 
   <!-- About Section -->
-  <section id="about" class="container mx-auto py-16 px-4 md:px-8 lg:px-12 bg-[#1e1e1e]">
+  <section id="about" class="theme-section container mx-auto py-16 px-4 md:px-8 lg:px-12 bg-[#1e1e1e]">
     <div class="text-center mb-12">
       <h3 class="text-3xl font-bold text-white mb-4">About the Event</h3>
       <p class="text-lg text-[#f0f0f0]/70 max-w-2xl mx-auto">
@@ -188,7 +248,7 @@ const metadata = {
   </section>
 
   <!-- Tracks Section -->
-  <section id="tracks" class="container mx-auto py-16 px-4 md:px-8 lg:px-12 bg-[#1e1e1e]">
+  <section id="tracks" class="theme-section container mx-auto py-16 px-4 md:px-8 lg:px-12 bg-[#1e1e1e]">
     <div class="text-center mb-12">
       <h3 class="text-3xl font-bold text-white mb-4">Tracks</h3>
       <p class="text-lg text-[#f0f0f0]/70 max-w-2xl mx-auto">
@@ -238,7 +298,7 @@ const metadata = {
     </div>
   </section>
 
-  <section id="community" class="container mx-auto py-16 px-4 md:px-8 lg:px-12 bg-[#1e1e1e]">
+  <section id="community" class="theme-section container mx-auto py-16 px-4 md:px-8 lg:px-12 bg-[#1e1e1e]">
     <div class="text-center mb-12">
       <h3 class="text-3xl font-bold text-white mb-4">Our Community</h3>
       <p class="text-lg text-[#f0f0f0]/70 max-w-2xl mx-auto">
@@ -461,7 +521,7 @@ const metadata = {
   </section>
 
   <!-- Schedule Section -->
-  <section id="schedule" class="container mx-auto py-16 px-4 md:px-8 lg:px-12 bg-[#1e1e1e]">
+  <section id="schedule" class="theme-section container mx-auto py-16 px-4 md:px-8 lg:px-12 bg-[#1e1e1e]">
     <div class="text-center mb-12">
       <h3 class="text-3xl font-bold text-white mb-4">Agenda</h3>
       <p class="text-lg text-[#f0f0f0]/70 max-w-2xl mx-auto">
@@ -489,7 +549,7 @@ const metadata = {
   </section>
 
   <!-- Sponsors Section -->
-  <section id="sponsors" class="container mx-auto py-16 px-4 md:px-8 lg:px-12 bg-[#1e1e1e]">
+  <section id="sponsors" class="theme-section container mx-auto py-16 px-4 md:px-8 lg:px-12 bg-[#1e1e1e]">
     <div class="text-center mb-12">
       <h3 class="text-3xl font-bold text-white mb-4">Thank You to Our 2025 Sponsors</h3>
       <p class="text-lg text-[#f0f0f0]/70 max-w-2xl mx-auto mt-4">
@@ -507,7 +567,7 @@ const metadata = {
     <Sponsor />
   </section>
 
-  <section id="venue" class="container mx-auto py-16 px-4 md:px-8 lg:px-12 bg-[#1e1e1e]">
+  <section id="venue" class="theme-section container mx-auto py-16 px-4 md:px-8 lg:px-12 bg-[#1e1e1e]">
     <div class="text-center">
       <h3 class="text-3xl font-bold text-white mb-4">Venue</h3>
       <p class="text-lg text-[#f0f0f0]/70 max-w-2xl mx-auto">Venue announcement coming soon.</p>

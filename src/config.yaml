@@ -9,14 +9,14 @@ metadata:
   title:
     default: DevFest Florida
     template: '%s — DevFest Florida'
-  description: "\U0001F334 Devfest Central Florida Hackathon is Coming Soon!"
+  description: 'DevFest Hackathon 2026 is a three-day community technology event in Orlando, Florida, November 6–8.'
   robots:
     index: true
     follow: true
   openGraph:
     site_name: DevFest Florida
     images:
-      - url: '~/assets/images/2026/devFestFloridaSaveTheDate2026.png'
+      - url: '~/assets/images/2026/devFestFloridaSaveTheDate2026.webp'
         width: 2816
         height: 1536
     type: website

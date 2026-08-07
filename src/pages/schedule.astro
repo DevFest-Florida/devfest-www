@@ -2,8 +2,42 @@
 import Layout from '~/layouts/PageLayout.astro';
 ---
 
+<style>
+  .theme-section {
+    background-color: rgb(248 250 252);
+  }
+
+  .theme-section :is(h1, h2, h3) {
+    color: rgb(15 23 42);
+  }
+
+  .theme-section p {
+    color: rgb(71 85 105);
+  }
+
+  .theme-section :is(.rounded-2xl, .rounded-3xl) {
+    background-color: white;
+  }
+
+  :global(.dark) .theme-section {
+    background-color: rgb(30 30 30);
+  }
+
+  :global(.dark) .theme-section :is(h1, h2, h3) {
+    color: rgb(248 250 252);
+  }
+
+  :global(.dark) .theme-section p {
+    color: rgb(240 240 240 / 0.75);
+  }
+
+  :global(.dark) .theme-section :is(.rounded-2xl, .rounded-3xl) {
+    background-color: rgb(30 30 30);
+  }
+</style>
+
 <Layout>
-  <section class="bg-[#1e1e1e]">
+  <section class="theme-section bg-[#1e1e1e]">
     <!-- Hero -->
     <div class="relative overflow-hidden">
       <div class="container mx-auto px-4 py-20 md:px-8 md:py-28 lg:px-12">
