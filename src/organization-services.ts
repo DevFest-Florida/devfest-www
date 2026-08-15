@@ -14,7 +14,7 @@ export class OrganizationInfo
 export class OrganizationServices
 {
     getOrganizationInfo() : OrganizationInfo{
-        let record = new OrganizationInfo();
+        const record = new OrganizationInfo();
         record.name = "Google Developer Group of Central Florida";
         record.conferenceEmail = "organizers@devfestflorida.org";
         record.codeOfConductReportFormLink = "https://fixme.com";

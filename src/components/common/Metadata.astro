@@ -1,11 +1,8 @@
 ---
 import merge from 'lodash.merge';
-import { AstroSeo } from '@astrolib/seo';
-
-import type { Props as AstroSeoProps } from '@astrolib/seo';
 
 import { SITE, METADATA, I18N } from 'astrowind:config';
-import type { MetaData } from '~/types';
+import type { MetaData, MetaDataOpenGraph, MetaDataTwitter } from '~/types';
 import { getCanonical } from '~/utils/permalinks';
 
 import { adaptOpenGraphImages } from '~/utils/images';
@@ -24,7 +21,18 @@ const {
   twitter = {},
 } = Astro.props;
 
-const seoProps: AstroSeoProps = merge(
+interface SeoData {
+  title?: string;
+  titleTemplate?: string;
+  canonical?: string;
+  noindex?: boolean;
+  nofollow?: boolean;
+  description?: string;
+  openGraph?: MetaDataOpenGraph & { site_name?: string };
+  twitter?: MetaDataTwitter;
+}
+
+const seoProps = merge(
   {
     title: '',
     titleTemplate: '%s',
@@ -62,7 +70,39 @@ const seoProps: AstroSeoProps = merge(
     openGraph: { url: canonical, ...openGraph },
     twitter: twitter,
   }
-);
+) as SeoData;
+
+const resolvedOpenGraph = await adaptOpenGraphImages(seoProps.openGraph, Astro.site) as MetaDataOpenGraph & {
+  site_name?: string;
+};
+const resolvedTitle = seoProps.title
+  ? (seoProps.titleTemplate || '%s').replace('%s', seoProps.title)
+  : undefined;
+const robotsContent = [seoProps.noindex ? 'noindex' : 'index', seoProps.nofollow ? 'nofollow' : 'follow'].join(', ');
 ---
 
-<AstroSeo {...{ ...seoProps, openGraph: await adaptOpenGraphImages(seoProps?.openGraph, Astro.site) }} />
+{resolvedTitle && <title>{resolvedTitle}</title>}
+{seoProps.canonical && <link rel="canonical" href={seoProps.canonical} />}
+{seoProps.description && <meta name="description" content={seoProps.description} />}
+<meta name="robots" content={robotsContent} />
+
+{resolvedTitle && <meta property="og:title" content={resolvedTitle} />}
+{seoProps.description && <meta property="og:description" content={seoProps.description} />}
+{resolvedOpenGraph.url && <meta property="og:url" content={resolvedOpenGraph.url} />}
+{(resolvedOpenGraph.siteName || resolvedOpenGraph.site_name) && <meta property="og:site_name" content={resolvedOpenGraph.siteName || resolvedOpenGraph.site_name} />}
+{resolvedOpenGraph.locale && <meta property="og:locale" content={resolvedOpenGraph.locale} />}
+{resolvedOpenGraph.type && <meta property="og:type" content={resolvedOpenGraph.type} />}
+{resolvedOpenGraph.images?.map((image) => (
+  <>
+    <meta property="og:image" content={image.url} />
+    {image.width && <meta property="og:image:width" content={String(image.width)} />}
+    {image.height && <meta property="og:image:height" content={String(image.height)} />}
+  </>
+))}
+
+{seoProps.twitter?.cardType && <meta name="twitter:card" content={seoProps.twitter.cardType} />}
+{seoProps.twitter?.handle && <meta name="twitter:creator" content={seoProps.twitter.handle} />}
+{seoProps.twitter?.site && <meta name="twitter:site" content={seoProps.twitter.site} />}
+{resolvedTitle && <meta name="twitter:title" content={resolvedTitle} />}
+{seoProps.description && <meta name="twitter:description" content={seoProps.description} />}
+{resolvedOpenGraph.images?.[0]?.url && <meta name="twitter:image" content={resolvedOpenGraph.images[0].url} />}

@@ -3,6 +3,7 @@ import { UI } from 'astrowind:config';
 ---
 
 <script is:inline define:vars={{ defaultTheme: UI.theme }}>
+  (() => {
   if (window.basic_script) {
     return;
   }
@@ -159,4 +160,5 @@ import { UI } from 'astrowind:config';
     onLoad();
     onPageShow();
   });
+  })();
 </script>

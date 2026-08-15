@@ -1,13 +1,20 @@
 ---
-import { GoogleAnalytics } from '@astrolib/analytics';
 import { ANALYTICS } from 'astrowind:config';
+
+const id = ANALYTICS?.vendors?.googleAnalytics?.id;
+const usePartytown = ANALYTICS?.vendors?.googleAnalytics?.partytown;
 ---
 
 {
-  ANALYTICS?.vendors?.googleAnalytics?.id ? (
-    <GoogleAnalytics
-      id={String(ANALYTICS.vendors.googleAnalytics.id)}
-      partytown={ANALYTICS?.vendors?.googleAnalytics?.partytown}
-    />
+  id ? (
+    <>
+      <script async src={`https://www.googletagmanager.com/gtag/js?id=${encodeURIComponent(String(id))}`} type={usePartytown ? 'text/partytown' : undefined}></script>
+      <script is:inline type={usePartytown ? 'text/partytown' : undefined} define:vars={{ id }}>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(...args) { dataLayer.push(args); }
+        gtag('js', new Date());
+        gtag('config', id);
+      </script>
+    </>
   ) : null
 }
