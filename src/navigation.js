@@ -44,6 +44,10 @@ export const headerData = {
       text: 'Sponsors',
       href: getPermalink('/sponsors'),
     },
+    {
+      text: 'Register',
+      href: 'https://www.eventbrite.com/e/devfest-florida-hackathon-11626-11826-tickets-1998655551557?aff=oddtdtcreator'
+    }
   ],
 };
 
