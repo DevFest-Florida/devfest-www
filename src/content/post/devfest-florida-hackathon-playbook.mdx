@@ -1,0 +1,625 @@
+---
+publishDate: 2026-09-20T00:00:00Z
+title: '🚀 The Complete Playbook for the DevFest Florida Hackathon'
+excerpt: "I walked into my first hackathon with more nerves than confidence, and it changed the way I build software. Here is the playbook I wish someone had handed me: how to pick your DevFest Florida track, form a team, survive the three-day sprint, and deliver a 2 to 3 minute pitch people remember."
+image: ~/assets/images/2026/hackathon-playbook/devfest-hackathon-team.jpg
+
+tags:
+  - devfest
+  - hackathon
+  - community
+  - career
+---
+
+import { Image } from 'astro:assets';
+import tadhackFloorImage from '../../assets/images/2026/hackathon-playbook/tadhack-mini-orlando-2019-floor.jpg';
+import tadhackRoomImage from '../../assets/images/2026/hackathon-playbook/tadhack-mini-orlando-2019-room.jpg';
+import iapproveFrontendImage from '../../assets/images/2026/hackathon-playbook/iapprove-frontend.png';
+import iapproveDashboardImage from '../../assets/images/2026/hackathon-playbook/iapprove-dashboard.png';
+import devfestHackathonTeamImage from '../../assets/images/2026/hackathon-playbook/devfest-hackathon-team.jpg';
+import Button from '~/components/ui/Button.astro';
+
+¡Hola! 👋
+
+#### [By Javi, Software Engineer & GDG Community Organizer](https://gdg.community.dev/u/javier4/#/about)
+
+I am genuinely excited that you are getting ready for our [DevFest Florida Hackathon](https://devfestflorida.com/)!
+
+As someone who helps organize GDG events here in Central Florida, one of my favorite things is watching people walk into an event with an idea and leave having built something they did not think they could build a few days earlier.
+
+First, a fun fact.
+
+The word **hackathon** combines **“hack,” meaning clever or exploratory programming, with “marathon.”** The term became part of developer culture in 1999, when OpenBSD held a developer gathering in Calgary and Sun Microsystems also hosted a programming event during JavaOne.
+
+Apparently, developers have been voluntarily giving themselves impossible deadlines ever since. 😄
+
+But that is also part of the fun.
+
+Hackathons are not really about producing a perfect, production-ready application. They are about creativity, experimentation, collaboration, learning quickly, and showing the potential of an idea.
+
+### **🔥 My First Hackathon Experience**
+
+When I first came to Florida and was starting my career as a developer, I decided one of the best ways to learn was to jump into the fire.
+
+So I attended my first hackathon, **[TADHack-mini Orlando 2019](https://blog.tadhack.com/2019/03/18/tadhack-mini-orlando-2019-summary/)**.
+
+Believe me, it was intimidating.
+
+I was still building confidence as a developer, and suddenly I was surrounded by people trying to come up with an idea, choose technologies, build something, and present it, all within a limited amount of time.
+
+But I took the risk.
+
+And I am glad I did.
+
+<figure class="not-prose my-10">
+  <div class="grid gap-4 sm:grid-cols-2 sm:gap-6">
+    <Image
+      src={tadhackFloorImage}
+      alt="On the floor at TADHack-mini Orlando 2019"
+      width={340}
+      height={255}
+      densities={[1, 2]}
+      format="webp"
+      quality={82}
+      class="h-auto w-full rounded-md shadow-lg"
+      loading="lazy"
+      decoding="async"
+    />
+    <Image
+      src={tadhackRoomImage}
+      alt="Presentations and participants at TADHack-mini Orlando 2019"
+      width={340}
+      height={255}
+      densities={[1, 2]}
+      format="webp"
+      quality={82}
+      class="h-auto w-full rounded-md shadow-lg"
+      loading="lazy"
+      decoding="async"
+    />
+  </div>
+  <figcaption class="mt-3 text-center text-sm italic text-muted dark:text-slate-400">
+    On the floor at TADHack-mini Orlando 2019, my first hackathon experience.
+  </figcaption>
+</figure>
+
+Our team built **iApprove**, an SMS multimedia approval MVP designed to eliminate slow email chains. It allowed decision makers to quickly review and approve candidate applications and photos directly from their phones.
+
+The platform automated the workflow using messaging APIs powered by TeleSign and VoIP Innovations.
+
+<figure class="not-prose my-10">
+  <Image
+    src={iapproveFrontendImage}
+    alt="The iApprove hackathon prototype frontend: a form for submitting a Disney cast member photo for approval"
+    width={818}
+    height={770}
+    format="webp"
+    quality={88}
+    class="mx-auto h-auto w-full max-w-xl rounded-md shadow-lg"
+    loading="lazy"
+    decoding="async"
+  />
+  <figcaption class="mx-auto max-w-xl mt-3 text-center text-sm italic text-muted dark:text-slate-400">
+    The frontend of our iApprove hackathon prototype.
+  </figcaption>
+</figure>
+
+<figure class="not-prose my-10">
+  <Image
+    src={iapproveDashboardImage}
+    alt="The iApprove backend dashboard listing submitted photos with their approval status, reviewer, and response time"
+    width={772}
+    height={745}
+    format="webp"
+    quality={88}
+    class="mx-auto h-auto w-full max-w-xl rounded-md shadow-lg"
+    loading="lazy"
+    decoding="async"
+  />
+  <figcaption class="mx-auto max-w-xl mt-3 text-center text-sm italic text-muted dark:text-slate-400">
+    The backend dashboard we built for iApprove (the backend was named iApproval for some reason).
+  </figcaption>
+</figure>
+
+Did iApprove change the world?
+
+Nope. 😄
+
+But that hackathon changed me.
+
+I made friends, expanded my network, learned practical skills, and gained confidence that helped jumpstart my developer career.
+
+Sometimes a few intense days building something with other people can teach you things that are difficult to learn from months of tutorials.
+
+### **🧠 What Can You Learn From a Hackathon?**
+
+The beauty of participating in a hackathon is that it accelerates both your technical skills and your soft skills.
+
+You will probably learn a little bit about all of these:
+
+* Building a prototype and delivering an MVP, or Minimum Viable Product.
+* Adopting new tools and technologies while learning how to read documentation quickly.
+* Time management and working under pressure.
+* Problem solving when there is no tutorial telling you exactly what to do.
+* Collaborating with people from different backgrounds and skill sets.
+* Communicating clearly and learning when to ask for help.
+* Presenting an idea to judges and explaining technical concepts simply.
+* Focusing on solving the actual problem instead of getting lost in technical details.
+
+That last one is especially important.
+
+As developers, sometimes we get excited about the technology and forget to explain **why we built something in the first place.**
+
+So, with that in mind, I put together a playbook to help you navigate the DevFest Florida Hackathon.
+
+## **🌴 The Complete Playbook for DevFest Florida Hackathon**
+
+Welcome to DevFest Florida!
+
+Our hackathon is a welcoming three-day experience focused on collaboration, creativity, experimentation, and community impact.
+
+At the end, participants will have only a short amount of time to present their ideas and projects.
+
+That means you need to think about two things from the beginning:
+
+**What are we building?**
+
+And just as importantly:
+
+**How are we going to explain it?**
+
+This playbook is designed to help you do both.
+
+### **⚠️ Progress Over Perfection**
+
+Here is probably the most important thing I can tell you:
+
+**Your hackathon submission does not need to be a finished production application.**
+
+You have limited time, and the judges know that.
+
+What matters is whether we can understand your idea, see what you accomplished, understand the decisions you made, and imagine where the project could go next.
+
+If something is not finished, do not hide it.
+
+Simply say:
+
+> Here is what works today, and here is what we would build next.
+
+That is much stronger than pretending everything is complete.
+
+Build what you can. Learn something. Meet people. Have fun with it.
+
+### **🛣️ Choose Your DevFest Florida Track**
+
+Before you start building, you need to know your lane.
+
+DevFest Florida has three tracks:
+
+#### **💻 Software Prototype**
+
+Develop a working MVP of a high-impact software application or game enabled by AI.
+
+This is the track for builders who want to bring an idea to life with code.
+
+#### **🎨 App Pitch**
+
+Pitch the design and concept of operations for an application.
+
+This is a great option for designers, product managers, strategists, and innovators who want to focus more on the idea, user experience, and product direction.
+
+#### **🚀 Singularity Startup Pitch**
+
+Create a business plan and product definition built around the possibilities of advanced AI.
+
+This track focuses more heavily on the business, product, and future impact of your idea.
+
+Choose the track that works best for your team.
+
+You do not need to force yourself into the Software Prototype track just because you know how to code.
+
+### **🧰 Before the Hackathon: Set Yourself Up to Succeed**
+
+#### **Build Your Team**
+
+For a three-day hackathon, I like teams of around four people.
+
+It gives you enough people to divide the work without turning every decision into a committee meeting. 😄
+
+Try to have a mix of skills.
+
+You might want:
+
+* Someone comfortable presenting.
+* Someone who understands the problem or domain.
+* Developers who can build the prototype.
+* A designer or someone thinking about the user experience.
+
+🚩 **One possible red flag:** everyone on the team has exactly the same skill set.
+
+Different perspectives can make your project stronger.
+
+#### **Get Your Tech Ready**
+
+Do not spend the first three hours installing software.
+
+Before the event:
+
+* Get your basic boilerplates ready.
+* Make sure your development environment works.
+* Set up Google Cloud, Firebase, Gemini, or whatever technologies you expect to explore.
+* Test your Git workflow.
+* Make sure your team knows how you will share code and assets.
+* Spend some time learning the AI or technology suite you plan to use.
+
+You do not need to build the project before the hackathon.
+
+You just do not want your first challenge to be:
+
+> “Why does npm install hate me?” 😄
+
+## **📅 The Three-Day Playbook**
+
+### **Day 1: Plan and Connect**
+
+**Focus:** Ideation, registration, team building, and understanding the problem.
+
+Your goal is not to write 2,000 lines of code.
+
+Your goal is to make sure everyone agrees on what you are building.
+
+Ask:
+
+* What problem are we solving?
+* Who has this problem?
+* What is the simplest version of our solution?
+* What is the ONE thing our demo absolutely needs to show?
+
+Sketch the user flow.
+
+Talk through the idea.
+
+Then start building.
+
+### **Day 2: Build and Iterate**
+
+**Focus:** Collaboration and execution.
+
+Now things get interesting. 😄
+
+Divide the work and build in parallel.
+
+Use GenAI where it makes sense to accelerate things like boilerplate, brainstorming, debugging, documentation, or repetitive development tasks.
+
+But remember: AI is helping your team build the solution. It is not replacing your team's thinking.
+
+Try to have a basic working version by Saturday evening.
+
+Every few hours, ask yourselves:
+
+> **If we had to demo this right now, could we?**
+
+If the answer is no, you probably know what needs your attention next.
+
+### **Day 3: Polish and Pitch**
+
+**Focus:** Reliability, storytelling, and presentation.
+
+This is where teams sometimes get themselves into trouble.
+
+Someone has a brilliant idea for one more feature.
+
+Then another.
+
+Then another.
+
+Suddenly it is presentation time and nothing works.
+
+So on the final day:
+
+**STOP ADDING FEATURES.** 😄
+
+Polish what you already have.
+
+Make the happy path reliable.
+
+Write your presentation.
+
+Practice it at least five times.
+
+And please record a backup demo video.
+
+Future you will be very happy you did.
+
+## **🎤 Presentation Lessons: How to Pitch Your Project**
+
+Building something is only half of a hackathon.
+
+You also need to help people understand why it matters.
+
+### **1. Don't Start With the Tech Stack**
+
+One of the easiest mistakes developers make is starting like this:
+
+> We used React, Firebase, Gemini, Cloud Run… etc.
+
+Cool.
+
+But what are you building?
+
+And why should I care?
+
+Start with the problem.
+
+#### **🌟 The Golden Rule**
+
+**Do not make the judges reverse engineer your purpose from your tech stack.**
+
+Technology supports your story. It should not be the story.
+
+### **2. Give Us a User Story**
+
+Projects are much easier to understand when there is a person attached to the problem.
+
+Instead of:
+
+❌ “Here is our application.”
+
+Try:
+
+✅ “Meet Maya. She manages three projects and spends too much time searching through documents. Our solution helps her find what she needs in seconds.”
+
+Now we understand who has the problem.
+
+And when you demo the application, we are following Maya's journey instead of watching someone randomly click buttons.
+
+### **3. Focus on Honest Impact**
+
+Features are useful.
+
+Outcomes are memorable.
+
+Do not just tell us:
+
+> We integrated Gemini.
+
+Tell us why Gemini made sense for this problem.
+
+If your project could reduce a task from twenty minutes to one minute, that is interesting.
+
+But if you do not have real metrics yet, please do not invent them.
+
+Explain the **expected impact** and how you would measure it later.
+
+Honesty is stronger than fake precision.
+
+### **4. Follow the Crunch-Time Demo Rule**
+
+Your demo is not a product tour.
+
+You do not need to show every button someone built at 2:00 AM. 😄
+
+Show us the happy path.
+
+Get to the interaction that proves your idea works.
+
+#### **🌟 The Golden Rule**
+
+**Don't demo everything. Demo the thing that proves your idea works.**
+
+And yes, I am going to say it again:
+
+**Record a backup video.**
+
+### **5. Keep Technical Details Near the End**
+
+We definitely want to hear about your architecture.
+
+Just not first.
+
+A simple diagram should help us understand the solution in a few seconds.
+
+If you used Gemini, Firebase, Google Cloud, or another technology, explain why you chose it.
+
+What problem did it solve?
+
+Why was it a good fit?
+
+The technology should support the story, not replace it.
+
+### **6. Stop Adding Features**
+
+Yes, this deserves its own section too.
+
+On the final day, someone on your team needs permission to yell:
+
+> **STOP ADDING FEATURES!**
+
+Eventually, another feature becomes less valuable than a reliable demo.
+
+Make what you already have work well.
+
+### **7. Your Team Is Part of the Story**
+
+A hackathon is not only about code.
+
+It is also about collaboration, creativity, learning, and working through problems together.
+
+Tell us about that.
+
+What did you learn?
+
+What surprised you?
+
+Did something break?
+
+Did your team change direction?
+
+Did someone learn a technology they had never touched before?
+
+That journey is part of what makes hackathons special.
+
+## **🖥️ Keep Your Pitch Deck Short**
+
+Please do not show up with 27 slides for a three-minute presentation. 😄
+
+Around five slides is plenty.
+
+#### **Slide 1: The Problem**
+
+What problem are you solving, and who has it?
+
+#### **Slide 2: The Project**
+
+Introduce your solution in one clear sentence.
+
+#### **Slide 3: The Demo**
+
+Show the working prototype, mockup, or design concept.
+
+Get to the good stuff quickly.
+
+#### **Slide 4: The Technology**
+
+Show the important technologies and a simple architecture or workflow.
+
+Explain why they were chosen.
+
+#### **Slide 5: The Future**
+
+Where does the project go next?
+
+How would you reach users?
+
+What would you build with more time?
+
+When talking about the business side, I would rather hear how you plan to reach your first users than see a complicated five-year revenue spreadsheet.
+
+## **⏱️ A 2 to 3 Minute Pitch Formula**
+
+If you are wondering how to fit everything into a few minutes, try this:
+
+#### **1. The Hook: 10 seconds**
+
+What is the problem, and who experiences it?
+
+#### **2. The Solution: 10 seconds**
+
+Explain what you built in one sentence.
+
+#### **3. The Demo: 90 seconds**
+
+Show the happy path through your prototype or design.
+
+Tell a story instead of randomly clicking around.
+
+#### **4. The Tech and AI: 30 seconds**
+
+Explain the important technology behind the solution and why you chose it.
+
+A simple architecture diagram can help.
+
+#### **5. The Future: 20 seconds**
+
+What would you build next?
+
+How could this grow?
+
+How would you reach your users?
+
+That gives you about **2 minutes and 40 seconds**, leaving just enough breathing room without racing through your presentation.
+
+## **✅ The Developer Pitch Checklist**
+
+Before you walk up to present, ask your team:
+
+* ✅ Can I explain the project in one sentence?
+* ✅ Can our ENTIRE team explain the project using roughly the SAME sentence?
+* ✅ Do we start with a problem?
+* ✅ Do we explain who has that problem?
+* ✅ Do we have a simple user story?
+* ✅ Can a nontechnical judge understand the project?
+* ✅ Did we focus on honest outcomes and expected impact?
+* ✅ If we used numbers, can we actually support them?
+* ✅ Does our demo focus on the happy path?
+* ✅ Can we finish comfortably within the time limit?
+* ✅ Are we explaining outcomes instead of just listing frameworks?
+* ✅ Do we have a backup video?
+* ✅ Did we practice?
+
+If everybody on the team describes the project differently, take another five minutes and figure that out before presenting. 😄
+
+### **🌴 One Last Thing**
+
+Your first hackathon might feel intimidating.
+
+Mine certainly did.
+
+But you do not need to be the smartest developer in the room.
+
+You do not need to know every technology.
+
+And you definitely do not need to build the next billion-dollar startup in three days.
+
+Come ready to learn.
+
+Talk to people.
+
+Ask questions.
+
+Try something outside your comfort zone.
+
+Build something you are proud of.
+
+My first hackathon project did not change the world.
+
+**But the experience changed me.**
+
+That is one of the reasons I continue helping organize events like this today.
+
+Your first hackathon will be a learning experience.
+
+By your third, who knows? You might be the person helping someone else through their first one. 🚀
+
+<figure class="not-prose my-10">
+  <Image
+    src={devfestHackathonTeamImage}
+    alt="Hackathon participants, mentors, and organizers posing together in front of a whiteboard at a DevFest Florida Hackathon"
+    width={720}
+    height={405}
+    densities={[1, 2]}
+    format="webp"
+    quality={82}
+    class="h-auto w-full rounded-md shadow-lg"
+    loading="lazy"
+    decoding="async"
+  />
+  <figcaption class="mt-3 text-center text-sm italic text-muted dark:text-slate-400">
+    Developers, designers, mentors, and community members building together at a previous DevFest Florida Hackathon.
+  </figcaption>
+</figure>
+
+I hope this playbook helps you walk into DevFest Florida a little more prepared and a lot less nervous.
+
+Bring your idea.
+
+Bring your curiosity.
+
+Bring your laptop charger. Seriously. 🔌😄
+
+See you at DevFest Florida! 🌴🚀
+
+👉 [Learn more about the DevFest Florida Hackathon](https://devfestflorida.com/)
+
+¡Hasta la próxima!
+
+**Javi**<br />
+Software Engineer & GDG Central Florida Community Organizer
+
+<Button
+        text="Buy a Ticket!"
+        variant="primary"
+        target="_blank"
+        icon="tabler:square-rounded-arrow-right"
+        href="https://www.eventbrite.com/e/devfest-florida-hackathon-11626-11826-tickets-1998655551557?aff=oddtdtcreator"
+      />
