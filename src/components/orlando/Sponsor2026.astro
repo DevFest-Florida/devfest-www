@@ -1,48 +1,88 @@
 ---
-import GoogleLogo from '../../assets/images/sponsors/Google_2015_logo.png';
-import JetBrainsLogo from '../../assets/images/sponsors/jetbrains.png';
-import JetBrainsLogoWhite from '../../assets/images/sponsors/jetbrains-mono-white.png';
-import TekSystemsLogo from '../../assets/images/sponsors/teksystems.png';
-import VonageLogo from '~/assets/images/sponsors/Vonage_Logo.png';
+import GoogleLogo from '~/assets/images/sponsors/Google_2015_logo.png';
+import DataKindLogo from '~/assets/images/sponsors/DK_LOGO_R_ORG-2.png';
+import VonageLogo from '~/assets/images/sponsors/vonage-transparent.png';
+import VonageLogoWhite from '~/assets/images/sponsors/vonage-white.png';
+import TekSystemsLogo from '~/assets/images/sponsors/teksystems.png';
+import BotLogoBlack from '~/assets/images/sponsors/BOT_10YRGala_logo_Black (2).png';
+import BotLogoWhite from '~/assets/images/sponsors/BOT_10YRGala_logo_white (1).png';
+import JetBrainsLogo from '~/assets/images/sponsors/jetbrains.png';
+import JetBrainsLogoWhite from '~/assets/images/sponsors/jetbrains-mono-white.png';
+import KodecoLogo from '~/assets/images/sponsors/logotype-orange.png';
 ---
 
 <h3 class="text-center my-10 font-semibold">Partner</h3>
-<section class="w-10/12 mx-auto flex justify-center">
-  <a href="https://developers.google.com/" target="_blank" class="w-full md:w-3/4 lg:w-2/3 flex justify-center">
-    <img src={GoogleLogo.src} alt="Google Logo" class="object-contain h-28 md:h-32 w-full px-2 mx-auto" />
+<section class="w-10/12 max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 items-center justify-items-center">
+  <a href="https://developers.google.com/" target="_blank" class="w-full flex justify-center items-center">
+    <img src={GoogleLogo.src} alt="Google Logo" class="object-contain h-24 md:h-28 w-auto max-w-[280px] md:max-w-xs px-2 mx-auto" />
+  </a>
+  <a href="https://www.datakind.org/" target="_blank" class="w-full flex justify-center items-center">
+    <img
+      src={DataKindLogo.src}
+      alt="DataKind Logo"
+      class="object-contain h-14 md:h-18 w-auto max-w-[280px] md:max-w-xs px-2 mx-auto"
+    />
   </a>
 </section>
 
 <h3 class="text-center my-10 font-semibold">Diamond</h3>
-<section class="w-10/12 mx-auto flex justify-center">
-  <a href="https://www.vonage.com/" target="_blank" class="w-full md:w-3/4 lg:w-2/3 flex justify-center">
-    <img src={VonageLogo.src} alt="Vonage Logo" class="object-contain h-28 md:h-32 w-full px-2 mx-auto" />
+<section class="w-10/12 max-w-4xl mx-auto flex justify-center items-center">
+  <a href="https://www.vonage.com/" target="_blank" class="w-full md:w-3/4 lg:w-2/3 flex justify-center items-center">
+    <img
+      src={VonageLogo.src}
+      alt="Vonage Logo"
+      class="object-contain h-24 md:h-28 w-auto max-w-[280px] md:max-w-xs px-2 mx-auto block dark:hidden"
+    />
+    <img
+      src={VonageLogoWhite.src}
+      alt="Vonage Logo"
+      class="object-contain h-24 md:h-28 w-auto max-w-[280px] md:max-w-xs px-2 mx-auto hidden dark:block"
+    />
   </a>
 </section>
 
 <h3 class="text-center my-10 font-semibold">Copper</h3>
-<section class="w-10/12 mx-auto flex justify-center">
-  <a href="https://www.teksystems.com/" target="_blank" class="w-full md:w-2/3 lg:w-1/2 flex justify-center">
+<section class="w-10/12 max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 items-center justify-items-center">
+  <a href="https://www.teksystems.com/" target="_blank" class="w-full flex justify-center items-center">
     <img
       src={TekSystemsLogo.src}
       alt="TEKsystems Logo"
-      class="object-contain h-20 md:h-24 w-full px-2 mx-auto dark:brightness-0 dark:invert"
+      class="object-contain h-20 md:h-24 w-auto max-w-[280px] md:max-w-xs px-2 mx-auto dark:brightness-0 dark:invert"
+    />
+  </a>
+  <a href="https://blackorlandotech.org/" target="_blank" class="w-full flex justify-center items-center">
+    <img
+      src={BotLogoBlack.src}
+      alt="Black Orlando Tech Logo"
+      class="object-contain h-24 md:h-28 w-auto max-w-[280px] md:max-w-xs px-2 mx-auto block dark:hidden"
+    />
+    <img
+      src={BotLogoWhite.src}
+      alt="Black Orlando Tech Logo"
+      class="object-contain h-24 md:h-28 w-auto max-w-[280px] md:max-w-xs px-2 mx-auto hidden dark:block"
     />
   </a>
 </section>
 
 <h3 class="text-center my-10 font-semibold">Community Supporter</h3>
-<section class="w-10/12 mx-auto flex justify-center">
-  <a href="https://www.jetbrains.com/" target="_blank" class="w-full md:w-1/2 lg:w-2/5 flex justify-center">
+<section class="w-10/12 max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 items-center justify-items-center">
+  <a href="https://www.jetbrains.com/" target="_blank" class="w-full flex justify-center items-center">
     <img
       src={JetBrainsLogo.src}
       alt="JetBrains Logo"
-      class="object-contain h-16 md:h-20 w-full px-2 mx-auto block dark:hidden"
+      class="object-contain h-16 md:h-20 w-auto max-w-[260px] md:max-w-xs px-2 mx-auto block dark:hidden"
     />
     <img
       src={JetBrainsLogoWhite.src}
       alt="JetBrains Logo"
-      class="object-contain h-16 md:h-20 w-full px-2 mx-auto hidden dark:block"
+      class="object-contain h-16 md:h-20 w-auto max-w-[260px] md:max-w-xs px-2 mx-auto hidden dark:block"
+    />
+  </a>
+  <a href="https://www.kodeco.com/" target="_blank" class="w-full flex justify-center items-center">
+    <img
+      src={KodecoLogo.src}
+      alt="Kodeco Logo"
+      class="object-contain h-14 md:h-16 w-auto max-w-[260px] md:max-w-xs px-2 mx-auto"
     />
   </a>
 </section>
