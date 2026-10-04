@@ -22,6 +22,10 @@ export const headerData = {
       text: 'Schedule',
       href: getPermalink('/schedule'),
     },
+    {
+      text: 'Venue',
+      href: getPermalink('/#venue'),
+    },
 
     // {
     //   text: 'Miami',

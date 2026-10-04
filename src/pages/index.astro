@@ -6,11 +6,46 @@ import Sponsor from '~/components/orlando/Sponsor2026.astro';
 import DevFestFans from '~/assets/images/devfest-fans.jpg';
 import DevFestSaveTheDate2026 from '~/assets/images/2026/devFestFloridaSaveTheDate2026.webp';
 import GdgCentralFloridaLogo from '~/assets/images/2026/GDG ProfessionalHorizontalLight.png';
+import UcfAerialPhoto from '~/assets/images/2026/ucf-downtown-aerial.webp';
+import UcfDpacPhoto from '~/assets/images/2026/ucf-downtown.webp';
+import UcfPlazaPhoto from '~/assets/images/2026/ucf-downtown-plaza.webp';
+import UcfTerracePhoto from '~/assets/images/2026/ucf-downtown-terrace.webp';
+
+const venueSlides = [
+  {
+    image: UcfAerialPhoto,
+    badge: 'UCF Downtown',
+    title: 'Campus Aerial View & Creative Village',
+    description: 'Aerial overview of 500 W. Livingston Street, Dr. Phillips Academic Commons, and surrounding transit.',
+    alt: 'Aerial view of UCF Downtown campus in Creative Village Orlando',
+  },
+  {
+    image: UcfDpacPhoto,
+    badge: 'DPAC Facility',
+    title: 'Dr. Phillips Academic Commons',
+    description: 'The signature four-story academic center and bridge housing our main hackathon work halls.',
+    alt: 'Dr. Phillips Academic Commons building at UCF Downtown',
+  },
+  {
+    image: UcfPlazaPhoto,
+    badge: 'Campus Plaza',
+    title: 'James M. Seneff Plaza & West Livingston',
+    description: 'Modern pedestrian walkways, outdoor greenery, and direct access to LYMMO transit.',
+    alt: 'James M. Seneff Plaza exterior at UCF Downtown',
+  },
+  {
+    image: UcfTerracePhoto,
+    badge: 'Collaboration',
+    title: 'Team Workspaces & Terrace Lounges',
+    description: 'Comfortable collaboration areas built for brainstorming, development, and team hacking sessions.',
+    alt: 'Students collaborating on terrace overlooking downtown Orlando',
+  },
+];
 
 const metadata = {
-  title: 'DevFest Hackathon 2026 | November 6–8',
+  title: 'DevFest Hackathon 2026 | November 6–8 | UCF Downtown, Orlando',
   description:
-    'Save the date for DevFest Hackathon 2026, November 6–8. Venue and registration details are coming soon.',
+    'Join us for DevFest Hackathon 2026, November 6–8 at UCF Downtown in Orlando, Florida. Collaborate, innovate, and build with the GDG community.',
 };
 
 const eventSchema = {
@@ -26,11 +61,13 @@ const eventSchema = {
   url: 'https://devfestflorida.com/',
   location: {
     '@type': 'Place',
-    name: 'Orlando, Florida',
+    name: 'UCF Downtown (Dr. Phillips Academic Commons)',
     address: {
       '@type': 'PostalAddress',
+      streetAddress: '500 W. Livingston Street',
       addressLocality: 'Orlando',
       addressRegion: 'FL',
+      postalCode: '32801',
       addressCountry: 'US',
     },
   },
@@ -130,7 +167,12 @@ const eventSchema = {
           <Icon name="tabler:calendar-event" class="h-6 w-6 shrink-0 text-[#4285f4]" aria-hidden="true" />
           Save the date — November 6–8, 2026
         </p>
-        <p class="mt-1 text-sm sm:text-base">Venue details are coming soon.</p>
+        <p class="mt-1 flex items-center gap-2 text-sm sm:text-base">
+          <Icon name="tabler:map-pin" class="h-5 w-5 shrink-0 text-[#ea4335]" aria-hidden="true" />
+          <span>
+            <strong>UCF Downtown</strong> &mdash; 500 W. Livingston Street, Orlando, FL
+          </span>
+        </p>
       </aside>
       <!-- Main CTA Button -->
       <a
@@ -493,10 +535,223 @@ const eventSchema = {
     <Sponsor />
   </section>
 
+  <!-- Venue Section -->
   <section id="venue" class="theme-section container mx-auto py-16 px-4 md:px-8 lg:px-12">
-    <div class="text-center">
-      <h3 class="theme-heading text-3xl font-bold mb-4">Venue</h3>
-      <p class="theme-copy text-lg max-w-2xl mx-auto">Venue announcement coming soon.</p>
+    <div class="text-center mb-12">
+      <div class="inline-flex items-center gap-2 rounded-full bg-[#4285f4]/10 dark:bg-[#4285f4]/20 px-4 py-1.5 text-sm font-semibold text-[#1967d2] dark:text-[#8ab4f8] mb-4">
+        <Icon name="tabler:map-pin" class="h-4 w-4" aria-hidden="true" />
+        <span>Official Event Location</span>
+      </div>
+      <h3 class="theme-heading text-3xl sm:text-4xl font-extrabold mb-4">
+        Venue: UCF Downtown
+      </h3>
+      <p class="theme-copy text-lg max-w-2xl mx-auto">
+        Dr. Phillips Academic Commons &bull; 500 W. Livingston Street, Orlando, FL 32801
+      </p>
+    </div>
+
+    <!-- Main Grid: Photo & Overview -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center mb-12">
+      <!-- Image Slideshow Column -->
+      <div class="lg:col-span-7">
+        <div
+          id="venue-carousel"
+          class="relative overflow-hidden rounded-3xl shadow-2xl border-4 border-solid border-[#4285f4]/30 bg-black group select-none"
+          role="region"
+          aria-label="UCF Downtown Photo Slideshow"
+          tabindex="0"
+        >
+          <!-- Slides Track -->
+          <div class="relative w-full aspect-[16/10] min-h-[320px] sm:min-h-[420px] overflow-hidden">
+            {venueSlides.map((slide, index) => (
+              <div
+                data-venue-slide={index}
+                class={`absolute inset-0 transition-opacity duration-700 ease-in-out ${index === 0 ? 'opacity-100 z-10' : 'opacity-0 z-0 pointer-events-none'}`}
+              >
+                <img
+                  src={slide.image.src}
+                  alt={slide.alt}
+                  width={slide.image.width}
+                  height={slide.image.height}
+                  loading={index === 0 ? 'eager' : 'lazy'}
+                  decoding="async"
+                  class="w-full h-full object-cover"
+                />
+                <!-- Gradient Overlay & Labels -->
+                <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/90 via-black/55 to-transparent p-5 sm:p-7 text-white">
+                  <div class="inline-block rounded-full bg-[#f9ab00] px-3 py-1 text-xs font-bold text-[#1e1e1e] mb-2 uppercase tracking-wider shadow">
+                    {slide.badge}
+                  </div>
+                  <h5 class="text-xl sm:text-2xl font-bold leading-tight mb-1 text-white">
+                    {slide.title}
+                  </h5>
+                  <p class="text-xs sm:text-sm text-gray-200 line-clamp-2 max-w-xl">
+                    {slide.description}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <!-- Top-Right Slide Counter -->
+          <div
+            id="venue-slide-counter"
+            class="absolute top-4 right-4 z-20 rounded-full bg-black/60 backdrop-blur-md px-3 py-1 text-xs font-semibold text-white border border-white/20"
+            aria-live="polite"
+          >
+            1 / {venueSlides.length}
+          </div>
+
+          <!-- Navigation Arrows -->
+          <button
+            id="venue-prev-btn"
+            type="button"
+            class="absolute left-3 top-1/2 -translate-y-1/2 z-20 flex h-10 w-10 sm:h-12 sm:w-12 items-center justify-center rounded-full bg-black/50 text-white backdrop-blur-md transition-all hover:bg-[#1967d2] hover:scale-110 focus:outline-none focus-visible:ring-2 focus-visible:ring-white"
+            aria-label="Previous photo"
+          >
+            <Icon name="tabler:chevron-left" class="h-6 w-6" aria-hidden="true" />
+          </button>
+          <button
+            id="venue-next-btn"
+            type="button"
+            class="absolute right-3 top-1/2 -translate-y-1/2 z-20 flex h-10 w-10 sm:h-12 sm:w-12 items-center justify-center rounded-full bg-black/50 text-white backdrop-blur-md transition-all hover:bg-[#1967d2] hover:scale-110 focus:outline-none focus-visible:ring-2 focus-visible:ring-white"
+            aria-label="Next photo"
+          >
+            <Icon name="tabler:chevron-right" class="h-6 w-6" aria-hidden="true" />
+          </button>
+
+          <!-- Navigation Indicators / Dots -->
+          <div class="absolute bottom-3 right-5 sm:bottom-4 sm:right-7 z-20 flex items-center gap-1.5 sm:gap-2">
+            {venueSlides.map((_, index) => (
+              <button
+                data-venue-dot={index}
+                type="button"
+                class={`h-2 sm:h-2.5 rounded-full transition-all duration-300 ${index === 0 ? 'w-6 sm:w-8 bg-[#f9ab00]' : 'w-2 sm:w-2.5 bg-white/50 hover:bg-white'}`}
+                aria-label={`Go to slide ${index + 1}`}
+              ></button>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <!-- Info Column -->
+      <div class="lg:col-span-5 flex flex-col gap-6">
+        <div class="theme-card rounded-2xl border-l-4 border-[#34a853] p-6 shadow-lg">
+          <h4 class="theme-heading text-xl font-bold mb-2 flex items-center gap-2">
+            <Icon name="tabler:building-community" class="h-6 w-6 text-[#34a853]" aria-hidden="true" />
+            Modern Innovation Hub
+          </h4>
+          <p class="theme-copy text-sm sm:text-base leading-relaxed">
+            UCF Downtown is situated in Orlando's Creative Village innovation district. It features state-of-the-art collaborative workspaces, high-speed network connectivity, open atriums, and comfortable team project areas ideal for an immersive 3-day hackathon.
+          </p>
+        </div>
+
+        <div class="theme-card rounded-2xl border-l-4 border-[#ea4335] p-6 shadow-lg">
+          <h4 class="theme-heading text-xl font-bold mb-2 flex items-center gap-2">
+            <Icon name="tabler:map-2" class="h-6 w-6 text-[#ea4335]" aria-hidden="true" />
+            Address & Campus
+          </h4>
+          <p class="theme-copy text-sm sm:text-base font-medium">
+            500 W. Livingston Street<br />
+            Orlando, FL 32801
+          </p>
+          <div class="mt-4 flex flex-wrap gap-3">
+            <a
+              href="https://maps.google.com/?q=UCF+Downtown,+500+W+Livingston+St,+Orlando,+FL+32801"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center gap-2 rounded-full bg-[#1967d2] px-5 py-2.5 text-sm font-bold text-white shadow-md transition-colors hover:bg-[#1557b0] focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2"
+              aria-label="Open Google Maps directions to UCF Downtown"
+            >
+              <Icon name="tabler:directions" class="h-4 w-4" aria-hidden="true" />
+              Get Directions
+            </a>
+            <a
+              href="https://www.ucf.edu/downtown/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center gap-2 rounded-full border border-slate-300 dark:border-slate-600 bg-white/50 dark:bg-slate-800/50 px-5 py-2.5 text-sm font-semibold theme-heading shadow-sm transition-colors hover:bg-slate-100 dark:hover:bg-slate-800"
+              aria-label="Visit the official UCF Downtown website"
+            >
+              <Icon name="tabler:external-link" class="h-4 w-4" aria-hidden="true" />
+              Campus Info
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Getting Here / Directions Section -->
+    <div class="mb-12">
+      <h4 class="theme-heading text-2xl font-bold text-center mb-2">Getting There & Directions</h4>
+      <p class="theme-copy text-sm text-center max-w-xl mx-auto mb-8">
+        Easy transit options from anywhere in Central Florida and beyond
+      </p>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="theme-card rounded-2xl border-t-4 border-[#4285f4] p-6 shadow-lg">
+          <div class="flex items-center gap-3 mb-3">
+            <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#1967d2]/15 text-[#1967d2] dark:text-[#8ab4f8]">
+              <Icon name="tabler:train" class="h-5 w-5" aria-hidden="true" />
+            </div>
+            <h5 class="theme-heading font-bold text-base">SunRail Commuter</h5>
+          </div>
+          <p class="theme-copy text-sm">
+            Take SunRail to <strong>LYNX Central Station</strong>. From there, it’s a quick 5-minute walk or a free hop on the LYMMO bus directly to campus.
+          </p>
+        </div>
+
+        <div class="theme-card rounded-2xl border-t-4 border-[#34a853] p-6 shadow-lg">
+          <div class="flex items-center gap-3 mb-3">
+            <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#137333]/15 text-[#137333] dark:text-[#81c995]">
+              <Icon name="tabler:bus" class="h-5 w-5" aria-hidden="true" />
+            </div>
+            <h5 class="theme-heading font-bold text-base">LYMMO (Free Bus)</h5>
+          </div>
+          <p class="theme-copy text-sm">
+            Orlando's <strong>free rapid transit bus</strong> stops right at UCF Downtown. Hop on the Grapefruit or Orange line anywhere in downtown Orlando.
+          </p>
+        </div>
+
+        <div class="theme-card rounded-2xl border-t-4 border-[#f9ab00] p-6 shadow-lg">
+          <div class="flex items-center gap-3 mb-3">
+            <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#f9ab00]/15 text-[#b06000] dark:text-[#fdd663]">
+              <Icon name="tabler:parking" class="h-5 w-5" aria-hidden="true" />
+            </div>
+            <h5 class="theme-heading font-bold text-base">Parking Garages</h5>
+          </div>
+          <p class="theme-copy text-sm">
+            Garage parking is available nearby at the <strong>Amelia I Garage</strong> and <strong>Parramore Garage</strong> adjacent to the campus buildings.
+          </p>
+        </div>
+
+        <div class="theme-card rounded-2xl border-t-4 border-[#ea4335] p-6 shadow-lg">
+          <div class="flex items-center gap-3 mb-3">
+            <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#c5221f]/15 text-[#c5221f] dark:text-[#f28b82]">
+              <Icon name="tabler:car" class="h-5 w-5" aria-hidden="true" />
+            </div>
+            <h5 class="theme-heading font-bold text-base">Highway Access</h5>
+          </div>
+          <p class="theme-copy text-sm">
+            Conveniently accessed directly off <strong>I-4</strong> (Exits 83B / 84) and the <strong>SR 408 Expressway</strong>, making transit smooth from airport and suburbs.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Interactive Map Embed -->
+    <div class="overflow-hidden rounded-3xl shadow-xl border border-slate-200 dark:border-slate-800">
+      <iframe
+        title="Map of UCF Downtown"
+        width="100%"
+        height="400"
+        style="border:0;"
+        loading="lazy"
+        allowfullscreen="false"
+        referrerpolicy="no-referrer-when-downgrade"
+        src="https://maps.google.com/maps?q=UCF+Downtown+500+W+Livingston+St+Orlando+FL+32801&t=&z=15&ie=UTF8&iwloc=&output=embed"
+        class="w-full h-80 sm:h-96"
+      ></iframe>
     </div>
   </section>
 
@@ -590,15 +845,136 @@ const eventSchema = {
       }
     };
 
+    // Venue Slideshow Logic
+    const initVenueCarousel = () => {
+      const container = document.getElementById('venue-carousel');
+      if (!container) return;
+
+      const slides = container.querySelectorAll('[data-venue-slide]');
+      const dots = container.querySelectorAll('[data-venue-dot]');
+      const counter = document.getElementById('venue-slide-counter');
+      const prevBtn = document.getElementById('venue-prev-btn');
+      const nextBtn = document.getElementById('venue-next-btn');
+
+      if (!slides.length) return;
+
+      let currentIndex = 0;
+      let autoplayTimer: number | undefined;
+
+      const showSlide = (index: number) => {
+        currentIndex = (index + slides.length) % slides.length;
+
+        slides.forEach((slide, idx) => {
+          if (idx === currentIndex) {
+            slide.classList.remove('opacity-0', 'pointer-events-none', 'z-0');
+            slide.classList.add('opacity-100', 'z-10');
+          } else {
+            slide.classList.remove('opacity-100', 'z-10');
+            slide.classList.add('opacity-0', 'pointer-events-none', 'z-0');
+          }
+        });
+
+        dots.forEach((dot, idx) => {
+          if (idx === currentIndex) {
+            dot.className = 'h-2 sm:h-2.5 rounded-full transition-all duration-300 w-6 sm:w-8 bg-[#f9ab00]';
+          } else {
+            dot.className = 'h-2 sm:h-2.5 rounded-full transition-all duration-300 w-2 sm:w-2.5 bg-white/50 hover:bg-white';
+          }
+        });
+
+        if (counter) {
+          counter.textContent = `${currentIndex + 1} / ${slides.length}`;
+        }
+      };
+
+      const nextSlide = () => showSlide(currentIndex + 1);
+      const prevSlide = () => showSlide(currentIndex - 1);
+
+      const startAutoplay = () => {
+        stopAutoplay();
+        autoplayTimer = window.setInterval(nextSlide, 5000);
+      };
+
+      const stopAutoplay = () => {
+        if (autoplayTimer) {
+          window.clearInterval(autoplayTimer);
+          autoplayTimer = undefined;
+        }
+      };
+
+      // Button controls
+      nextBtn?.addEventListener('click', (e) => {
+        e.stopPropagation();
+        nextSlide();
+        startAutoplay();
+      });
+
+      prevBtn?.addEventListener('click', (e) => {
+        e.stopPropagation();
+        prevSlide();
+        startAutoplay();
+      });
+
+      // Dot controls
+      dots.forEach((dot, idx) => {
+        dot.addEventListener('click', (e) => {
+          e.stopPropagation();
+          showSlide(idx);
+          startAutoplay();
+        });
+      });
+
+      // Pause on hover
+      container.addEventListener('mouseenter', stopAutoplay);
+      container.addEventListener('mouseleave', startAutoplay);
+
+      // Keyboard controls
+      container.addEventListener('keydown', (e) => {
+        const keyboardEvent = e as KeyboardEvent;
+        if (keyboardEvent.key === 'ArrowLeft') {
+          prevSlide();
+          startAutoplay();
+        } else if (keyboardEvent.key === 'ArrowRight') {
+          nextSlide();
+          startAutoplay();
+        }
+      });
+
+      // Touch swipe support for mobile
+      let touchStartX = 0;
+      container.addEventListener('touchstart', (e) => {
+        const touchEvent = e as TouchEvent;
+        touchStartX = touchEvent.changedTouches[0].screenX;
+        stopAutoplay();
+      }, { passive: true });
+
+      container.addEventListener('touchend', (e) => {
+        const touchEvent = e as TouchEvent;
+        const touchEndX = touchEvent.changedTouches[0].screenX;
+        if (touchStartX - touchEndX > 50) {
+          nextSlide();
+        } else if (touchEndX - touchStartX > 50) {
+          prevSlide();
+        }
+        startAutoplay();
+      }, { passive: true });
+
+      startAutoplay();
+    };
+
     initCountdown();
+    initVenueCarousel();
+
     window.addEventListener('pageshow', (event) => {
       if (event.persisted) {
         initCountdown();
+        initVenueCarousel();
       }
     });
 
     document.addEventListener('astro:page-load', () => {
       initCountdown();
+      initVenueCarousel();
     });
   </script>
 
