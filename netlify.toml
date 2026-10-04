@@ -7,3 +7,21 @@
   for = "/_astro/*"
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
+
+[[redirects]]
+  from = "/volunteer"
+  to = "https://dashboard.devfestflorida.com/volunteer"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/volunteer/"
+  to = "https://dashboard.devfestflorida.com/volunteer"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/volunteer.html"
+  to = "https://dashboard.devfestflorida.com/volunteer"
+  status = 301
+  force = true

@@ -2,4 +2,6 @@
 title: Volunteer
 layout: ../layouts/MarkdownLayout.astro
 ---
-<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSddtsdtHbNeh74I9rUCjAGDeALYXKXYURWxBPw7sp8wIRrIuA/viewform?embedded=true" width="100%" height="1275" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+Sign in with Google to choose volunteer shifts, share your availability, and manage your signups for DevFest Florida 2026.
+
+[Choose your volunteer shifts](https://dashboard.devfestflorida.com/volunteer)

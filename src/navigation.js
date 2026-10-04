@@ -76,7 +76,7 @@ export const footerData = {
       links: [
         { text: 'Code of Conduct', href: '/code-of-conduct' },
         { text: 'FAQ', href: '/faq' },
-        { text: 'Volunteer', href: '/volunteer' },
+        { text: 'Volunteer', href: 'https://dashboard.devfestflorida.com/volunteer' },
       ],
     },
   ],
