@@ -49,9 +49,13 @@ export const headerData = {
       href: getPermalink('/sponsors'),
     },
     {
+      text: 'FAQ',
+      href: getPermalink('/faq'),
+    },
+    {
       text: 'Register',
-      href: 'https://www.eventbrite.com/e/devfest-florida-hackathon-11626-11826-tickets-1998655551557?aff=oddtdtcreator'
-    }
+      href: 'https://www.eventbrite.com/e/devfest-florida-hackathon-11626-11826-tickets-1998655551557?aff=oddtdtcreator',
+    },
   ],
 };
 
@@ -61,10 +65,8 @@ export const footerData = {
       title: 'Resources',
       links: [
         { text: 'Google Developer Groups', href: 'https://developers.google.com/community/gdg' },
-        { text: 'Women Techmakers', href: 'https://developers.google.com/womentechmakers' },
-        { text: 'Google Developer Student Clubs', href: 'https://developers.google.com/community/gdsc' },
+        { text: 'Google Developer Groups on Campus', href: 'https://developers.google.com/profile/badges/community/gdg/GDGoC/organizer' },
         { text: 'Google Developer Experts', href: 'https://developers.google.com/community/experts' },
-        { text: 'Google Cloud Innovators', href: 'https://cloud.google.com/innovators' },
       ],
     },
     {

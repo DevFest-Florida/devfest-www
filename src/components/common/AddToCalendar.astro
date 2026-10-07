@@ -1,0 +1,131 @@
+---
+import { Icon } from 'astro-icon/components';
+
+export interface Props {
+  variant?: 'hero' | 'compact';
+  class?: string;
+}
+
+const { variant = 'compact', class: customClass = '' } = Astro.props;
+
+const event = {
+  title: 'DevFest Florida Hackathon 2026',
+  dates: '20261106T220000Z/20261108T220000Z',
+  location: 'UCF Downtown (Dr. Phillips Academic Commons), 500 W. Livingston Street, Orlando, FL 32801',
+  description:
+    'DevFest Florida Hackathon 2026 - Build, Innovate & Connect in the Agentic Era with Google technologies, Gemini AI, and the GDG Florida community!\n\nTickets & Details: https://devfestflorida.com/',
+};
+
+const googleUrl = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(
+  event.title
+)}&dates=${event.dates}&details=${encodeURIComponent(event.description)}&location=${encodeURIComponent(
+  event.location
+)}`;
+
+const outlookUrl = `https://outlook.live.com/calendar/0/deeplink/compose?path=/calendar/action/compose&rru=addevent&startdt=2026-11-06T17:00:00-05:00&enddt=2026-11-08T17:00:00-05:00&subject=${encodeURIComponent(
+  event.title
+)}&location=${encodeURIComponent(event.location)}&body=${encodeURIComponent(event.description)}`;
+
+const office365Url = `https://outlook.office.com/calendar/0/deeplink/compose?path=/calendar/action/compose&rru=addevent&startdt=2026-11-06T17:00:00-05:00&enddt=2026-11-08T17:00:00-05:00&subject=${encodeURIComponent(
+  event.title
+)}&location=${encodeURIComponent(event.location)}&body=${encodeURIComponent(event.description)}`;
+
+const icsUrl = '/devfest-florida-2026.ics';
+---
+
+<details class={`group relative inline-block text-left add-to-calendar-dropdown ${customClass}`}>
+  <summary
+    class="list-none cursor-pointer select-none inline-flex items-center justify-center gap-1.5 rounded-full border border-gray-300 dark:border-gray-600 bg-white/95 dark:bg-gray-800/95 px-4 py-2 text-xs sm:text-sm font-semibold text-gray-800 dark:text-gray-100 shadow-sm hover:border-[#4285f4] hover:text-[#4285f4] dark:hover:text-[#4285f4] transition-all hover:shadow focus:outline-none focus-visible:ring-2 focus-visible:ring-[#4285f4]"
+    aria-label="Add DevFest 2026 to Calendar"
+  >
+    <Icon name="tabler:calendar-plus" class="h-4 w-4 text-[#4285f4] shrink-0" aria-hidden="true" />
+    <span>Add to Calendar</span>
+    <Icon
+      name="tabler:chevron-down"
+      class="h-3.5 w-3.5 opacity-60 transition-transform duration-200 group-open:rotate-180"
+      aria-hidden="true"
+    />
+  </summary>
+
+  <div
+    class="absolute right-0 sm:right-0 mt-2 w-56 rounded-2xl bg-white dark:bg-[#1a202c] p-2 shadow-2xl ring-1 ring-black/10 dark:ring-white/10 z-[100] text-gray-800 dark:text-gray-100 animate-in fade-in zoom-in-95 duration-100"
+    role="menu"
+  >
+    <a
+      href={googleUrl}
+      target="_blank"
+      rel="noopener noreferrer"
+      class="flex items-center gap-2.5 px-3 py-2 text-xs sm:text-sm font-medium rounded-xl hover:bg-blue-50 dark:hover:bg-blue-950/40 hover:text-[#4285f4] transition-colors"
+      role="menuitem"
+    >
+      <Icon name="tabler:brand-google" class="h-4 w-4 text-[#4285f4] shrink-0" />
+      <span>Google Calendar</span>
+    </a>
+
+    <a
+      href={icsUrl}
+      download="devfest-florida-2026.ics"
+      class="flex items-center gap-2.5 px-3 py-2 text-xs sm:text-sm font-medium rounded-xl hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+      role="menuitem"
+    >
+      <Icon name="tabler:brand-apple" class="h-4 w-4 text-gray-900 dark:text-white shrink-0" />
+      <span>Apple Calendar / iCal</span>
+    </a>
+
+    <a
+      href={outlookUrl}
+      target="_blank"
+      rel="noopener noreferrer"
+      class="flex items-center gap-2.5 px-3 py-2 text-xs sm:text-sm font-medium rounded-xl hover:bg-sky-50 dark:hover:bg-sky-950/40 hover:text-sky-600 transition-colors"
+      role="menuitem"
+    >
+      <Icon name="tabler:mail" class="h-4 w-4 text-sky-600 shrink-0" />
+      <span>Outlook.com</span>
+    </a>
+
+    <a
+      href={office365Url}
+      target="_blank"
+      rel="noopener noreferrer"
+      class="flex items-center gap-2.5 px-3 py-2 text-xs sm:text-sm font-medium rounded-xl hover:bg-red-50 dark:hover:bg-red-950/40 hover:text-red-600 transition-colors"
+      role="menuitem"
+    >
+      <Icon name="tabler:brand-office" class="h-4 w-4 text-red-500 shrink-0" />
+      <span>Microsoft 365</span>
+    </a>
+
+    <div class="my-1 border-t border-gray-100 dark:border-gray-800"></div>
+
+    <a
+      href={icsUrl}
+      download="devfest-florida-2026.ics"
+      class="flex items-center gap-2.5 px-3 py-1.5 text-xs text-gray-500 dark:text-gray-400 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors"
+      role="menuitem"
+    >
+      <Icon name="tabler:download" class="h-3.5 w-3.5 shrink-0" />
+      <span>Download .ICS file</span>
+    </a>
+  </div>
+</details>
+
+<style>
+  /* Remove native summary arrow marker across all browsers */
+  summary::-webkit-details-marker {
+    display: none;
+  }
+  summary {
+    list-style: none;
+  }
+</style>
+
+<script>
+  // Close the details dropdown when user clicks anywhere outside of it
+  document.addEventListener('click', (event) => {
+    const target = event.target as HTMLElement | null;
+    document.querySelectorAll('details.add-to-calendar-dropdown[open]').forEach((details) => {
+      if (!details.contains(target)) {
+        details.removeAttribute('open');
+      }
+    });
+  });
+</script>

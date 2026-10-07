@@ -1,6 +1,7 @@
 ---
 import { Icon } from 'astro-icon/components';
 import Layout from '~/layouts/PageLayout.astro';
+import AddToCalendar from '~/components/common/AddToCalendar.astro';
 
 import Sponsor from '~/components/orlando/Sponsor2026.astro';
 import DevFestFans from '~/assets/images/devfest-fans.jpg';
@@ -163,26 +164,38 @@ const eventSchema = {
         class="mb-8 rounded-2xl border-l-4 border-[#4285f4] bg-[#f0f0f0]/95 px-5 py-4 text-left text-[#1e1e1e] shadow-lg sm:px-6"
         aria-label="DevFest Hackathon 2026 planning status"
       >
-        <p class="flex items-center gap-3 text-lg font-bold sm:text-xl">
-          <Icon name="tabler:calendar-event" class="h-6 w-6 shrink-0 text-[#4285f4]" aria-hidden="true" />
-          Save the date — November 6–8, 2026
-        </p>
-        <p class="mt-1 flex items-center gap-2 text-sm sm:text-base">
-          <Icon name="tabler:map-pin" class="h-5 w-5 shrink-0 text-[#ea4335]" aria-hidden="true" />
-          <span>
-            <strong>UCF Downtown</strong> &mdash; 500 W. Livingston Street, Orlando, FL
-          </span>
-        </p>
+        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+          <div>
+            <p class="flex items-center gap-3 text-lg font-bold sm:text-xl">
+              <Icon name="tabler:calendar-event" class="h-6 w-6 shrink-0 text-[#4285f4]" aria-hidden="true" />
+              Save the date — November 6–8, 2026
+            </p>
+            <p class="mt-1 flex items-center gap-2 text-sm sm:text-base text-gray-700">
+              <Icon name="tabler:map-pin" class="h-5 w-5 shrink-0 text-[#ea4335]" aria-hidden="true" />
+              <span>
+                <strong>UCF Downtown</strong> &mdash; 500 W. Livingston Street, Orlando, FL
+              </span>
+            </p>
+          </div>
+          <div class="sm:self-center shrink-0">
+            <AddToCalendar variant="compact" />
+          </div>
+        </div>
       </aside>
+
       <!-- Main CTA Button -->
-      <a
-        href="https://www.eventbrite.com/e/devfest-florida-hackathon-11626-11826-tickets-1998655551557?aff=oddtdtcreator"
-        aria-label="Register for DevFest Florida Hackathon"
-        class="inline-flex items-center justify-center gap-2 rounded-full bg-[#1967d2] px-12 py-4 text-lg font-bold text-white shadow-lg transition-colors duration-300 hover:bg-[#1e1e1e] hover:text-[#f0f0f0] focus:outline-none focus-visible:ring-4 focus-visible:ring-[#f9ab00] focus-visible:ring-offset-2 focus-visible:ring-offset-[#1e1e1e]"
-      >
-        <Icon name="tabler:mail" class="h-5 w-5" aria-hidden="true" />
-        Register for DevFest Hackathon
-      </a>
+      <div class="flex items-center justify-center mt-6">
+        <a
+          href="https://www.eventbrite.com/e/devfest-florida-hackathon-11626-11826-tickets-1998655551557?aff=oddtdtcreator"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Register for DevFest Florida Hackathon"
+          class="inline-flex items-center justify-center gap-2.5 rounded-full bg-gradient-to-r from-[#1967d2] to-[#1a73e8] px-10 py-4 text-lg font-bold text-white shadow-xl shadow-blue-500/30 transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-blue-500/50 hover:from-[#1557b0] hover:to-[#1967d2] focus:outline-none focus-visible:ring-4 focus-visible:ring-[#f9ab00] focus-visible:ring-offset-2 focus-visible:ring-offset-[#1e1e1e] active:scale-95"
+        >
+          <Icon name="tabler:ticket" class="h-6 w-6" aria-hidden="true" />
+          <span>Register for DevFest Hackathon</span>
+        </a>
+      </div>
     </div>
   </section>
 
@@ -752,6 +765,60 @@ const eventSchema = {
         src="https://maps.google.com/maps?q=UCF+Downtown+500+W+Livingston+St+Orlando+FL+32801&t=&z=15&ie=UTF8&iwloc=&output=embed"
         class="w-full h-80 sm:h-96"
       ></iframe>
+    </div>
+  </section>
+
+  <!-- FAQ Highlight Section -->
+  <section id="faq" class="theme-section container mx-auto py-16 px-4 md:px-8 lg:px-12 border-t border-slate-200 dark:border-slate-800">
+    <div class="text-center mb-12">
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-100 dark:bg-blue-900/50 text-[#1967d2] dark:text-blue-300 text-xs sm:text-sm font-semibold mb-4">
+        <Icon name="tabler:help-circle" class="w-4 h-4" />
+        <span>Got Questions?</span>
+      </div>
+      <h3 class="theme-heading text-3xl sm:text-4xl font-bold mb-4">Frequently Asked Questions</h3>
+      <p class="theme-copy text-lg max-w-2xl mx-auto">
+        Answers to essential questions about DevFest Florida Hackathon 2026 at UCF Downtown.
+      </p>
+    </div>
+
+    <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
+      <div class="theme-card rounded-2xl border-t-4 border-[#4285f4] p-6 shadow-md">
+        <h4 class="theme-heading font-bold text-lg mb-2">What is DevFest Florida Hackathon?</h4>
+        <p class="theme-copy text-sm leading-relaxed">
+          An in-person 3-day hackathon sprint (Nov 6–8, 2026) uniting developers, designers, and students to build innovative solutions using Google’s generative AI technologies.
+        </p>
+      </div>
+
+      <div class="theme-card rounded-2xl border-t-4 border-[#ea4335] p-6 shadow-md">
+        <h4 class="theme-heading font-bold text-lg mb-2">Do I need coding experience?</h4>
+        <p class="theme-copy text-sm leading-relaxed">
+          No! Builders of all backgrounds and skill levels are welcome. Mentors will be available to help you collaborate, formulate ideas, and code.
+        </p>
+      </div>
+
+      <div class="theme-card rounded-2xl border-t-4 border-[#f9ab00] p-6 shadow-md">
+        <h4 class="theme-heading font-bold text-lg mb-2">Can I participate solo?</h4>
+        <p class="theme-copy text-sm leading-relaxed">
+          Yes! You can come solo and join our team-formation session during Friday kickoff, or register with a pre-formed team (2 to 5 members).
+        </p>
+      </div>
+
+      <div class="theme-card rounded-2xl border-t-4 border-[#34a853] p-6 shadow-md">
+        <h4 class="theme-heading font-bold text-lg mb-2">Where is it located?</h4>
+        <p class="theme-copy text-sm leading-relaxed">
+          Hosted at UCF Downtown (Dr. Phillips Academic Commons), 500 W. Livingston Street, Orlando, FL with easy LYMMO and SunRail transit access.
+        </p>
+      </div>
+    </div>
+
+    <div class="text-center">
+      <a
+        href="/faq"
+        class="inline-flex items-center gap-2 rounded-full border-2 border-[#1967d2] px-8 py-3 text-base font-bold text-[#1967d2] dark:text-blue-400 hover:bg-[#1967d2] hover:text-white transition-all duration-300 shadow-sm hover:shadow-md"
+      >
+        <span>View Full FAQ & Answers</span>
+        <Icon name="tabler:arrow-right" class="w-4 h-4" />
+      </a>
     </div>
   </section>
 

@@ -1,0 +1,22 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//DevFest Florida//DevFest Florida Hackathon 2026//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:devfest-florida-2026-hackathon@devfestflorida.com
+DTSTAMP:20261007T120000Z
+DTSTART:20261106T220000Z
+DTEND:20261108T220000Z
+SUMMARY:DevFest Florida Hackathon 2026
+DESCRIPTION:DevFest Florida Hackathon 2026 - Build, Innovate & Connect in the Agentic Era with Google technologies, Gemini AI, and the GDG Florida community!\n\nVenue: UCF Downtown (Dr. Phillips Academic Commons)\nAddress: 500 W. Livingston Street, Orlando, FL 32801\nTickets & Info: https://devfestflorida.com/
+LOCATION:UCF Downtown, 500 W. Livingston Street, Orlando, FL 32801
+URL:https://devfestflorida.com/
+STATUS:CONFIRMED
+BEGIN:VALARM
+TRIGGER:-P1D
+ACTION:DISPLAY
+DESCRIPTION:DevFest Florida Hackathon 2026 starts tomorrow!
+END:VALARM
+END:VEVENT
+END:VCALENDAR

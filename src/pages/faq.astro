@@ -1,0 +1,219 @@
+---
+import { Icon } from 'astro-icon/components';
+import Layout from '~/layouts/PageLayout.astro';
+
+const metadata = {
+  title: 'Frequently Asked Questions (FAQ) | DevFest Florida 2026',
+  description:
+    'Answers to frequently asked questions about DevFest Florida Hackathon 2026, taking place November 6–8 at UCF Downtown in Orlando, Florida.',
+};
+
+const faqCategories = [
+  {
+    id: 'general',
+    name: 'About DevFest',
+    icon: 'tabler:bulb',
+    color: 'text-[#4285f4]',
+    bg: 'bg-blue-50 dark:bg-blue-950/30 border-blue-200 dark:border-blue-900',
+    questions: [
+      {
+        q: 'What is DevFest?',
+        a: 'DevFest is a global, community-led tech conference hosted annually by Google Developer Groups (GDG) worldwide. DevFests offer developers, builders, and tech enthusiasts the opportunity to connect, learn about the latest industry trends, and gain hands-on experience with technologies like AI, cloud computing, mobile, and web development.',
+      },
+      {
+        q: 'What is DevFest Florida Hackathon 2026?',
+        a: 'DevFest Florida Hackathon 2026 is an in-person, 3-day hackathon sprint taking place November 6–8, 2026, at UCF Downtown in Orlando, Florida. It brings together builders from all backgrounds to collaboratively create innovative solutions, explore generative AI and developer tooling, and connect with fellow creators.',
+      },
+      {
+        q: 'Who organizes DevFest Florida?',
+        a: 'DevFest Florida is organized by volunteer leaders from Google Developer Group (GDG) Central Florida, in collaboration with university partners, students, and local tech community champions.',
+      },
+    ],
+  },
+  {
+    id: 'attendance',
+    name: 'Registration & Attendance',
+    icon: 'tabler:ticket',
+    color: 'text-[#ea4335]',
+    bg: 'bg-red-50 dark:bg-red-950/30 border-red-200 dark:border-red-900',
+    questions: [
+      {
+        q: 'When and where will the event take place?',
+        a: 'The event takes place over the weekend of <strong>November 6–8, 2026</strong> at <strong>UCF Downtown</strong> (Dr. Phillips Academic Commons), 500 W. Livingston Street, Orlando, FL 32801. It is conveniently situated in Creative Village with easy access via LYMMO transit, SunRail, and nearby parking garages.',
+      },
+      {
+        q: 'How do I register or purchase tickets?',
+        a: 'Tickets are available via our official <a href="https://www.eventbrite.com/e/devfest-florida-hackathon-11626-11826-tickets-1998655551557?aff=oddtdtcreator" target="_blank" class="text-blue-600 dark:text-blue-400 font-semibold underline underline-offset-2">Eventbrite Registration Page</a>. Your ticket grants you full access to kickoff ceremonies, hackathon workspaces, mentorship sessions, meals/snacks, and the final demo presentation showcase.',
+      },
+      {
+        q: 'Do I need to be an experienced coder or AI specialist to attend?',
+        a: 'No! Developers, UI/UX designers, product managers, storytellers, researchers, and students of all skill levels are encouraged to join. Hackathons thrive when cross-disciplinary minds collaborate. Mentors will be available all weekend to guide and support your project.',
+      },
+      {
+        q: 'Can I participate solo, or do I need a team?',
+        a: 'Both options are welcome! You can register as an individual and join our team-formation mixer on Friday evening kickoff to find collaborators, or you can register with a pre-formed team of colleagues and friends (typically 2 to 5 members per team).',
+      },
+    ],
+  },
+  {
+    id: 'logistics',
+    name: 'Hackathon & Logistics',
+    icon: 'tabler:device-laptop',
+    color: 'text-[#f9ab00]',
+    bg: 'bg-amber-50 dark:bg-amber-950/30 border-amber-200 dark:border-amber-900',
+    questions: [
+      {
+        q: 'What should I bring with me?',
+        a: 'Bring your laptop, charger, power strip (optional but helpful), valid government or student ID for check-in, a refillable water bottle, and any peripherals your project requires. Wi-Fi and power outlets will be provided at the venue.',
+      },
+      {
+        q: 'Will meals and refreshments be provided?',
+        a: 'Yes! Your ticket includes meals, snacks, coffee, and refreshments throughout the hackathon weekend. We will also provide vegetarian and common dietary options.',
+      },
+      {
+        q: 'What technologies and platforms can we build with?',
+        a: 'We welcome any technology! You are free to build with whatever programming languages, frameworks, libraries, or developer tools best suit your team’s project. Sponsors may also provide specialized APIs or platforms to help you create. While we encourage the exploration of Google technologies (such as the Gemini AI suite, Google Cloud, and Firebase), they are not a hard requirement.',
+      },
+      {
+        q: 'Is there an official Code of Conduct?',
+        a: 'Yes. DevFest Florida is dedicated to providing a safe, respectful, and harassment-free environment for everyone. All attendees, speakers, sponsors, and organizers must abide by our <a href="/code-of-conduct" class="text-blue-600 dark:text-blue-400 font-semibold underline underline-offset-2">Code of Conduct</a>.',
+      },
+    ],
+  },
+  {
+    id: 'community',
+    name: 'Sponsors & Volunteering',
+    icon: 'tabler:users-group',
+    color: 'text-[#34a853]',
+    bg: 'bg-green-50 dark:bg-green-950/30 border-green-200 dark:border-green-900',
+    questions: [
+      {
+        q: 'How can my company sponsor DevFest Florida 2026?',
+        a: 'Sponsoring DevFest Florida offers incredible brand exposure and direct engagement with hundreds of skilled developers, designers, and tech leaders across Florida. You can view our sponsorship prospectus directly on our <a href="/sponsors" class="text-blue-600 dark:text-blue-400 font-semibold underline underline-offset-2">Sponsors page</a> or contact our organizing team via <a href="mailto:organizers@devfestflorida.com" class="text-blue-600 dark:text-blue-400 font-semibold underline underline-offset-2">Email</a>.',
+      },
+      {
+        q: 'How can I volunteer to help at the event?',
+        a: 'We welcome passionate volunteers to assist with registration, logistics, attendee support, and media! Apply through our <a href="https://dashboard.devfestflorida.com/volunteer" target="_blank" class="text-blue-600 dark:text-blue-400 font-semibold underline underline-offset-2">Volunteer Portal</a> or reach out to our team.',
+      },
+      {
+        q: 'Who can I contact if I have further questions?',
+        a: 'You can reach our organizing team directly via <a href="mailto:organizers@devfestflorida.com" class="text-blue-600 dark:text-blue-400 font-semibold underline underline-offset-2">Email</a>. For more information about our community, upcoming meetups, and local events, visit our chapter website at <a href="https://googledevscentralflorida.com/" target="_blank" rel="noopener noreferrer" class="text-blue-600 dark:text-blue-400 font-semibold underline underline-offset-2">Google Developers Central Florida</a>.',
+      },
+    ],
+  },
+];
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero Section -->
+  <section class="relative overflow-hidden py-16 md:py-24 bg-gradient-to-b from-blue-50/50 via-white to-gray-50/50 dark:from-gray-900 dark:via-gray-900 dark:to-gray-950 border-b border-gray-200/80 dark:border-gray-800">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-100 dark:bg-blue-900/50 text-[#1967d2] dark:text-blue-300 text-xs sm:text-sm font-semibold mb-6">
+        <Icon name="tabler:sparkles" class="w-4 h-4" />
+        <span>DevFest Florida Hackathon 2026 • UCF Downtown</span>
+      </div>
+
+      <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold text-gray-900 dark:text-white tracking-tight mb-6 font-heading">
+        Frequently Asked <span class="bg-gradient-to-r from-[#4285f4] via-[#ea4335] to-[#f9ab00] bg-clip-text text-transparent">Questions</span>
+      </h1>
+
+      <p class="max-w-2xl mx-auto text-lg sm:text-xl text-gray-600 dark:text-gray-300 mb-8 leading-relaxed">
+        Got questions about DevFest Florida 2026? Find everything you need to know about the hackathon schedule, registration, teams, and venue details below.
+      </p>
+
+      <!-- Quick Action CTA -->
+      <div class="flex items-center justify-center">
+        <a
+          href="https://www.eventbrite.com/e/devfest-florida-hackathon-11626-11826-tickets-1998655551557?aff=oddtdtcreator"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center gap-2 px-8 py-3.5 rounded-full bg-[#1967d2] hover:bg-[#1557b0] text-white font-bold text-base shadow-lg shadow-blue-500/25 transition-all hover:scale-105 active:scale-95"
+        >
+          <Icon name="tabler:ticket" class="w-5 h-5" />
+          <span>Register on Eventbrite</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Content Section -->
+  <section class="py-16 md:py-20 bg-white dark:bg-gray-900">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- Category Jump Navigation -->
+      <div class="flex flex-wrap items-center justify-center gap-2.5 mb-12" role="tablist">
+        {
+          faqCategories.map((category) => (
+            <a
+              href={`#${category.id}`}
+              class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-gray-200 dark:border-gray-700 bg-gray-50/80 dark:bg-gray-800/80 text-xs sm:text-sm font-medium text-gray-700 dark:text-gray-200 hover:border-blue-500 hover:text-blue-600 dark:hover:text-blue-400 transition-colors shadow-sm"
+            >
+              <Icon name={category.icon} class={`w-4 h-4 ${category.color}`} />
+              <span>{category.name}</span>
+            </a>
+          ))
+        }
+      </div>
+
+      <!-- FAQ Groups -->
+      <div class="space-y-16">
+        {
+          faqCategories.map((category) => (
+            <div id={category.id} class="scroll-mt-24">
+              <div class="flex items-center gap-3 mb-6 pb-3 border-b border-gray-200 dark:border-gray-800">
+                <div class={`p-2.5 rounded-xl border ${category.bg}`}>
+                  <Icon name={category.icon} class={`w-6 h-6 ${category.color}`} />
+                </div>
+                <div>
+                  <h2 class="text-2xl font-bold text-gray-900 dark:text-white">{category.name}</h2>
+                </div>
+              </div>
+
+              <div class="space-y-4">
+                {category.questions.map(({ q, a }) => (
+                  <details class="group rounded-2xl border border-gray-200 dark:border-gray-800 bg-gray-50/50 dark:bg-gray-800/50 p-6 transition-all duration-200 hover:border-gray-300 dark:hover:border-gray-700 open:bg-white dark:open:bg-gray-800 open:shadow-md">
+                    <summary class="flex cursor-pointer list-none items-center justify-between text-left font-semibold text-gray-900 dark:text-gray-100 text-lg">
+                      <span class="pr-4">{q}</span>
+                      <span class="ml-2 flex-shrink-0 rounded-full p-1 text-gray-400 transition duration-300 group-open:-rotate-180 group-hover:text-gray-700 dark:group-hover:text-gray-200">
+                        <Icon name="tabler:chevron-down" class="h-5 w-5" />
+                      </span>
+                    </summary>
+                    <div class="mt-4 text-gray-600 dark:text-gray-300 leading-relaxed text-base pt-2 border-t border-gray-100 dark:border-gray-700/60" set:html={a} />
+                  </details>
+                ))}
+              </div>
+            </div>
+          ))
+        }
+      </div>
+
+      <!-- Still have questions banner -->
+      <div class="mt-20 rounded-3xl bg-gradient-to-r from-[#4285f4] to-[#1a73e8] p-8 sm:p-12 text-white text-center shadow-2xl relative overflow-hidden">
+        <div class="relative z-10 max-w-2xl mx-auto">
+          <Icon name="tabler:help-circle" class="w-12 h-12 mx-auto mb-4 text-white/90" />
+          <h3 class="text-2xl sm:text-3xl font-extrabold mb-3">Still have questions?</h3>
+          <p class="text-white/90 text-base sm:text-lg mb-8 leading-relaxed">
+            Can’t find the answer you’re looking for? Reach out to our organizing team and we’ll get back to you right away.
+          </p>
+          <div class="flex flex-wrap items-center justify-center gap-4">
+            <a
+              href="mailto:organizers@devfestflorida.com"
+              class="inline-flex items-center gap-2 px-8 py-3.5 rounded-full bg-white text-[#1967d2] hover:bg-gray-100 font-bold shadow-md transition-all hover:scale-105"
+            >
+              <Icon name="tabler:mail" class="w-5 h-5" />
+              <span>Email</span>
+            </a>
+            <a
+              href="https://googledevscentralflorida.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center gap-2 px-8 py-3.5 rounded-full border-2 border-white text-white hover:bg-white/10 font-bold transition-all hover:scale-105"
+            >
+              <Icon name="tabler:world" class="w-5 h-5" />
+              <span>GDG Central Florida</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
