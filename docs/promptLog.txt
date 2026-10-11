@@ -1,0 +1,25 @@
+As an event planner for DevFestFlorida.com, draft ticket page copy.
+- pull in key information from the following pages:
+    - https://devfestflorida.com/
+    - https://devfestflorida.com/speakers
+    - https://devfestflorida.com/devfest-partnerships-tracks-2026
+- Explore Schedule 
+    - Friday - 6:30pm - 8:30pm 
+        - Hackathon social kick-off
+        - Learn about hackathon themes
+        - Network and build teams
+        - Location: Details coming soon
+    - Read docs/saturdaySchedule.md    
+    - Read docs/sundaySchedule.md
+- Make ticket value clear   
+    - Breakfast, Lunches, Snacks
+    - Workshops to support dev growth and hackathon projects
+    - Mentors
+- Make prizes clear 
+    - Prizes per tracks
+        1st place team - $500
+        2nd place team - $200
+        3rd place team - $100
+- Network with potential employers and engineering leaders
+
+
