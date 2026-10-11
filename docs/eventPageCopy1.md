@@ -4,6 +4,8 @@
 **November 7–8, 2026 · UCF Downtown · Orlando, Florida**
 Join the DevFest Florida Hackathon for a weekend where developers, designers, data practitioners, game creators, product thinkers, storytellers, and curious problem-solvers come together to imagine, build, and share. Bring an idea, bring a skill, or simply bring your curiosity. There is a place for you on this team.
 This is more than a competition. It is a community-powered opportunity to learn new tools, meet generous collaborators, and create technology that reflects human creativity, care, and purpose.
+
+
 **[Explore the schedule]**
 
 ## **Find your people and build something meaningful**
