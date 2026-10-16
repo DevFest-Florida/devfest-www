@@ -1,0 +1,94 @@
+---
+import { Image } from 'astro:assets';
+import Layout from '~/layouts/PageLayout.astro';
+import { speakers } from '~/data/speakers2026';
+
+const metadata = {
+  title: 'Speaker Cards | DevFest Florida 2026',
+  robots: { index: false, follow: false },
+};
+
+// DevFest palette: yellow, blue, pink, green, orange, red
+const palettes = [
+  { bg: '#ffe8a8', accent: '#4285f4' },
+  { bg: '#d0f5d8', accent: '#ff7eb6' },
+  { bg: '#fad9dc', accent: '#34a853' },
+  { bg: '#cfe9fb', accent: '#fbab00' },
+  { bg: '#ffe8a8', accent: '#ea4335' },
+];
+---
+
+<Layout metadata={metadata}>
+  <section class="mx-auto max-w-7xl px-4 py-12 sm:px-6">
+    <h1 class="mb-2 text-3xl font-bold">Speaker Cards</h1>
+    <p class="mb-8 text-muted">Shareable cards for every DevFest Florida 2026 speaker. Screenshot a card to use it.</p>
+
+    <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+      {
+        speakers.map((speaker, i) => {
+          const p = palettes[i % palettes.length];
+          return (
+            <article
+              id={speaker.id}
+              class="speaker-card relative flex flex-col overflow-hidden rounded-3xl border-2 border-black px-6 py-4 text-black"
+              style={`background:${p.bg}`}
+            >
+              <span class="shape-a" style={`background:${p.accent}`} aria-hidden="true" />
+              <span class="shape-b" aria-hidden="true" />
+
+              <p class="relative z-10 mb-3 text-xs font-bold uppercase tracking-widest">
+                DevFest Florida 2026 · Orlando
+              </p>
+
+              <Image
+                src={speaker.image}
+                width={400}
+                height={400}
+                alt={speaker.imageAlt}
+                format="webp"
+                quality={80}
+                class="relative z-10 mx-auto mb-4 aspect-square w-48 rounded-full border-2 border-black object-cover"
+                style={`box-shadow:6px 6px 0 ${p.accent}`}
+              />
+
+              <h2 class="relative z-10 text-center text-2xl font-extrabold">{speaker.name}</h2>
+              <p class="relative z-10 mb-4 text-center text-sm font-medium">
+                {speaker.role} · {speaker.company}
+              </p>
+
+              <div class="relative z-10 mt-auto rounded-2xl border-2 border-black bg-white px-4 py-2">
+                <p class="font-bold leading-snug">{speaker.talkTitle}</p>
+              </div>
+            </article>
+          );
+        })
+      }
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .speaker-card {
+    box-shadow: 6px 6px 0 #000;
+  }
+  .shape-a {
+    position: absolute;
+    top: -2rem;
+    right: -2rem;
+    width: 7rem;
+    height: 7rem;
+    border: 2px solid #000;
+    border-radius: 9999px;
+  }
+  .shape-b {
+    position: absolute;
+    bottom: 40%;
+    left: -1.5rem;
+    width: 3.5rem;
+    height: 3.5rem;
+    background: #fff;
+    border: 2px solid #000;
+    transform: rotate(45deg);
+    opacity: 0.6;
+  }
+</style>
