@@ -52,7 +52,7 @@ const palettes = [
                   alt={speaker.imageAlt}
                   format="webp"
                   quality={80}
-                  class="relative z-10 mx-auto mb-3 aspect-square w-40 rounded-full border-2 border-black object-cover"
+                  class="relative z-10 mx-auto mb-3 aspect-square w-44 rounded-full border-2 border-black object-cover"
                   style={`box-shadow:6px 6px 0 ${p.accent}`}
                 />
 
@@ -91,7 +91,7 @@ const palettes = [
       if (!card) return;
       const label = btn.textContent;
       try {
-        const blob = await toBlob(card, { pixelRatio: 2, cacheBust: true });
+        const blob = await toBlob(card, { pixelRatio: 2, cacheBust: true, includeQueryParams: true });
         if (!blob) throw new Error('render failed');
         const a = document.createElement('a');
         a.href = URL.createObjectURL(blob);
