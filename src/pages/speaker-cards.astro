@@ -36,9 +36,7 @@ const palettes = [
               <span class="shape-a" style={`background:${p.accent}`} aria-hidden="true" />
               <span class="shape-b" aria-hidden="true" />
 
-              <p class="relative z-10 mb-3 text-xs font-bold uppercase tracking-widest">
-                DevFest Florida 2026 · Orlando
-              </p>
+              <img src="/logo512.png" alt="DevFest Florida logo" width="96" height="96" class="relative z-10 mx-auto mb-3 h-24 w-24" />
 
               <Image
                 src={speaker.image}
@@ -59,6 +57,8 @@ const palettes = [
               <div class="relative z-10 mt-auto rounded-2xl border-2 border-black bg-white px-4 py-2">
                 <p class="font-bold leading-snug">{speaker.talkTitle}</p>
               </div>
+
+              <p class="relative z-10 mt-3 text-center text-sm font-bold">Learn more at DevFestFlorida.com</p>
             </article>
           );
         })
