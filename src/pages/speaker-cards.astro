@@ -28,44 +28,84 @@ const palettes = [
         speakers.map((speaker, i) => {
           const p = palettes[i % palettes.length];
           return (
-            <article
-              id={speaker.id}
-              class="speaker-card relative flex flex-col overflow-hidden rounded-3xl border-2 border-black px-6 py-4 text-black"
-              style={`background:${p.bg}`}
-            >
-              <span class="shape-a" style={`background:${p.accent}`} aria-hidden="true" />
-              <span class="shape-b" aria-hidden="true" />
+            <div class="flex flex-col items-center gap-3">
+              <article
+                id={speaker.id}
+                class="speaker-card relative flex flex-col overflow-hidden rounded-3xl border-2 border-black px-6 py-4 text-black"
+                style={`background:${p.bg}`}
+              >
+                <span class="shape-a" style={`background:${p.accent}`} aria-hidden="true" />
+                <span class="shape-b" aria-hidden="true" />
 
-              <img src="/logo512.png" alt="DevFest Florida logo" width="96" height="96" class="relative z-10 mx-auto mb-3 h-24 w-24" />
+                <img
+                  src="/logo512.png"
+                  alt="DevFest Florida logo"
+                  width="80"
+                  height="80"
+                  class="relative z-10 mx-auto mb-2 h-20 w-20"
+                />
 
-              <Image
-                src={speaker.image}
-                width={400}
-                height={400}
-                alt={speaker.imageAlt}
-                format="webp"
-                quality={80}
-                class="relative z-10 mx-auto mb-4 aspect-square w-48 rounded-full border-2 border-black object-cover"
-                style={`box-shadow:6px 6px 0 ${p.accent}`}
-              />
+                <Image
+                  src={speaker.image}
+                  width={400}
+                  height={400}
+                  alt={speaker.imageAlt}
+                  format="webp"
+                  quality={80}
+                  class="relative z-10 mx-auto mb-3 aspect-square w-40 rounded-full border-2 border-black object-cover"
+                  style={`box-shadow:6px 6px 0 ${p.accent}`}
+                />
 
-              <h2 class="relative z-10 text-center text-2xl font-extrabold">{speaker.name}</h2>
-              <p class="relative z-10 mb-4 text-center text-sm font-medium">
-                {speaker.role} · {speaker.company}
-              </p>
+                <h2 class="relative z-10 text-center text-2xl font-extrabold">{speaker.name}</h2>
+                <p class="relative z-10 mb-3 text-center text-sm font-medium">
+                  {speaker.role} · {speaker.company}
+                </p>
 
-              <div class="relative z-10 mt-auto rounded-2xl border-2 border-black bg-white px-4 py-2">
-                <p class="font-bold leading-snug">{speaker.talkTitle}</p>
-              </div>
+                <div class="relative z-10 mt-auto rounded-2xl border-2 border-black bg-white px-4 py-2">
+                  <p class="font-bold leading-snug">{speaker.talkTitle}</p>
+                </div>
 
-              <p class="relative z-10 mt-3 text-center text-sm font-bold">Learn more at DevFestFlorida.com</p>
-            </article>
+                <p class="relative z-10 mt-2 text-center text-sm font-bold">Learn more at DevFestFlorida.com</p>
+              </article>
+              <button
+                type="button"
+                class="download-btn rounded-full border-2 border-black bg-white px-5 py-2 text-sm font-bold text-black hover:bg-gray-100"
+                data-target={speaker.id}
+              >
+                Download card
+              </button>
+            </div>
           );
         })
       }
     </div>
   </section>
 </Layout>
+
+<script>
+  import { toBlob } from 'html-to-image';
+
+  document.querySelectorAll<HTMLButtonElement>('.download-btn').forEach((btn) => {
+    btn.addEventListener('click', async () => {
+      const card = document.getElementById(btn.dataset.target!);
+      if (!card) return;
+      const label = btn.textContent;
+      try {
+        const blob = await toBlob(card, { pixelRatio: 2, cacheBust: true });
+        if (!blob) throw new Error('render failed');
+        const a = document.createElement('a');
+        a.href = URL.createObjectURL(blob);
+        a.download = `${btn.dataset.target}.png`;
+        a.click();
+        URL.revokeObjectURL(a.href);
+        btn.textContent = 'Downloaded!';
+      } catch {
+        btn.textContent = 'Failed';
+      }
+      setTimeout(() => (btn.textContent = label), 2000);
+    });
+  });
+</script>
 
 <style>
   .speaker-card {
