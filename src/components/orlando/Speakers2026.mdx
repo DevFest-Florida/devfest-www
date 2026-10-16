@@ -1,109 +1,24 @@
 import { Image } from 'astro:assets';
-import javiera_laso_image from '../../assets/images/2026/speakers/javiera_laso.jpg';
-import carol_bolger_image from '../../assets/images/2026/speakers/carol_bolger.png';
-import will_gorman_image from '../../assets/images/2026/speakers/will_gorman.jpg';
-import dwane_hemmings_image from '../../assets/images/2026/speakers/dwane_hemmings.jpg';
-import loiane_groner_image from '../../assets/images/2026/speakers/loiane_groner.jpeg';
+import { speakers } from '~/data/speakers2026';
 
-### Carol Bolger
-#### Founder / Flutter & AI Consultant
-[Real World Applications](https://realworldapplications.net)
+{speakers.map((speaker) => (
+  <section id={speaker.id}>
+    <h3>{speaker.name}</h3>
+    <h4>
+      {speaker.role}
+      {speaker.companyUrl && (
+        <> | <a href={speaker.companyUrl}>{speaker.company}</a></>
+      )}
+    </h4>
+    {!speaker.companyUrl && <p>{speaker.company}</p>}
 
-<Image
-  src={carol_bolger_image}
-  width={300}
-  alt="Carol Bolger"
-  format="webp"
-  quality={80}
-/>
+    <Image src={speaker.image} width={300} alt={speaker.imageAlt} format="webp" quality={80} />
 
-Ask My Data: Building Grounded Gemini Agents with Flutter & Firebase
+    <p>{speaker.talkTitle}</p>
+    {speaker.talkDescription.map((paragraph) => <p>{paragraph}</p>)}
 
-Most AI agents lean on one deceptively simple trick to be useful: grounding. In this hands-on workshop, you'll build a Flutter chat app where Gemini answers questions using your own live Firestore data instead of guessing — the same function-calling pattern behind real agentic apps. Along the way, you'll set up a Firebase project from scratch (free, no credit card required), learn what Firestore, Authentication, and Firebase AI Logic actually do, and wire them into a working Flutter app. You'll leave with a template you can immediately re-skin and extend for your hackathon project this weekend, plus a real mental model for grounding an LLM in data instead of letting it hallucinate.
-- [Connect on LinkedIn](https://www.linkedin.com/in/carolcorybolger)
-- [Check out Carol's Substack](https://substack.com/@car01)
-
-### Loiane Groner
-#### Director of Engineering | [BNY](https://www.bny.com/corporate/global/en.html)
-
-<Image
-  src={loiane_groner_image}
-  width={300}
-  alt="Loiane Groner"
-  format="webp"
-  quality={80}
-/>
-
-Specs Driven Development, Harness Engineering, Loops and Everything in Between
-
-Chatting with LLMs is fun, but episodic prompting is a dead-end for enterprise software development. To build robust, production-ready code with AI, we need to move from 'prompt engineering' to SDD with 'harness and loop engineering.'
-This session introduces an enterprise-scale architecture where AI agents and human developers co-author code inside a highly defensive, multi-layer validation harness. We walk through a Specs-Driven Development (SDD) methodology that keeps AI agents honest through rigid EARS-based specifications and TDD requirements.
-We then dive deep into the mechanics of automated loops. You will learn how to design systems where an agent automatically polls MR pipelines, analyzes compiler traces, tracks down SonarQube issues, synthesizes the exact code modifications needed, and pushes updates iteratively until the build is 100% green.
-- [loiane.com](https://loiane.com/)
-- [Connect on LinkedIn](https://www.linkedin.com/in/loiane)
-- [github.com/loiane](https://github.com/loiane)
-
-### Will Gorman
-#### CTO
-[Nucleus Security](https://nucleussec.com/)
-
-<Image
-  src={will_gorman_image}
-  width={300}
-  alt="Will Gorman"
-  format="webp"
-  quality={80}
-/>
-
-Agentic Engineering Workshop
-
-This talk and optional lab will explore how the Software Developer role is evolving into Agentic Engineering. We will look at Agent Skills and Agent Orchestration impacting the traditional software development life cycle.
-- [Connect on LinkedIn](https://www.linkedin.com/in/wpgorman/)
-
-### Dwane Hemmings
-#### JavaScript Developer Advocate
-[Vonage](https://www.vonage.com/)
-
-<Image
-  src={dwane_hemmings_image}
-  width={300}
-  alt="Dwane Hemmings"
-  format="webp"
-  quality={80}
-/>
-
-WebXR: Augment Reality with Real-time Communications
-
-Smart glasses are getting smarter with some being able to display WebXR experiences like their headset counterparts. In this interactive code-along workshop, we will create a WebXR application capable of receiving phone calls.
-
-- [Connect on LinkedIn](https://www.linkedin.com/in/dwane-hemmings)
-- [LifeLong.dev](https://LifeLong.dev)
-- [GitHub](https://github.com/conshus)
-
-### Javiera Laso
-#### Lead developer consultant
-Thoughtworks
-
-<Image
-  src={javiera_laso_image}
-  width={300}
-  alt="Javier Laso"
-  format="webp"
-  quality={80}
-/>
-
-Build Your Own AI-Assisted Architecture Review Board
-
-Architecture Review Boards are meant to improve consistency, reduce risk, and help teams make better technical decisions. In practice, they can also become slow, centralized, and difficult to scale.
-
-In this hands-on workshop, participants will design a lightweight AI-assisted Architecture Review Board that brings architectural standards, ADRs, engineering principles, system constraints, and organizational knowledge directly into the decision process.
-
-I’ll share how I use AI in my own architecture practice to structure analysis, surface relevant standards, explore alternatives, challenge assumptions, and expose trade-offs. Participants will then apply those ideas to build their own review workflow.
-
-We’ll work through a realistic architectural decision and define what an AI-assisted review should evaluate, what context it needs, what questions it should ask, and when a decision should still require human review or escalation.
-
-The goal is not to automate architecture governance. It is to make architectural guidance more accessible, consistent, and scalable while preserving the judgment and accountability of engineers and architects.
-
-By the end of the workshop, participants will leave with a practical blueprint for an Architecture Review Board they can adapt to their own organization, standards, and level of governance maturity.
-
-[Connect on LinkedIn](https://www.linkedin.com/in/javujavichi/)
+    <ul>
+      {speaker.links.map((link) => <li><a href={link.href}>{link.label}</a></li>)}
+    </ul>
+  </section>
+))}

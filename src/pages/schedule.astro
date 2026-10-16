@@ -1,87 +1,169 @@
 ---
+import { Image } from 'astro:assets';
 import Layout from '~/layouts/PageLayout.astro';
+import { getSpeaker } from '~/data/speakers2026';
+
+interface Session {
+  title: string;
+  speakerId?: string;
+}
+
+interface Slot {
+  start: string;
+  end?: string;
+  sessions: Session[];
+}
+
+const day1: Slot[] = [
+  { start: '8:00 AM', end: '9:00 AM', sessions: [{ title: 'Registration' }] },
+  { start: '9:00 AM', end: '10:00 AM', sessions: [{ title: 'Orientation/Kick-Off' }] },
+  { start: '10:00 AM', end: '11:00 AM', sessions: [{ title: '', speakerId: 'dwane-hemmings' }] },
+  {
+    start: '11:00 AM',
+    end: '12:00 PM',
+    sessions: [
+      { title: '', speakerId: 'loiane-groner' },
+      { title: '', speakerId: 'carol-bolger' },
+    ],
+  },
+  { start: '12:00 PM', end: '1:00 PM', sessions: [{ title: 'Lunch' }] },
+  {
+    start: '1:00 PM',
+    end: '1:30 PM',
+    sessions: [
+      { title: '', speakerId: 'javiera-laso' },
+      { title: '', speakerId: 'will-gorman' },
+    ],
+  },
+  { start: '1:30 PM', end: '2:30 PM', sessions: [{ title: 'Hackathon planning' }] },
+  { start: '2:30 PM', end: '6:00 PM', sessions: [{ title: 'BEGIN THE HACK!!!' }] },
+  { start: '6:00 PM', end: '7:00 PM', sessions: [{ title: 'Dinner time :)' }] },
+  { start: '7:00 PM', end: '8:00 PM', sessions: [{ title: 'Wrap up work for day 1' }] },
+];
+
+const day2: Slot[] = [
+  { start: '8:00 AM', end: '9:00 AM', sessions: [{ title: 'Breakfast' }] },
+  { start: '9:00 AM', end: '12:00 PM', sessions: [{ title: 'Continue Working' }] },
+  { start: '12:00 PM', end: '1:00 PM', sessions: [{ title: 'Lunch' }] },
+  { start: '1:00 PM', end: '3:00 PM', sessions: [{ title: 'Continue Working' }] },
+  { start: '3:00 PM', end: '4:00 PM', sessions: [{ title: 'Submit!!!' }] },
+  { start: '4:00 PM', end: '5:30 PM', sessions: [{ title: 'Presentations' }] },
+  { start: '5:30 PM', end: '6:00 PM', sessions: [{ title: 'Judge Deliberations' }] },
+  { start: '6:00 PM', end: '6:30 PM', sessions: [{ title: 'Awards' }] },
+  { start: '6:30 PM', sessions: [{ title: 'After Partay' }] },
+];
+
+const tracks = ['Track A', 'Track B'];
+
+const resolve = (session: Session) => {
+  const speaker = session.speakerId ? getSpeaker(session.speakerId) : undefined;
+  return { ...session, title: speaker?.talkTitle ?? session.title, speaker };
+};
+
+let dialogCount = 0;
+const withDialogs = (slots: Slot[]) =>
+  slots.map((slot) => ({
+    ...slot,
+    sessions: slot.sessions.map((session) => {
+      const resolved = resolve(session);
+      return { ...resolved, dialogId: resolved.speaker ? `talk-dialog-${dialogCount++}` : undefined };
+    }),
+  }));
+
+const days = [
+  {
+    label: 'Hackathon Day 1',
+    title: 'Workshops & Kick-Off \u2014 November 7',
+    accent: 'theme-accent-blue',
+    border: 'border-[#4285f4]/40',
+    slots: withDialogs(day1),
+    footer: '8:00 PM \u2014 Doors close',
+  },
+  {
+    label: 'Hackathon Day 2',
+    title: 'Submissions, Presentations & Awards \u2014 November 8',
+    accent: 'theme-accent-red',
+    border: 'border-[#ea4335]/40',
+    slots: withDialogs(day2),
+  },
+];
 ---
 
-<Layout>
+<Layout metadata={{ title: 'Schedule' }}>
   <section class="theme-section">
-    <!-- Hero -->
-    <div class="relative overflow-hidden">
-      <div class="container mx-auto px-4 py-20 md:px-8 md:py-28 lg:px-12">
-        <div class="mx-auto max-w-3xl text-center">
-          <span
-            class="theme-accent-blue inline-flex items-center gap-2 rounded-full border border-[#4285f4]/40 bg-[#4285f4]/10 px-4 py-1 text-xs font-semibold uppercase tracking-[0.2em]"
-          >
-            <span class="h-2 w-2 rounded-full bg-[#4285f4]"></span>
-            Programming in planning
-          </span>
-          <h1 class="theme-heading mt-6 text-4xl font-extrabold leading-tight tracking-tight sm:text-5xl md:text-6xl">
-            Schedule — Coming Soon
-          </h1>
-          <p class="theme-copy mt-6 text-lg sm:text-xl">
-            DevFest Hackathon 2026 is a three-day collaboration and creative sprint, November 6&ndash;8 in Orlando, FL.
-            The full programming keynotes, workshops, hackathon tracks, and closing showcase is being finalized and will
-            be announced here first.
-          </p>
-          <p class="theme-copy mt-3 text-base">
-            Want to be notified when sessions are announced? Email
-            <a
-              href="mailto:organizers@devfestflorida.com?subject=DevFest%20Hackathon%202026%20Schedule%20Updates"
-              class="theme-accent-blue font-semibold underline decoration-current/60 underline-offset-4 hover:opacity-80"
-              >organizers@devfestflorida.com</a
-            >.
-          </p>
-        </div>
-      </div>
-    </div>
-
-    <!-- 3-day agenda cards -->
-    <div class="container mx-auto px-4 pb-20 md:px-8 md:pb-28 lg:px-12">
-      <div class="mx-auto mb-12 max-w-3xl text-center">
-        <h2 class="theme-heading text-3xl font-bold sm:text-4xl">A Glimpse at the Three Days</h2>
-        <p class="theme-copy mt-4 text-base">
-          A high-level look at the shape of the 2026 program. Specific sessions, speakers, and workshops will roll out
-          over the coming weeks.
+    <div class="container mx-auto px-4 py-16 md:px-8 md:py-24 lg:px-12">
+      <div class="mx-auto max-w-3xl text-center">
+        <span
+          class="theme-accent-blue inline-flex items-center gap-2 rounded-full border border-[#4285f4]/40 bg-[#4285f4]/10 px-4 py-1 text-xs font-semibold uppercase tracking-[0.2em]"
+        >
+          <span class="h-2 w-2 rounded-full bg-[#4285f4]"></span>
+          DevFest Hackathon 2026 &middot; Orlando, FL
+        </span>
+        <h1 class="theme-heading mt-6 text-4xl font-extrabold leading-tight tracking-tight sm:text-5xl md:text-6xl">
+          Schedule
+        </h1>
+        <p class="theme-copy mt-6 text-lg">
+          Select any talk to see its description and speaker details.
         </p>
       </div>
 
-      <div class="grid grid-cols-1 gap-8 md:grid-cols-3">
-        <div class="theme-card rounded-3xl border-4 border-solid border-[#4285f4] p-8">
-          <span class="theme-accent-blue text-xs font-semibold uppercase tracking-[0.2em]">Day 1</span>
-          <h3 class="theme-heading mt-3 text-2xl font-bold">November 6 &mdash; Opening Day</h3>
-          <p class="theme-copy mt-3">Kickoff, registration, and community building. Programming details coming soon.</p>
-        </div>
+      {
+        days.map((day) => (
+          <div class="mx-auto mt-12 max-w-5xl">
+            <h2 class="theme-heading mb-6 text-2xl font-bold sm:text-3xl">
+              <span class={`${day.accent} text-xs font-semibold uppercase tracking-[0.2em]`}>{day.label}</span>
+              <span class="block">{day.title}</span>
+            </h2>
 
-        <div class="theme-card rounded-3xl border-4 border-solid border-[#ea4335] p-8">
-          <span class="theme-accent-red text-xs font-semibold uppercase tracking-[0.2em]">Day 2</span>
-          <h3 class="theme-heading mt-3 text-2xl font-bold">November 7 &mdash; DevFest Programming</h3>
-          <p class="theme-copy mt-3">
-            A full day of sessions, workshops, and hands-on collaboration. Programming details coming soon.
-          </p>
-        </div>
+            <ol class="space-y-4">
+              {day.slots.map((slot) => (
+                <li
+                  class={`theme-card grid gap-3 rounded-2xl border-2 border-solid ${day.border} p-4 md:grid-cols-[10rem_1fr] md:p-5`}
+                >
+                  <p class={`${day.accent} text-sm font-semibold uppercase tracking-wide`}>
+                    <time>{slot.start}</time>
+                    {slot.end && (
+                      <>
+                        {' '}&ndash; <time>{slot.end}</time>
+                      </>
+                    )}
+                  </p>
+                  <div class:list={['grid gap-3', slot.sessions.length > 1 && 'md:grid-cols-2']}>
+                    {slot.sessions.map((session, index) =>
+                      session.speaker ? (
+                        <button
+                          type="button"
+                          data-dialog-target={session.dialogId}
+                          class="group rounded-xl border-2 border-solid border-[#34a853] p-4 text-left transition hover:bg-[#34a853]/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#34a853]"
+                        >
+                          {slot.sessions.length > 1 && (
+                            <span class="theme-accent-green block text-xs font-semibold uppercase tracking-[0.2em]">
+                              {tracks[index]}
+                            </span>
+                          )}
+                          <span class="theme-heading block text-lg font-bold">{session.title}</span>
+                          <span class="theme-copy mt-1 block text-sm">
+                            {session.speaker.name} &middot; {session.speaker.company}
+                          </span>
+                          <span class="theme-accent-green mt-2 block text-sm font-semibold underline underline-offset-4 group-hover:opacity-80">
+                            View details
+                          </span>
+                        </button>
+                      ) : (
+                        <p class="theme-heading py-2 text-lg font-bold">{session.title}</p>
+                      )
+                    )}
+                  </div>
+                </li>
+              ))}
+              {day.footer && (
+                <li class="theme-copy px-5 text-sm font-semibold uppercase tracking-wide">{day.footer}</li>
+              )}
+            </ol>
+          </div>
+        ))
+      }
 
-        <div class="theme-card rounded-3xl border-4 border-solid border-[#34a853] p-8">
-          <span class="theme-accent-green text-xs font-semibold uppercase tracking-[0.2em]">Day 3</span>
-          <h3 class="theme-heading mt-3 text-2xl font-bold">November 8 &mdash; Closing Day</h3>
-          <p class="theme-copy mt-3">
-            Project showcases, celebration, and community networking. Programming details coming soon.
-          </p>
-        </div>
-      </div>
-
-      <!-- "What we'll be announcing" callout -->
-      <div
-        class="theme-card theme-copy mx-auto mt-16 max-w-3xl rounded-2xl border-l-4 border-[#f9ab00] px-6 py-5 text-left shadow-lg"
-      >
-        <p class="theme-heading text-lg font-bold sm:text-xl">What we&rsquo;ll be announcing</p>
-        <ul class="mt-3 list-disc space-y-1 pl-6 text-sm sm:text-base">
-          <li>Opening keynote and featured speaker lineup</li>
-          <li>Workshop schedule and hands-on lab sign-ups</li>
-          <li>Hackathon tracks, judging criteria, and submission timelines</li>
-          <li>Closing showcase format and community networking events</li>
-        </ul>
-      </div>
-
-      <!-- Archive link -->
       <div class="mt-12 text-center">
         <p class="theme-copy text-sm">
           Curious what the 2025 day-of program looked like?
@@ -94,4 +176,112 @@ import Layout from '~/layouts/PageLayout.astro';
       </div>
     </div>
   </section>
+
+  {
+    days.flatMap((day) => day.slots).flatMap((slot) =>
+      slot.sessions.map(
+        (session) =>
+          session.speaker && (
+            <dialog
+              id={session.dialogId}
+              aria-labelledby={`${session.dialogId}-title`}
+              class="theme-card theme-copy m-auto w-[calc(100%-2rem)] max-w-2xl rounded-3xl border-4 border-solid border-[#34a853] p-0 overflow-hidden backdrop:bg-black/60"
+            >
+              <div class="max-h-[85dvh] overflow-y-auto overscroll-contain p-6 md:p-8" tabindex="0">
+                <div class="flex items-start justify-between gap-4">
+                  <p class="theme-accent-green text-xs font-semibold uppercase tracking-[0.2em]">
+                    {slot.start} &ndash; {slot.end}
+                  </p>
+                  <button
+                    type="button"
+                    data-dialog-close
+                    aria-label="Close"
+                    class="theme-heading -mr-2 -mt-2 rounded-full px-3 py-1 text-2xl leading-none hover:bg-black/10"
+                  >
+                    &times;
+                  </button>
+                </div>
+                <h2 id={`${session.dialogId}-title`} class="theme-heading mt-2 text-2xl font-bold">
+                  {session.title}
+                </h2>
+
+                <div class="mt-6 flex flex-col items-start gap-4 sm:flex-row">
+                  <Image
+                    src={session.speaker.image}
+                    width={120}
+                    height={120}
+                    alt={session.speaker.imageAlt}
+                    format="webp"
+                    quality={80}
+                    class="h-28 w-28 shrink-0 rounded-2xl border-4 border-solid border-[#34a853] object-cover"
+                  />
+                  <div>
+                    <p class="theme-heading text-lg font-bold">{session.speaker.name}</p>
+                    <p class="text-sm">{session.speaker.role}</p>
+                    <p class="text-sm">
+                      {session.speaker.companyUrl ? (
+                        <a
+                          href={session.speaker.companyUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          class="theme-accent-blue underline underline-offset-4"
+                        >
+                          {session.speaker.company}
+                        </a>
+                      ) : (
+                        session.speaker.company
+                      )}
+                    </p>
+                  </div>
+                </div>
+
+                <div class="mt-6 space-y-3">
+                  {session.speaker.talkDescription.map((paragraph) => (
+                    <p>{paragraph}</p>
+                  ))}
+                </div>
+
+                <ul class="mt-6 flex flex-wrap gap-x-6 gap-y-2 text-sm font-semibold">
+                  {session.speaker.links.map((link) => (
+                    <li>
+                      <a
+                        href={link.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="theme-accent-blue underline underline-offset-4 hover:opacity-80"
+                      >
+                        {link.label}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </dialog>
+          )
+      )
+    )
+  }
 </Layout>
+
+<style is:global>
+  body:has(dialog[open]) {
+    overflow: hidden;
+  }
+</style>
+
+<script>
+  document.querySelectorAll<HTMLButtonElement>('[data-dialog-target]').forEach((trigger) => {
+    trigger.addEventListener('click', () => {
+      const dialog = document.getElementById(trigger.dataset.dialogTarget ?? '');
+      if (dialog instanceof HTMLDialogElement) dialog.showModal();
+    });
+  });
+
+  document.querySelectorAll<HTMLDialogElement>('dialog').forEach((dialog) => {
+    dialog.querySelector('[data-dialog-close]')?.addEventListener('click', () => dialog.close());
+    // Clicking the backdrop (the dialog element itself) closes it.
+    dialog.addEventListener('click', (event) => {
+      if (event.target === dialog) dialog.close();
+    });
+  });
+</script>
