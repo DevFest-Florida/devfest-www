@@ -20,9 +20,9 @@ No Astro server adapter or runtime secrets are required for the public site.
 
 `wrangler.jsonc` configures the Worker name (`devfest-florida`) and `dist` assets.
 If connecting an existing Worker, set the name to match that Worker before deploying.
-For Cloudflare Workers Builds, connect this repository with root directory `/`,
-build command `npm run build`, and deploy command `npx wrangler deploy`.
-Use `main` as the production branch and enable Preview builds for other branches
+Cloudflare Workers Builds is connected to `DevFest-Florida/devfest-www` with root
+directory `/`, build command `npm run build`, and deploy command `npx wrangler deploy`.
+`main` is the production branch; Preview builds are enabled for other branches
 with Preview command `npx wrangler preview`. Pushes and merges to `main` deploy
 production; other branches get their own public Preview URL. The empty `previews`
 configuration shares the static asset settings without adding production routes.
