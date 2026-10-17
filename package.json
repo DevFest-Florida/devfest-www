@@ -12,6 +12,10 @@
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
+    "preview:workers": "npm run build && wrangler dev",
+    "deploy": "npm run build && wrangler deploy",
+    "deploy:preview": "npm run build && wrangler preview",
+    "deploy:check": "npm run build && wrangler deploy --dry-run",
     "astro": "astro",
     "format": "prettier -w .",
     "lint:eslint": "eslint ."
@@ -59,6 +63,7 @@
     "tailwind-merge": "^2.3.0",
     "tailwindcss": "^3.4.4",
     "typescript": "^5.5.2",
-    "typescript-eslint": "^7.13.1"
+    "typescript-eslint": "^7.13.1",
+    "wrangler": "^4.151.1"
   }
 }

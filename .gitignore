@@ -1,6 +1,8 @@
 # build output
 dist/
 .output/
+.wrangler/
+.dev.vars*
 
 # dependencies
 node_modules/
