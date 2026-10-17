@@ -97,25 +97,48 @@ const eventSchema = {
       <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-white leading-tight mb-4">
         DevFest Hackathon 2026
       </h1>
-      <p class="text-xl sm:text-2xl md:text-3xl font-light mb-8 text-white">Build, Innovate & Connect</p>
-      <p class="text-xl sm:text-2xl md:text-3xl font-light mb-8 text-white">November 6–8, 2026</p>
-      <p class="text-white">
-        DevFest Hackathon 2026 is a welcoming space where people of all backgrounds come together to imagine, build, and
-        share ideas for a better future. Instead of focusing on competition or speed, we emphasize collaboration,
-        creativity, and community impact. With AI transforming the world, we approach it as a tool for augmentation, not
-        replacement — a partner that supports human creativity, connection, and problem-solving.
+      <p class="mx-auto max-w-2xl text-xl font-medium leading-relaxed text-white sm:text-2xl">
+        Build with AI. Leave with a project, practical skills, and new collaborators.
       </p>
-      <p class="text-white">
-        At this event, participants explore how to use AI responsibly and ethically, ensuring that innovation is guided
-        by inclusivity, fairness, and care for people. Whether you’re a coder, designer, storyteller, or community
-        builder, there’s a place for your voice. Together, we’ll create solutions that reflect both human ingenuity and
-        human values.
+      <div class="mt-6 flex flex-col items-center gap-2 text-base font-semibold text-white sm:flex-row sm:justify-center sm:gap-5 sm:text-lg">
+        <span class="inline-flex items-center gap-2">
+          <Icon name="tabler:calendar-event" class="h-5 w-5 text-[#f9ab00]" aria-hidden="true" />
+          November 7–8, 2026
+        </span>
+        <span class="inline-flex items-center gap-2">
+          <Icon name="tabler:map-pin" class="h-5 w-5 text-[#ea4335]" aria-hidden="true" />
+          UCF Downtown, Orlando
+        </span>
+      </div>
+      <p class="mt-4 text-sm font-medium text-white/85 sm:text-base">
+        Early-bird tickets from $21.30 <span aria-hidden="true">&bull;</span> In person at UCF Downtown
       </p>
+
+      <!-- Main CTA Buttons -->
+      <div class="mt-7 flex flex-col items-stretch justify-center gap-3 sm:flex-row sm:items-center">
+        <a
+          href="https://www.eventbrite.com/e/devfest-florida-hackathon-11626-11826-tickets-1998655551557?aff=oddtdtcreator"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Register for DevFest Florida Hackathon"
+          class="inline-flex items-center justify-center gap-2.5 rounded-full bg-[#1967d2] px-7 py-3.5 text-base font-bold text-white shadow-xl shadow-blue-500/30 transition-all duration-300 hover:scale-105 hover:bg-[#1557b0] hover:shadow-2xl hover:shadow-blue-500/50 focus:outline-none focus-visible:ring-4 focus-visible:ring-[#f9ab00] focus-visible:ring-offset-2 focus-visible:ring-offset-[#1e1e1e] active:scale-95 sm:px-9 sm:text-lg"
+        >
+          <Icon name="tabler:ticket" class="h-5 w-5 sm:h-6 sm:w-6" aria-hidden="true" />
+          <span>Register now</span>
+        </a>
+        <a
+          href="#tracks"
+          class="inline-flex items-center justify-center gap-2 rounded-full border-2 border-white/80 bg-[#1e1e1e]/50 px-7 py-3.5 text-base font-bold text-white transition-colors hover:border-[#f9ab00] hover:bg-white hover:text-[#1e1e1e] focus:outline-none focus-visible:ring-4 focus-visible:ring-[#f9ab00] focus-visible:ring-offset-2 focus-visible:ring-offset-[#1e1e1e] sm:px-9 sm:text-lg"
+        >
+          <Icon name="tabler:map-2" class="h-5 w-5 sm:h-6 sm:w-6" aria-hidden="true" />
+          <span>Explore tracks</span>
+        </a>
+      </div>
 
       <!-- Countdown Timer -->
       <div
         id="countdown"
-        class="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-12 text-white"
+        class="mt-10 grid grid-cols-2 gap-3 text-white sm:grid-cols-4 sm:gap-4"
         role="group"
         aria-labelledby="countdown-heading"
       >
@@ -160,41 +183,8 @@ const eventSchema = {
         </p>
       </div>
       <p id="countdown-status" class="sr-only" role="status" aria-live="polite" aria-atomic="true"></p>
-      <aside
-        class="mb-8 rounded-2xl border-l-4 border-[#4285f4] bg-[#f0f0f0]/95 px-5 py-4 text-left text-[#1e1e1e] shadow-lg sm:px-6"
-        aria-label="DevFest Hackathon 2026 planning status"
-      >
-        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
-          <div>
-            <p class="flex items-center gap-3 text-lg font-bold sm:text-xl">
-              <Icon name="tabler:calendar-event" class="h-6 w-6 shrink-0 text-[#4285f4]" aria-hidden="true" />
-              Save the date — November 6–8, 2026
-            </p>
-            <p class="mt-1 flex items-center gap-2 text-sm sm:text-base text-gray-700">
-              <Icon name="tabler:map-pin" class="h-5 w-5 shrink-0 text-[#ea4335]" aria-hidden="true" />
-              <span>
-                <strong>UCF Downtown</strong> &mdash; 500 W. Livingston Street, Orlando, FL
-              </span>
-            </p>
-          </div>
-          <div class="sm:self-center shrink-0">
-            <AddToCalendar variant="compact" />
-          </div>
-        </div>
-      </aside>
-
-      <!-- Main CTA Button -->
-      <div class="flex items-center justify-center mt-6">
-        <a
-          href="https://www.eventbrite.com/e/devfest-florida-hackathon-11626-11826-tickets-1998655551557?aff=oddtdtcreator"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="Register for DevFest Florida Hackathon"
-          class="inline-flex items-center justify-center gap-2.5 rounded-full bg-gradient-to-r from-[#1967d2] to-[#1a73e8] px-10 py-4 text-lg font-bold text-white shadow-xl shadow-blue-500/30 transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-blue-500/50 hover:from-[#1557b0] hover:to-[#1967d2] focus:outline-none focus-visible:ring-4 focus-visible:ring-[#f9ab00] focus-visible:ring-offset-2 focus-visible:ring-offset-[#1e1e1e] active:scale-95"
-        >
-          <Icon name="tabler:ticket" class="h-6 w-6" aria-hidden="true" />
-          <span>Register for DevFest Hackathon</span>
-        </a>
+      <div class="mt-8 flex justify-center">
+        <AddToCalendar variant="compact" />
       </div>
     </div>
   </section>
@@ -219,10 +209,12 @@ const eventSchema = {
     <div class="text-center mb-12">
       <h3 class="theme-heading text-3xl font-bold mb-4">About the Event</h3>
       <p class="theme-copy text-lg max-w-2xl mx-auto">
-        Join us for an electrifying, three-day sprint building GenAI-powered apps—a flagship DevFest event designed to
-        spark innovation and connect the brightest minds in tech. This is your unparalleled opportunity to dive deep
-        into the thrilling realm of AI agents and discover how they seamlessly integrate with the cutting-edge power of
-        Google's technologies.
+        DevFest Hackathon is a welcoming space where people from different backgrounds come together to imagine, build,
+        and share ideas. We center collaboration, creativity, and community impact over competition or speed.
+      </p>
+      <p class="theme-copy text-lg max-w-2xl mx-auto mt-4">
+        Explore AI as a tool that supports human creativity, connection, and problem-solving. Whether you code, design,
+        tell stories, or build community, you can find teammates and turn an idea into something real.
       </p>
     </div>
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">

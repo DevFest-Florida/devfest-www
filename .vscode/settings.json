@@ -48,7 +48,8 @@
     "statusBar.debuggingBackground": "#38bdf8",
     "statusBar.debuggingForeground": "#15202b",
     "activityBar.activeBorder": "#15202b",
-    "activityBarTop.activeBorder": "#15202b"
+    "activityBarTop.activeBorder": "#15202b",
+    "statusBar.inactiveBackground": "#38bdf8"
   },
   "peacock.color": "#38bdf8",
   "IDX.aI.enableInlineCompletion": true,

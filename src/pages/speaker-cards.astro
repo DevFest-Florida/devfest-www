@@ -31,7 +31,7 @@ const palettes = [
             <div class="flex flex-col items-center gap-3">
               <article
                 id={speaker.id}
-                class="speaker-card relative flex flex-col overflow-hidden rounded-3xl border-2 border-black px-6 py-4 text-black"
+                class="speaker-card relative flex h-[38rem] w-full flex-col overflow-hidden rounded-3xl border-2 border-black px-6 py-4 text-black"
                 style={`background:${p.bg}`}
               >
                 <span class="shape-a" style={`background:${p.accent}`} aria-hidden="true" />
@@ -85,7 +85,7 @@ const palettes = [
 <script>
   import { toBlob } from 'html-to-image';
 
-  document.querySelectorAll<HTMLButtonElement>('.download-btn').forEach((btn) => {
+  document.querySelectorAll<HTMLButtonElement>('.download-btn').forEach(btn => {
     btn.addEventListener('click', async () => {
       const card = document.getElementById(btn.dataset.target!);
       if (!card) return;
