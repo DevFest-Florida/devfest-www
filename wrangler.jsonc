@@ -2,6 +2,11 @@
   "$schema": "./node_modules/wrangler/config-schema.json",
   "name": "devfest-florida",
   "account_id": "2862245a74b588ee7841686b682c209d",
+  "workers_dev": true,
+  "routes": [
+    { "pattern": "devfestflorida.com/*", "zone_name": "devfestflorida.com" },
+    { "pattern": "www.devfestflorida.com/*", "zone_name": "devfestflorida.com" },
+  ],
   "compatibility_date": "2026-10-17",
   "previews": {},
   "assets": {

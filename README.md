@@ -26,8 +26,11 @@ Use `main` as the production branch and enable Preview builds for other branches
 with Preview command `npx wrangler preview`. Pushes and merges to `main` deploy
 production; other branches get their own public Preview URL. The empty `previews`
 configuration shares the static asset settings without adding production routes.
-Set the build Node.js version to 22 or later. Manage custom domains on that Worker
-in the Cloudflare dashboard, including `devfestflorida.com` and any desired `www` domain.
+Set the build Node.js version to 22 or later. `wrangler.jsonc` targets the DevFest
+account and routes `devfestflorida.com/*` and `www.devfestflorida.com/*` to the Worker.
+These routes require proxied DNS records. Preview deployments do not use these routes.
+For local deployment with the existing DevFest login, run `wrangler auth activate devfest`
+once in this directory, or pass `--profile devfest` directly to Wrangler commands.
 
 The `public/_redirects` file preserves the permanent volunteer redirects.
 `public/_headers` preserves immutable caching for Astro's fingerprinted assets.
