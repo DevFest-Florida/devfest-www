@@ -1,0 +1,143 @@
+---
+publishDate: 2026-10-20T00:00:00Z
+title: "Join the Data for Good Applied Research Sprint at DevFest Florida 2026"
+excerpt: "The Data for Good Applied Research Sprint at DevFest Florida 2026 takes place in person from November 7–8 at UCF Downtown in Orlando. Hosted by GDG Central Florida alongside partners like Google, LAT AI, TekSystems and DataPsy, the weekend challenges participants to use data and machine learning to improve student success. Teams will work with curated public datasets across two main themes: building early-warning models to catch struggling students and developing AI tutors that use Socratic dialogue rather than simply providing answers."
+image: ~/assets/images/2026/dataTrackDevFest.jpeg
+
+tags:
+  - community
+  - data
+  - ai
+---
+
+import Button from '~/components/ui/Button.astro';
+import { Image } from 'astro:assets';
+
+
+# **Join the Data for Good Applied Research Sprint at DevFest Florida 2026**
+**November 7–8, 2026 · UCF Downtown, Orlando · In person**
+If you've ever wanted a weekend where the hard part of the problem is the fun part, this is your invitation.
+The **Data for Good track** at DevFest Hackathon 2026 is an **applied research sprint** focused on one question: *how can data help students succeed?* You get two days to frame a real problem in education, test a hypothesis against well-documented public data, and leave with a reproducible result you're proud to put your name on. The event is hosted by GDG Central Florida, with partners including Google and DataPsy.
+Whether you're a senior practitioner or still building your ML intuition, we'd love to have you in the room.
+
+---
+
+## **Start With the Data**
+We know you want to see the schema before you see the swag. Every dataset below is **public**, and several are synthetically augmented. Treat them as a starting point. You're welcome to join, augment, or challenge them with other public sources.
+
+### **🎯 Theme 1: Catch students before they slip**
+*Early-warning models that flag students who need support while there's still time to help.*
+**Classification with an Academic Success Dataset** ([Kaggle Playground S4E6](https://www.kaggle.com/competitions/playground-series-s4e6))
+* **Records:** 76,518 students (synthetically augmented from real higher-ed cohorts)
+* **Dimensionality:** 36 features covering demographics, parental education and occupation, socioeconomic indicators, and 1st/2nd-semester credit metrics
+* **Granularity:** One row per student, with two semester snapshots
+* **Task:** 3-class classification (Dropout / Enrolled / Graduate), scored on accuracy
+* **Edge cases:** Synthetic-augmentation artifacts, and a hard boundary between *Enrolled* and *Dropout*. Early curricular momentum (approved vs. enrolled units, tuition status) outweighs static background traits.
+* **License:** CC BY 4.0
+**Open University Learning Analytics Dataset (OULAD)** ([Kaggle](https://doi.org/10.34740/kaggle/dsv/8949892))
+* **Records:** 32,593 distance learners across 22 course presentations (2013–2014), plus **10.6M clickstream interactions**
+* **Dimensionality:** 7 relational tables linking demographics, registrations, assessments, and VLE activity
+* **Granularity:** Daily click counts per learning resource, indexed to module start date
+* **Task:** Binary dropout prediction, or 4-class final result (Distinction / Pass / Fail / Withdrawn). F1 and ROC-AUC are typical metrics.
+* **Edge cases:** Irregular time-series sampling, students who withdraw mid-module, and multi-table joins that reward careful temporal feature aggregation
+* **License:** CC BY 4.0
+**xAPI-Edu-Data** ([Kaggle](https://www.kaggle.com/datasets/aljarah/xAPI-Edu-Data))
+* **Records:** 480 K–12 students
+* **Dimensionality:** 17 behavioral, academic, and demographic attributes (hand-raises, resource visits, discussion posts, parent survey responses)
+* **Granularity:** One row per student per semester
+* **Task:** Ordinal 3-class performance band (Low / Medium / High), scored on accuracy and macro F1
+* **Edge cases:** Small *n*, gender imbalance (305 male / 175 female), and a multinational sample. Overfitting is the real opponent here.
+* **License:** Open access (check the source page)
+
+### **💬 Theme 2: Tutors that teach, not tell**
+*AI tutoring that guides students to the answer instead of handing it over.*
+**MathDial** ([Hugging Face: eth-nlped/mathdial](https://huggingface.co/datasets/eth-nlped/mathdial))
+* **Records:** ~2,860 annotated multi-turn tutoring dialogues
+* **Schema:** Dialogue turns, the student's misconception, problem context (from GSM8K), and gold solution steps
+* **Granularity:** Per conversational turn
+* **Task:** Socratic dialogue generation and pedagogical alignment
+* **Edge cases:** "Solution handover," where the tutor simply gives the answer away. The challenge is scaffolding without telling, and fading support at the right moment.
+* **License:** MIT / CC BY 4.0
+**TutorChat** ([Hugging Face: princeton-nlp/TutorChat](https://huggingface.co/datasets/princeton-nlp/TutorChat))
+* **Records:** 77,300 synthetic tutoring dialogues grounded in open textbooks (STEM and humanities)
+* **Schema:** Multi-turn exchanges, learner personas, topical context, and open-book vs. closed-book constraints
+* **Task:** Instruction tuning for educational dialogue
+* **Edge cases:** Synthetic persona artifacts and uneven conversational depth across subjects
+* **License:** See the dataset card
+**Want more?** Our full catalog also includes ASAP-AES, SciQ, RACE, and StudyChat.[ Browse the complete dataset guide →](https://docs.google.com/document/d/e/2PACX-1vTnVdfGfUPnhRk2RbUz7SFByfmfNU3N62_Cu0LHYJXRcUq3gcUlnHfs7M72Y8-6V9ZFpUWSIGH7Xgqp/pub)
+**A note on responsible use:** These datasets describe real students, even when they're anonymized or synthetically expanded. We encourage teams to report subgroup performance, document limitations, and design for students' benefit rather than surveillance.
+
+---
+
+## **Why Join?**
+
+### **Intellectual rigor**
+This isn't a race to the flashiest demo. It's a chance to get the method right: clear problem framing, sound validation, honest uncertainty, and fairness checks across student groups. Mentors will be on hand to push your thinking.
+
+### **Peer networking**
+Spend three days working alongside data scientists, ML engineers, analysts, and education experts from Central Florida and beyond. Come solo and join Friday's team-formation session, or bring a team of 2 to 5.
+
+---
+
+## **Compute and Tools**
+* **Cloud tool trials:** Google will be providing cloud credits for this event
+* **Fast connectivity and workspaces** in UCF Downtown's Dr. Phillips Academic Commons
+
+### **Kaggle Notebooks
+
+**Kaggle offers generous, consistent free access without charging for compute.
+1. **Verify your account:** Complete phone number verification in your Kaggle profile settings (required to unlock accelerator access).
+2. **Create a notebook:** Navigate to **Code** > **New Notebook**.
+3. **Turn on the GPU:** In the right-hand **Notebook Options** panel:
+ * Expand **Accelerator**.
+ * Choose **GPU T4 x2** or **GPU P100**.
+
+### **Google Colab
+**
+**Colab runs directly inside Google Drive and requires zero local environment setup.  You can pay for more computers as required.**
+1. Open a notebook: Go to[ colab.research.google.com](https://colab.research.google.com/).
+2. Select the GPU runtime:
+ * Go to Runtime > Change runtime type.
+ * Set Hardware accelerator to GPU.
+ * On the free tier, it defaults to a T4.
+3. Paid upgrades: If you hit usage limits or need large memory (high-RAM, 40GB/80GB VRAM) for tasks like LoRA fine-tuning:
+ * Pay-As-You-Go ($9.99 for 100 units): Good if you only need an A100 occasionally.
+ * Colab Pro (
+(WARN_UNRECOGNIZED_ELEMENT: EQUATION)
+$49.99/mo): Provides monthly recurring compute units, priority access to A100/L4 GPUs, and background execution (Pro+).
+
+---
+
+## **You Own What You Build**
+Your work stays yours. **Projects are released under the MIT License**. No surprise IP claims.
+Each dataset keeps its own license, so check the terms above before redistributing data or derived models. Some sources are non-commercial or governed by Kaggle competition rules.
+
+---
+
+## **The Weekend at a Glance**
+| **Day** | **What happens** | 
+| --- | --- |
+|  |  | 
+| **Sat, Nov 7** | Sessions, workshops, and heads-down sprinting | 
+| **Sun, Nov 8** | Project showcases, celebration, networking | 
+**Where:** UCF Downtown, Dr. Phillips Academic Commons, 500 W. Livingston Street, Orlando, FL 32801. Free LYMMO bus stops on campus, SunRail is a short walk away, and garage parking is nearby.
+
+---
+
+## **Save Your Seat**
+Early-bird tickets start at **$21.30**.
+👉[ Register on Eventbrite](https://www.eventbrite.com/e/devfest-florida-hackathon-11626-11826-tickets-1998655551557?aff=oddtdtcreator)
+Questions? Email organizers@devfestflorida.com or check the[ FAQ](https://devfestflorida.com/faq).
+Bring your curiosity, your favorite notebook setup, and your toughest questions. Let's build something that helps students thrive. 🌴
+
+
+![](http://innovativeteams.net/wp-content/uploads/2026/09/devFestFloridaSaveTheDate2026-1024x559.webp)
+Learn more at [DevFestFlorida.com](https://DevFestFlorida.com)
+
+<Button 
+  text="Join DevFest Hackathon!"
+  variant="primary"
+  target="_blank"
+  icon="tabler:square-rounded-arrow-right"
+  href="https://www.eventbrite.com/e/devfest-florida-hackathon-11626-11826-tickets-1998655551557?aff=oddtdtcreator"
+/>
