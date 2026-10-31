@@ -45,16 +45,18 @@ const palettes = [
                   class="relative z-10 mx-auto mb-2 h-20 w-20"
                 />
 
-                <Image
-                  src={speaker.image}
-                  width={400}
-                  height={400}
-                  alt={speaker.imageAlt}
-                  format="webp"
-                  quality={80}
-                  class="relative z-10 mx-auto mb-3 aspect-square w-44 rounded-full border-2 border-black object-cover"
-                  style={`box-shadow:6px 6px 0 ${p.accent}`}
-                />
+                {speaker.image && (
+                  <Image
+                    src={speaker.image}
+                    width={400}
+                    height={400}
+                    alt={speaker.imageAlt ?? speaker.name}
+                    format="webp"
+                    quality={80}
+                    class="relative z-10 mx-auto mb-3 aspect-square w-44 rounded-full border-2 border-black object-cover"
+                    style={`box-shadow:6px 6px 0 ${p.accent}`}
+                  />
+                )}
 
                 <h2 class="relative z-10 text-center text-2xl font-extrabold">{speaker.name}</h2>
                 <p class="relative z-10 mb-3 text-center text-sm font-medium">
