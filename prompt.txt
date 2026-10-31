@@ -1,0 +1,4 @@
+
+- Review details of key note here src/pages/keynote.mdx
+- Update src/pages/schedule.astro
+- Add keynote at 9:00am

@@ -6,6 +6,8 @@ import { getSpeaker } from '~/data/speakers2026';
 interface Session {
   title: string;
   speakerId?: string;
+  href?: string;
+  subtitle?: string;
 }
 
 interface Slot {
@@ -16,7 +18,18 @@ interface Slot {
 
 const day1: Slot[] = [
   { start: '8:00 AM', end: '9:00 AM', sessions: [{ title: 'Registration' }] },
-  { start: '9:00 AM', end: '10:00 AM', sessions: [{ title: 'Orientation/Kick-Off' }] },
+  {
+    start: '9:00 AM',
+    end: '10:00 AM',
+    sessions: [
+      { title: 'Orientation/Kick-Off' },
+      {
+        title: 'Keynote: Beyond the Build: Technology, AI, and Community Impact',
+        href: '/keynote',
+        subtitle: 'Larry Kilroy · Vice President, Technology at DataKind',
+      },
+    ],
+  },
   { start: '10:00 AM', end: '11:00 AM', sessions: [{ title: '', speakerId: 'dwane-hemmings' }] },
   {
     start: '11:00 AM',
@@ -149,7 +162,20 @@ const days = [
                           </span>
                         </button>
                       ) : (
-                        <p class="theme-heading py-2 text-lg font-bold">{session.title}</p>
+                        session.href ? (
+                          <a
+                            href={session.href}
+                            class="group rounded-xl border-2 border-solid border-[#34a853] p-4 transition hover:bg-[#34a853]/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#34a853]"
+                          >
+                            <span class="theme-heading block text-lg font-bold">{session.title}</span>
+                            {session.subtitle && <span class="theme-copy mt-1 block text-sm">{session.subtitle}</span>}
+                            <span class="theme-accent-green mt-2 block text-sm font-semibold underline underline-offset-4 group-hover:opacity-80">
+                              View keynote details
+                            </span>
+                          </a>
+                        ) : (
+                          <p class="theme-heading py-2 text-lg font-bold">{session.title}</p>
+                        )
                       )
                     )}
                   </div>
