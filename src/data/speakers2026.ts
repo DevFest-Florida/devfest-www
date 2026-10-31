@@ -1,5 +1,6 @@
 import type { ImageMetadata } from 'astro';
 
+import arthurThompsonImage from '~/assets/images/2026/speakers/arthur_thompson.jpg';
 import carolBolgerImage from '~/assets/images/2026/speakers/carol_bolger.png';
 import dwaneHemmingsImage from '~/assets/images/2026/speakers/dwane_hemmings.jpg';
 import javieraLasoImage from '~/assets/images/2026/speakers/javiera_laso.jpg';
@@ -17,8 +18,8 @@ export interface Speaker {
   role: string;
   company: string;
   companyUrl?: string;
-  image: ImageMetadata;
-  imageAlt: string;
+  image?: ImageMetadata;
+  imageAlt?: string;
   talkTitle: string;
   /** Each entry renders as a paragraph. */
   talkDescription: string[];
@@ -26,6 +27,35 @@ export interface Speaker {
 }
 
 export const speakers: Speaker[] = [
+  {
+    id: 'arthur-thompson',
+    name: 'Arthur Thompson',
+    role: 'Developer Relations Engineer',
+    company: 'Google',
+    companyUrl: 'https://google.com',
+    image: arthurThompsonImage,
+    imageAlt: 'Arthur Thompson',
+    talkTitle: 'Building AI apps from scratch with the Google ecosystem',
+    talkDescription: [
+      'The way we build software has changed. Today, the most successful developers aren\'t just writing code, they are orchestrating AI tools and agents to build better and faster. This hands-on session is a deep dive into this modern "Builder Stack"',
+    ],
+    links: [
+      { label: 'GitHub', href: 'https://github.com/kroikie' },
+      { label: 'LinkedIn', href: 'https://www.linkedin.com/in/arthur-thompson-02a275258/' },
+    ],
+  },
+  {
+    id: 'german-gamboa',
+    name: 'German Gamboa',
+    role: 'Senior Software Engineer',
+    company: 'Olo',
+    talkTitle: 'Exploring experiments in agent harnesses',
+    talkDescription: [],
+    links: [
+      { label: 'GitHub', href: 'https://github.com/germangamboa95' },
+      { label: 'LinkedIn', href: 'https://www.linkedin.com/in/germangamboa' },
+    ],
+  },
   {
     id: 'carol-bolger',
     name: 'Carol Bolger',

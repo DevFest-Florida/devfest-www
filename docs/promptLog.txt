@@ -23,3 +23,38 @@ As an event planner for DevFestFlorida.com, draft ticket page copy.
 - Network with potential employers and engineering leaders
 
 
+===
+
+10/31/2026
+
+Move the talk Build Your Own AI-Assisted Architecture Review Board to 3:00pm in Track A
+
+===
+
+Publish a new speaker and talk
+
+Speaker: Arthur Thompson
+Title: Developer Relations Engineer
+Company: Google
+Github: https://github.com/kroikie
+LinkedIn: https://www.linkedin.com/in/arthur-thompson-02a275258/
+TalkTitle: Building AI apps from scratch with the Google ecosystem
+TalkAbstract: The way we build software has changed. Today, the most successful developers aren't just writing code, they are orchestrating AI tools and agents to build better and faster. This hands-on session is a deep dive into this modern "Builder Stack"
+TalkLocation: TrackA
+TalkTime: 1:00pm
+
+===
+
+Publish a new speaker and talk
+
+Speaker: German Gamboa
+Title: Senior Software Engineer
+Company: Olo
+Github: https://github.com/germangamboa95
+LinkedIn: https://www.linkedin.com/in/germangamboa
+TalkTitle: Exploring experiments in building agent harnesses
+TalkAbstract: TBD
+TalkLocation: TrackB
+TalkTime: 3:00pm
+
+

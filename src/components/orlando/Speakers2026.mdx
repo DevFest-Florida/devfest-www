@@ -12,7 +12,9 @@ import { speakers } from '~/data/speakers2026';
     </h4>
     {!speaker.companyUrl && <p>{speaker.company}</p>}
 
-    <Image src={speaker.image} width={300} alt={speaker.imageAlt} format="webp" quality={80} />
+    {speaker.image && (
+      <Image src={speaker.image} width={300} alt={speaker.imageAlt ?? speaker.name} format="webp" quality={80} />
+    )}
 
     <p>{speaker.talkTitle}</p>
     {speaker.talkDescription.map((paragraph) => <p>{paragraph}</p>)}

@@ -44,12 +44,18 @@ const day1: Slot[] = [
     start: '1:00 PM',
     end: '1:30 PM',
     sessions: [
-      { title: '', speakerId: 'javiera-laso' },
+      { title: '', speakerId: 'arthur-thompson' },
       { title: '', speakerId: 'will-gorman' },
     ],
   },
   { start: '1:30 PM', end: '2:30 PM', sessions: [{ title: 'Hackathon planning' }] },
-  { start: '2:30 PM', end: '6:00 PM', sessions: [{ title: 'BEGIN THE HACK!!!' }] },
+  { start: '2:30 PM', end: '3:00 PM', sessions: [{ title: 'BEGIN THE HACK!!!' }] },
+  {
+    start: '3:00 PM',
+    end: '3:30 PM',
+    sessions: [{ title: '', speakerId: 'javiera-laso' }, { title: '', speakerId: 'german-gamboa' }],
+  },
+  { start: '3:30 PM', end: '6:00 PM', sessions: [{ title: 'BEGIN THE HACK!!!' }] },
   { start: '6:00 PM', end: '7:00 PM', sessions: [{ title: 'Dinner time :)' }] },
   { start: '7:00 PM', end: '8:00 PM', sessions: [{ title: 'Wrap up work for day 1' }] },
 ];
@@ -231,15 +237,17 @@ const days = [
                 </h2>
 
                 <div class="mt-6 flex flex-col items-start gap-4 sm:flex-row">
-                  <Image
-                    src={session.speaker.image}
-                    width={120}
-                    height={120}
-                    alt={session.speaker.imageAlt}
-                    format="webp"
-                    quality={80}
-                    class="h-28 w-28 shrink-0 rounded-2xl border-4 border-solid border-[#34a853] object-cover"
-                  />
+                  {session.speaker.image && (
+                    <Image
+                      src={session.speaker.image}
+                      width={120}
+                      height={120}
+                      alt={session.speaker.imageAlt ?? session.speaker.name}
+                      format="webp"
+                      quality={80}
+                      class="h-28 w-28 shrink-0 rounded-2xl border-4 border-solid border-[#34a853] object-cover"
+                    />
+                  )}
                   <div>
                     <p class="theme-heading text-lg font-bold">{session.speaker.name}</p>
                     <p class="text-sm">{session.speaker.role}</p>
@@ -260,11 +268,13 @@ const days = [
                   </div>
                 </div>
 
-                <div class="mt-6 space-y-3">
-                  {session.speaker.talkDescription.map((paragraph) => (
-                    <p>{paragraph}</p>
-                  ))}
-                </div>
+                {session.speaker.talkDescription.length > 0 && (
+                  <div class="mt-6 space-y-3">
+                    {session.speaker.talkDescription.map((paragraph) => (
+                      <p>{paragraph}</p>
+                    ))}
+                  </div>
+                )}
 
                 <ul class="mt-6 flex flex-wrap gap-x-6 gap-y-2 text-sm font-semibold">
                   {session.speaker.links.map((link) => (
