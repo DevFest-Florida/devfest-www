@@ -17,21 +17,21 @@ const venueSlides = [
     image: UcfAerialPhoto,
     badge: 'UCF Downtown',
     title: 'Campus Aerial View & Creative Village',
-    description: 'Aerial overview of 500 W. Livingston Street, Dr. Phillips Academic Commons, and surrounding transit.',
+    description: 'Aerial overview of 500 W. Livingston Street, the Communication and Media Building (CMB), and surrounding transit.',
     alt: 'Aerial view of UCF Downtown campus in Creative Village Orlando',
   },
   {
     image: UcfDpacPhoto,
-    badge: 'DPAC Facility',
-    title: 'Dr. Phillips Academic Commons',
-    description: 'The signature four-story academic center and bridge housing our main hackathon work halls.',
-    alt: 'Dr. Phillips Academic Commons building at UCF Downtown',
+    badge: 'CMB 182A/B',
+    title: 'Communication and Media Building (CMB)',
+    description: 'Head to CMB 182A/B — a multi-purpose event, presentation, and meeting space located inside the Communication and Media Building (CMB).',
+    alt: 'UCF Downtown campus buildings in Orlando',
   },
   {
     image: UcfPlazaPhoto,
     badge: 'Campus Plaza',
     title: 'James M. Seneff Plaza & West Livingston',
-    description: 'Modern pedestrian walkways, outdoor greenery, and direct access to LYMMO transit.',
+    description: 'Modern pedestrian walkways, outdoor greenery, and direct access to the Communication and Media Building (CMB) and LYMMO transit.',
     alt: 'James M. Seneff Plaza exterior at UCF Downtown',
   },
   {
@@ -44,9 +44,9 @@ const venueSlides = [
 ];
 
 const metadata = {
-  title: 'DevFest Hackathon 2026 | November 6–8 | UCF Downtown, Orlando',
+  title: 'DevFest Hackathon 2026 | November 6–8 | UCF Downtown (CMB 182A/B), Orlando',
   description:
-    'Join us for DevFest Hackathon 2026, November 6–8 at UCF Downtown in Orlando, Florida. Collaborate, innovate, and build with the GDG community.',
+    'Join us for DevFest Hackathon 2026, November 6–8 at UCF Downtown — Communication and Media Building (CMB), Room CMB 182A/B in Orlando, Florida.',
 };
 
 const eventSchema = {
@@ -62,10 +62,10 @@ const eventSchema = {
   url: 'https://devfestflorida.com/',
   location: {
     '@type': 'Place',
-    name: 'UCF Downtown (Dr. Phillips Academic Commons)',
+    name: 'UCF Downtown — Communication and Media Building (CMB), Room CMB 182A/B',
     address: {
       '@type': 'PostalAddress',
-      streetAddress: '500 W. Livingston Street',
+      streetAddress: '500 W. Livingston Street, CMB 182A/B',
       addressLocality: 'Orlando',
       addressRegion: 'FL',
       postalCode: '32801',
@@ -107,11 +107,15 @@ const eventSchema = {
         </span>
         <span class="inline-flex items-center gap-2">
           <Icon name="tabler:map-pin" class="h-5 w-5 text-[#ea4335]" aria-hidden="true" />
-          UCF Downtown, Orlando
+          UCF Downtown &bull; CMB 182A/B, Orlando
         </span>
       </div>
-      <p class="mt-4 text-sm font-medium text-white/85 sm:text-base">
-        Early-bird tickets from $21.30 <span aria-hidden="true">&bull;</span> In person at UCF Downtown
+      <p class="mt-4 text-sm font-medium text-white/90 sm:text-base">
+        <a href="#venue" class="inline-flex flex-wrap items-center justify-center gap-1.5 rounded-full bg-[#f9ab00]/20 border border-[#f9ab00]/60 px-4 py-1.5 text-white hover:bg-[#f9ab00]/30 transition-colors">
+          <strong class="text-[#f9ab00]">Room CMB 182A/B</strong>
+          <span aria-hidden="true">&bull;</span>
+          <span>Communication and Media Building (CMB), 500 W. Livingston St.</span>
+        </a>
       </p>
 
       <!-- Main CTA Buttons -->
@@ -542,17 +546,34 @@ const eventSchema = {
 
   <!-- Venue Section -->
   <section id="venue" class="theme-section container mx-auto py-16 px-4 md:px-8 lg:px-12">
-    <div class="text-center mb-12">
+    <div class="text-center mb-10">
       <div class="inline-flex items-center gap-2 rounded-full bg-[#4285f4]/10 dark:bg-[#4285f4]/20 px-4 py-1.5 text-sm font-semibold text-[#1967d2] dark:text-[#8ab4f8] mb-4">
         <Icon name="tabler:map-pin" class="h-4 w-4" aria-hidden="true" />
         <span>Official Event Location</span>
       </div>
       <h3 class="theme-heading text-3xl sm:text-4xl font-extrabold mb-4">
-        Venue: UCF Downtown
+        Venue: UCF Downtown &mdash; CMB 182A/B
       </h3>
-      <p class="theme-copy text-lg max-w-2xl mx-auto">
-        Dr. Phillips Academic Commons &bull; 500 W. Livingston Street, Orlando, FL 32801
+      <p class="theme-copy text-lg max-w-3xl mx-auto font-medium">
+        Communication and Media Building (CMB) &bull; Room CMB 182A/B &bull; 500 W. Livingston Street, Orlando, FL 32801
       </p>
+    </div>
+
+    <!-- Prominent Building & Room Alert Banner -->
+    <div class="max-w-4xl mx-auto mb-12 rounded-2xl border-2 border-[#f9ab00] bg-[#f9ab00]/15 dark:bg-[#f9ab00]/10 p-5 sm:p-6 shadow-lg">
+      <div class="flex flex-col sm:flex-row items-start sm:items-center gap-4">
+        <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-[#f9ab00] text-[#1e1e1e] font-extrabold">
+          <Icon name="tabler:map-pin" class="h-7 w-7" aria-hidden="true" />
+        </div>
+        <div>
+          <p class="theme-heading text-lg sm:text-xl font-extrabold">
+            Head to <span class="underline decoration-[#f9ab00] decoration-2 underline-offset-4">Room CMB 182A/B</span> inside the Communication and Media Building (CMB)
+          </p>
+          <p class="theme-copy text-sm sm:text-base mt-1 leading-relaxed">
+            <strong>CMB 182A/B</strong> is a multi-purpose event, presentation, and meeting space located inside the <strong>Communication and Media Building (CMB)</strong> at <strong>500 W. Livingston Street, Orlando, FL 32801</strong>. Please make sure to enter the <strong>CMB</strong> building on campus!
+          </p>
+        </div>
+      </div>
     </div>
 
     <!-- Main Grid: Photo & Overview -->
@@ -644,32 +665,34 @@ const eventSchema = {
         <div class="theme-card rounded-2xl border-l-4 border-[#34a853] p-6 shadow-lg">
           <h4 class="theme-heading text-xl font-bold mb-2 flex items-center gap-2">
             <Icon name="tabler:building-community" class="h-6 w-6 text-[#34a853]" aria-hidden="true" />
-            Modern Innovation Hub
+            CMB 182A/B Event Space
           </h4>
           <p class="theme-copy text-sm sm:text-base leading-relaxed">
-            UCF Downtown is situated in Orlando's Creative Village innovation district. It features state-of-the-art collaborative workspaces, high-speed network connectivity, open atriums, and comfortable team project areas ideal for an immersive 3-day hackathon.
+            <strong>CMB 182A/B</strong> is a multi-purpose event, presentation, and meeting space located inside the <strong>Communication and Media Building (CMB)</strong> at UCF Downtown in Orlando's Creative Village innovation district, featuring collaborative workspaces, high-speed network connectivity, and team hacking areas.
           </p>
         </div>
 
         <div class="theme-card rounded-2xl border-l-4 border-[#ea4335] p-6 shadow-lg">
           <h4 class="theme-heading text-xl font-bold mb-2 flex items-center gap-2">
             <Icon name="tabler:map-2" class="h-6 w-6 text-[#ea4335]" aria-hidden="true" />
-            Address & Campus
+            Building, Room & Address
           </h4>
-          <p class="theme-copy text-sm sm:text-base font-medium">
+          <p class="theme-copy text-sm sm:text-base font-medium leading-relaxed">
+            <strong class="theme-heading">Communication and Media Building (CMB)</strong><br />
+            <span class="inline-block my-1 rounded-md bg-[#f9ab00]/25 px-2.5 py-0.5 font-extrabold theme-heading border border-[#f9ab00]">Room: CMB 182A/B</span><br />
             500 W. Livingston Street<br />
             Orlando, FL 32801
           </p>
           <div class="mt-4 flex flex-wrap gap-3">
             <a
-              href="https://maps.google.com/?q=UCF+Downtown,+500+W+Livingston+St,+Orlando,+FL+32801"
+              href="https://maps.google.com/?q=UCF+Communication+and+Media+Building,+500+W+Livingston+St,+Orlando,+FL+32801"
               target="_blank"
               rel="noopener noreferrer"
               class="inline-flex items-center gap-2 rounded-full bg-[#1967d2] px-5 py-2.5 text-sm font-bold text-white shadow-md transition-colors hover:bg-[#1557b0] focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2"
-              aria-label="Open Google Maps directions to UCF Downtown"
+              aria-label="Open Google Maps directions to UCF Communication and Media Building (CMB)"
             >
               <Icon name="tabler:directions" class="h-4 w-4" aria-hidden="true" />
-              Get Directions
+              Get Directions to CMB
             </a>
             <a
               href="https://www.ucf.edu/downtown/"
@@ -747,14 +770,14 @@ const eventSchema = {
     <!-- Interactive Map Embed -->
     <div class="overflow-hidden rounded-3xl shadow-xl border border-slate-200 dark:border-slate-800">
       <iframe
-        title="Map of UCF Downtown"
+        title="Map of UCF Communication and Media Building (CMB)"
         width="100%"
         height="400"
         style="border:0;"
         loading="lazy"
         allowfullscreen="false"
         referrerpolicy="no-referrer-when-downgrade"
-        src="https://maps.google.com/maps?q=UCF+Downtown+500+W+Livingston+St+Orlando+FL+32801&t=&z=15&ie=UTF8&iwloc=&output=embed"
+        src="https://maps.google.com/maps?q=UCF+Communication+and+Media+Building+500+W+Livingston+St+Orlando+FL+32801&t=&z=17&ie=UTF8&iwloc=&output=embed"
         class="w-full h-80 sm:h-96"
       ></iframe>
     </div>
@@ -769,7 +792,7 @@ const eventSchema = {
       </div>
       <h3 class="theme-heading text-3xl sm:text-4xl font-bold mb-4">Frequently Asked Questions</h3>
       <p class="theme-copy text-lg max-w-2xl mx-auto">
-        Answers to essential questions about DevFest Florida Hackathon 2026 at UCF Downtown.
+        Answers to essential questions about DevFest Florida Hackathon 2026 at UCF Downtown (CMB 182A/B).
       </p>
     </div>
 
@@ -798,7 +821,7 @@ const eventSchema = {
       <div class="theme-card rounded-2xl border-t-4 border-[#34a853] p-6 shadow-md">
         <h4 class="theme-heading font-bold text-lg mb-2">Where is it located?</h4>
         <p class="theme-copy text-sm leading-relaxed">
-          Hosted at UCF Downtown (Dr. Phillips Academic Commons), 500 W. Livingston Street, Orlando, FL with easy LYMMO and SunRail transit access.
+          Hosted at UCF Downtown in <strong>Room CMB 182A/B</strong> (a multi-purpose event, presentation, and meeting space inside the <strong>Communication and Media Building</strong>), 500 W. Livingston Street, Orlando, FL 32801.
         </p>
       </div>
     </div>
