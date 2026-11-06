@@ -15,6 +15,10 @@ export const headerData = {
       href: getPermalink('/speakers'),
     },
     {
+      text: 'Challenges',
+      href: 'https://docs.google.com/document/d/e/2PACX-1vScTd33Ugr1xgLyJgOsECSZSKvMGaNRP19s2q01w8eZNBPwz7vTDqcPtyMjDyaE04xI2eykW4qcPvEp/pub',
+    },
+    {
       text: 'Inspiration',
       href: getPermalink('/inspiration'),
     },
