@@ -5,6 +5,7 @@ import carolBolgerImage from '~/assets/images/2026/speakers/carol_bolger.png';
 import dwaneHemmingsImage from '~/assets/images/2026/speakers/dwane_hemmings.jpg';
 import javieraLasoImage from '~/assets/images/2026/speakers/javiera_laso.jpg';
 import loianeGronerImage from '~/assets/images/2026/speakers/loiane_groner.jpeg';
+import muntaserSyedImage from '~/assets/images/2026/speakers/muntaser_syed.jpg';
 import willGormanImage from '~/assets/images/2026/speakers/will_gorman.jpg';
 
 export interface SpeakerLink {
@@ -42,18 +43,6 @@ export const speakers: Speaker[] = [
     links: [
       { label: 'GitHub', href: 'https://github.com/kroikie' },
       { label: 'LinkedIn', href: 'https://www.linkedin.com/in/arthur-thompson-02a275258/' },
-    ],
-  },
-  {
-    id: 'german-gamboa',
-    name: 'German Gamboa',
-    role: 'Senior Software Engineer',
-    company: 'Olo',
-    talkTitle: 'Exploring experiments in agent harnesses',
-    talkDescription: [],
-    links: [
-      { label: 'GitHub', href: 'https://github.com/germangamboa95' },
-      { label: 'LinkedIn', href: 'https://www.linkedin.com/in/germangamboa' },
     ],
   },
   {
@@ -123,6 +112,23 @@ export const speakers: Speaker[] = [
       { label: 'Connect on LinkedIn', href: 'https://www.linkedin.com/in/dwane-hemmings' },
       { label: 'LifeLong.dev', href: 'https://LifeLong.dev' },
       { label: 'GitHub', href: 'https://github.com/conshus' },
+    ],
+  },
+  {
+    id: 'muntaser-syed',
+    name: 'Muntaser Syed',
+    role: 'Lead GenAI Engineer/Architect',
+    company: 'Insight Global',
+    image: muntaserSyedImage,
+    imageAlt: 'Muntaser Syed',
+    talkTitle: 'Hashrope: One Data Structure, Four Languages',
+    talkDescription: [
+      'Strings do not scale to everything. When data is large, edited often, and shared between systems, you need a structure that supports fast edits and proves it has not been tampered with. Hashrope is a rope, a binary tree of text segments, where every node also carries a hash of its contents. The root hash therefore fingerprints the entire sequence: any copy can be verified with one comparison, and splits, merges, and inserts stay logarithmic. The same design is implemented four times, in Python, Rust, Java, and TypeScript, and published on PyPI, crates.io, Maven Central, and npm on a single version line. This session covers the design, live demos in Python and TypeScript, the conformance work that keeps four implementations identical, and where verified sequences pay off in practice, from data pipelines to AI agent memory.',
+    ],
+    links: [
+      { label: 'GitHub', href: 'https://github.com/jemsbhai' },
+      { label: 'LinkedIn', href: 'https://www.linkedin.com/in/muntasersyed/' },
+      { label: 'Blog', href: 'https://muntasersyed.com/' },
     ],
   },
   {

@@ -57,4 +57,22 @@ TalkAbstract: TBD
 TalkLocation: TrackB
 TalkTime: 3:00pm
 
+===
+Remove German Gamboa from schedule
+Publish a new speaker and talk
+
+Speaker: Muntaser Syed
+Title: Lead GenAI Engineer/Architect
+Company: Insight Global
+Github: https://github.com/jemsbhai
+LinkedIn: https://www.linkedin.com/in/muntasersyed/
+Blog: https://muntasersyed.com/
+Image: muntaser_syed.jpg
+TalkTitle: Hashrope: One Data Structure, Four Languages
+TalkAbstract:
+
+Strings do not scale to everything. When data is large, edited often, and shared between systems, you need a structure that supports fast edits and proves it has not been tampered with. Hashrope is a rope, a binary tree of text segments, where every node also carries a hash of its contents. The root hash therefore fingerprints the entire sequence: any copy can be verified with one comparison, and splits, merges, and inserts stay logarithmic. The same design is implemented four times, in Python, Rust, Java, and TypeScript, and published on PyPI, crates.io, Maven Central, and npm on a single version line. This session covers the design, live demos in Python and TypeScript, the conformance work that keeps four implementations identical, and where verified sequences pay off in practice, from data pipelines to AI agent memory.
+
+TalkLocation: TrackB
+TalkTime: 3:00pm
 
