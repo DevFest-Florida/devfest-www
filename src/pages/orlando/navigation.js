@@ -5,27 +5,27 @@ export const headerData = {
   links: [
     {
       text: 'Orlando',
-      href: getPermalink('/orlando'),
+      href: getPermalink('/'),
     },
     {
       text: 'Speakers',
-      href: getPermalink('/orlando/speakers'),
+      href: getPermalink('/speakers'),
     },
     {
       text: 'Keynote',
-      href: getPermalink('/orlando/keyNote'),
+      href: getPermalink('/keyNote'),
     },    
     {
       text: 'Sponsors',
-      href: getPermalink('/orlando/sponsors'),
+      href: getPermalink('/sponsors'),
     },
     {
       text: 'Schedule',
-      href: getPermalink('/orlando/schedule'),
+      href: getPermalink('/schedule'),
     },
     {
       text: 'Location',
-      href: getPermalink('/orlando/location'),
+      href: getPermalink('/location'),
     },
     {
       text: 'Blog',
