@@ -1,3 +1,9 @@
 /volunteer https://dashboard.devfestflorida.com/volunteer 301
 /volunteer/ https://dashboard.devfestflorida.com/volunteer 301
 /volunteer.html https://dashboard.devfestflorida.com/volunteer 301
+/orlando / 301
+/orlando/ / 301
+/orlando/* / 301
+/2025 / 301
+/2025/ / 301
+/2025/* / 301

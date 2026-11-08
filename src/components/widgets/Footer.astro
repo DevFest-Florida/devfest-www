@@ -34,19 +34,26 @@ const { socialLinks = [], secondaryLinks = [], links = [], footNote = '', theme 
         <div class="mb-2">
           <a class="inline-block font-bold text-xl" href={getHomePermalink()}>🌴 {SITE?.name} 🏖️</a>
         </div>
-        <div class="text-sm text-muted flex flex-wrap gap-x-1 gap-y-1">
-          {
-            secondaryLinks.map(({ text, href }, index) => (
-              <span class="inline-flex whitespace-nowrap">
-                <a
-                  class="text-muted hover:text-gray-700 dark:text-gray-400 hover:underline transition duration-150 ease-in-out"
-                  href={href}
-                  set:html={text}
-                />
-              </span>
-            ))
-          }
-        </div>
+        {
+          secondaryLinks.length > 0 && (
+            <nav class="mt-5" aria-label="Past event archives">
+              <p class="mb-2 text-xs font-semibold uppercase tracking-[0.16em] text-muted dark:text-gray-400">
+                Past events
+              </p>
+              <ul class="grid max-w-sm grid-cols-2 gap-2 text-sm">
+                {secondaryLinks.map(({ text, href }) => (
+                  <li>
+                    <a
+                      class="inline-flex w-full items-center rounded-full border border-gray-200 px-3 py-1.5 text-muted transition duration-150 ease-in-out hover:border-gray-400 hover:text-gray-700 dark:border-slate-700 dark:text-gray-400 dark:hover:border-slate-500 dark:hover:text-white"
+                      href={href}
+                      set:html={text}
+                    />
+                  </li>
+                ))}
+              </ul>
+            </nav>
+          )
+        }
       </div>
       {
         links.map(({ title, links }) => (
