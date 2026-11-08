@@ -5,7 +5,7 @@ export const headerData = {
   links: [
     {
       text: 'Miami',
-      href: getPermalink('/miami'),
+      href: getPermalink('/'),
     },
     // {
     //   text: 'Speakers',
@@ -13,15 +13,15 @@ export const headerData = {
     // },
     {
       text: 'Sponsors',
-      href: getPermalink('/miami/sponsors'),
+      href: getPermalink('/sponsors'),
     },
     {
       text: 'Schedule',
-      href: getPermalink('/miami/schedule'),
+      href: getPermalink('/schedule'),
     },
     {
       text: 'Location',
-      href: getPermalink('/miami/location'),
+      href: getPermalink('/location'),
     },
     {
       text: 'Blog',

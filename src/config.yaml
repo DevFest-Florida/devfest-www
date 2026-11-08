@@ -1,6 +1,6 @@
 site:
   name: DevFest Florida
-  site: 'https://devfestflorida.com/'
+  site: 'https://2024-miami.devfestflorida.com/'
   base: '/'
   trailingSlash: false
 
